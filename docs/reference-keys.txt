@@ -5,6 +5,11 @@ conceptos
 datos
 section
 gráficos-descriptivos
+tópicos-básicos-de-estadística-1
+conceptos-1
+estimador-y-estimación
+variabilidad-muestral
+gráficos-descriptivos-1
 parts
 footnotes-and-citations
 footnotes
@@ -17,8 +22,3 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
-tópicos-básicos-de-estadística-1
-conceptos-1
-section-1
-gráficos-descriptivos-1
-estimador-y-estimación

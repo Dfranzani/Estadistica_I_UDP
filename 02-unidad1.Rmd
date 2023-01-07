@@ -54,7 +54,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 
 ```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
   set.seed(250)
-  par(mfrow = c(1,2), las = 1, bty = "n")
+  par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
   pos = data.frame(sample(1:30,20), sample(1:30,20))
   pos[,3] = NA
   n = sample(3:17, 1)
@@ -95,7 +95,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 
 ```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
   set.seed(1070)
-  par(mfrow = c(1,2), las = 1, bty = "n")
+  par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
   pos = data.frame(sample(1:30,20), sample(1:30,20))
   pos[,3] = NA
   n = sample(3:17, 1)
@@ -128,6 +128,10 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 
 
 ¿Cuándo diríamos que una estimación es buena?
+
+### Variabilidad muestral
+
+
 
 
 ## Gráficos descriptivos
