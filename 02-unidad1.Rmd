@@ -1,0 +1,205 @@
+# Tópicos básicos de estadística
+
+## Conceptos
+
+### Datos {-}
+
+Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
+
+Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
+
+### Información {-}
+
+<center>
+**Información = Datos + Significado**
+</center>
+
+Los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información. Otra forma de entenderlo es:
+
+<center>
+**Información = Datos + Reglas para decodificar**
+</center>
+
+En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo, viene de las reglas sociales que indican como actuar en determinadas situaciones.
+
+**En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.**
+
+### Tipos de variables {-}
+
+Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
+
+- Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
+- Cuantitativas (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
+
+**Ejemplo**: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+
+### Población y Muestra {-}
+
+- **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
+- **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
+
+Determinar en cada caso la población y la muestra:
+
+  - Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
+  - La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
+
+### Parámetros y Estadísticos {-}
+
+Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
+
+- **Parámetros**: característica numérica de resumen de la población.
+- **Estadísticos**: característica numérica de resumen de la muestra.
+
+Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.
+
+```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
+  set.seed(250)
+  par(mfrow = c(1,2), las = 1, bty = "n")
+  pos = data.frame(sample(1:30,20), sample(1:30,20))
+  pos[,3] = NA
+  n = sample(3:17, 1)
+  pos[sample(1:20,n),3] = "red"
+  pos[,3] = ifelse(is.na(pos[,3]), "blue", pos[,3])
+  
+  plot(x = pos[,1], y = pos[,2],
+       pch = 20, cex = 1.5, col = pos[,3],
+       xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "", main = "Población",
+       cex.main = 1,
+       xlim = c(1,30), ylim = c(0,30))
+  legend("bottom",
+         legend = paste(format(round(c(sum(pos[,3] == "red"), sum(pos[,3] == "blue"))/length(pos[,3])*100,1),
+                               nsmall = 1),"%", sep = ""),
+         pch = 16, col = c("red", "blue"), horiz = T,
+         bty = "o", inset = c(0,-0.25), xpd = T,
+         title = "Proporción", cex = 1)
+  
+  n2 = sample(1:20, sample(1:19,1))
+  plot(x = pos[n2,1], y = pos[n2,2],
+       pch = 20, cex = 1.5, col = pos[n2,3],
+       xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "", main = "Muestra", cex.main = 1,
+       xlim = c(1,30), ylim = c(0,30))
+  legend("bottom",
+         legend = paste(format(round(c(sum(pos[n2,3] == "red"), sum(pos[n2,3] == "blue"))/length(pos[n2,3])*100,1),
+                               nsmall = 1),"%", sep = ""),
+         pch = 16, col = c("red", "blue"), horiz = T,
+         bty = "o", inset = c(0,-0.25), xpd = T,
+         title = "Proporción", cex = 1)
+```
+
+### Estimador y Estimación
+
+- **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
+- **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la “fórmula”, y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
+
+```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
+  set.seed(1070)
+  par(mfrow = c(1,2), las = 1, bty = "n")
+  pos = data.frame(sample(1:30,20), sample(1:30,20))
+  pos[,3] = NA
+  n = sample(3:17, 1)
+  pos[sample(1:20,n),3] = "red"
+  pos[,3] = ifelse(is.na(pos[,3]), "blue", pos[,3])
+  
+  plot(x = pos[,1], y = pos[,2],
+       pch = 20, cex = 1.5, col = pos[,3],
+       xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "", main = "Población", cex.main = 1,
+       xlim = c(1,30), ylim = c(0,30))
+  legend("bottom",
+         legend = paste(format(round(c(sum(pos[,3] == "red"), sum(pos[,3] == "blue"))/length(pos[,3])*100,1),
+                               nsmall = 1),"%", sep = ""),
+         pch = 16, col = c("red", "blue"), horiz = T, bty = "o",
+         inset = c(0,-0.25), xpd = T, title = "Proporción", cex = 1)
+  set.seed(156)
+  n2 = sample(1:20, sample(1:19,1))
+  plot(x = pos[n2,1], y = pos[n2,2],
+       pch = 20, cex = 1.5, col = pos[n2,3],
+       xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "", main = "Muestra", cex.main = 1,
+       xlim = c(1,30), ylim = c(0,30))
+  legend("bottom",
+         legend = paste(format(round(c(sum(pos[n2,3] == "red"), sum(pos[n2,3] == "blue"))/length(pos[n2,3])*100,1),
+                               nsmall = 1),"%", sep = ""),
+         pch = 16, col = c("red", "blue"), horiz = T, bty = "o",
+         inset = c(0,-0.25), xpd = T,title = "Proporción", cex = 1)
+```
+
+
+¿Cuándo diríamos que una estimación es buena?
+
+
+## Gráficos descriptivos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

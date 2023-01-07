@@ -1,6 +1,4 @@
 bookdown::gitbook:
-  fontsettings:
-    theme: Night
   css: style.css
   config:
     toc:
@@ -10,6 +8,8 @@ bookdown::gitbook:
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf"]
+    fontsettings:
+      theme: white
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
