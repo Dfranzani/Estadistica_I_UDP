@@ -1,6 +1,6 @@
 bookdown::gitbook:
   fontsettings:
-    theme: night
+    theme: Night
   css: style.css
   config:
     toc:
