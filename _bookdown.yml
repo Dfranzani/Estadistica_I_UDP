@@ -4,3 +4,6 @@ book_filename: "est1+descriptiva.Rmd"
 language:
   ui:
     chapter_name: "Unidad "
+  label:
+    fig: "Figura "
+    tab: "Tabla "

@@ -167,10 +167,16 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#tipos-de-variables"><i class="fa fa-check"></i>Tipos de variables</a></li>
 <li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#población-y-muestra"><i class="fa fa-check"></i>Población y Muestra</a></li>
 <li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos"><i class="fa fa-check"></i>Parámetros y Estadísticos</a></li>
-<li class="chapter" data-level="1.1.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i><b>1.1.1</b> Estimador y Estimación</a></li>
-<li class="chapter" data-level="1.1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.2</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i>Estimador y Estimación</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i>Variabilidad muestral</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra"><i class="fa fa-check"></i>Representatividad y sesgo de la muestra</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc"><i class="fa fa-check"></i>Medidas de Tendencia Central (MTC)</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md"><i class="fa fa-check"></i>Medidas de Dipersión (MD)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>1.2</b> Gráficos descriptivos</a></li>
+<li class="chapter" data-level="1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>1.2</b> Gráficos descriptivos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i><b>1.2.1</b> Histograma</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>2</b> Parts</a></li>
 <li class="chapter" data-level="3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>3</b> Footnotes and citations</a>
@@ -263,8 +269,8 @@ div.csl-indent {
 <p>Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.</p>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="estimador-y-estimación" class="section level3 hasAnchor" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Estimador y Estimación<a href="tópicos-básicos-de-estadística.html#estimador-y-estimación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="estimador-y-estimación" class="section level3 unnumbered hasAnchor">
+<h3>Estimador y Estimación<a href="tópicos-básicos-de-estadística.html#estimador-y-estimación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Estimador</strong>: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.</li>
 <li><strong>Estimación</strong>: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la “fórmula”, y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.</li>
@@ -272,13 +278,81 @@ div.csl-indent {
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>¿Cuándo diríamos que una estimación es buena?</p>
 </div>
-<div id="variabilidad-muestral" class="section level3 hasAnchor" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Variabilidad muestral<a href="tópicos-básicos-de-estadística.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="variabilidad-muestral" class="section level3 unnumbered hasAnchor">
+<h3>Variabilidad muestral<a href="tópicos-básicos-de-estadística.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es ``azarosa’’, es decir, no podemos intencionarla en su totalidad.</p>
+<p>El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).</p>
+<center>
+<strong>¿Cuál es la proporción de círculos rojos en la población relfejada en la figura <a href="tópicos-básicos-de-estadística.html#fig:figura-poblacion1">1.1</a>?</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-poblacion1"></span>
+<img src="est1+descriptiva_files/figure-html/figura-poblacion1-1.png" alt="Población" width="288" />
+<p class="caption">
+Figura 1.1: Población
+</p>
+</div>
+<center>
+<strong>¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra1">1.2</a>?</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra1"></span>
+<img src="est1+descriptiva_files/figure-html/figura-muestra1-1.png" alt="Muestra 1" width="288" />
+<p class="caption">
+Figura 1.2: Muestra 1
+</p>
+</div>
+<center>
+<strong>¿Y ahora? (Figura <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra2">1.3</a>) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra2"></span>
+<img src="est1+descriptiva_files/figure-html/figura-muestra2-1.png" alt="Muestra 2" width="288" />
+<p class="caption">
+Figura 1.3: Muestra 2
+</p>
+</div>
+</div>
+<div id="representatividad-y-sesgo-de-la-muestra" class="section level3 unnumbered hasAnchor">
+<h3>Representatividad y sesgo de la muestra<a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Discusión</strong>: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).</p>
+<p>Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).</p>
+</div>
+<div id="medidas-de-tendencia-central-mtc" class="section level3 unnumbered hasAnchor">
+<h3>Medidas de Tendencia Central (MTC)<a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Media: <span class="math inline">\(\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i\)</span></li>
+<li>Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.</li>
+<li>Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.</li>
+</ul>
+</div>
+<div id="medidas-de-dipersión-md" class="section level3 unnumbered hasAnchor">
+<h3>Medidas de Dipersión (MD)<a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Varianza: <span class="math inline">\(S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}\)</span></li>
+<li>Desviación Estándar: <span class="math inline">\(\sqrt{S}\)</span></li>
+</ul>
 </div>
 </div>
 <div id="gráficos-descriptivos" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Gráficos descriptivos<a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica.</p>
+<p>Para ilustrar los diferentes gráficos, usaremos la base de datos <em>rock</em> que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:</p>
+<ul>
+<li>area: área del espacio de poros, en píxeles de 256 por 256.</li>
+<li>peri: perímetro en píxeles.</li>
+<li>shape: perímetros dividido por la raíz cuadrada del área.</li>
+<li>perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este <a href="https://en.wikipedia.org/wiki/Darcy_(unit)">link</a>).</li>
+</ul>
+<div id="histograma" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (<span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tópicos-básicos-de-estadística.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="tópicos-básicos-de-estadística.html#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> rock</span>
+<span id="cb1-3"><a href="tópicos-básicos-de-estadística.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> perm)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="tópicos-básicos-de-estadística.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkorange&quot;</span>, <span class="at">bins =</span> <span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="tópicos-básicos-de-estadística.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histograma&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="tópicos-básicos-de-estadística.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
 
+</div>
 </div>
 </div>
             </section>

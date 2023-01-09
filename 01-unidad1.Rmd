@@ -2,165 +2,263 @@
 
 ## Conceptos
 
-### Datos {-}
+### Datos {.unnumbered}
 
 Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
 
 Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
-### Información {-}
+### Información {.unnumbered}
 
-<center>
-**Información = Datos + Significado**
-</center>
+<center>**Información = Datos + Significado**</center>
 
 Los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información. Otra forma de entenderlo es:
 
-<center>
-**Información = Datos + Reglas para decodificar**
-</center>
+<center>**Información = Datos + Reglas para decodificar**</center>
 
 En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo, viene de las reglas sociales que indican como actuar en determinadas situaciones.
 
 **En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.**
 
-### Tipos de variables {-}
+### Tipos de variables {.unnumbered}
 
 Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
 
-- Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
-- Cuantitativas (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
+-   Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
+-   Cuantitativas (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
 
 **Ejemplo**: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
 
-### Población y Muestra {-}
+### Población y Muestra {.unnumbered}
 
-- **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
-- **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
+-   **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
+-   **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
 
 Determinar en cada caso la población y la muestra:
 
-  - Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
-  - La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
+-   Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
+-   La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
 
-### Parámetros y Estadísticos {-}
+### Parámetros y Estadísticos {.unnumbered}
 
 Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
 
-- **Parámetros**: característica numérica de resumen de la población.
-- **Estadísticos**: característica numérica de resumen de la muestra.
+-   **Parámetros**: característica numérica de resumen de la población.
+-   **Estadísticos**: característica numérica de resumen de la muestra.
 
 Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.
 
-```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
-  set.seed(250)
+```{r echo=FALSE, fig.align="center", fig.width=8, fig.height= 4}
+  set.seed(2023)
+  col_text = "gray35"
+  col_point1 = "red"
+  col_point2 = "blue"
   par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
   pos = data.frame(sample(1:30,20), sample(1:30,20))
   pos[,3] = NA
   n = sample(3:17, 1)
-  pos[sample(1:20,n),3] = "red"
-  pos[,3] = ifelse(is.na(pos[,3]), "blue", pos[,3])
+  pos[sample(1:20,n),3] = col_point1
+  pos[,3] = ifelse(is.na(pos[,3]), col_point2, pos[,3])
   
   plot(x = pos[,1], y = pos[,2],
-       pch = 20, cex = 1.5, col = pos[,3],
+       pch = 20, cex = 2, col = pos[,3],
        xaxt = "n", yaxt = "n",
        xlab = "", ylab = "", main = "Población",
-       cex.main = 1,
+       cex.main = 1, col.main = col_text,
        xlim = c(1,30), ylim = c(0,30))
   legend("bottom",
-         legend = paste(format(round(c(sum(pos[,3] == "red"), sum(pos[,3] == "blue"))/length(pos[,3])*100,1),
+         legend = paste(format(round(c(sum(pos[,3] == col_point1), sum(pos[,3] == col_point2))/length(pos[,3])*100,1),
                                nsmall = 1),"%", sep = ""),
-         pch = 16, col = c("red", "blue"), horiz = T,
+         pch = 16, col = c(col_point1, col_point2), horiz = T,
          bty = "o", inset = c(0,-0.25), xpd = T,
-         title = "Proporción", cex = 1)
+         title = "Proporción", cex = 1,
+         text.col = col_text, box.col = col_text)
   
   n2 = sample(1:20, sample(1:19,1))
   plot(x = pos[n2,1], y = pos[n2,2],
-       pch = 20, cex = 1.5, col = pos[n2,3],
+       pch = 20, cex = 2, col = pos[n2,3],
        xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "", main = "Muestra", cex.main = 1,
+       xlab = "", ylab = "", main = "Muestra",
+       cex.main = 1, col.main = col_text,
        xlim = c(1,30), ylim = c(0,30))
   legend("bottom",
-         legend = paste(format(round(c(sum(pos[n2,3] == "red"), sum(pos[n2,3] == "blue"))/length(pos[n2,3])*100,1),
+         legend = paste(format(round(c(sum(pos[n2,3] == col_point1), sum(pos[n2,3] == col_point2))/length(pos[n2,3])*100,1),
                                nsmall = 1),"%", sep = ""),
-         pch = 16, col = c("red", "blue"), horiz = T,
+         pch = 16, col = c(col_point1, col_point2), horiz = T,
          bty = "o", inset = c(0,-0.25), xpd = T,
-         title = "Proporción", cex = 1)
+         title = "Proporción", cex = 1,
+         text.col = col_text, box.col = col_text)
 ```
 
-### Estimador y Estimación
+### Estimador y Estimación {.unnumbered}
 
-- **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
-- **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la “fórmula”, y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
+-   **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
+-   **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la "fórmula", y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
 
-```{r echo = FALSE, fig.align="center", fig.width=8, fig.height= 4}
-  set.seed(1070)
+```{r echo=FALSE, fig.align="center", fig.width=8, fig.height= 4}
+  set.seed(1992)
   par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
   pos = data.frame(sample(1:30,20), sample(1:30,20))
   pos[,3] = NA
   n = sample(3:17, 1)
-  pos[sample(1:20,n),3] = "red"
-  pos[,3] = ifelse(is.na(pos[,3]), "blue", pos[,3])
+  pos[sample(1:20,n),3] = col_point1
+  pos[,3] = ifelse(is.na(pos[,3]), col_point2, pos[,3])
   
   plot(x = pos[,1], y = pos[,2],
-       pch = 20, cex = 1.5, col = pos[,3],
+       pch = 20, cex = 2, col = pos[,3],
        xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "", main = "Población", cex.main = 1,
+       xlab = "", ylab = "",
+       main = "Población", cex.main = 1, col.main = col_text,
        xlim = c(1,30), ylim = c(0,30))
   legend("bottom",
-         legend = paste(format(round(c(sum(pos[,3] == "red"), sum(pos[,3] == "blue"))/length(pos[,3])*100,1),
+         legend = paste(format(round(c(sum(pos[,3] == col_point1), sum(pos[,3] == col_point2))/length(pos[,3])*100,1),
                                nsmall = 1),"%", sep = ""),
-         pch = 16, col = c("red", "blue"), horiz = T, bty = "o",
-         inset = c(0,-0.25), xpd = T, title = "Proporción", cex = 1)
+         pch = 16, col = c(col_point1, col_point2), horiz = T, bty = "o",
+         inset = c(0,-0.25), xpd = T, title = "Proporción", cex = 1,
+         text.col = col_text, box.col = col_text)
+  
   set.seed(156)
   n2 = sample(1:20, sample(1:19,1))
   plot(x = pos[n2,1], y = pos[n2,2],
-       pch = 20, cex = 1.5, col = pos[n2,3],
+       pch = 20, cex = 2, col = pos[n2,3],
        xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "", main = "Muestra", cex.main = 1,
+       xlab = "", ylab = "",
+       main = "Muestra", cex.main = 1, col.main = col_text,
        xlim = c(1,30), ylim = c(0,30))
   legend("bottom",
-         legend = paste(format(round(c(sum(pos[n2,3] == "red"), sum(pos[n2,3] == "blue"))/length(pos[n2,3])*100,1),
+         legend = paste(format(round(c(sum(pos[n2,3] == col_point1), sum(pos[n2,3] == col_point2))/length(pos[n2,3])*100,1),
                                nsmall = 1),"%", sep = ""),
-         pch = 16, col = c("red", "blue"), horiz = T, bty = "o",
-         inset = c(0,-0.25), xpd = T,title = "Proporción", cex = 1)
+         pch = 16, col = c(col_point1, col_point2), horiz = T, bty = "o",
+         inset = c(0,-0.25), xpd = T,title = "Proporción", cex = 1,
+         text.col = col_text, box.col = col_text)
 ```
-
 
 ¿Cuándo diríamos que una estimación es buena?
 
-### Variabilidad muestral
+### Variabilidad muestral {.unnumbered}
+
+Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es \`\`azarosa'', es decir, no podemos intencionarla en su totalidad.
+
+El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).
+
+<center>
+**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura \@ref(fig:figura-poblacion1)?**
+</center>
+
+```{r figura-poblacion1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Población"}
+  col_point1 = "darkred"
+  col_point2 = "darkgray"
+  col_fill = "black"
+  par(bg = NA, mar = c(0,0,0,0))
+  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+  set.seed(2023)
+  df$color[sample(dim(df)[1], 20)] = col_point1
+  df$color[is.na(df$color)] = col_point2
+  plot(x = df$x, y = df$y, col = df$color,
+       pch = 20, cex = 5,
+       xlim = c(0,8), ylim = c(0,8),
+       bty = "n", xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "")
+  segments(x0 = c(0,0,0,8), y0 = c(0,8,0,0),
+           x1 = c(0,8,8,8), y1 = c(8,8,0,8))
+```
+
+<center>
+**¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura \@ref(fig:figura-muestra1)?**
+</center>
+
+```{r figura-muestra1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 1"}
+  par(bg = NA, mar = c(0,0,0,0))
+  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+  set.seed(2023)
+  df$color[sample(dim(df)[1], 20)] = col_point1
+  df$color[is.na(df$color)] = col_point2
+  plot(x = df$x, y = df$y, col = df$color,
+       pch = 20, cex = 5,
+       xlim = c(0,8), ylim = c(0,8),
+       bty = "n", xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "")
+  polygon(x = c(0,0,8,8,4.5,4.5,2.5,2.5,4.5,4.5),
+          y = c(8,0,0,8,8,2.5,2.5,4.5,4.5,8),
+          col = col_fill, border = col_fill)
+```
+
+<center>
+**¿Y ahora? (Figura \@ref(fig:figura-muestra2)) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral**
+</center>
+
+```{r figura-muestra2, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 2"}
+  par(bg = NA, mar = c(0,0,0,0))
+  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+  set.seed(2023)
+  df$color[sample(dim(df)[1], 20)] = col_point1
+  df$color[is.na(df$color)] = col_point2
+  plot(x = df$x, y = df$y, col = df$color,
+       pch = 20, cex = 5,
+       xlim = c(0,8), ylim = c(0,8),
+       bty = "n", xaxt = "n", yaxt = "n",
+       xlab = "", ylab = "")
+  polygon(x = c(0,0,8,8,7.5,7.5,3.5,3.5,7.5,7.5),
+          y = c(8,0,0,8,8,3.5,3.5,7.5,7.5,8),
+          col = col_fill, border = col_fill)
+```
+
+### Representatividad y sesgo de la muestra {-}
+
+**Discusión**: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
+
+Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).
 
 
+### Medidas de Tendencia Central (MTC) {-}
+
+- Media: $\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i$
+- Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.
+- Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
+
+### Medidas de Dipersión (MD) {-}
+
+- Varianza: $S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}$
+- Desviación Estándar: $\sqrt{S}$
 
 
 ## Gráficos descriptivos
 
+Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica. 
 
+Para ilustrar los diferentes gráficos, usaremos la base de datos *rock* que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
 
+- area: área del espacio de poros, en píxeles de 256 por 256.
+- peri: perímetro en píxeles.
+- shape: perímetros dividido por la raíz cuadrada del área.
+- perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este [link](https://en.wikipedia.org/wiki/Darcy_(unit))).
 
+### Histograma
 
+Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges ($1+\log_2(n)$, aproximando hacia el entero más próximo).
 
+```{r fig.align="center", fig.width=4, fig.height=3, eval=FALSE}
+library(ggplot2)
+datos = rock
+ggplot(datos, aes(x = perm)) +
+  geom_histogram(color = "white", fill = "darkorange", bins = 7) +
+  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia") +
+  theme_bw()
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```{r fig.align="center", fig.width=4, fig.height=3, echo=FALSE}
+library(ggplot2)
+datos = rock
+ggplot(datos, aes(x = perm)) +
+  geom_histogram(color = "white", fill = "darkorange", bins = 7) +
+  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia") +
+  theme(legend.background = element_rect(fill = "transparent"),
+        legend.box.background = element_rect(fill = "transparent"),
+        panel.background = element_rect(fill = "transparent", color = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "transparent", color = NA))
+```
 
 
 

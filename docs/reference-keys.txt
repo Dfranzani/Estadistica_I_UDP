@@ -1,10 +1,12 @@
+fig:figura-poblacion1
+fig:figura-muestra1
+fig:figura-muestra2
 eq:binom
 thm:tri
 tópicos-básicos-de-estadística
 conceptos
-estimador-y-estimación
-variabilidad-muestral
 gráficos-descriptivos
+histograma
 parts
 footnotes-and-citations
 footnotes
