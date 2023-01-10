@@ -233,43 +233,84 @@ Para ilustrar los diferentes gráficos, usaremos la base de datos *rock* que vie
 - shape: perímetros dividido por la raíz cuadrada del área.
 - perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este [link](https://en.wikipedia.org/wiki/Darcy_(unit))).
 
-### Histograma
+### Histograma {-}
 
 Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges ($1+\log_2(n)$, aproximando hacia el entero más próximo).
 
-```{r fig.align="center", fig.width=4, fig.height=3, eval=FALSE}
+```{r fig.align="center", fig.width=4, fig.height=3}
 library(ggplot2)
 datos = rock
-ggplot(datos, aes(x = perm)) +
-  geom_histogram(color = "white", fill = "darkorange", bins = 7) +
-  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia") +
-  theme_bw()
+ggplot(data = datos, aes(x = perm)) +
+  geom_histogram(color = "white", fill = "darkred", bins = 7) +
+  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia")
 ```
 
-```{r fig.align="center", fig.width=4, fig.height=3, echo=FALSE}
-library(ggplot2)
-datos = rock
-ggplot(datos, aes(x = perm)) +
-  geom_histogram(color = "white", fill = "darkorange", bins = 7) +
-  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia") +
-  theme(legend.background = element_rect(fill = "transparent"),
-        legend.box.background = element_rect(fill = "transparent"),
-        panel.background = element_rect(fill = "transparent", color = NA),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        plot.background = element_rect(fill = "transparent", color = NA))
+### Gráfico de caja {-}
+
+Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
+
+```{r fig.align="center", fig.width=4, fig.height=3}
+ggplot(data = datos, aes(y = perm)) + 
+  geom_boxplot(color = "black", fill = "darkred") +
+  labs(title = "Caja", x = "Permeabilidad (mD)", y = "Dispersión/Cuantiles") 
+```
+
+### Gráfico de violín {-}
+
+Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
+
+```{r fig.align="center", fig.width=4, fig.height=3}
+g = ggplot(data = datos, aes(x = 1, y = perm)) + 
+  geom_violin(trim = F, alpha = 0.5, fill = "aquamarine3") +
+  labs(title = "Violín", x = "", y = "Permeabilidad (mD)") + 
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank())
+g
+```
+### Gráfico de violín + caja + promedio {-}
+
+```{r fig.align="center", fig.width=4, fig.height=3}
+
+g + geom_boxplot(width = 0.1, color = "black",
+                 alpha = 0.3, fill = "darkblue")  +
+  stat_summary(fun = mean, geom = "point",
+               size = 1, color = "red")
+```
+
+### Gráfico de barras {-}
+
+Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
+
+```{r fig.align="center", fig.width=4, fig.height=3}
+datos$Perm2 = ifelse(datos$perm > 500, "Mayor a 500", "Menor a  500")
+ggplot(data = datos,aes(x = Perm2)) + 
+  geom_bar(fill = "darkgreen") + 
+  labs(title = "Barras", x = "Permeabilidad (mD)", y = "Frecuencia")
+```
+
+### Gráfico de dispersión {-}
+
+Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
+
+```{r fig.align="center", fig.width=6, fig.height=3}
+ggplot(data = datos, aes(x = peri, y = perm)) +
+  geom_point() +
+  labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
+```
+
+### Gráfico de dispersión + líneas {-}
+
+```{r fig.align="center", fig.width=6, fig.height=3}
+ggplot(data = datos, aes(x = peri, y = perm)) + 
+  geom_point() + 
+  geom_line() +
+  labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
 ```
 
 
+## Ejercicios
 
-
-
-
-
-
-
-
-
+Desarrollar el [Taller 1](https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing).
 
 
 

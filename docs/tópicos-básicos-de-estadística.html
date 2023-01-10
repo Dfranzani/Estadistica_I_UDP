@@ -175,8 +175,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>1.2</b> Gráficos descriptivos</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i><b>1.2.1</b> Histograma</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i>Histograma</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-caja"><i class="fa fa-check"></i>Gráfico de caja</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín"><i class="fa fa-check"></i>Gráfico de violín</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-barras"><i class="fa fa-check"></i>Gráfico de barras</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión"><i class="fa fa-check"></i>Gráfico de dispersión</a></li>
+<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas"><i class="fa fa-check"></i>Gráfico de dispersión + líneas</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#ejercicios"><i class="fa fa-check"></i><b>1.3</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>2</b> Parts</a></li>
 <li class="chapter" data-level="3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>3</b> Footnotes and citations</a>
@@ -341,18 +347,71 @@ Figura 1.3: Muestra 2
 <li>shape: perímetros dividido por la raíz cuadrada del área.</li>
 <li>perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este <a href="https://en.wikipedia.org/wiki/Darcy_(unit)">link</a>).</li>
 </ul>
-<div id="histograma" class="section level3 hasAnchor" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="histograma" class="section level3 unnumbered hasAnchor">
+<h3>Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (<span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tópicos-básicos-de-estadística.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="tópicos-básicos-de-estadística.html#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> rock</span>
-<span id="cb1-3"><a href="tópicos-básicos-de-estadística.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> perm)) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="tópicos-básicos-de-estadística.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkorange&quot;</span>, <span class="at">bins =</span> <span class="dv">7</span>) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="tópicos-básicos-de-estadística.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histograma&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="tópicos-básicos-de-estadística.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
-
+<span id="cb1-3"><a href="tópicos-básicos-de-estadística.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> perm)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="tópicos-básicos-de-estadística.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">bins =</span> <span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="tópicos-básicos-de-estadística.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histograma&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-4-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
+<div id="gráfico-de-caja" class="section level3 unnumbered hasAnchor">
+<h3>Gráfico de caja<a href="tópicos-básicos-de-estadística.html#gráfico-de-caja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tópicos-básicos-de-estadística.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">y =</span> perm)) <span class="sc">+</span> </span>
+<span id="cb2-2"><a href="tópicos-básicos-de-estadística.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="tópicos-básicos-de-estadística.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Dispersión/Cuantiles&quot;</span>) </span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-violín" class="section level3 unnumbered hasAnchor">
+<h3>Gráfico de violín<a href="tópicos-básicos-de-estadística.html#gráfico-de-violín" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tópicos-básicos-de-estadística.html#cb3-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> perm)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="tópicos-básicos-de-estadística.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> F, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="tópicos-básicos-de-estadística.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Violín&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="tópicos-básicos-de-estadística.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-5"><a href="tópicos-básicos-de-estadística.html#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb3-6"><a href="tópicos-básicos-de-estadística.html#cb3-6" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" />
+### Gráfico de violín + caja + promedio {-}</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tópicos-básicos-de-estadística.html#cb4-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb4-2"><a href="tópicos-básicos-de-estadística.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">fill =</span> <span class="st">&quot;darkblue&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb4-3"><a href="tópicos-básicos-de-estadística.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>,</span>
+<span id="cb4-4"><a href="tópicos-básicos-de-estadística.html#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-7-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-barras" class="section level3 unnumbered hasAnchor">
+<h3>Gráfico de barras<a href="tópicos-básicos-de-estadística.html#gráfico-de-barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tópicos-básicos-de-estadística.html#cb5-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Perm2 <span class="ot">=</span> <span class="fu">ifelse</span>(datos<span class="sc">$</span>perm <span class="sc">&gt;</span> <span class="dv">500</span>, <span class="st">&quot;Mayor a 500&quot;</span>, <span class="st">&quot;Menor a  500&quot;</span>)</span>
+<span id="cb5-2"><a href="tópicos-básicos-de-estadística.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos,<span class="fu">aes</span>(<span class="at">x =</span> Perm2)) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="tópicos-básicos-de-estadística.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="tópicos-básicos-de-estadística.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Barras&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-8-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-dispersión" class="section level3 unnumbered hasAnchor">
+<h3>Gráfico de dispersión<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tópicos-básicos-de-estadística.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> peri, <span class="at">y =</span> perm)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="tópicos-básicos-de-estadística.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="tópicos-básicos-de-estadística.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dispersión&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Perímetro (px)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-dispersión-líneas" class="section level3 unnumbered hasAnchor">
+<h3>Gráfico de dispersión + líneas<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tópicos-básicos-de-estadística.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> peri, <span class="at">y =</span> perm)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="tópicos-básicos-de-estadística.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="tópicos-básicos-de-estadística.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="tópicos-básicos-de-estadística.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dispersión&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Perímetro (px)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="ejercicios" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Ejercicios<a href="tópicos-básicos-de-estadística.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Desarrollar el <a href="https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing">Taller 1</a>.</p>
+
 </div>
 </div>
             </section>
@@ -387,7 +446,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "sepia",
+"theme": "white",
 "family": "sans",
 "size": 2
 },

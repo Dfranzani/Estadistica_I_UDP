@@ -9,7 +9,7 @@ bookdown::gitbook:
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf"]
     fontsettings:
-      theme: sepia
+      theme: white
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
