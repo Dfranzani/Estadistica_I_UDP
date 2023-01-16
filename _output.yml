@@ -7,7 +7,7 @@ bookdown::gitbook:
       after: |
         <li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
 #    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
-    download: ["pdf","epub"]
+    download: ["pdf"]
     fontsettings:
       theme: white
     sharing:
@@ -27,4 +27,4 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default
+# bookdown::epub_book: default
