@@ -3,13 +3,24 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Coordinación de estadística</a></li>
+        <li><a href="./"><img src="logo/FAE.png" class="img-responsive"></a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+        <li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
+#    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf"]
     fontsettings:
       theme: white
+    sharing:
+      facebook: false
+      twitter: false
+      linkedin: false
+      weibo: false
+      instapaper: false
+      vk: false
+      whatsapp: true
+      github: true
+      all: no
+    info: true
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

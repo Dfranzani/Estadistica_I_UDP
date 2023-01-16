@@ -1,20 +1,21 @@
 --- 
 title: "Estadística I & Estadística Descriptiva"
 author: "Coordinación de Estadística - UFME"
+description: "Curso básico de Estadística en R para ingeniería"
 date: ""
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+url: 'https://dfranzani.github.io/Estadistica_I_UDP/'
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: "Dfranzani/Estadistica_I_UDP"
 ---
 
 # Presentación del curso {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+La asignatura Estadística I & Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestion respectivamente, los cuales, entregan las herramientas necesarias para realizar análisis descriptivos de datos, incluyendo formas simples de modelar relaciones entre variables con la intención de facilitar e iluminar la toma de decisiones económicas, de negocios, entre otros ámbitos. Al mismo tiempo, entrega los fundamentos básicos de la teoría de probabilidades para la modelación de fenómenos con base probabilística.
 
+Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso de herramientas modernas de programación, situando al estudiante en un rol de analista dentro de una unidad organizacional.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -22,3 +23,5 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+# Modalidad de trabajo {-}

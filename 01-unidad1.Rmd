@@ -2,13 +2,13 @@
 
 ## Conceptos
 
-### Datos {.unnumbered}
+### Datos {-}
 
 Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
 
 Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
-### Información {.unnumbered}
+### Información {-}
 
 <center>**Información = Datos + Significado**</center>
 
@@ -20,7 +20,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 
 **En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.**
 
-### Tipos de variables {.unnumbered}
+### Tipos de variables {-}
 
 Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
 
@@ -29,7 +29,7 @@ Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo
 
 **Ejemplo**: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
 
-### Población y Muestra {.unnumbered}
+### Población y Muestra {-}
 
 -   **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
 -   **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
@@ -39,7 +39,7 @@ Determinar en cada caso la población y la muestra:
 -   Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
 -   La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
 
-### Parámetros y Estadísticos {.unnumbered}
+### Parámetros y Estadísticos {-}
 
 Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
 
@@ -90,7 +90,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
          text.col = col_text, box.col = col_text)
 ```
 
-### Estimador y Estimación {.unnumbered}
+### Estimador y Estimación {-}
 
 -   **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
 -   **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la "fórmula", y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
@@ -135,7 +135,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 
 ¿Cuándo diríamos que una estimación es buena?
 
-### Variabilidad muestral {.unnumbered}
+### Variabilidad muestral {-}
 
 Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es \`\`azarosa'', es decir, no podemos intencionarla en su totalidad.
 
@@ -267,6 +267,7 @@ g = ggplot(data = datos, aes(x = 1, y = perm)) +
         axis.text.x = element_blank())
 g
 ```
+
 ### Gráfico de violín + caja + promedio {-}
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
