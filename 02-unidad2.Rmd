@@ -13,28 +13,27 @@
 
 ## Variable aleatoria discreta
 
-### Variable Uniforme 
-### Variable Bernoulli
-### Variable Binomial 
-### Variable Poisson 
+### Uniforme 
+### Bernoulli
+### Binomial 
+### Poisson 
 
 ## Variable aleatoria continua
 
-### Variable Uniforme
-### Variable Exponencial 
-### Variable Normal 
-### Variable T - Student 
-### Variable Ji - Cuadrado
+### Uniforme
+### Exponencial 
+### Normal 
+### T - Student 
+### Ji - Cuadrado
 
 
 ## Esperanza
 
-### Esperanza de una variable aleatoria discreta 
-### Esperanza de una variable aleatoria continua 
-
+### Variable aleatoria discreta 
+### Variable aleatoria continua
 
 ## Varianza
 
-### Varianza de una variable aleatoria discreta 
-### Varianza de una variable aleatoria continua 
+### Variable aleatoria discreta 
+### Variable aleatoria continua 
 

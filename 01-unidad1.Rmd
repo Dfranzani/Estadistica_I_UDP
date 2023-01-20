@@ -236,7 +236,7 @@ ggplot(data = datos, aes(x = perm)) +
   labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia")
 ```
 
-### Gráfico de caja 
+### Caja 
 
 Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
 
@@ -246,7 +246,7 @@ ggplot(data = datos, aes(y = perm)) +
   labs(title = "Caja", x = "Permeabilidad (mD)", y = "Dispersión/Cuantiles") 
 ```
 
-### Gráfico de violín 
+### Violín 
 
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
@@ -259,7 +259,7 @@ g = ggplot(data = datos, aes(x = 1, y = perm)) +
 g
 ```
 
-### Gráfico de violín + caja + promedio 
+### Violín + caja + promedio 
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 
@@ -269,7 +269,7 @@ g + geom_boxplot(width = 0.1, color = "black",
                size = 1, color = "red")
 ```
 
-### Gráfico de barras 
+### Barras 
 
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
@@ -280,7 +280,7 @@ ggplot(data = datos,aes(x = Perm2)) +
   labs(title = "Barras", x = "Permeabilidad (mD)", y = "Frecuencia")
 ```
 
-### Gráfico de dispersión 
+### Dispersión 
 
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
@@ -290,7 +290,7 @@ ggplot(data = datos, aes(x = peri, y = perm)) +
   labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
 ```
 
-### Gráfico de dispersión + líneas 
+### Dispersión + líneas 
 
 ```{r fig.align="center", fig.width=6, fig.height=3}
 ggplot(data = datos, aes(x = peri, y = perm)) + 
