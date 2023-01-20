@@ -2,13 +2,13 @@
 
 ## Conceptos
 
-### Datos {-}
+### Datos 
 
 Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
 
 Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
-### Información {-}
+### Información
 
 <center>**Información = Datos + Significado**</center>
 
@@ -20,7 +20,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 
 **En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.**
 
-### Tipos de variables {-}
+### Tipos de variables
 
 Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
 
@@ -29,7 +29,7 @@ Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo
 
 **Ejemplo**: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
 
-### Población y Muestra {-}
+### Población y Muestra 
 
 -   **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
 -   **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
@@ -39,7 +39,7 @@ Determinar en cada caso la población y la muestra:
 -   Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
 -   La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
 
-### Parámetros y Estadísticos {-}
+### Parámetros y Estadísticos
 
 Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
 
@@ -90,7 +90,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
          text.col = col_text, box.col = col_text)
 ```
 
-### Estimador y Estimación {-}
+### Estimador y Estimación 
 
 -   **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
 -   **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la "fórmula", y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
@@ -135,15 +135,13 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 
 ¿Cuándo diríamos que una estimación es buena?
 
-### Variabilidad muestral {-}
+### Variabilidad muestral 
 
 Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es \`\`azarosa'', es decir, no podemos intencionarla en su totalidad.
 
 El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).
 
-<center>
-**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura \@ref(fig:figura-poblacion1)?**
-</center>
+<center>**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura** \@ref(fig:figura-poblacion1)**?**</center>
 
 ```{r figura-poblacion1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Población"}
   col_point1 = "darkred"
@@ -163,9 +161,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
            x1 = c(0,8,8,8), y1 = c(8,8,0,8))
 ```
 
-<center>
-**¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura \@ref(fig:figura-muestra1)?**
-</center>
+<center>**¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura** \@ref(fig:figura-muestra1)**?**</center>
 
 ```{r figura-muestra1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 1"}
   par(bg = NA, mar = c(0,0,0,0))
@@ -183,9 +179,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
           col = col_fill, border = col_fill)
 ```
 
-<center>
-**¿Y ahora? (Figura \@ref(fig:figura-muestra2)) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral**
-</center>
+<center>**¿Y ahora? (Figura** \@ref(fig:figura-muestra2)**) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral**</center>
 
 ```{r figura-muestra2, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 2"}
   par(bg = NA, mar = c(0,0,0,0))
@@ -203,37 +197,34 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
           col = col_fill, border = col_fill)
 ```
 
-### Representatividad y sesgo de la muestra {-}
+### Representatividad y sesgo de la muestra 
 
 **Discusión**: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
 
 Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).
 
+### Medidas de Tendencia Central (MTC) 
+-   Media: $\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i$
+-   Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.
+-   Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
 
-### Medidas de Tendencia Central (MTC) {-}
+### Medidas de Dipersión (MD) 
 
-- Media: $\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i$
-- Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.
-- Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
-
-### Medidas de Dipersión (MD) {-}
-
-- Varianza: $S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}$
-- Desviación Estándar: $\sqrt{S}$
-
+-   Varianza: $S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}$
+-   Desviación Estándar: $\sqrt{S}$
 
 ## Gráficos descriptivos
 
-Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica. 
+Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica.
 
 Para ilustrar los diferentes gráficos, usaremos la base de datos *rock* que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
 
-- area: área del espacio de poros, en píxeles de 256 por 256.
-- peri: perímetro en píxeles.
-- shape: perímetros dividido por la raíz cuadrada del área.
-- perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este [link](https://en.wikipedia.org/wiki/Darcy_(unit))).
+-   area: área del espacio de poros, en píxeles de 256 por 256.
+-   peri: perímetro en píxeles.
+-   shape: perímetros dividido por la raíz cuadrada del área.
+-   perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este [link](https://en.wikipedia.org/wiki/Darcy_(unit))).
 
-### Histograma {-}
+### Histograma 
 
 Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges ($1+\log_2(n)$, aproximando hacia el entero más próximo).
 
@@ -245,7 +236,7 @@ ggplot(data = datos, aes(x = perm)) +
   labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia")
 ```
 
-### Gráfico de caja {-}
+### Gráfico de caja 
 
 Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
 
@@ -255,7 +246,7 @@ ggplot(data = datos, aes(y = perm)) +
   labs(title = "Caja", x = "Permeabilidad (mD)", y = "Dispersión/Cuantiles") 
 ```
 
-### Gráfico de violín {-}
+### Gráfico de violín 
 
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
@@ -268,7 +259,7 @@ g = ggplot(data = datos, aes(x = 1, y = perm)) +
 g
 ```
 
-### Gráfico de violín + caja + promedio {-}
+### Gráfico de violín + caja + promedio 
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 
@@ -278,7 +269,7 @@ g + geom_boxplot(width = 0.1, color = "black",
                size = 1, color = "red")
 ```
 
-### Gráfico de barras {-}
+### Gráfico de barras 
 
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
@@ -289,7 +280,7 @@ ggplot(data = datos,aes(x = Perm2)) +
   labs(title = "Barras", x = "Permeabilidad (mD)", y = "Frecuencia")
 ```
 
-### Gráfico de dispersión {-}
+### Gráfico de dispersión 
 
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
@@ -299,7 +290,7 @@ ggplot(data = datos, aes(x = peri, y = perm)) +
   labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
 ```
 
-### Gráfico de dispersión + líneas {-}
+### Gráfico de dispersión + líneas 
 
 ```{r fig.align="center", fig.width=6, fig.height=3}
 ggplot(data = datos, aes(x = peri, y = perm)) + 
@@ -308,42 +299,6 @@ ggplot(data = datos, aes(x = peri, y = perm)) +
   labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
 ```
 
-
 ## Ejercicios
 
 Desarrollar el [Taller 1](https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

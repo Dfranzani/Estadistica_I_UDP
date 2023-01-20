@@ -2,6 +2,7 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: null
       before: |
         <li><a href="./"><img src="logo/FAE.png" class="img-responsive"></a></li>
       after: |

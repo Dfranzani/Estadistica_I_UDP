@@ -1,12 +1,40 @@
-# Parts
+# Probabilidad y variables aleatorias.
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file. 
+## Elementos de probabilidad
 
-Add a numbered part: `# (PART) Act one {-}` (followed by `# A chapter`)
+### Espacio muestral 
+### Función de probabilidad 
 
-Add an unnumbered part: `# (PART\*) Act one {-}` (followed by `# A chapter`)
+## Variable aleatoria
 
-Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff {-}` (followed by `# A chapter`). Chapters in an appendix are prepended with letters instead of numbers.
+### Función de probabilidad 
+### Función de distribución 
 
 
+## Variable aleatoria discreta
+
+### Variable Uniforme 
+### Variable Bernoulli
+### Variable Binomial 
+### Variable Poisson 
+
+## Variable aleatoria continua
+
+### Variable Uniforme
+### Variable Exponencial 
+### Variable Normal 
+### Variable T - Student 
+### Variable Ji - Cuadrado
+
+
+## Esperanza
+
+### Esperanza de una variable aleatoria discreta 
+### Esperanza de una variable aleatoria continua 
+
+
+## Varianza
+
+### Varianza de una variable aleatoria discreta 
+### Varianza de una variable aleatoria continua 
 

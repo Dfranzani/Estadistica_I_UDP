@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="modalidad-de-trabajo.html"/>
-<link rel="next" href="parts.html"/>
+<link rel="next" href="probabilidad-y-variables-aleatorias..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -118,28 +118,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -163,46 +141,95 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
 <ul>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#datos"><i class="fa fa-check"></i>Datos</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#información"><i class="fa fa-check"></i>Información</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#tipos-de-variables"><i class="fa fa-check"></i>Tipos de variables</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#población-y-muestra"><i class="fa fa-check"></i>Población y Muestra</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos"><i class="fa fa-check"></i>Parámetros y Estadísticos</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i>Estimador y Estimación</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i>Variabilidad muestral</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra"><i class="fa fa-check"></i>Representatividad y sesgo de la muestra</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc"><i class="fa fa-check"></i>Medidas de Tendencia Central (MTC)</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md"><i class="fa fa-check"></i>Medidas de Dipersión (MD)</a></li>
+<li class="chapter" data-level="1.1.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#datos"><i class="fa fa-check"></i><b>1.1.1</b> Datos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#información"><i class="fa fa-check"></i><b>1.1.2</b> Información</a></li>
+<li class="chapter" data-level="1.1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#tipos-de-variables"><i class="fa fa-check"></i><b>1.1.3</b> Tipos de variables</a></li>
+<li class="chapter" data-level="1.1.4" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#población-y-muestra"><i class="fa fa-check"></i><b>1.1.4</b> Población y Muestra</a></li>
+<li class="chapter" data-level="1.1.5" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos"><i class="fa fa-check"></i><b>1.1.5</b> Parámetros y Estadísticos</a></li>
+<li class="chapter" data-level="1.1.6" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i><b>1.1.6</b> Estimador y Estimación</a></li>
+<li class="chapter" data-level="1.1.7" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.7</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="1.1.8" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra"><i class="fa fa-check"></i><b>1.1.8</b> Representatividad y sesgo de la muestra</a></li>
+<li class="chapter" data-level="1.1.9" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc"><i class="fa fa-check"></i><b>1.1.9</b> Medidas de Tendencia Central (MTC)</a></li>
+<li class="chapter" data-level="1.1.10" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md"><i class="fa fa-check"></i><b>1.1.10</b> Medidas de Dipersión (MD)</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>1.2</b> Gráficos descriptivos</a>
 <ul>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i>Histograma</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-caja"><i class="fa fa-check"></i>Gráfico de caja</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín"><i class="fa fa-check"></i>Gráfico de violín</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín-caja-promedio"><i class="fa fa-check"></i>Gráfico de violín + caja + promedio</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-barras"><i class="fa fa-check"></i>Gráfico de barras</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión"><i class="fa fa-check"></i>Gráfico de dispersión</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas"><i class="fa fa-check"></i>Gráfico de dispersión + líneas</a></li>
+<li class="chapter" data-level="1.2.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i><b>1.2.1</b> Histograma</a></li>
+<li class="chapter" data-level="1.2.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-caja"><i class="fa fa-check"></i><b>1.2.2</b> Gráfico de caja</a></li>
+<li class="chapter" data-level="1.2.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín"><i class="fa fa-check"></i><b>1.2.3</b> Gráfico de violín</a></li>
+<li class="chapter" data-level="1.2.4" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín-caja-promedio"><i class="fa fa-check"></i><b>1.2.4</b> Gráfico de violín + caja + promedio</a></li>
+<li class="chapter" data-level="1.2.5" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-barras"><i class="fa fa-check"></i><b>1.2.5</b> Gráfico de barras</a></li>
+<li class="chapter" data-level="1.2.6" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión"><i class="fa fa-check"></i><b>1.2.6</b> Gráfico de dispersión</a></li>
+<li class="chapter" data-level="1.2.7" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas"><i class="fa fa-check"></i><b>1.2.7</b> Gráfico de dispersión + líneas</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#ejercicios"><i class="fa fa-check"></i><b>1.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>2</b> Parts</a></li>
-<li class="chapter" data-level="3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>3</b> Footnotes and citations</a>
+<li class="chapter" data-level="2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias.</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>3.1</b> Footnotes</a></li>
-<li class="chapter" data-level="3.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>3.2</b> Citations</a></li>
+<li class="chapter" data-level="2.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#elementos-de-probabilidad"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#espacio-muestral"><i class="fa fa-check"></i><b>2.1.1</b> Espacio muestral</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-probabilidad"><i class="fa fa-check"></i><b>2.1.2</b> Función de probabilidad</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>4</b> Blocks</a>
+<li class="chapter" data-level="2.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>4.1</b> Equations</a></li>
-<li class="chapter" data-level="4.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>4.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="4.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>4.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="2.2.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-probabilidad-1"><i class="fa fa-check"></i><b>2.2.1</b> Función de probabilidad</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-distribución"><i class="fa fa-check"></i><b>2.2.2</b> Función de distribución</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>5</b> Sharing your book</a>
+<li class="chapter" data-level="2.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variable aleatoria discreta</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>5.1</b> Publishing</a></li>
-<li class="chapter" data-level="5.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>5.2</b> 404 pages</a></li>
-<li class="chapter" data-level="5.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>5.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-uniforme"><i class="fa fa-check"></i><b>2.3.1</b> Variable Uniforme</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-bernoulli"><i class="fa fa-check"></i><b>2.3.2</b> Variable Bernoulli</a></li>
+<li class="chapter" data-level="2.3.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-binomial"><i class="fa fa-check"></i><b>2.3.3</b> Variable Binomial</a></li>
+<li class="chapter" data-level="2.3.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-poisson"><i class="fa fa-check"></i><b>2.3.4</b> Variable Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variable aleatoria continua</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-uniforme-1"><i class="fa fa-check"></i><b>2.4.1</b> Variable Uniforme</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-exponencial"><i class="fa fa-check"></i><b>2.4.2</b> Variable Exponencial</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-normal"><i class="fa fa-check"></i><b>2.4.3</b> Variable Normal</a></li>
+<li class="chapter" data-level="2.4.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-t---student"><i class="fa fa-check"></i><b>2.4.4</b> Variable T - Student</a></li>
+<li class="chapter" data-level="2.4.5" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-ji---cuadrado"><i class="fa fa-check"></i><b>2.4.5</b> Variable Ji - Cuadrado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#esperanza-de-una-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.5.1</b> Esperanza de una variable aleatoria discreta</a></li>
+<li class="chapter" data-level="2.5.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#esperanza-de-una-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.5.2</b> Esperanza de una variable aleatoria continua</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#varianza-de-una-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.6.1</b> Varianza de una variable aleatoria discreta</a></li>
+<li class="chapter" data-level="2.6.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#varianza-de-una-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.6.2</b> Varianza de una variable aleatoria continua</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales y pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-muestreo-de-la-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#estandarización"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-la-media"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del límite central</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-muestreo-de-la-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="3.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#la-distribución-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+<li class="chapter" data-level="3.4" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#pruebas-de-hipótesis"><i class="fa fa-check"></i><b>3.4</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#una-media"><i class="fa fa-check"></i><b>3.4.1</b> Una media</a></li>
+<li class="chapter" data-level="3.4.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-medias"><i class="fa fa-check"></i><b>3.4.2</b> Diferencia de medias</a></li>
+<li class="chapter" data-level="3.4.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#comparación-de-varianzas"><i class="fa fa-check"></i><b>3.4.3</b> Comparación de varianzas</a></li>
+<li class="chapter" data-level="3.4.4" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.4.4</b> Diferencia de proporciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#una-media-1"><i class="fa fa-check"></i><b>4.1</b> Una media</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#bajo-distribución-normal"><i class="fa fa-check"></i><b>4.1.1</b> Bajo distribución normal</a></li>
+<li class="chapter" data-level="4.1.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#asintótico"><i class="fa fa-check"></i><b>4.1.2</b> Asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-medias-1"><i class="fa fa-check"></i><b>4.2</b> Diferencia de medias</a></li>
+<li class="chapter" data-level="4.3" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>4.3</b> Compraración de varianzas</a></li>
+<li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>4.4</b> Diferencia de proporciones</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -229,13 +256,13 @@ div.csl-indent {
 <h1><span class="header-section-number">Unidad 1</span> Tópicos básicos de estadística<a href="tópicos-básicos-de-estadística.html#tópicos-básicos-de-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="conceptos" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Conceptos<a href="tópicos-básicos-de-estadística.html#conceptos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="datos" class="section level3 unnumbered hasAnchor">
-<h3>Datos<a href="tópicos-básicos-de-estadística.html#datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="datos" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Datos<a href="tópicos-básicos-de-estadística.html#datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.</p>
 <p>Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?</p>
 </div>
-<div id="información" class="section level3 unnumbered hasAnchor">
-<h3>Información<a href="tópicos-básicos-de-estadística.html#información" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="información" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Información<a href="tópicos-básicos-de-estadística.html#información" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <strong>Información = Datos + Significado</strong>
 </center>
@@ -246,8 +273,8 @@ div.csl-indent {
 <p>En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo, viene de las reglas sociales que indican como actuar en determinadas situaciones.</p>
 <p><strong>En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.</strong></p>
 </div>
-<div id="tipos-de-variables" class="section level3 unnumbered hasAnchor">
-<h3>Tipos de variables<a href="tópicos-básicos-de-estadística.html#tipos-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tipos-de-variables" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Tipos de variables<a href="tópicos-básicos-de-estadística.html#tipos-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:</p>
 <ul>
 <li>Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.</li>
@@ -255,8 +282,8 @@ div.csl-indent {
 </ul>
 <p><strong>Ejemplo</strong>: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.</p>
 </div>
-<div id="población-y-muestra" class="section level3 unnumbered hasAnchor">
-<h3>Población y Muestra<a href="tópicos-básicos-de-estadística.html#población-y-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="población-y-muestra" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Población y Muestra<a href="tópicos-básicos-de-estadística.html#población-y-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Población</strong>: La población es el conjunto de todos los sujetos de interés en un estudio.</li>
 <li><strong>Muestra</strong>: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.</li>
@@ -267,8 +294,8 @@ div.csl-indent {
 <li>La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.</li>
 </ul>
 </div>
-<div id="parámetros-y-estadísticos" class="section level3 unnumbered hasAnchor">
-<h3>Parámetros y Estadísticos<a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="parámetros-y-estadísticos" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Parámetros y Estadísticos<a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:</p>
 <ul>
 <li><strong>Parámetros</strong>: característica numérica de resumen de la población.</li>
@@ -277,8 +304,8 @@ div.csl-indent {
 <p>Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.</p>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="estimador-y-estimación" class="section level3 unnumbered hasAnchor">
-<h3>Estimador y Estimación<a href="tópicos-básicos-de-estadística.html#estimador-y-estimación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="estimador-y-estimación" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Estimador y Estimación<a href="tópicos-básicos-de-estadística.html#estimador-y-estimación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Estimador</strong>: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.</li>
 <li><strong>Estimación</strong>: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la “fórmula”, y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.</li>
@@ -286,12 +313,12 @@ div.csl-indent {
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>¿Cuándo diríamos que una estimación es buena?</p>
 </div>
-<div id="variabilidad-muestral" class="section level3 unnumbered hasAnchor">
-<h3>Variabilidad muestral<a href="tópicos-básicos-de-estadística.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="variabilidad-muestral" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> Variabilidad muestral<a href="tópicos-básicos-de-estadística.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es ``azarosa’’, es decir, no podemos intencionarla en su totalidad.</p>
 <p>El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).</p>
 <center>
-<strong>¿Cuál es la proporción de círculos rojos en la población relfejada en la figura <a href="tópicos-básicos-de-estadística.html#fig:figura-poblacion1">1.1</a>?</strong>
+<strong>¿Cuál es la proporción de círculos rojos en la población relfejada en la figura</strong> <a href="tópicos-básicos-de-estadística.html#fig:figura-poblacion1">1.1</a><strong>?</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-poblacion1"></span>
 <img src="est1+descriptiva_files/figure-html/figura-poblacion1-1.png" alt="Población" width="288" />
@@ -300,7 +327,7 @@ Figura 1.1: Población
 </p>
 </div>
 <center>
-<strong>¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra1">1.2</a>?</strong>
+<strong>¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura</strong> <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra1">1.2</a><strong>?</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra1"></span>
 <img src="est1+descriptiva_files/figure-html/figura-muestra1-1.png" alt="Muestra 1" width="288" />
@@ -309,7 +336,7 @@ Figura 1.2: Muestra 1
 </p>
 </div>
 <center>
-<strong>¿Y ahora? (Figura <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra2">1.3</a>) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral</strong>
+<strong>¿Y ahora? (Figura</strong> <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra2">1.3</a><strong>) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra2"></span>
 <img src="est1+descriptiva_files/figure-html/figura-muestra2-1.png" alt="Muestra 2" width="288" />
@@ -318,21 +345,21 @@ Figura 1.3: Muestra 2
 </p>
 </div>
 </div>
-<div id="representatividad-y-sesgo-de-la-muestra" class="section level3 unnumbered hasAnchor">
-<h3>Representatividad y sesgo de la muestra<a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="representatividad-y-sesgo-de-la-muestra" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Representatividad y sesgo de la muestra<a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Discusión</strong>: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).</p>
 <p>Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).</p>
 </div>
-<div id="medidas-de-tendencia-central-mtc" class="section level3 unnumbered hasAnchor">
-<h3>Medidas de Tendencia Central (MTC)<a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="medidas-de-tendencia-central-mtc" class="section level3 hasAnchor" number="1.1.9">
+<h3><span class="header-section-number">1.1.9</span> Medidas de Tendencia Central (MTC)<a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Media: <span class="math inline">\(\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i\)</span></li>
 <li>Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.</li>
 <li>Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.</li>
 </ul>
 </div>
-<div id="medidas-de-dipersión-md" class="section level3 unnumbered hasAnchor">
-<h3>Medidas de Dipersión (MD)<a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="medidas-de-dipersión-md" class="section level3 hasAnchor" number="1.1.10">
+<h3><span class="header-section-number">1.1.10</span> Medidas de Dipersión (MD)<a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Varianza: <span class="math inline">\(S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}\)</span></li>
 <li>Desviación Estándar: <span class="math inline">\(\sqrt{S}\)</span></li>
@@ -349,8 +376,8 @@ Figura 1.3: Muestra 2
 <li>shape: perímetros dividido por la raíz cuadrada del área.</li>
 <li>perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este <a href="https://en.wikipedia.org/wiki/Darcy_(unit)">link</a>).</li>
 </ul>
-<div id="histograma" class="section level3 unnumbered hasAnchor">
-<h3>Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="histograma" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (<span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tópicos-básicos-de-estadística.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="tópicos-básicos-de-estadística.html#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> rock</span>
@@ -359,16 +386,16 @@ Figura 1.3: Muestra 2
 <span id="cb1-5"><a href="tópicos-básicos-de-estadística.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histograma&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>)</span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-4-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-caja" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de caja<a href="tópicos-básicos-de-estadística.html#gráfico-de-caja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-caja" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Gráfico de caja<a href="tópicos-básicos-de-estadística.html#gráfico-de-caja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tópicos-básicos-de-estadística.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">y =</span> perm)) <span class="sc">+</span> </span>
 <span id="cb2-2"><a href="tópicos-básicos-de-estadística.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
 <span id="cb2-3"><a href="tópicos-básicos-de-estadística.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Dispersión/Cuantiles&quot;</span>) </span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-violín" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de violín<a href="tópicos-básicos-de-estadística.html#gráfico-de-violín" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-violín" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Gráfico de violín<a href="tópicos-básicos-de-estadística.html#gráfico-de-violín" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tópicos-básicos-de-estadística.html#cb3-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> perm)) <span class="sc">+</span> </span>
 <span id="cb3-2"><a href="tópicos-básicos-de-estadística.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> F, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span></span>
@@ -378,16 +405,16 @@ Figura 1.3: Muestra 2
 <span id="cb3-6"><a href="tópicos-básicos-de-estadística.html#cb3-6" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-violín-caja-promedio" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de violín + caja + promedio<a href="tópicos-básicos-de-estadística.html#gráfico-de-violín-caja-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-violín-caja-promedio" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Gráfico de violín + caja + promedio<a href="tópicos-básicos-de-estadística.html#gráfico-de-violín-caja-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tópicos-básicos-de-estadística.html#cb4-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
 <span id="cb4-2"><a href="tópicos-básicos-de-estadística.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">fill =</span> <span class="st">&quot;darkblue&quot;</span>)  <span class="sc">+</span></span>
 <span id="cb4-3"><a href="tópicos-básicos-de-estadística.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>,</span>
 <span id="cb4-4"><a href="tópicos-básicos-de-estadística.html#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-7-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-barras" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de barras<a href="tópicos-básicos-de-estadística.html#gráfico-de-barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-barras" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Gráfico de barras<a href="tópicos-básicos-de-estadística.html#gráfico-de-barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tópicos-básicos-de-estadística.html#cb5-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Perm2 <span class="ot">=</span> <span class="fu">ifelse</span>(datos<span class="sc">$</span>perm <span class="sc">&gt;</span> <span class="dv">500</span>, <span class="st">&quot;Mayor a 500&quot;</span>, <span class="st">&quot;Menor a  500&quot;</span>)</span>
 <span id="cb5-2"><a href="tópicos-básicos-de-estadística.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos,<span class="fu">aes</span>(<span class="at">x =</span> Perm2)) <span class="sc">+</span> </span>
@@ -395,16 +422,16 @@ Figura 1.3: Muestra 2
 <span id="cb5-4"><a href="tópicos-básicos-de-estadística.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Barras&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>)</span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-8-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-dispersión" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de dispersión<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-dispersión" class="section level3 hasAnchor" number="1.2.6">
+<h3><span class="header-section-number">1.2.6</span> Gráfico de dispersión<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tópicos-básicos-de-estadística.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> peri, <span class="at">y =</span> perm)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="tópicos-básicos-de-estadística.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb6-3"><a href="tópicos-básicos-de-estadística.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dispersión&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Perímetro (px)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Permeabilidad (mD)&quot;</span>)</span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
-<div id="gráfico-de-dispersión-líneas" class="section level3 unnumbered hasAnchor">
-<h3>Gráfico de dispersión + líneas<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gráfico-de-dispersión-líneas" class="section level3 hasAnchor" number="1.2.7">
+<h3><span class="header-section-number">1.2.7</span> Gráfico de dispersión + líneas<a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tópicos-básicos-de-estadística.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> peri, <span class="at">y =</span> perm)) <span class="sc">+</span> </span>
 <span id="cb7-2"><a href="tópicos-básicos-de-estadística.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb7-3"><a href="tópicos-básicos-de-estadística.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
@@ -424,7 +451,7 @@ Figura 1.3: Muestra 2
         </div>
       </div>
 <a href="modalidad-de-trabajo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="parts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidad-y-variables-aleatorias..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -472,7 +499,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": null
 },
 "info": true
 });

@@ -121,23 +121,6 @@
 \author{Coordinación de Estadística - UFME}
 \date{}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -164,16 +147,14 @@ Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso d
 \section{Conceptos}\label{conceptos}}
 
 \hypertarget{datos}{%
-\subsection*{Datos}\label{datos}}
-\addcontentsline{toc}{subsection}{Datos}
+\subsection{Datos}\label{datos}}
 
 Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
 
 Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
 \hypertarget{informaciuxf3n}{%
-\subsection*{Información}\label{informaciuxf3n}}
-\addcontentsline{toc}{subsection}{Información}
+\subsection{Información}\label{informaciuxf3n}}
 
 \textbf{Información = Datos + Significado}
 
@@ -186,8 +167,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 \textbf{En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.}
 
 \hypertarget{tipos-de-variables}{%
-\subsection*{Tipos de variables}\label{tipos-de-variables}}
-\addcontentsline{toc}{subsection}{Tipos de variables}
+\subsection{Tipos de variables}\label{tipos-de-variables}}
 
 Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
 
@@ -202,8 +182,7 @@ Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo
 \textbf{Ejemplo}: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
 
 \hypertarget{poblaciuxf3n-y-muestra}{%
-\subsection*{Población y Muestra}\label{poblaciuxf3n-y-muestra}}
-\addcontentsline{toc}{subsection}{Población y Muestra}
+\subsection{Población y Muestra}\label{poblaciuxf3n-y-muestra}}
 
 \begin{itemize}
 \tightlist
@@ -224,8 +203,7 @@ Determinar en cada caso la población y la muestra:
 \end{itemize}
 
 \hypertarget{paruxe1metros-y-estaduxedsticos}{%
-\subsection*{Parámetros y Estadísticos}\label{paruxe1metros-y-estaduxedsticos}}
-\addcontentsline{toc}{subsection}{Parámetros y Estadísticos}
+\subsection{Parámetros y Estadísticos}\label{paruxe1metros-y-estaduxedsticos}}
 
 Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
 
@@ -242,8 +220,7 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \hypertarget{estimador-y-estimaciuxf3n}{%
-\subsection*{Estimador y Estimación}\label{estimador-y-estimaciuxf3n}}
-\addcontentsline{toc}{subsection}{Estimador y Estimación}
+\subsection{Estimador y Estimación}\label{estimador-y-estimaciuxf3n}}
 
 \begin{itemize}
 \tightlist
@@ -258,14 +235,13 @@ Veamos el siguiente gráfico y, distingamos el parámetro y estadístico corresp
 ¿Cuándo diríamos que una estimación es buena?
 
 \hypertarget{variabilidad-muestral}{%
-\subsection*{Variabilidad muestral}\label{variabilidad-muestral}}
-\addcontentsline{toc}{subsection}{Variabilidad muestral}
+\subsection{Variabilidad muestral}\label{variabilidad-muestral}}
 
 Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es ``azarosa'\,', es decir, no podemos intencionarla en su totalidad.
 
 El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).
 
-\textbf{¿Cuál es la proporción de círculos rojos en la población relfejada en la figura \ref{fig:figura-poblacion1}?}
+\textbf{¿Cuál es la proporción de círculos rojos en la población relfejada en la figura} \ref{fig:figura-poblacion1}\textbf{?}
 
 \begin{figure}
 
@@ -276,7 +252,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \caption{Población}\label{fig:figura-poblacion1}
 \end{figure}
 
-\textbf{¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura \ref{fig:figura-muestra1}?}
+\textbf{¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura} \ref{fig:figura-muestra1}\textbf{?}
 
 \begin{figure}
 
@@ -287,7 +263,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \caption{Muestra 1}\label{fig:figura-muestra1}
 \end{figure}
 
-\textbf{¿Y ahora? (Figura \ref{fig:figura-muestra2}) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral}
+\textbf{¿Y ahora? (Figura} \ref{fig:figura-muestra2}\textbf{) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral}
 
 \begin{figure}
 
@@ -299,16 +275,14 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \end{figure}
 
 \hypertarget{representatividad-y-sesgo-de-la-muestra}{%
-\subsection*{Representatividad y sesgo de la muestra}\label{representatividad-y-sesgo-de-la-muestra}}
-\addcontentsline{toc}{subsection}{Representatividad y sesgo de la muestra}
+\subsection{Representatividad y sesgo de la muestra}\label{representatividad-y-sesgo-de-la-muestra}}
 
 \textbf{Discusión}: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
 
 Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).
 
 \hypertarget{medidas-de-tendencia-central-mtc}{%
-\subsection*{Medidas de Tendencia Central (MTC)}\label{medidas-de-tendencia-central-mtc}}
-\addcontentsline{toc}{subsection}{Medidas de Tendencia Central (MTC)}
+\subsection{Medidas de Tendencia Central (MTC)}\label{medidas-de-tendencia-central-mtc}}
 
 \begin{itemize}
 \tightlist
@@ -321,8 +295,7 @@ Por otro lado, la representatividad no es un concepto válido matemáticamente (
 \end{itemize}
 
 \hypertarget{medidas-de-dipersiuxf3n-md}{%
-\subsection*{Medidas de Dipersión (MD)}\label{medidas-de-dipersiuxf3n-md}}
-\addcontentsline{toc}{subsection}{Medidas de Dipersión (MD)}
+\subsection{Medidas de Dipersión (MD)}\label{medidas-de-dipersiuxf3n-md}}
 
 \begin{itemize}
 \tightlist
@@ -352,8 +325,7 @@ Para ilustrar los diferentes gráficos, usaremos la base de datos \emph{rock} qu
 \end{itemize}
 
 \hypertarget{histograma}{%
-\subsection*{Histograma}\label{histograma}}
-\addcontentsline{toc}{subsection}{Histograma}
+\subsection{Histograma}\label{histograma}}
 
 Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (\(1+\log_2(n)\), aproximando hacia el entero más próximo).
 
@@ -370,8 +342,7 @@ Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se deb
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \hypertarget{gruxe1fico-de-caja}{%
-\subsection*{Gráfico de caja}\label{gruxe1fico-de-caja}}
-\addcontentsline{toc}{subsection}{Gráfico de caja}
+\subsection{Gráfico de caja}\label{gruxe1fico-de-caja}}
 
 Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
 
@@ -386,8 +357,7 @@ Este gráfico se utiliza para evidenciar las medidas de posición conocidas como
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \hypertarget{gruxe1fico-de-violuxedn}{%
-\subsection*{Gráfico de violín}\label{gruxe1fico-de-violuxedn}}
-\addcontentsline{toc}{subsection}{Gráfico de violín}
+\subsection{Gráfico de violín}\label{gruxe1fico-de-violuxedn}}
 
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
@@ -405,8 +375,7 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \hypertarget{gruxe1fico-de-violuxedn-caja-promedio}{%
-\subsection*{Gráfico de violín + caja + promedio}\label{gruxe1fico-de-violuxedn-caja-promedio}}
-\addcontentsline{toc}{subsection}{Gráfico de violín + caja + promedio}
+\subsection{Gráfico de violín + caja + promedio}\label{gruxe1fico-de-violuxedn-caja-promedio}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -420,8 +389,7 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \hypertarget{gruxe1fico-de-barras}{%
-\subsection*{Gráfico de barras}\label{gruxe1fico-de-barras}}
-\addcontentsline{toc}{subsection}{Gráfico de barras}
+\subsection{Gráfico de barras}\label{gruxe1fico-de-barras}}
 
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
@@ -437,8 +405,7 @@ Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \hypertarget{gruxe1fico-de-dispersiuxf3n}{%
-\subsection*{Gráfico de dispersión}\label{gruxe1fico-de-dispersiuxf3n}}
-\addcontentsline{toc}{subsection}{Gráfico de dispersión}
+\subsection{Gráfico de dispersión}\label{gruxe1fico-de-dispersiuxf3n}}
 
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
@@ -453,8 +420,7 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 \hypertarget{gruxe1fico-de-dispersiuxf3n-luxedneas}{%
-\subsection*{Gráfico de dispersión + líneas}\label{gruxe1fico-de-dispersiuxf3n-luxedneas}}
-\addcontentsline{toc}{subsection}{Gráfico de dispersión + líneas}
+\subsection{Gráfico de dispersión + líneas}\label{gruxe1fico-de-dispersiuxf3n-luxedneas}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -472,102 +438,134 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 
 Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing}{Taller 1}.
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+\hypertarget{probabilidad-y-variables-aleatorias.}{%
+\chapter{Probabilidad y variables aleatorias.}\label{probabilidad-y-variables-aleatorias.}}
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+\hypertarget{elementos-de-probabilidad}{%
+\section{Elementos de probabilidad}\label{elementos-de-probabilidad}}
 
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{espacio-muestral}{%
+\subsection{Espacio muestral}\label{espacio-muestral}}
 
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{funciuxf3n-de-probabilidad}{%
+\subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad}}
 
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+\hypertarget{variable-aleatoria}{%
+\section{Variable aleatoria}\label{variable-aleatoria}}
 
-\hypertarget{footnotes-and-citations}{%
-\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+\hypertarget{funciuxf3n-de-probabilidad-1}{%
+\subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad-1}}
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\hypertarget{funciuxf3n-de-distribuciuxf3n}{%
+\subsection{Función de distribución}\label{funciuxf3n-de-distribuciuxf3n}}
 
-Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+\hypertarget{variable-aleatoria-discreta}{%
+\section{Variable aleatoria discreta}\label{variable-aleatoria-discreta}}
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\hypertarget{variable-uniforme}{%
+\subsection{Variable Uniforme}\label{variable-uniforme}}
 
-Reference items in your bibliography file(s) using \texttt{@key}.
+\hypertarget{variable-bernoulli}{%
+\subsection{Variable Bernoulli}\label{variable-bernoulli}}
 
-For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
-Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+\hypertarget{variable-binomial}{%
+\subsection{Variable Binomial}\label{variable-binomial}}
 
-The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+\hypertarget{variable-poisson}{%
+\subsection{Variable Poisson}\label{variable-poisson}}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+\hypertarget{variable-aleatoria-continua}{%
+\section{Variable aleatoria continua}\label{variable-aleatoria-continua}}
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\hypertarget{variable-uniforme-1}{%
+\subsection{Variable Uniforme}\label{variable-uniforme-1}}
 
-Here is an equation.
+\hypertarget{variable-exponencial}{%
+\subsection{Variable Exponencial}\label{variable-exponencial}}
 
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
+\hypertarget{variable-normal}{%
+\subsection{Variable Normal}\label{variable-normal}}
 
-You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+\hypertarget{variable-t---student}{%
+\subsection{Variable T - Student}\label{variable-t---student}}
 
-\hypertarget{theorems-and-proofs}{%
-\section{Theorems and proofs}\label{theorems-and-proofs}}
+\hypertarget{variable-ji---cuadrado}{%
+\subsection{Variable Ji - Cuadrado}\label{variable-ji---cuadrado}}
 
-Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+\hypertarget{esperanza}{%
+\section{Esperanza}\label{esperanza}}
 
-\begin{theorem}
-\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
-\[a^2 + b^2 = c^2\]
-\end{theorem}
+\hypertarget{esperanza-de-una-variable-aleatoria-discreta}{%
+\subsection{Esperanza de una variable aleatoria discreta}\label{esperanza-de-una-variable-aleatoria-discreta}}
 
-Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+\hypertarget{esperanza-de-una-variable-aleatoria-continua}{%
+\subsection{Esperanza de una variable aleatoria continua}\label{esperanza-de-una-variable-aleatoria-continua}}
 
-\hypertarget{callout-blocks}{%
-\section{Callout blocks}\label{callout-blocks}}
+\hypertarget{varianza}{%
+\section{Varianza}\label{varianza}}
 
-The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+\hypertarget{varianza-de-una-variable-aleatoria-discreta}{%
+\subsection{Varianza de una variable aleatoria discreta}\label{varianza-de-una-variable-aleatoria-discreta}}
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{varianza-de-una-variable-aleatoria-continua}{%
+\subsection{Varianza de una variable aleatoria continua}\label{varianza-de-una-variable-aleatoria-continua}}
 
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
+\hypertarget{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}{%
+\chapter{Distribuciones muestrales y pruebas de hipótesis}\label{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}}
 
-HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+\hypertarget{distribuciuxf3n-de-muestreo-de-la-media}{%
+\section{Distribución de muestreo de la media}\label{distribuciuxf3n-de-muestreo-de-la-media}}
 
-\hypertarget{pages}{%
-\section{404 pages}\label{pages}}
+\hypertarget{estandarizaciuxf3n}{%
+\subsection{Estandarización}\label{estandarizaciuxf3n}}
 
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+\hypertarget{distribuciuxf3n-de-la-media}{%
+\subsection{Distribución de la media}\label{distribuciuxf3n-de-la-media}}
 
-\hypertarget{metadata-for-sharing}{%
-\section{Metadata for sharing}\label{metadata-for-sharing}}
+\hypertarget{teorema-del-luxedmite-central}{%
+\subsection{Teorema del límite central}\label{teorema-del-luxedmite-central}}
 
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+\hypertarget{distribuciuxf3n-de-muestreo-de-la-varianza}{%
+\section{Distribución de muestreo de la varianza}\label{distribuciuxf3n-de-muestreo-de-la-varianza}}
 
-This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+\hypertarget{la-distribuciuxf3n-t-student}{%
+\section{La distribución T-Student}\label{la-distribuciuxf3n-t-student}}
 
-Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+\hypertarget{pruebas-de-hipuxf3tesis}{%
+\section{Pruebas de hipótesis}\label{pruebas-de-hipuxf3tesis}}
 
-Read more about the features of this output format here:
+\hypertarget{una-media}{%
+\subsection{Una media}\label{una-media}}
 
-\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+\hypertarget{diferencia-de-medias}{%
+\subsection{Diferencia de medias}\label{diferencia-de-medias}}
 
-Or use:
+\hypertarget{comparaciuxf3n-de-varianzas}{%
+\subsection{Comparación de varianzas}\label{comparaciuxf3n-de-varianzas}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{diferencia-de-proporciones}{%
+\subsection{Diferencia de proporciones}\label{diferencia-de-proporciones}}
 
+\hypertarget{intervalos-de-confianza}{%
+\chapter{Intervalos de confianza}\label{intervalos-de-confianza}}
+
+\hypertarget{una-media-1}{%
+\section{Una media}\label{una-media-1}}
+
+\hypertarget{bajo-distribuciuxf3n-normal}{%
+\subsection{Bajo distribución normal}\label{bajo-distribuciuxf3n-normal}}
+
+\hypertarget{asintuxf3tico}{%
+\subsection{Asintótico}\label{asintuxf3tico}}
+
+\hypertarget{diferencia-de-medias-1}{%
+\section{Diferencia de medias}\label{diferencia-de-medias-1}}
+
+\hypertarget{compraraciuxf3n-de-varianzas}{%
+\section{Compraración de varianzas}\label{compraraciuxf3n-de-varianzas}}
+
+\hypertarget{diferencia-de-proporciones-1}{%
+\section{Diferencia de proporciones}\label{diferencia-de-proporciones-1}}
 
   \bibliography{book.bib,packages.bib}
 
