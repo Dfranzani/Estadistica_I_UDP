@@ -107,7 +107,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
@@ -151,9 +151,9 @@ En esta sección repasaremos algunos conceptos claves de la estadística que est
 \hypertarget{datos}{%
 \subsection{Datos}\label{datos}}
 
-El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
+El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
 
-Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
+Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar al encontrarno con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
 \hypertarget{informaciuxf3n}{%
 \subsection{Información}\label{informaciuxf3n}}
@@ -171,7 +171,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 \hypertarget{tipos-de-variables}{%
 \subsection{Tipos de variables}\label{tipos-de-variables}}
 
-El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que rodea los datos que se desean estudiar u observar. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato''), las cuales, se pueden clasificar la siguiente manera:
+El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato'', ``los tipos de valores que adquiere el dato''), las cuales, se pueden clasificar la siguiente manera \citep[página 7]{anderson_estadistica_2008}:
 
 \begin{itemize}
 \tightlist
@@ -211,43 +211,70 @@ A continuación, determine la población y muestra de los siguientes enunciados:
 \hypertarget{paruxe1metros-y-estaduxedsticos}{%
 \subsection{Parámetros y Estadísticos}\label{paruxe1metros-y-estaduxedsticos}}
 
-Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
+Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera \citep[página 83]{anderson_estadistica_2008}:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Parámetros}: característica numérica de resumen de la población.
+  \textbf{Parámetros}: corresponde a una característica de resumen de la población.
 \item
-  \textbf{Estadísticos}: característica numérica de resumen de la muestra.
+  \textbf{Estadísticos}: corresponde a una característica de resumen de la muestra.
 \end{itemize}
 
-Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspondiente.
+En la figura \ref{fig:parametro1} se observa un ejemplo de círculos rojos y azules tanto para la población como para una muestra de esta. Dado que la población contiene todos los datos (censo), es posible apreciar todos los círculos con sus colores. Por otro lado, la muestra es solo una pequeña parte de la población, es decir, seleccionan algunos de los círculos al ``azar'' con sus respectivos colores.
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-2-1} \end{center}
+Un ejemplo de los conceptos explicados es \textbf{la proporción de círculos rojos}. En caso de que estuviésemos interesados en dicha característica en la población, se hablaría de un parámetro, mientras que, si se está interesado en la muestra se hablaría de estadístico.
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/parametro1-1} 
+
+}
+
+\caption{Parámetro y estadístico}\label{fig:parametro1}
+\end{figure}
 
 \hypertarget{estimador-y-estimaciuxf3n}{%
 \subsection{Estimador y Estimación}\label{estimador-y-estimaciuxf3n}}
 
+Una extensión de los conceptos de parámetro y estadístico, son los de estimador y estimación, para los cuales, se hace la siguiente distinción:
+
 \begin{itemize}
-\tightlist
 \item
   \textbf{Estimador}: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
 \item
   \textbf{Estimación}: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la ``fórmula'', y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
 \end{itemize}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-3-1} \end{center}
+Si consideramos un ejemplo similar al anterior (Figura \ref{fig:parametro2}), y establecemos que el \textbf{parámetro} a estudiar es la proporción de círculos rojos, es natural pensar que en la muestra (\textbf{estadístico}) el comportamiento debería ser similar. La intención de decir ``usaremos la proporción de círculos rojos en la muestra para deducir como es la proporción de círculos rojos en la población'' corresponde al \textbf{estimador} (otro tema es argumentar si esto es correcto o no), mientras que, el cálculo del estimador (cálculo de la proporción de círculos rojos en la muestra) lleva el nombre de \textbf{estimación}.
 
-¿Cuándo diríamos que una estimación es buena?
+Respecto a lo anterior:
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cuál sería la estimación de los círculos rojos?
+\item
+  Si observamos la muestra de la figura \ref{fig:parametro1} y \ref{fig:parametro2}, ¿cuándo diríamos que una estimación es buena?
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/parametro2-1} 
+
+}
+
+\caption{Estimador y estimación}\label{fig:parametro2}
+\end{figure}
 
 \hypertarget{variabilidad-muestral}{%
 \subsection{Variabilidad muestral}\label{variabilidad-muestral}}
 
-Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es ``azarosa'\,', es decir, no podemos intencionarla en su totalidad.
+Efectivamente, la estimación de un parámetro está determinada por la muestra con la que se trabaja. La forma en la que se elige una muestra es azarosa (que no se puede intencionar en su totalidad), por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso.
 
-El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).
+El concepto detrás de esto es la \textbf{variabilidad muestral}, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación). Para ilustrar esto, observemos la figura \ref{fig:figura-poblacion1}.
 
-\textbf{¿Cuál es la proporción de círculos rojos en la población relfejada en la figura} \ref{fig:figura-poblacion1}\textbf{?}
+\textbf{¿Cuál es la proporción de círculos rojos en la población relfejada en la figura} \textbf{?}
 
 \begin{figure}
 
@@ -258,7 +285,9 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \caption{Población}\label{fig:figura-poblacion1}
 \end{figure}
 
-\textbf{¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura} \ref{fig:figura-muestra1}\textbf{?}
+Luego,
+
+\textbf{¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura} \ref{fig:figura-muestra1}\textbf{?}
 
 \begin{figure}
 
@@ -269,7 +298,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \caption{Muestra 1}\label{fig:figura-muestra1}
 \end{figure}
 
-\textbf{¿Y ahora? (Figura} \ref{fig:figura-muestra2}\textbf{) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral}
+\textbf{¿Y ahora? (Figura} \ref{fig:figura-muestra2}\textbf{)}
 
 \begin{figure}
 
@@ -280,28 +309,61 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
 \caption{Muestra 2}\label{fig:figura-muestra2}
 \end{figure}
 
+Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como \textbf{variabilidad muestral}.
+
 \hypertarget{representatividad-y-sesgo-de-la-muestra}{%
 \subsection{Representatividad y sesgo de la muestra}\label{representatividad-y-sesgo-de-la-muestra}}
 
-\textbf{Discusión}: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
+Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
 
 Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).
 
-\hypertarget{medidas-de-tendencia-central-mtc}{%
-\subsection{Medidas de Tendencia Central (MTC)}\label{medidas-de-tendencia-central-mtc}}
+\hypertarget{medidas-de-localizaciuxf3n}{%
+\subsection{Medidas de localización}\label{medidas-de-localizaciuxf3n}}
 
-\begin{itemize}
-\tightlist
-\item
-  Media: \(\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i\)
-\item
-  Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.
-\item
-  Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
-\end{itemize}
+Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares, Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos.
 
-\hypertarget{medidas-de-dipersiuxf3n-md}{%
-\subsection{Medidas de Dipersión (MD)}\label{medidas-de-dipersiuxf3n-md}}
+\hypertarget{media}{%
+\subsubsection*{Media}\label{media}}
+\addcontentsline{toc}{subsubsection}{Media}
+
+Para un conjunto dado de números \(x_1, x_2, x_3, \ldots, x_n\), la medida más conocida y útil es la \textbf{media} o promedio aritmético. Usualmente se asume que los números \(x_i\) hace parte de una muestra, por lo que a este promedio se le connota como \textbf{media muestral} y se denota con por \(\bar{x}\).
+
+De lo anterior, la media muestral (\(\bar{x}\)) de una conjunto de datos \(x_1, x_2, x_3, \ldots, x_n\) está dada por \citep[página 25]{Devore}
+
+\[
+\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}
+\]
+
+En R, para obtener el promedio aritmético de los datos se hace uso de la función \textbf{mean()}. A continuación, un ejemplo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Un conjunto de datos cualquiera}
+\NormalTok{x }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{20}\NormalTok{)}
+\CommentTok{\# Promedio de los datos}
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2727273
+\end{verbatim}
+
+El promedio (\(\bar{x}\)) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos (\href{https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021\#:~:text=El\%20ingreso\%20laboral\%20promedio\%20mensual\%20en\%20Chile\%20fue\%20de\%20\%24681.039\%20en\%202021,-21\%2F07\%2F2022\&text=El\%2050\%25\%20de\%20las\%20personas,ingreso\%20de\%20hasta\%20\%24457.690\%20mensuales.}{el caso de Chile}), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, \href{https://www.google.com/finance/quote/BTC-USD?sa=X\&ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe\&window=MAX}{es la valorización de BitCoin al dólar estadounidense}).
+
+A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: tipo de cambio del dólar).
+
+\hypertarget{moda}{%
+\subsubsection*{Moda}\label{moda}}
+\addcontentsline{toc}{subsubsection}{Moda}
+
+\hypertarget{mediana}{%
+\subsubsection*{Mediana}\label{mediana}}
+\addcontentsline{toc}{subsubsection}{Mediana}
+
+\hypertarget{medidas-de-escala}{%
+\subsection{Medidas de escala}\label{medidas-de-escala}}
 
 \begin{itemize}
 \tightlist
@@ -358,7 +420,7 @@ Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \hypertarget{caja}{%
 \subsection{Caja}\label{caja}}
@@ -373,7 +435,7 @@ Este gráfico se utiliza para evidenciar las medidas de posición conocidas como
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \hypertarget{violuxedn}{%
 \subsection{Violín}\label{violuxedn}}
@@ -391,10 +453,7 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-\hypertarget{violuxedn-caja-promedio}{%
-\subsection{Violín + caja + promedio}\label{violuxedn-caja-promedio}}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -405,7 +464,7 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \hypertarget{barras}{%
 \subsection{Barras}\label{barras}}
@@ -421,7 +480,7 @@ Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \hypertarget{dispersiuxf3n}{%
 \subsection{Dispersión}\label{dispersiuxf3n}}
@@ -436,10 +495,7 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-9-1} \end{center}
-
-\hypertarget{dispersiuxf3n-luxedneas}{%
-\subsection{Dispersión + líneas}\label{dispersiuxf3n-luxedneas}}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -450,7 +506,7 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \hypertarget{ejercicios}{%
 \section{Ejercicios}\label{ejercicios}}
@@ -586,6 +642,6 @@ Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdr
 \hypertarget{diferencia-de-proporciones-1}{%
 \section{Diferencia de proporciones}\label{diferencia-de-proporciones-1}}
 
-  \bibliography{book.bib,packages.bib}
+  \bibliography{refs.bib}
 
 \end{document}

@@ -6,9 +6,9 @@ En esta sección repasaremos algunos conceptos claves de la estadística que est
 
 ### Datos 
 
-El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna [@brachman_knowledge_2004].
+El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna [@brachman_knowledge_2004].
 
-Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
+Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar al encontrarno con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
 ### Información
 
@@ -24,7 +24,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 
 ### Tipos de variables
 
-El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que rodea los datos que se desean estudiar u observar. En este sentido, los datos están asociados a lo que llamamos variable ("naturaleza del dato"), las cuales, se pueden clasificar la siguiente manera:
+El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable ("naturaleza del dato", "los tipos de valores que adquiere el dato"), las cuales, se pueden clasificar la siguiente manera [@anderson_estadistica_2008, página 7]:
 
 -   **Cualitativas** (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
 -   **Cuantitativas** (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
@@ -47,16 +47,18 @@ A continuación, determine la población y muestra de los siguientes enunciados:
 
 ### Parámetros y Estadísticos
 
-Ambos conceptos son utilizados de manera frecuente en distintos medios de comunicación, cometiéndose el error de tratarlos como sinónimos. Sin embargo, tienen definiciones totalmente distintas:
+Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera [@anderson_estadistica_2008, página 83]:
 
--   **Parámetros**: característica numérica de resumen de la población.
--   **Estadísticos**: característica numérica de resumen de la muestra.
+-   **Parámetros**: corresponde a una característica de resumen de la población.
+-   **Estadísticos**: corresponde a una característica de resumen de la muestra.
 
-Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspondiente.
+En la figura \@ref(fig:parametro1) se observa un ejemplo de círculos rojos y azules tanto para la población como para una muestra de esta. Dado que la población contiene todos los datos (censo), es posible apreciar todos los círculos con sus colores. Por otro lado, la muestra es solo una pequeña parte de la población, es decir, seleccionan algunos de los círculos al "azar" con sus respectivos colores.
 
-```{r echo=FALSE, fig.align="center", fig.width=8, fig.height= 4}
+Un ejemplo de los conceptos explicados es **la proporción de círculos rojos**. En caso de que estuviésemos interesados en dicha característica en la población, se hablaría de un parámetro, mientras que, si se está interesado en la muestra se hablaría de estadístico.
+
+```{r parametro1, echo=FALSE, fig.align="center", fig.width=8, fig.height=4, fig.cap="Parámetro y estadístico"}
   set.seed(2023)
-  col_text = "gray35"
+  col_text = "black"
   col_point1 = "red"
   col_point2 = "blue"
   par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
@@ -98,10 +100,20 @@ Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspon
 
 ### Estimador y Estimación 
 
+Una extensión de los conceptos de parámetro y estadístico, son los de estimador y estimación, para los cuales, se hace la siguiente distinción:
+
 -   **Estimador**: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
+
 -   **Estimación**: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la "fórmula", y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
 
-```{r echo=FALSE, fig.align="center", fig.width=8, fig.height= 4}
+Si consideramos un ejemplo similar al anterior (Figura \@ref(fig:parametro2)), y establecemos que el **parámetro** a estudiar es la proporción de círculos rojos, es natural pensar que en la muestra (**estadístico**) el comportamiento debería ser similar. La intención de decir "usaremos la proporción de círculos rojos en la muestra para deducir como es la proporción de círculos rojos en la población" corresponde al **estimador** (otro tema es argumentar si esto es correcto o no), mientras que, el cálculo del estimador (cálculo de la proporción de círculos rojos en la muestra) lleva el nombre de **estimación**.
+
+Respecto a lo anterior:
+
+- ¿Cuál sería la estimación de los círculos rojos?
+- Si observamos la muestra de la figura \@ref(fig:parametro1) y \@ref(fig:parametro2), ¿cuándo diríamos que una estimación es buena?
+
+```{r parametro2, echo=FALSE, fig.align="center", fig.width=8, fig.height=4, fig.cap="Estimador y estimación"}
   set.seed(1992)
   par(mfrow = c(1,2), las = 1, bty = "n", bg = NA)
   pos = data.frame(sample(1:30,20), sample(1:30,20))
@@ -139,15 +151,13 @@ Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspon
          text.col = col_text, box.col = col_text)
 ```
 
-¿Cuándo diríamos que una estimación es buena?
-
 ### Variabilidad muestral 
 
-Efectivamente, al estimación de un parámetro está fuertemente determinada por la muestra con la que uno trabaja. La forma en la que se elige una muestra es azarosa, por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso. Cabe mencionar que en todo momento la elección es \`\`azarosa'', es decir, no podemos intencionarla en su totalidad.
+Efectivamente, la estimación de un parámetro está determinada por la muestra con la que se trabaja. La forma en la que se elige una muestra es azarosa (que no se puede intencionar en su totalidad), por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso.
 
-El concepto detrás de esto es la variabilidad muestral, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación).
+El concepto detrás de esto es la **variabilidad muestral**, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación). Para ilustrar esto, observemos la figura \@ref(fig:figura-poblacion1).
 
-<center>**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura** \@ref(fig:figura-poblacion1)**?**</center>
+<center>**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura** **?**</center>
 
 ```{r figura-poblacion1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Población"}
   col_point1 = "darkred"
@@ -167,7 +177,9 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
            x1 = c(0,8,8,8), y1 = c(8,8,0,8))
 ```
 
-<center>**¿Qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura** \@ref(fig:figura-muestra1)**?**</center>
+Luego,
+
+<center>**¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura** \@ref(fig:figura-muestra1)**?**</center>
 
 ```{r figura-muestra1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 1"}
   par(bg = NA, mar = c(0,0,0,0))
@@ -185,7 +197,7 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
           col = col_fill, border = col_fill)
 ```
 
-<center>**¿Y ahora? (Figura** \@ref(fig:figura-muestra2)**) Diferentes muestras se comportan de manera diferente. Esto se denomina como variabilidad muestral**</center>
+<center>**¿Y ahora? (Figura** \@ref(fig:figura-muestra2)**)**</center>
 
 ```{r figura-muestra2, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 2"}
   par(bg = NA, mar = c(0,0,0,0))
@@ -203,18 +215,50 @@ El concepto detrás de esto es la variabilidad muestral, el cual, indica que dep
           col = col_fill, border = col_fill)
 ```
 
+Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como **variabilidad muestral**.
+
+
 ### Representatividad y sesgo de la muestra 
 
-**Discusión**: Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
+Ambos conceptos se usan con frecuencia en la vida cotidiana, y a su vez están mal empleados. El sesgo no es una propiedad de la muestra sino que del estimador (concepto avanzado de estadística).
 
 Por otro lado, la representatividad no es un concepto válido matemáticamente (no existe tal definición).
 
-### Medidas de Tendencia Central (MTC) 
--   Media: $\bar{x} = \displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n x_i$
--   Mediana: La mediana de un conjunto de observaciones es el valor para el cual, cuando todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad.
--   Moda: La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
+### Medidas de localización
 
-### Medidas de Dipersión (MD) 
+Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares, Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos.
+
+#### Media {-}
+
+Para un conjunto dado de números $x_1, x_2, x_3, \ldots, x_n$, la medida más conocida y útil es la **media** o promedio aritmético. Usualmente se asume que los números $x_i$ hace parte de una muestra, por lo que a este promedio se le connota como **media muestral** y se denota con por $\bar{x}$.
+
+De lo anterior, la media muestral ($\bar{x}$) de una conjunto de datos $x_1, x_2, x_3, \ldots, x_n$ está dada por [@Devore, página 25]
+
+$$
+\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}
+$$
+
+En R, para obtener el promedio aritmético de los datos se hace uso de la función **mean()**. A continuación, un ejemplo.
+
+```{r}
+# Un conjunto de datos cualquiera
+x = c(1,2,3,6,1,-4,-2,6,0,10,-20)
+# Promedio de los datos
+mean(x)
+```
+
+
+El promedio ($\bar{x}$) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos ([el caso de Chile](https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021#:~:text=El%20ingreso%20laboral%20promedio%20mensual%20en%20Chile%20fue%20de%20%24681.039%20en%202021,-21%2F07%2F2022&text=El%2050%25%20de%20las%20personas,ingreso%20de%20hasta%20%24457.690%20mensuales.)), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, [es la valorización de BitCoin al dólar estadounidense](https://www.google.com/finance/quote/BTC-USD?sa=X&ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe&window=MAX)).
+
+A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: tipo de cambio del dólar).
+
+#### Moda {-}
+
+#### Mediana {-}
+
+
+
+### Medidas de escala
 
 -   Varianza: $S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}$
 -   Desviación Estándar: $\sqrt{S}$
@@ -270,8 +314,6 @@ g = ggplot(data = datos, aes(x = 1, y = perm)) +
 g
 ```
 
-### Violín + caja + promedio 
-
 ```{r fig.align="center", fig.width=4, fig.height=3}
 
 g + geom_boxplot(width = 0.1, color = "black",
@@ -300,8 +342,6 @@ ggplot(data = datos, aes(x = peri, y = perm)) +
   geom_point() +
   labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
 ```
-
-### Dispersión + líneas 
 
 ```{r fig.align="center", fig.width=6, fig.height=3}
 ggplot(data = datos, aes(x = peri, y = perm)) + 
