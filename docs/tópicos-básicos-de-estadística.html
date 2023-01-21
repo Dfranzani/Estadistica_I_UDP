@@ -118,6 +118,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -231,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>4.3</b> Compraración de varianzas</a></li>
 <li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>4.4</b> Diferencia de proporciones</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
 
@@ -256,9 +278,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Unidad 1</span> Tópicos básicos de estadística<a href="tópicos-básicos-de-estadística.html#tópicos-básicos-de-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="conceptos" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Conceptos<a href="tópicos-básicos-de-estadística.html#conceptos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas estadística básicas de visualización y tabulación de datos, para el estudio de estos.</p>
 <div id="datos" class="section level3 hasAnchor" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Datos<a href="tópicos-básicos-de-estadística.html#datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.</p>
+<p>El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna <span class="citation">(<a href="#ref-brachman_knowledge_2004" role="doc-biblioref">Brachman and Levesque 2004</a>)</span>.</p>
 <p>Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?</p>
 </div>
 <div id="información" class="section level3 hasAnchor" number="1.1.2">
@@ -266,29 +289,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <strong>Información = Datos + Significado</strong>
 </center>
-<p>Los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información. Otra forma de entenderlo es:</p>
+<p>Por otro lado, los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información <span class="citation">(<a href="#ref-brachman_knowledge_2004" role="doc-biblioref">Brachman and Levesque 2004</a>)</span>. Otra forma de entenderlo es:</p>
 <center>
 <strong>Información = Datos + Reglas para decodificar</strong>
 </center>
 <p>En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo, viene de las reglas sociales que indican como actuar en determinadas situaciones.</p>
-<p><strong>En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.</strong></p>
+<p><strong>En estadística, mediante el uso de distintas herramientas (gráficos, tablas, entre otras), dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio.</strong></p>
 </div>
 <div id="tipos-de-variables" class="section level3 hasAnchor" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> Tipos de variables<a href="tópicos-básicos-de-estadística.html#tipos-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:</p>
+<p>El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que rodea los datos que se desean estudiar u observar. En este sentido, los datos están asociados a lo que llamamos variable (“naturaleza del dato”), las cuales, se pueden clasificar la siguiente manera:</p>
 <ul>
-<li>Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.</li>
-<li>Cuantitativas (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.</li>
+<li><strong>Cualitativas</strong> (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.</li>
+<li><strong>Cuantitativas</strong> (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.</li>
 </ul>
 <p><strong>Ejemplo</strong>: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.</p>
 </div>
 <div id="población-y-muestra" class="section level3 hasAnchor" number="1.1.4">
 <h3><span class="header-section-number">1.1.4</span> Población y Muestra<a href="tópicos-básicos-de-estadística.html#población-y-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los ingenieros y científicos constantemente están expuestos a la recolección de hecho o datos, tanto en sus actividades profesionales como en sus actividades diarias. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información contenida en datos.</p>
+<p>Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una <strong>población</strong> de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un <strong>censo</strong>. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una <strong>muestra</strong>, de manera prescrita <span class="citation">(<a href="#ref-Devore" role="doc-biblioref">Devore 2008</a>, paǵina 2)</span>.</p>
 <ul>
 <li><strong>Población</strong>: La población es el conjunto de todos los sujetos de interés en un estudio.</li>
-<li><strong>Muestra</strong>: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.</li>
+<li><strong>Muestra</strong>: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.</li>
 </ul>
-<p>Determinar en cada caso la población y la muestra:</p>
+<p>A continuación, determine la población y muestra de los siguientes enunciados:</p>
 <ul>
 <li>Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.</li>
 <li>La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.</li>
@@ -301,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Parámetros</strong>: característica numérica de resumen de la población.</li>
 <li><strong>Estadísticos</strong>: característica numérica de resumen de la muestra.</li>
 </ul>
-<p>Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.</p>
+<p>Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspondiente.</p>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="estimador-y-estimación" class="section level3 hasAnchor" number="1.1.6">
@@ -368,8 +393,7 @@ Figura 1.3: Muestra 2
 </div>
 <div id="gráficos-descriptivos" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Gráficos descriptivos<a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica.</p>
-<p>Para ilustrar los diferentes gráficos, usaremos la base de datos <em>rock</em> que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:</p>
+<p>La estadística descriptiva se divide en dos temas generales. En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de probabilidad. Para ello, usaremos la base de datos <em>rock</em> que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:</p>
 <ul>
 <li>area: área del espacio de poros, en píxeles de 256 por 256.</li>
 <li>peri: perímetro en píxeles.</li>
@@ -378,7 +402,14 @@ Figura 1.3: Muestra 2
 </ul>
 <div id="histograma" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Histograma<a href="tópicos-básicos-de-estadística.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (<span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo).</p>
+<p>Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente <span class="citation">(<a href="#ref-Devore" role="doc-biblioref">Devore 2008</a>, paǵina 12)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Subdividir los datos en <strong>intervalos de clase</strong> o <strong>clases</strong>, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges, la cual, consiste en calcular la expresión <span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo, dónde <span class="math inline">\(n\)</span> corresponde a la cantidad de datos (existen otra variedad de técnicas).</li>
+<li>Determinar la frecuencia y la frecuencia relativa de cada clase, es decir, cuántas observaciones hay en cada uno de los intervalos.</li>
+<li>Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.</li>
+<li>Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.</li>
+</ol>
+<p>Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tópicos-básicos-de-estadística.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="tópicos-básicos-de-estadística.html#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> rock</span>
 <span id="cb1-3"><a href="tópicos-básicos-de-estadística.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="fu">aes</span>(<span class="at">x =</span> perm)) <span class="sc">+</span></span>
@@ -443,6 +474,15 @@ Figura 1.3: Muestra 2
 <h2><span class="header-section-number">1.3</span> Ejercicios<a href="tópicos-básicos-de-estadística.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Desarrollar el <a href="https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing">Taller 1</a>.</p>
 
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-brachman_knowledge_2004" class="csl-entry">
+Brachman, Ronald J., and Hector J. Levesque. 2004. <em>Knowledge Representation and Reasoning</em>. Amsterdam ; Boston: Morgan Kaufmann.
+</div>
+<div id="ref-Devore" class="csl-entry">
+Devore, Jay L. 2008. <em>Probability and Statistics for Engineering and the Sciences</em>. 7th ed. Belmont, CA: Thomson/Brooks/Cole.
 </div>
 </div>
             </section>

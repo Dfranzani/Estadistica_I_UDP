@@ -146,10 +146,12 @@ Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso d
 \hypertarget{conceptos}{%
 \section{Conceptos}\label{conceptos}}
 
+En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas estadística básicas de visualización y tabulación de datos, para el estudio de estos.
+
 \hypertarget{datos}{%
 \subsection{Datos}\label{datos}}
 
-Un dato es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna.
+El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, es cualquier hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
 
 Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar, cuando encontramos un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
@@ -158,25 +160,25 @@ Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por q
 
 \textbf{Información = Datos + Significado}
 
-Los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información. Otra forma de entenderlo es:
+Por otro lado, los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información \citep{brachman_knowledge_2004}. Otra forma de entenderlo es:
 
 \textbf{Información = Datos + Reglas para decodificar}
 
 En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo, viene de las reglas sociales que indican como actuar en determinadas situaciones.
 
-\textbf{En estadística, mediante el uso de distintas herramientas, dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio propios de su área.}
+\textbf{En estadística, mediante el uso de distintas herramientas (gráficos, tablas, entre otras), dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio.}
 
 \hypertarget{tipos-de-variables}{%
 \subsection{Tipos de variables}\label{tipos-de-variables}}
 
-Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo de dato que estoy observando. La clasificación es la siguiente:
+El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que rodea los datos que se desean estudiar u observar. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato''), las cuales, se pueden clasificar la siguiente manera:
 
 \begin{itemize}
 \tightlist
 \item
-  Cualitativas (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
+  \textbf{Cualitativas} (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
 \item
-  Cuantitativas (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
+  \textbf{Cuantitativas} (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
 \end{itemize}
 
 \textbf{Ejemplo}: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
@@ -184,15 +186,19 @@ Otro concepto básico de estadística, es el tipo de variable, es decir, el tipo
 \hypertarget{poblaciuxf3n-y-muestra}{%
 \subsection{Población y Muestra}\label{poblaciuxf3n-y-muestra}}
 
+Los ingenieros y científicos constantemente están expuestos a la recolección de hecho o datos, tanto en sus actividades profesionales como en sus actividades diarias. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información contenida en datos.
+
+Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una \textbf{población} de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un \textbf{censo}. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una \textbf{muestra}, de manera prescrita \citep[paǵina 2]{Devore}.
+
 \begin{itemize}
 \tightlist
 \item
   \textbf{Población}: La población es el conjunto de todos los sujetos de interés en un estudio.
 \item
-  \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos. Aspectos importantes de la muestra son el tamaño y distribución de las características.
+  \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
 \end{itemize}
 
-Determinar en cada caso la población y la muestra:
+A continuación, determine la población y muestra de los siguientes enunciados:
 
 \begin{itemize}
 \tightlist
@@ -215,7 +221,7 @@ Ambos conceptos son utilizados de manera frecuente en distintos medios de comuni
   \textbf{Estadísticos}: característica numérica de resumen de la muestra.
 \end{itemize}
 
-Veamos el siguiente gráfico y, distingamos el parámetro y estadístico correspondiente.
+Veamos el siguiente gráfico, distingamos el parámetro y estadístico correspondiente.
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
@@ -308,9 +314,7 @@ Por otro lado, la representatividad no es un concepto válido matemáticamente (
 \hypertarget{gruxe1ficos-descriptivos}{%
 \section{Gráficos descriptivos}\label{gruxe1ficos-descriptivos}}
 
-Los gráficos son una herramienta de resumen de información visual. Se usa tanto de forma descriptiva como analítica.
-
-Para ilustrar los diferentes gráficos, usaremos la base de datos \emph{rock} que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
+La estadística descriptiva se divide en dos temas generales. En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de probabilidad. Para ello, usaremos la base de datos \emph{rock} que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
 
 \begin{itemize}
 \tightlist
@@ -327,7 +331,22 @@ Para ilustrar los diferentes gráficos, usaremos la base de datos \emph{rock} qu
 \hypertarget{histograma}{%
 \subsection{Histograma}\label{histograma}}
 
-Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se debe tener cuidado con la cantidad de intervalos del histograma, se recomienda utilizar la regla de Sturges (\(1+\log_2(n)\), aproximando hacia el entero más próximo).
+Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente \citep[paǵina 12]{Devore}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Subdividir los datos en \textbf{intervalos de clase} o \textbf{clases}, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges, la cual, consiste en calcular la expresión \(1+\log_2(n)\), aproximando hacia el entero más próximo, dónde \(n\) corresponde a la cantidad de datos (existen otra variedad de técnicas).
+\item
+  Determinar la frecuencia y la frecuencia relativa de cada clase, es decir, cuántas observaciones hay en cada uno de los intervalos.
+\item
+  Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.
+\item
+  Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
+\end{enumerate}
+
+Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -341,8 +360,8 @@ Es la forma idónea para mostrar una tabla de frecuencia de forma visual. Se deb
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-\hypertarget{gruxe1fico-de-caja}{%
-\subsection{Gráfico de caja}\label{gruxe1fico-de-caja}}
+\hypertarget{caja}{%
+\subsection{Caja}\label{caja}}
 
 Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
 
@@ -356,8 +375,8 @@ Este gráfico se utiliza para evidenciar las medidas de posición conocidas como
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-\hypertarget{gruxe1fico-de-violuxedn}{%
-\subsection{Gráfico de violín}\label{gruxe1fico-de-violuxedn}}
+\hypertarget{violuxedn}{%
+\subsection{Violín}\label{violuxedn}}
 
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
@@ -374,8 +393,8 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
-\hypertarget{gruxe1fico-de-violuxedn-caja-promedio}{%
-\subsection{Gráfico de violín + caja + promedio}\label{gruxe1fico-de-violuxedn-caja-promedio}}
+\hypertarget{violuxedn-caja-promedio}{%
+\subsection{Violín + caja + promedio}\label{violuxedn-caja-promedio}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -388,8 +407,8 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
-\hypertarget{gruxe1fico-de-barras}{%
-\subsection{Gráfico de barras}\label{gruxe1fico-de-barras}}
+\hypertarget{barras}{%
+\subsection{Barras}\label{barras}}
 
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
@@ -404,8 +423,8 @@ Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
-\hypertarget{gruxe1fico-de-dispersiuxf3n}{%
-\subsection{Gráfico de dispersión}\label{gruxe1fico-de-dispersiuxf3n}}
+\hypertarget{dispersiuxf3n}{%
+\subsection{Dispersión}\label{dispersiuxf3n}}
 
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
@@ -419,8 +438,8 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
-\hypertarget{gruxe1fico-de-dispersiuxf3n-luxedneas}{%
-\subsection{Gráfico de dispersión + líneas}\label{gruxe1fico-de-dispersiuxf3n-luxedneas}}
+\hypertarget{dispersiuxf3n-luxedneas}{%
+\subsection{Dispersión + líneas}\label{dispersiuxf3n-luxedneas}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -462,53 +481,53 @@ Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdr
 \hypertarget{variable-aleatoria-discreta}{%
 \section{Variable aleatoria discreta}\label{variable-aleatoria-discreta}}
 
-\hypertarget{variable-uniforme}{%
-\subsection{Variable Uniforme}\label{variable-uniforme}}
+\hypertarget{uniforme}{%
+\subsection{Uniforme}\label{uniforme}}
 
-\hypertarget{variable-bernoulli}{%
-\subsection{Variable Bernoulli}\label{variable-bernoulli}}
+\hypertarget{bernoulli}{%
+\subsection{Bernoulli}\label{bernoulli}}
 
-\hypertarget{variable-binomial}{%
-\subsection{Variable Binomial}\label{variable-binomial}}
+\hypertarget{binomial}{%
+\subsection{Binomial}\label{binomial}}
 
-\hypertarget{variable-poisson}{%
-\subsection{Variable Poisson}\label{variable-poisson}}
+\hypertarget{poisson}{%
+\subsection{Poisson}\label{poisson}}
 
 \hypertarget{variable-aleatoria-continua}{%
 \section{Variable aleatoria continua}\label{variable-aleatoria-continua}}
 
-\hypertarget{variable-uniforme-1}{%
-\subsection{Variable Uniforme}\label{variable-uniforme-1}}
+\hypertarget{uniforme-1}{%
+\subsection{Uniforme}\label{uniforme-1}}
 
-\hypertarget{variable-exponencial}{%
-\subsection{Variable Exponencial}\label{variable-exponencial}}
+\hypertarget{exponencial}{%
+\subsection{Exponencial}\label{exponencial}}
 
-\hypertarget{variable-normal}{%
-\subsection{Variable Normal}\label{variable-normal}}
+\hypertarget{normal}{%
+\subsection{Normal}\label{normal}}
 
-\hypertarget{variable-t---student}{%
-\subsection{Variable T - Student}\label{variable-t---student}}
+\hypertarget{t---student}{%
+\subsection{T - Student}\label{t---student}}
 
-\hypertarget{variable-ji---cuadrado}{%
-\subsection{Variable Ji - Cuadrado}\label{variable-ji---cuadrado}}
+\hypertarget{ji---cuadrado}{%
+\subsection{Ji - Cuadrado}\label{ji---cuadrado}}
 
 \hypertarget{esperanza}{%
 \section{Esperanza}\label{esperanza}}
 
-\hypertarget{esperanza-de-una-variable-aleatoria-discreta}{%
-\subsection{Esperanza de una variable aleatoria discreta}\label{esperanza-de-una-variable-aleatoria-discreta}}
+\hypertarget{variable-aleatoria-discreta-1}{%
+\subsection{Variable aleatoria discreta}\label{variable-aleatoria-discreta-1}}
 
-\hypertarget{esperanza-de-una-variable-aleatoria-continua}{%
-\subsection{Esperanza de una variable aleatoria continua}\label{esperanza-de-una-variable-aleatoria-continua}}
+\hypertarget{variable-aleatoria-continua-1}{%
+\subsection{Variable aleatoria continua}\label{variable-aleatoria-continua-1}}
 
 \hypertarget{varianza}{%
 \section{Varianza}\label{varianza}}
 
-\hypertarget{varianza-de-una-variable-aleatoria-discreta}{%
-\subsection{Varianza de una variable aleatoria discreta}\label{varianza-de-una-variable-aleatoria-discreta}}
+\hypertarget{variable-aleatoria-discreta-2}{%
+\subsection{Variable aleatoria discreta}\label{variable-aleatoria-discreta-2}}
 
-\hypertarget{varianza-de-una-variable-aleatoria-continua}{%
-\subsection{Varianza de una variable aleatoria continua}\label{varianza-de-una-variable-aleatoria-continua}}
+\hypertarget{variable-aleatoria-continua-2}{%
+\subsection{Variable aleatoria continua}\label{variable-aleatoria-continua-2}}
 
 \hypertarget{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}{%
 \chapter{Distribuciones muestrales y pruebas de hipótesis}\label{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}}
