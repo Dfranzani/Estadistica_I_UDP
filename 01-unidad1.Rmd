@@ -351,16 +351,15 @@ Al momento de reportar la media solo se obtiene información parcial sobre el un
 
 ```{r variabilidad, echo=FALSE}
 library(kableExtra)
+options(kableExtra.html.bsTable = T)
 n = c(3,4.5,5,5.5,7,4.0,5,6,rep(NA,2),3,7, rep(NA,3))
 n = format(round(n,1), nsmall = 1)
 n = ifelse(n %in% " NA", "--", n)
 tabla = matrix(n, byrow = F, ncol = 3)
-tabla = structure(.Data = tabla, .Dim = dim(tabla), .Dimnames = list(c(),c("Curso 1", "Curso 2", "Curso 3")))
-#options(knitr.kable.NA = "")
-knitr::kable(tabla, caption = "Notas por curso", align = "c") |>
-  kable_classic()|>
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "condensed"))
-
+# tabla = structure(.Data = tabla, .Dim = dim(tabla), .Dimnames = list(c(),c("Curso 1", "Curso 2", "Curso 3")))
+kable(tabla, caption = 'Notas por curso', align = 'c', booktabs = TRUE,
+             col.names = c("Curso 1", "Curso 2", "Curso 3"), escape = FALSE) |>
+  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"))
 ```
 
 #### Rango {-}
@@ -375,7 +374,7 @@ Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
 # Utilizando el comando range() se obtienen los valores mínimo y máximo
 # de la variable en cuestión
 (rango = range(datos$Open))
-# Luego restamos el valor máximo con le mínimo
+# Luego calculamos la diferencia entre el valor máximo y mínimo
 rango[2] - rango[1]
 # Nota: El valor máximo siempre estará en la segunda posición y le mínimo en la segunda.
 ```

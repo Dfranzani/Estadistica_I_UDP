@@ -1,6 +1,5 @@
 bookdown::gitbook:
   css: style.css
-  # pandoc_args: ["--csl", "apa.csl"]
   config:
     toc:
       collapse: null
@@ -23,6 +22,7 @@ bookdown::gitbook:
       github: true
       all: no
     info: true
+  table_css: false
 bookdown::pdf_book:
 #  pandoc_args: ["--csl", "apa6.csl"]
   includes:
