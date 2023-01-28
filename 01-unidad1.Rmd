@@ -8,7 +8,7 @@ En esta sección repasaremos algunos conceptos claves de la estadística que est
 
 El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna [@brachman_knowledge_2004].
 
-Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar al encontrarno con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
+Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué al caminar nos detenemos al encontrarnos con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
 ### Información
 
@@ -24,30 +24,34 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 
 ### Tipos de variables
 
-El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable ("naturaleza del dato", "los tipos de valores que adquiere el dato"), las cuales, se pueden clasificar la siguiente manera [@anderson_estadistica_2008, página 7]:
+El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable ("naturaleza del dato", "los tipos de valores que adquiere el dato"), las cuales, se pueden clasificar la siguiente manera [@anderson, página 7]:
 
 -   **Cualitativas** (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
 -   **Cuantitativas** (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
 
-**Ejemplo**: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+**Ejercicio**
+
+1. Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
 
 ### Población y Muestra 
 
 Los ingenieros y científicos constantemente están expuestos a la recolección de hecho o datos, tanto en sus actividades profesionales como en sus actividades diarias. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información contenida en datos.
 
-Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una **población** de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un **censo**. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una **muestra**, de manera prescrita [@Devore, paǵina 2].
+Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una **población** de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un **censo**. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una **muestra**, de manera prescrita [@Devore, página 2].
 
 -   **Población**: La población es el conjunto de todos los sujetos de interés en un estudio.
 -   **Muestra**: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
 
-A continuación, determine la población y muestra de los siguientes enunciados:
+**Ejercicio:**
+
+1. Determine la población y muestra de los siguientes enunciados:
 
 -   Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
 -   La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
 
 ### Parámetros y Estadísticos
 
-Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera [@anderson_estadistica_2008, página 83]:
+Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera [@anderson, página 83]:
 
 -   **Parámetros**: corresponde a una característica de resumen de la población.
 -   **Estadísticos**: corresponde a una característica de resumen de la muestra.
@@ -226,7 +230,7 @@ Por otro lado, la representatividad no es un concepto válido matemáticamente (
 
 ### Medidas de localización
 
-Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares, Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos.
+Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares. Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos. Las tres medidas de resumen más utilizadas son la media, la medianda y la moda.
 
 #### Media {-}
 
@@ -234,9 +238,10 @@ Para un conjunto dado de números $x_1, x_2, x_3, \ldots, x_n$, la medida más c
 
 De lo anterior, la media muestral ($\bar{x}$) de una conjunto de datos $x_1, x_2, x_3, \ldots, x_n$ está dada por [@Devore, página 25]
 
-$$
+\begin{equation}
 \bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}
-$$
+(\#eq:promedio)
+\end{equation}
 
 En R, para obtener el promedio aritmético de los datos se hace uso de la función **mean()**. A continuación, un ejemplo.
 
@@ -250,33 +255,258 @@ mean(x)
 
 El promedio ($\bar{x}$) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos ([el caso de Chile](https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021#:~:text=El%20ingreso%20laboral%20promedio%20mensual%20en%20Chile%20fue%20de%20%24681.039%20en%202021,-21%2F07%2F2022&text=El%2050%25%20de%20las%20personas,ingreso%20de%20hasta%20%24457.690%20mensuales.)), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, [es la valorización de BitCoin al dólar estadounidense](https://www.google.com/finance/quote/BTC-USD?sa=X&ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe&window=MAX)).
 
-A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: tipo de cambio del dólar).
+A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: [tipo de cambio del dólar y el euro](https://www.google.com/finance/quote/EUR-CLP?window=MAX&comparison=USD-CLP)).
 
-#### Moda {-}
+**Ejercicio:**
+
+1. Cargue la [base de datos](https://es.finance.yahoo.com/quote/EURUSD%3DX?p=EURUSD%3DX) *Tasa+euro+dolar+historica2023.csv* (se estará usando esta base para el resto de la unidad), la cual, contiene el registro diario histórico de la tasa de cambio del Euro a Dólar. Las columnas en la base de datos son las siguientes:
+
+  - Date: Fecha de medición (yyyy-mm-dd).
+  - Open: tasa de apertura.
+  - High: tasa más alta alcanzada en el día.
+  - Low: tasa más baja alcanzada en el día.
+  - Close: tasa de cierre del día.
+  - Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
+  - Volume: "no aplica".
+  
+```{r}
+datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Estad%C3%ADstica%201/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv")
+```
+    
+2. Obtenga el promedio de la variable (columna) **Open**. Interprete.
+3. Utilice el comando **colMeans()** para obtener la media de todas las variables asociadas a la tasa de conversión.
 
 #### Mediana {-}
 
+La palabra mediana es sinónimo de "medio" y la mediana muestral es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande [@Devore, página 26].
 
+La mediana muestral se obtiene ordenando primero las observaciones de la más pequeña a la más grande. Por lo tanto,
+
+- Si la cantidad de datos es impar, entonces, la mediana es igual al número en la posición $\frac{n+1}{2}$.
+- Si la cantidad de datos es par, entonces, la mediana es el promedio entre los números ubicados en las posiciones $\frac{n}{2}$ y $(\frac{n}{2}+1)$.
+
+Para poder calcular la mediana en R, se debe hacer uso del comando **median()**, tal como se muestra a continuación.
+
+```{r}
+# Conjunto de datos (cantidad impar)
+x = c(1,2,3,4,5,6,7,-3,-1,-2,5.4,9.3,0)
+# Mediana del conjunto de datos
+median(x)
+
+# Conjunto de datos (cantidad par)
+x = c(1,2,3,4,5,6,7,-3,-1,-2,5.4,9.3)
+# Mediana del conjunto de datos
+median(x)
+```
+
+En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una recta real), tanto a la derecha como izquierda de la mediana se encuentra la misma cantidad de datos.
+
+
+**Ejercicio:**
+
+1. Utilizando la base de tasas de EUR/USD, determine la media de cada una de las variables  presentes en la base (ignore la la columna de la fecha de medición). Interprete.
+
+
+#### Moda {-}
+
+La moda es la medida más intuitiva de las tres, ya que simplemente corresponde al valor que se presenta con mayor frecuencia [@anderson, página 85]. Para ilustrar esto, veamos el siguiente código en R:
+
+```{r}
+# El siguiente vector contiene la información de la cantidad de hermanos 
+# de un determinado grupo de personas
+hermanos = c(1,2,3,1,2,3,3,3,4,1,7,1,0,0,1,0,2)
+# Utilizando el comando table podemos obtener la frecuencia de cada una 
+# de las distintas observaciones
+table(hermanos)
+# Como resultado se aprecia que la cantidad de hermanos que más se repita dentro 
+# del grupo de personas es de 5
+```
+
+**Ejemplo:**
+
+1. Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base *Tasa+euro+dolar+historica2023.csv* (no impriman la tabla).
+```{r}
+tabla = table(datos$Open)
+```
+2. Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando **which.max()** para encontrar la posición en la que se ubica, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
+```{r}
+(posicion = which.max(tabla))
+```
+3. Finalmente consulte directamente en la tabla en valor en la posición calculada en el paso anterior. Interprete.
+```{r}
+tabla[posicion]
+
+```
+Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es `r names(tabla)[posicion]` con una frecuencia de `r tabla[posicion]`.
+
+*Nota: En caso de que existan dos o más valores con las frecuencias más altas, el programa solo reporta la primera, según el orden lexicográfico de las columnas.*
+
+**Ejercicio:**
+
+1. Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
 
 ### Medidas de escala
 
--   Varianza: $S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}$
--   Desviación Estándar: $\sqrt{S}$
+Al momento de reportar la media solo se obtiene información parcial sobre el un conjunto de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de localización y aún diferir entre sí en otras importantes maneras. La tabla \@ref(tab:variabilidad) muestra las notas obtenidas por los alumnos de 2 dos cursos con la misma media, aunque el grado de **dispersión** (variabilidad) en torno a esta es diferente para ambas muestras, es decir, en el Curso 1 las se observan notas más bajas y altas que el Curso 2.
+
+```{r variabilidad, echo=FALSE}
+library(kableExtra)
+n = c(3,4.5,5,5.5,7,4.0,5,6,rep(NA,2),3,7, rep(NA,3))
+n = format(round(n,1), nsmall = 1)
+n = ifelse(n %in% " NA", "--", n)
+tabla = matrix(n, byrow = F, ncol = 3)
+tabla = structure(.Data = tabla, .Dim = dim(tabla), .Dimnames = list(c(),c("Curso 1", "Curso 2", "Curso 3")))
+#options(knitr.kable.NA = "")
+knitr::kable(tabla, caption = "Notas por curso", align = "c") |>
+  kable_classic()|>
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "condensed"))
+
+```
+
+#### Rango {-}
+
+La medida más simple de variabilidad en una muestra es el **rango**, el cual es la diferencia entre los valores muestrales más grande y más pequeño [@Devore, página 32]. El rango de las notas del curso 1 en la tabla \@ref(tab:variabilidad) es más grande que el del curso 2, lo que refleja más variabilidad en la primer muestra que en la segunda. Un defecto del rango, no obstante, es que depende de solo las dos observaciones más extremas y hace caso omiso de las posiciones de los valores restantes. Los cursos 1 y 3 tienen rangos idénticos, aunque cuando se toman en cuenta las observaciones entre los dos extremos, existe mucho menos variabilidad o dispersión en la tercera muestra que en la primera.
+
+**Ejemplo:**
+
+Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
+
+```{r}
+# Utilizando el comando range() se obtienen los valores mínimo y máximo
+# de la variable en cuestión
+(rango = range(datos$Open))
+# Luego restamos el valor máximo con le mínimo
+rango[2] - rango[1]
+# Nota: El valor máximo siempre estará en la segunda posición y le mínimo en la segunda.
+```
+
+**Ejercicio:**
+
+1. Obtener el rango del resto de variables (ignore la variable fecha)
+
+#### Varianza y desviación estándar {-}
+
+Las medidas principales de variabilidad implican las **desviaciones de la media**,
+
+\begin{equation}
+x_1 - \bar{x}, x_2 - \bar{x}, x_3 - \bar{x}, \ldots, x_n - \bar{x}.
+(\#eq:desviaciones)
+\end{equation}
+
+Es decir, las desviaciones de la media se obtienen restando $\bar{x}$ de cada una de las $n$ observaciones muestrales. Una desviación será positiva si la observación es más grande que la media (a la derecha de la media sobre la recta real) y negativa si la observación es más pequeña que la media (a la izquierda de la media sobre la recta real). Si todas las desviaciones son pequeñas en magnitud, entonces todos los valores de la muestra son cercanos a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes de magnitud, entonces algunos de los de los valores de la muestra están lejos de la media (sobre la recta real) lo que sugiere una mayor variabilidad.
+
+Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es cero \@ref(eq:sumadesviaciones), ¿alguna idea del por qué?
+
+\begin{equation}
+\text{Suma de las desviaciones en una muestra} = \sum_{i=1}^{n}(x_i-\bar{x}) = 0
+(\#eq:sumadesviaciones)
+\end{equation}
+
+En este sentido, para poder resumir las desviaciones de una muestra evitando el problema mencionado, se elaboran dos expresiones [@Devore, página 32]:
+
+- Varianza (muestral): 
+
+\begin{equation}
+S^2= \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
+(\#eq:varianzamuestral)
+\end{equation}
+
+- Desviación estándar (muestral):
+
+\begin{equation}
+S = \sqrt{S^2}
+(\#eq:demuestral)
+\end{equation}
+
+Las unidades correspondientes a la **varianza** suele causar confusión. Como los valores que se suman para calcular la varianza, $(x_i-\bar{x})^2$, están elevados al cuadrado, las unidades correspondientes a la varianza muestral también están elevadas al cuadrado. Las unidades al cuadrado de la varianza dificulta la compresión e interpretación intuitiva de los valores numéricos de la varianzas. Lo recomendable es entender la varianza como una medida útil para comparar la variabilidad de dos o más variables. Al comparar variables, la que tiene la varianza mayor, muestra más variabilidad. Otra interpretación del valor de la varianza suele ser innecesaria [@anderson, página 94].
+
+La **desviación estándar** es la raíz cuadrada de la varianza, pero, ¿qué se gana con esto? Al calcular la desviación estándar, las unidades de esta son iguales a de la variable original, por lo que es más fácil de interpretar. Sin embargo, estas dos medidas tiene ciertas limitantes a la hora de comprar la variabilidad de dos variables:
+
+1. Es ideal que ambas variable tengan la misma media.
+2. Las variables deben tener la misma unidad de medida.
+
+No seguir estas recomendaciones puede generar un falsa sensación en la comunicación de resultados.
+
+**Ejemplo:**
+
+Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD, para ello:
+
+1. Verifique la media de ambas variables la misma
+
+```{r}
+mean(datos$Open) # Promedio de la tasa de apertura
+mean(datos$Close) # Promedio de la tasa de cierre
+
+# Las tasas son similares hasta el tercer decimal, se asumirá que las medias son iguales
+```
+
+2. Ya que tienen la misma unidad de medida, calcule la varianza y desviación estándar de cada una. Interprete.
+
+```{r}
+# Al calcular la varianza, se observa que la tasa de cierre es levemente menor
+# variabilidad que la tasa de apertura.
+c(var(datos$Open), var(datos$Close))
+
+# Al calcular la desviación estándar, se observa que la tasa de cierre tiene menor
+# variabilidad que la tasa de apertura.
+c(sd(datos$Open), sd(datos$Close))
+
+# ¿Por qué es más clara la interpretación (primer decimal distinto) al utilizar
+# la desviación estándar?
+```
+
+**Ejercicio:**
+
+1. Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD.
+
+
+#### Coeficiente de variación {-}
+
+Para subsanar el problema de las limitaciones de la varianza y desviación estándar, se encuentra la medida llamada **coeficiente de variación** \@ref(eq:cv).
+
+\begin{equation}
+CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
+(\#eq:cv)
+\end{equation}
+
+Cuando el valor del coeficiente de variación es cercano a 100% se habla de mayor dispersión (heterogéneo), mientras que un valor cercano a 0% indica menor dispersión (homogéneo), además, se debe considerar que el porcentaje calculado corresponde a la variabilidad respecto a la media de los datos. Sin embargo, no es recomendable usar esta medida cuando el valor de la media es cercano a cero, ya que el CV pierde su significado al tomar valores muy grandes, lo que daría una falsa sensación de dispersión de los datos [@anderson, página 95].
+
+**Ejemplo:**
+
+En el ejercicio anterior, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.
+
+```{r}
+# Claramente la media de la tasa más alta es mayor a la media de la tasa de apertura.
+c(mean(datos$Open), mean(datos$High))
+
+# Al verificarse una de las dos limitantes mencionadas, procedemos
+# a calcular el CV de ambas variables
+CV_Open = sd(datos$Open)/abs(mean(datos$Open))*100
+CV_High = sd(datos$High)/abs(mean(datos$High))*100
+c(CV_Open, CV_High)
+
+# Se puede observar que el coeficiente de variabilidad de la tasa más alta (10.06%)
+# es mayor a la de la tasa de apertura (10.04%). Por lo tanto, 
+# la variabilidad (dispersión) de los datos es más homogénea para la tasa de
+# apertura. Sin embargo, la diferencia es muy pequeña, por lo que la dispersión en 
+# relación a la media es similar entre ambas variables.
+```
+
+
+**Ejercicio:**
+
+1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
+
 
 ## Gráficos descriptivos
 
-La estadística descriptiva se divide en dos temas generales. En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de probabilidad. Para ello, usaremos la base de datos *rock* que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
-
--   area: área del espacio de poros, en píxeles de 256 por 256.
--   peri: perímetro en píxeles.
--   shape: perímetros dividido por la raíz cuadrada del área.
--   perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este [link](https://en.wikipedia.org/wiki/Darcy_(unit))).
+En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva.
 
 ### Histograma 
 
-Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente [@Devore, paǵina 12]:
+Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente [@Devore, página 12]:
 
-1. Subdividir los datos en **intervalos de clase** o **clases**, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges, la cual, consiste en calcular la expresión $1+\log_2(n)$, aproximando hacia el entero más próximo, dónde $n$ corresponde a la cantidad de datos (existen otra variedad de técnicas).
+1. Subdividir los datos en **intervalos de clase** o **clases**, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges [-@sturges1926choice], la cual, consiste en calcular la expresión $1+\log_2(n)$, aproximando hacia el entero más próximo, dónde $n$ corresponde a la cantidad de datos (existen otra variedad de técnicas).
 2. Determinar la frecuencia y la frecuencia relativa de cada clase, es decir, cuántas observaciones hay en cada uno de los intervalos.
 3. Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.
 3. Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
@@ -285,20 +515,33 @@ Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 library(ggplot2)
-datos = rock
-ggplot(data = datos, aes(x = perm)) +
-  geom_histogram(color = "white", fill = "darkred", bins = 7) +
-  labs(title = "Histograma", x = "Permeabilidad (mD)", y = "Frecuencia")
+ggplot(data = datos, # Base de datos a utilizar
+       aes(x = Close)) + # Comando estético para señalar la variable a graficar y en que eje
+  geom_histogram(bins = 13, color = "white", fill = "darkred", closed = "left") +
+  labs(title = "Histograma EUR/USD", x = "Tasa de cierre", y = "Frecuencia")
 ```
+
+Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.
+
+```{r}
+# Datos del histograma guardados
+h = hist(datos$Close, # Datos a graficar en el histograma
+         breaks = 13, # Cantidad de intervalos (Sturges)
+         right = F, # Cerrado por la izquierda
+         plot = F) # No desplegar el gráfico en consola
+library(agricolae) # Librería para generar la tabla de frecuencias
+print(table.freq(h)) # Imprime en consola la tabla de frecuencias
+```
+
 
 ### Caja 
 
 Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-ggplot(data = datos, aes(y = perm)) + 
+ggplot(data = datos, aes(y = Close)) + 
   geom_boxplot(color = "black", fill = "darkred") +
-  labs(title = "Caja", x = "Permeabilidad (mD)", y = "Dispersión/Cuantiles") 
+  labs(title = "Caja EUR/USD", x = "Tasa de cierre", y = "Dispersión/Cuantiles") 
 ```
 
 ### Violín 
@@ -306,9 +549,9 @@ ggplot(data = datos, aes(y = perm)) +
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-g = ggplot(data = datos, aes(x = 1, y = perm)) + 
+g = ggplot(data = datos, aes(x = 1, y = Close)) + 
   geom_violin(trim = F, alpha = 0.5, fill = "aquamarine3") +
-  labs(title = "Violín", x = "", y = "Permeabilidad (mD)") + 
+  labs(title = "Violín EUR/USD", x = "", y = "Tasa de cierre") + 
   theme(axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 g
@@ -327,29 +570,22 @@ g + geom_boxplot(width = 0.1, color = "black",
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-datos$Perm2 = ifelse(datos$perm > 500, "Mayor a 500", "Menor a  500")
-ggplot(data = datos,aes(x = Perm2)) + 
+datos$Close2 = ifelse(datos$Close > 1.1, "Mayor a 1.1", "Menor a  1.1")
+ggplot(data = datos,aes(x = Close2)) + 
   geom_bar(fill = "darkgreen") + 
-  labs(title = "Barras", x = "Permeabilidad (mD)", y = "Frecuencia")
+  labs(title = "Barras EUR/USD", x = "Tasa de cierre", y = "Frecuencia")
 ```
 
 ### Dispersión 
 
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
-```{r fig.align="center", fig.width=6, fig.height=3}
-ggplot(data = datos, aes(x = peri, y = perm)) +
+```{r fig.align="center", fig.width=8, fig.height=4}
+ggplot(data = datos, aes(x = Open, y = Close)) +
   geom_point() +
-  labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
+  labs(title = "Dispersión EUR/USD", x = "Tasa de apertura", y = "Tasa de cierre")
 ```
 
-```{r fig.align="center", fig.width=6, fig.height=3}
-ggplot(data = datos, aes(x = peri, y = perm)) + 
-  geom_point() + 
-  geom_line() +
-  labs(title = "Dispersión", x = "Perímetro (px)", y = "Permeabilidad (mD)")
-```
-
-## Ejercicios
+## Talleres de práctica
 
 Desarrollar el [Taller 1](https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing).

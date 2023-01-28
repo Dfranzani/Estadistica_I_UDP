@@ -103,6 +103,20 @@
 \usepackage{booktabs}
 \usepackage[spanish]{babel}
 \renewcommand{\chaptername}{Unidad}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -119,7 +133,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{Coordinación de Estadística - UFME}
-\date{}
+\date{01 de marzo del 2023}
 
 \begin{document}
 \maketitle
@@ -137,8 +151,8 @@ La asignatura Estadística I \& Estadística Descriptiva, es el primer curso est
 Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso de herramientas modernas de programación, situando al estudiante en un rol de analista dentro de una unidad organizacional.
 
 \hypertarget{modalidad-de-trabajo}{%
-\chapter*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
-\addcontentsline{toc}{chapter}{Modalidad de trabajo}
+\section*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
+\addcontentsline{toc}{section}{Modalidad de trabajo}
 
 \hypertarget{tuxf3picos-buxe1sicos-de-estaduxedstica}{%
 \chapter{Tópicos básicos de estadística}\label{tuxf3picos-buxe1sicos-de-estaduxedstica}}
@@ -153,7 +167,7 @@ En esta sección repasaremos algunos conceptos claves de la estadística que est
 
 El dato es la unidad básica de la estadística. Esta unidad es cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
 
-Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué nos detenemos al caminar al encontrarno con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
+Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué al caminar nos detenemos al encontrarnos con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 
 \hypertarget{informaciuxf3n}{%
 \subsection{Información}\label{informaciuxf3n}}
@@ -171,7 +185,7 @@ En el ejemplo anterior, el decodificador es la persona que va caminando, y el si
 \hypertarget{tipos-de-variables}{%
 \subsection{Tipos de variables}\label{tipos-de-variables}}
 
-El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato'', ``los tipos de valores que adquiere el dato''), las cuales, se pueden clasificar la siguiente manera \citep[página 7]{anderson_estadistica_2008}:
+El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato'', ``los tipos de valores que adquiere el dato''), las cuales, se pueden clasificar la siguiente manera \citep[página 7]{anderson}:
 
 \begin{itemize}
 \tightlist
@@ -181,14 +195,21 @@ El concepto de datos está fuertemente ligado a su naturaleza, es decir, el cont
   \textbf{Cuantitativas} (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
 \end{itemize}
 
-\textbf{Ejemplo}: Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+\textbf{Ejercicio}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+\end{enumerate}
 
 \hypertarget{poblaciuxf3n-y-muestra}{%
 \subsection{Población y Muestra}\label{poblaciuxf3n-y-muestra}}
 
 Los ingenieros y científicos constantemente están expuestos a la recolección de hecho o datos, tanto en sus actividades profesionales como en sus actividades diarias. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información contenida en datos.
 
-Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una \textbf{población} de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un \textbf{censo}. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una \textbf{muestra}, de manera prescrita \citep[paǵina 2]{Devore}.
+Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una \textbf{población} de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un \textbf{censo}. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una \textbf{muestra}, de manera prescrita \citep[página 2]{Devore}.
 
 \begin{itemize}
 \tightlist
@@ -198,7 +219,14 @@ Una investigación típicamente se enfocará en una colección bien definida de 
   \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
 \end{itemize}
 
-A continuación, determine la población y muestra de los siguientes enunciados:
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Determine la población y muestra de los siguientes enunciados:
+\end{enumerate}
 
 \begin{itemize}
 \tightlist
@@ -211,7 +239,7 @@ A continuación, determine la población y muestra de los siguientes enunciados:
 \hypertarget{paruxe1metros-y-estaduxedsticos}{%
 \subsection{Parámetros y Estadísticos}\label{paruxe1metros-y-estaduxedsticos}}
 
-Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera \citep[página 83]{anderson_estadistica_2008}:
+Ambos conceptos están fuertemente ligados a los de población y muestra de la siguiente manera \citep[página 83]{anderson}:
 
 \begin{itemize}
 \tightlist
@@ -321,7 +349,7 @@ Por otro lado, la representatividad no es un concepto válido matemáticamente (
 \hypertarget{medidas-de-localizaciuxf3n}{%
 \subsection{Medidas de localización}\label{medidas-de-localizaciuxf3n}}
 
-Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares, Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos.
+Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares. Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos. Las tres medidas de resumen más utilizadas son la media, la medianda y la moda.
 
 \hypertarget{media}{%
 \subsubsection*{Media}\label{media}}
@@ -331,9 +359,10 @@ Para un conjunto dado de números \(x_1, x_2, x_3, \ldots, x_n\), la medida más
 
 De lo anterior, la media muestral (\(\bar{x}\)) de una conjunto de datos \(x_1, x_2, x_3, \ldots, x_n\) está dada por \citep[página 25]{Devore}
 
-\[
+\begin{equation}
 \bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}
-\]
+\label{eq:promedio}
+\end{equation}
 
 En R, para obtener el promedio aritmético de los datos se hace uso de la función \textbf{mean()}. A continuación, un ejemplo.
 
@@ -352,54 +381,492 @@ En R, para obtener el promedio aritmético de los datos se hace uso de la funci�
 
 El promedio (\(\bar{x}\)) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos (\href{https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021\#:~:text=El\%20ingreso\%20laboral\%20promedio\%20mensual\%20en\%20Chile\%20fue\%20de\%20\%24681.039\%20en\%202021,-21\%2F07\%2F2022\&text=El\%2050\%25\%20de\%20las\%20personas,ingreso\%20de\%20hasta\%20\%24457.690\%20mensuales.}{el caso de Chile}), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, \href{https://www.google.com/finance/quote/BTC-USD?sa=X\&ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe\&window=MAX}{es la valorización de BitCoin al dólar estadounidense}).
 
-A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: tipo de cambio del dólar).
+A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: \href{https://www.google.com/finance/quote/EUR-CLP?window=MAX\&comparison=USD-CLP}{tipo de cambio del dólar y el euro}).
 
-\hypertarget{moda}{%
-\subsubsection*{Moda}\label{moda}}
-\addcontentsline{toc}{subsubsection}{Moda}
-
-\hypertarget{mediana}{%
-\subsubsection*{Mediana}\label{mediana}}
-\addcontentsline{toc}{subsubsection}{Mediana}
-
-\hypertarget{medidas-de-escala}{%
-\subsection{Medidas de escala}\label{medidas-de-escala}}
-
-\begin{itemize}
-\tightlist
-\item
-  Varianza: \(S^2 = \displaystyle{\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2}\)
-\item
-  Desviación Estándar: \(\sqrt{S}\)
-\end{itemize}
-
-\hypertarget{gruxe1ficos-descriptivos}{%
-\section{Gráficos descriptivos}\label{gruxe1ficos-descriptivos}}
-
-La estadística descriptiva se divide en dos temas generales. En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de probabilidad. Para ello, usaremos la base de datos \emph{rock} que viene incluida en R, la cual, contiene mediciones de 48 muestras de roca de un yacimiento de petróleo. Los las columnas de esta base son:
-
-\begin{itemize}
-\tightlist
-\item
-  area: área del espacio de poros, en píxeles de 256 por 256.
-\item
-  peri: perímetro en píxeles.
-\item
-  shape: perímetros dividido por la raíz cuadrada del área.
-\item
-  perm: permeabilidad en mili-Darcies (unidad que se utiliza para cuantificar la capacidad de permeabilidad de un fluido a través de una roca; más información en este \href{https://en.wikipedia.org/wiki/Darcy_(unit)}{link}).
-\end{itemize}
-
-\hypertarget{histograma}{%
-\subsection{Histograma}\label{histograma}}
-
-Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente \citep[paǵina 12]{Devore}:
+\textbf{Ejercicio:}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Subdividir los datos en \textbf{intervalos de clase} o \textbf{clases}, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges, la cual, consiste en calcular la expresión \(1+\log_2(n)\), aproximando hacia el entero más próximo, dónde \(n\) corresponde a la cantidad de datos (existen otra variedad de técnicas).
+  Cargue la \href{https://es.finance.yahoo.com/quote/EURUSD\%3DX?p=EURUSD\%3DX}{base de datos} \emph{Tasa+euro+dolar+historica2023.csv} (se estará usando esta base para el resto de la unidad), la cual, contiene el registro diario histórico de la tasa de cambio del Euro a Dólar. Las columnas en la base de datos son las siguientes:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Date: Fecha de medición (yyyy-mm-dd).
+\item
+  Open: tasa de apertura.
+\item
+  High: tasa más alta alcanzada en el día.
+\item
+  Low: tasa más baja alcanzada en el día.
+\item
+  Close: tasa de cierre del día.
+\item
+  Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
+\item
+  Volume: ``no aplica''.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/Dfranzani/Bases{-}de{-}datos{-}para{-}cursos/main/2023{-}1/Estad\%C3\%ADstica\%201/Tasa\%2Beuro\%2Bdolar\%2Bhistorica2023.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Obtenga el promedio de la variable (columna) \textbf{Open}. Interprete.
+\item
+  Utilice el comando \textbf{colMeans()} para obtener la media de todas las variables asociadas a la tasa de conversión.
+\end{enumerate}
+
+\hypertarget{mediana}{%
+\subsubsection*{Mediana}\label{mediana}}
+\addcontentsline{toc}{subsubsection}{Mediana}
+
+La palabra mediana es sinónimo de ``medio'' y la mediana muestral es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande \citep[página 26]{Devore}.
+
+La mediana muestral se obtiene ordenando primero las observaciones de la más pequeña a la más grande. Por lo tanto,
+
+\begin{itemize}
+\tightlist
+\item
+  Si la cantidad de datos es impar, entonces, la mediana es igual al número en la posición \(\frac{n+1}{2}\).
+\item
+  Si la cantidad de datos es par, entonces, la mediana es el promedio entre los números ubicados en las posiciones \(\frac{n}{2}\) y \((\frac{n}{2}+1)\).
+\end{itemize}
+
+Para poder calcular la mediana en R, se debe hacer uso del comando \textbf{median()}, tal como se muestra a continuación.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Conjunto de datos (cantidad impar)}
+\NormalTok{x }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\FloatTok{5.4}\NormalTok{,}\FloatTok{9.3}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\CommentTok{\# Mediana del conjunto de datos}
+\FunctionTok{median}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Conjunto de datos (cantidad par)}
+\NormalTok{x }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\FloatTok{5.4}\NormalTok{,}\FloatTok{9.3}\NormalTok{)}
+\CommentTok{\# Mediana del conjunto de datos}
+\FunctionTok{median}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.5
+\end{verbatim}
+
+En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una recta real), tanto a la derecha como izquierda de la mediana se encuentra la misma cantidad de datos.
+
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Utilizando la base de tasas de EUR/USD, determine la media de cada una de las variables presentes en la base (ignore la la columna de la fecha de medición). Interprete.
+\end{enumerate}
+
+\hypertarget{moda}{%
+\subsubsection*{Moda}\label{moda}}
+\addcontentsline{toc}{subsubsection}{Moda}
+
+La moda es la medida más intuitiva de las tres, ya que simplemente corresponde al valor que se presenta con mayor frecuencia \citep[página 85]{anderson}. Para ilustrar esto, veamos el siguiente código en R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# El siguiente vector contiene la información de la cantidad de hermanos }
+\CommentTok{\# de un determinado grupo de personas}
+\NormalTok{hermanos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\CommentTok{\# Utilizando el comando table podemos obtener la frecuencia de cada una }
+\CommentTok{\# de las distintas observaciones}
+\FunctionTok{table}\NormalTok{(hermanos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## hermanos
+## 0 1 2 3 4 7 
+## 3 5 3 4 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Como resultado se aprecia que la cantidad de hermanos que más se repita dentro }
+\CommentTok{\# del grupo de personas es de 5}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Ejemplo:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base \emph{Tasa+euro+dolar+historica2023.csv} (no impriman la tabla).
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tabla }\OtherTok{=} \FunctionTok{table}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando \textbf{which.max()} para encontrar la posición en la que se ubica, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{posicion =} \FunctionTok{which.max}\NormalTok{(tabla))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1.336005 
+##     3067
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Finalmente consulte directamente en la tabla en valor en la posición calculada en el paso anterior. Interprete.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tabla[posicion]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1.336005 
+##        6
+\end{verbatim}
+
+Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es 1.336005 con una frecuencia de 6.
+
+\emph{Nota: En caso de que existan dos o más valores con las frecuencias más altas, el programa solo reporta la primera, según el orden lexicográfico de las columnas.}
+
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
+\end{enumerate}
+
+\hypertarget{medidas-de-escala}{%
+\subsection{Medidas de escala}\label{medidas-de-escala}}
+
+Al momento de reportar la media solo se obtiene información parcial sobre el un conjunto de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de localización y aún diferir entre sí en otras importantes maneras. La tabla \ref{tab:variabilidad} muestra las notas obtenidas por los alumnos de 2 dos cursos con la misma media, aunque el grado de \textbf{dispersión} (variabilidad) en torno a esta es diferente para ambas muestras, es decir, en el Curso 1 las se observan notas más bajas y altas que el Curso 2.
+
+\begin{table}
+
+\caption{\label{tab:variabilidad}Notas por curso}
+\centering
+\begin{tabular}[t]{ccc}
+\toprule
+Curso 1 & Curso 2 & Curso 3\\
+\midrule
+3.0 & 4.0 & 3.0\\
+4.5 & 5.0 & 7.0\\
+5.0 & 6.0 & --\\
+5.5 & -- & --\\
+7.0 & -- & --\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{rango}{%
+\subsubsection*{Rango}\label{rango}}
+\addcontentsline{toc}{subsubsection}{Rango}
+
+La medida más simple de variabilidad en una muestra es el \textbf{rango}, el cual es la diferencia entre los valores muestrales más grande y más pequeño \citep[página 32]{Devore}. El rango de las notas del curso 1 en la tabla \ref{tab:variabilidad} es más grande que el del curso 2, lo que refleja más variabilidad en la primer muestra que en la segunda. Un defecto del rango, no obstante, es que depende de solo las dos observaciones más extremas y hace caso omiso de las posiciones de los valores restantes. Los cursos 1 y 3 tienen rangos idénticos, aunque cuando se toman en cuenta las observaciones entre los dos extremos, existe mucho menos variabilidad o dispersión en la tercera muestra que en la primera.
+
+\textbf{Ejemplo:}
+
+Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Utilizando el comando range() se obtienen los valores mínimo y máximo}
+\CommentTok{\# de la variable en cuestión}
+\NormalTok{(}\AttributeTok{rango =} \FunctionTok{range}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.959619 1.598184
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Luego restamos el valor máximo con le mínimo}
+\NormalTok{rango[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ rango[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.638565
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Nota: El valor máximo siempre estará en la segunda posición y le mínimo en la segunda.}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Obtener el rango del resto de variables (ignore la variable fecha)
+\end{enumerate}
+
+\hypertarget{varianza-y-desviaciuxf3n-estuxe1ndar}{%
+\subsubsection*{Varianza y desviación estándar}\label{varianza-y-desviaciuxf3n-estuxe1ndar}}
+\addcontentsline{toc}{subsubsection}{Varianza y desviación estándar}
+
+Las medidas principales de variabilidad implican las \textbf{desviaciones de la media},
+
+\begin{equation}
+x_1 - \bar{x}, x_2 - \bar{x}, x_3 - \bar{x}, \ldots, x_n - \bar{x}.
+\label{eq:desviaciones}
+\end{equation}
+
+Es decir, las desviaciones de la media se obtienen restando \(\bar{x}\) de cada una de las \(n\) observaciones muestrales. Una desviación será positiva si la observación es más grande que la media (a la derecha de la media sobre la recta real) y negativa si la observación es más pequeña que la media (a la izquierda de la media sobre la recta real). Si todas las desviaciones son pequeñas en magnitud, entonces todos los valores de la muestra son cercanos a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes de magnitud, entonces algunos de los de los valores de la muestra están lejos de la media (sobre la recta real) lo que sugiere una mayor variabilidad.
+
+Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es cero \eqref{eq:sumadesviaciones}, ¿alguna idea del por qué?
+
+\begin{equation}
+\text{Suma de las desviaciones en una muestra} = \sum_{i=1}^{n}(x_i-\bar{x}) = 0
+\label{eq:sumadesviaciones}
+\end{equation}
+
+En este sentido, para poder resumir las desviaciones de una muestra evitando el problema mencionado, se elaboran dos expresiones \citep[página 32]{Devore}:
+
+\begin{itemize}
+\tightlist
+\item
+  Varianza (muestral):
+\end{itemize}
+
+\begin{equation}
+S^2= \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
+\label{eq:varianzamuestral}
+\end{equation}
+
+\begin{itemize}
+\tightlist
+\item
+  Desviación estándar (muestral):
+\end{itemize}
+
+\begin{equation}
+S = \sqrt{S^2}
+\label{eq:demuestral}
+\end{equation}
+
+Las unidades correspondientes a la \textbf{varianza} suele causar confusión. Como los valores que se suman para calcular la varianza, \((x_i-\bar{x})^2\), están elevados al cuadrado, las unidades correspondientes a la varianza muestral también están elevadas al cuadrado. Las unidades al cuadrado de la varianza dificulta la compresión e interpretación intuitiva de los valores numéricos de la varianzas. Lo recomendable es entender la varianza como una medida útil para comparar la variabilidad de dos o más variables. Al comparar variables, la que tiene la varianza mayor, muestra más variabilidad. Otra interpretación del valor de la varianza suele ser innecesaria \citep[página 94]{anderson}.
+
+La \textbf{desviación estándar} es la raíz cuadrada de la varianza, pero, ¿qué se gana con esto? Al calcular la desviación estándar, las unidades de esta son iguales a de la variable original, por lo que es más fácil de interpretar. Sin embargo, estas dos medidas tiene ciertas limitantes a la hora de comprar la variabilidad de dos variables:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Es ideal que ambas variable tengan la misma media.
+\item
+  Las variables deben tener la misma unidad de medida.
+\end{enumerate}
+
+No seguir estas recomendaciones puede generar un falsa sensación en la comunicación de resultados.
+
+\textbf{Ejemplo:}
+
+Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD, para ello:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Verifique la media de ambas variables la misma
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open) }\CommentTok{\# Promedio de la tasa de apertura}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.244338
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close) }\CommentTok{\# Promedio de la tasa de cierre}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.244363
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Las tasas son similares hasta el tercer decimal, se asumirá que las medias son iguales}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Ya que tienen la misma unidad de medida, calcule la varianza y desviación estándar de cada una. Interprete.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Al calcular la varianza, se observa que la tasa de cierre es levemente menor}
+\CommentTok{\# variabilidad que la tasa de apertura.}
+\FunctionTok{c}\NormalTok{(}\FunctionTok{var}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open), }\FunctionTok{var}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01562596 0.01562404
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Al calcular la desviación estándar, se observa que la tasa de cierre tiene menor}
+\CommentTok{\# variabilidad que la tasa de apertura.}
+\FunctionTok{c}\NormalTok{(}\FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open), }\FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1250038 0.1249962
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ¿Por qué es más clara la interpretación (primer decimal distinto) al utilizar}
+\CommentTok{\# la desviación estándar?}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD.
+\end{enumerate}
+
+\hypertarget{coeficiente-de-variaciuxf3n}{%
+\subsubsection*{Coeficiente de variación}\label{coeficiente-de-variaciuxf3n}}
+\addcontentsline{toc}{subsubsection}{Coeficiente de variación}
+
+Para subsanar el problema de las limitaciones de la varianza y desviación estándar, se encuentra la medida llamada \textbf{coeficiente de variación} \eqref{eq:cv}.
+
+\begin{equation}
+CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
+\label{eq:cv}
+\end{equation}
+
+Cuando el valor del coeficiente de variación es cercano a 100\% se habla de mayor dispersión (heterogéneo), mientras que un valor cercano a 0\% indica menor dispersión (homogéneo), además, se debe considerar que el porcentaje calculado corresponde a la variabilidad respecto a la media de los datos. Sin embargo, no es recomendable usar esta medida cuando el valor de la media es cercano a cero, ya que el CV pierde su significado al tomar valores muy grandes, lo que daría una falsa sensación de dispersión de los datos \citep[página 95]{anderson}.
+
+\textbf{Ejemplo:}
+
+En el ejercicio anterior, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Claramente la media de la tasa más alta es mayor a la media de la tasa de apertura.}
+\FunctionTok{c}\NormalTok{(}\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open), }\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{High))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.244338 1.249022
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Al verificarse una de las dos limitantes mencionadas, procedemos}
+\CommentTok{\# a calcular el CV de ambas variables}
+\NormalTok{CV\_Open }\OtherTok{=} \FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open)}\SpecialCharTok{/}\FunctionTok{abs}\NormalTok{(}\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open))}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{CV\_High }\OtherTok{=} \FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{High)}\SpecialCharTok{/}\FunctionTok{abs}\NormalTok{(}\FunctionTok{mean}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{High))}\SpecialCharTok{*}\DecValTok{100}
+\FunctionTok{c}\NormalTok{(CV\_Open, CV\_High)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10.04581 10.06323
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Se puede observar que el coeficiente de variabilidad de la tasa más alta (10.06\%)}
+\CommentTok{\# es mayor a la de la tasa de apertura (10.04\%). Por lo tanto, }
+\CommentTok{\# la variabilidad (dispersión) de los datos es más homogénea para la tasa de}
+\CommentTok{\# apertura. Sin embargo, la diferencia es muy pequeña, por lo que la dispersión en }
+\CommentTok{\# relación a la media es similar entre ambas variables.}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
+\end{enumerate}
+
+\hypertarget{gruxe1ficos-descriptivos}{%
+\section{Gráficos descriptivos}\label{gruxe1ficos-descriptivos}}
+
+En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva.
+
+\hypertarget{histograma}{%
+\subsection{Histograma}\label{histograma}}
+
+Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente \citep[página 12]{Devore}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Subdividir los datos en \textbf{intervalos de clase} o \textbf{clases}, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges \citeyearpar{sturges1926choice}, la cual, consiste en calcular la expresión \(1+\log_2(n)\), aproximando hacia el entero más próximo, dónde \(n\) corresponde a la cantidad de datos (existen otra variedad de técnicas).
 \item
   Determinar la frecuencia y la frecuencia relativa de cada clase, es decir, cuántas observaciones hay en cada uno de los intervalos.
 \item
@@ -413,14 +880,45 @@ Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggplot2)}
-\NormalTok{datos }\OtherTok{=}\NormalTok{ rock}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perm)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\AttributeTok{bins =} \DecValTok{7}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Permeabilidad (mD)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético para señalar la variable a graficar y en que eje}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{13}\NormalTok{, }\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\AttributeTok{closed =} \StringTok{"left"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-12-1} \end{center}
+
+Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Datos del histograma guardados}
+\NormalTok{h }\OtherTok{=} \FunctionTok{hist}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close, }\CommentTok{\# Datos a graficar en el histograma}
+         \AttributeTok{breaks =} \DecValTok{13}\NormalTok{, }\CommentTok{\# Cantidad de intervalos (Sturges)}
+         \AttributeTok{right =}\NormalTok{ F, }\CommentTok{\# Cerrado por la izquierda}
+         \AttributeTok{plot =}\NormalTok{ F) }\CommentTok{\# No desplegar el gráfico en consola}
+\FunctionTok{library}\NormalTok{(agricolae) }\CommentTok{\# Librería para generar la tabla de frecuencias}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{table.freq}\NormalTok{(h)) }\CommentTok{\# Imprime en consola la tabla de frecuencias}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Lower Upper  Main Frequency Percentage   CF   CPF
+## 1   0.95  1.00 0.975        46        0.9   46   0.9
+## 2   1.00  1.05 1.025        89        1.8  135   2.7
+## 3   1.05  1.10 1.075       444        8.9  579  11.7
+## 4   1.10  1.15 1.125       839       16.9 1418  28.6
+## 5   1.15  1.20 1.175       591       11.9 2009  40.5
+## 6   1.20  1.25 1.225       634       12.8 2643  53.2
+## 7   1.25  1.30 1.275       614       12.4 3257  65.6
+## 8   1.30  1.35 1.325       654       13.2 3911  78.8
+## 9   1.35  1.40 1.375       510       10.3 4421  89.0
+## 10  1.40  1.45 1.425       257        5.2 4678  94.2
+## 11  1.45  1.50 1.475       166        3.3 4844  97.5
+## 12  1.50  1.55 1.525        38        0.8 4882  98.3
+## 13  1.55  1.60 1.575        84        1.7 4966 100.0
+\end{verbatim}
 
 \hypertarget{caja}{%
 \subsection{Caja}\label{caja}}
@@ -429,13 +927,13 @@ Este gráfico se utiliza para evidenciar las medidas de posición conocidas como
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ perm)) }\SpecialCharTok{+} 
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} 
   \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Permeabilidad (mD)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Dispersión/Cuantiles"}\NormalTok{) }
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Dispersión/Cuantiles"}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
 \hypertarget{violuxedn}{%
 \subsection{Violín}\label{violuxedn}}
@@ -444,16 +942,16 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ perm)) }\SpecialCharTok{+} 
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} 
   \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{trim =}\NormalTok{ F, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín"}\NormalTok{, }\AttributeTok{x =} \StringTok{""}\NormalTok{, }\AttributeTok{y =} \StringTok{"Permeabilidad (mD)"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{""}\NormalTok{, }\AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} 
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(),}
         \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{())}
 \NormalTok{g}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -464,7 +962,7 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 \hypertarget{barras}{%
 \subsection{Barras}\label{barras}}
@@ -473,14 +971,14 @@ Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Perm2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{perm }\SpecialCharTok{\textgreater{}} \DecValTok{500}\NormalTok{, }\StringTok{"Mayor a 500"}\NormalTok{, }\StringTok{"Menor a  500"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Perm2)) }\SpecialCharTok{+} 
+\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Close2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close }\SpecialCharTok{\textgreater{}} \FloatTok{1.1}\NormalTok{, }\StringTok{"Mayor a 1.1"}\NormalTok{, }\StringTok{"Menor a  1.1"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} 
   \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Barras"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Permeabilidad (mD)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \hypertarget{dispersiuxf3n}{%
 \subsection{Dispersión}\label{dispersiuxf3n}}
@@ -489,27 +987,16 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ peri, }\AttributeTok{y =}\NormalTok{ perm)) }\SpecialCharTok{+}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Open, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Perímetro (px)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Permeabilidad (mD)"}\NormalTok{)}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de apertura"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ peri, }\AttributeTok{y =}\NormalTok{ perm)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Perímetro (px)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Permeabilidad (mD)"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-8-1} \end{center}
-
-\hypertarget{ejercicios}{%
-\section{Ejercicios}\label{ejercicios}}
+\hypertarget{talleres-de-pruxe1ctica}{%
+\section{Talleres de práctica}\label{talleres-de-pruxe1ctica}}
 
 Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing}{Taller 1}.
 

@@ -24,7 +24,7 @@ bookdown::gitbook:
       all: no
     info: true
 bookdown::pdf_book:
-  pandoc_args: ["--csl", "apa6.csl"]
+#  pandoc_args: ["--csl", "apa6.csl"]
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
