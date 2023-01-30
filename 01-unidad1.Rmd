@@ -273,7 +273,7 @@ A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran 
 datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Estad%C3%ADstica%201/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv")
 ```
     
-2. Obtenga el promedio de la variable (columna) **Open**. Interprete.
+2. Obtenga la media de la variable (columna) **Open**. Interprete.
 3. Utilice el comando **colMeans()** para obtener la media de todas las variables asociadas a la tasa de conversión.
 
 #### Mediana {-}
@@ -335,7 +335,6 @@ tabla = table(datos$Open)
 3. Finalmente consulte directamente en la tabla en valor en la posición calculada en el paso anterior. Interprete.
 ```{r}
 tabla[posicion]
-
 ```
 Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es `r names(tabla)[posicion]` con una frecuencia de `r tabla[posicion]`.
 
@@ -344,6 +343,8 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
 **Ejercicio:**
 
 1. Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
+
+**Nota**: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
 
 ### Medidas de escala
 
@@ -381,7 +382,7 @@ rango[2] - rango[1]
 
 **Ejercicio:**
 
-1. Obtener el rango del resto de variables (ignore la variable fecha)
+1. Obtener el rango del resto de variables de la base de datos (ignore la variable fecha).
 
 #### Varianza y desviación estándar {-}
 
@@ -394,7 +395,7 @@ x_1 - \bar{x}, x_2 - \bar{x}, x_3 - \bar{x}, \ldots, x_n - \bar{x}.
 
 Es decir, las desviaciones de la media se obtienen restando $\bar{x}$ de cada una de las $n$ observaciones muestrales. Una desviación será positiva si la observación es más grande que la media (a la derecha de la media sobre la recta real) y negativa si la observación es más pequeña que la media (a la izquierda de la media sobre la recta real). Si todas las desviaciones son pequeñas en magnitud, entonces todos los valores de la muestra son cercanos a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes de magnitud, entonces algunos de los de los valores de la muestra están lejos de la media (sobre la recta real) lo que sugiere una mayor variabilidad.
 
-Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es cero \@ref(eq:sumadesviaciones), ¿alguna idea del por qué?
+Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es igual a cero \@ref(eq:sumadesviaciones), ¿alguna idea del por qué?
 
 \begin{equation}
 \text{Suma de las desviaciones en una muestra} = \sum_{i=1}^{n}(x_i-\bar{x}) = 0
@@ -442,11 +443,11 @@ mean(datos$Close) # Promedio de la tasa de cierre
 2. Ya que tienen la misma unidad de medida, calcule la varianza y desviación estándar de cada una. Interprete.
 
 ```{r}
-# Al calcular la varianza, se observa que la tasa de cierre es levemente menor
+# Al calcular la varianza muestral, se observa que la tasa de cierre es levemente menor
 # variabilidad que la tasa de apertura.
 c(var(datos$Open), var(datos$Close))
 
-# Al calcular la desviación estándar, se observa que la tasa de cierre tiene menor
+# Al calcular la desviación estándar muestral, se observa que la tasa de cierre tiene menor
 # variabilidad que la tasa de apertura.
 c(sd(datos$Open), sd(datos$Close))
 
@@ -496,6 +497,17 @@ c(CV_Open, CV_High)
 
 1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
 
+**Nota**: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
+
+#### Notación poblacional y muestral {-}
+
+```{r notacion, echo=FALSE}
+tabla = matrix(c("$$\\mu$$","$$\\sigma^2$$","$$\\sigma$$","$$\\bar{x}$$","$$S^2$$","$$S$$"), byrow = FALSE, ncol = 2)
+rownames(tabla) = c('Media','Varianza','Desviación estándar')
+kable(tabla, escape = FALSE, booktabs = TRUE, caption = 'Notación de parámetros y estadísticos',
+      col.names = c('Poblacional', 'Muestral'), align = 'c') |>
+  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"))
+```
 
 ## Gráficos descriptivos
 
