@@ -344,7 +344,7 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
 
 1. Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
 
-**Nota**: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
+**Nota**: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
 
 ### Medidas de escala
 
@@ -497,7 +497,7 @@ c(CV_Open, CV_High)
 
 1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
 
-**Nota**: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
+**Nota**: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
 
 #### Notación poblacional y muestral {-}
 
@@ -527,9 +527,14 @@ Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el
 ```{r fig.align="center", fig.width=4, fig.height=3}
 library(ggplot2)
 ggplot(data = datos, # Base de datos a utilizar
-       aes(x = Close)) + # Comando estético para señalar la variable a graficar y en que eje
-  geom_histogram(bins = 13, color = "white", fill = "darkred", closed = "left") +
-  labs(title = "Histograma EUR/USD", x = "Tasa de cierre", y = "Frecuencia")
+       aes(x = Close)) + # Comando estético: eje y variable
+  geom_histogram(bins = 13, # Cantidad de intervalos del histograma
+                 color = "white", # Color del borde de las barras del histograma
+                 fill = "darkred", # Color de relleno de las barras
+                 closed = "left") + # Tipo de intervalo del histograma
+  labs(title = "Histograma EUR/USD", # Título del gráfico
+       x = "Tasa de cierre", # Título del eje X
+       y = "Frecuencia") # Título del eje Y
 ```
 
 Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.
@@ -545,14 +550,36 @@ print(table.freq(h)) # Imprime en consola la tabla de frecuencias
 ```
 
 
+**Ejercicio:**
+
+1. Elaborar un histograma y obtener la tabla de frecuencias asociada, utilizando la variable **Low**.
+
 ### Caja 
 
-Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
+El gráfico de caja se utiliza para describir las siguiente características de un conjunto de datos [@Devore, página 35]:
+
+- El centro.
+- La dispersión.
+- El grado y naturaleza de cualquier alejamiento de la simetría.
+- La identificación de las observaciones "extremas" (atípicas) inusualmente alejadas del cuerpo principal de los datos.
+
+Los pasos para elaborar un gráfico de caja son los siguiente [@anderson, página 106]:
+
+1. Se dibuja una caja cuyos extremos se localicen en primer y tercer cuartiles. Esta caja contiene 50% de los datos centrales.
+2. En el punto donde se localiza la mediana se traza una linea horizontal.
+3. Usando el rango intercuartílico ($RIC = Q_3-Q_1$), se localizan los límites. En un gráfio de cajua los límites se encuentra a $1.5RIC$ abajo y arriba de $Q_1$ y $Q_3$ respectivamente. Los datos que quedan fuera de estos límites se consideran observaciones atípicas.
+4. Las lineas que se extieden verticalmente desde la caja se les llama *bigotes*. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculadso en el paso 3.
+5. Mediante puntos se indica la localización de las observaciones atípicas.
+
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-ggplot(data = datos, aes(y = Close)) + 
-  geom_boxplot(color = "black", fill = "darkred") +
-  labs(title = "Caja EUR/USD", x = "Tasa de cierre", y = "Dispersión/Cuantiles") 
+ggplot(data = datos, # Base de datos a utilizar
+       aes(y = Close)) + # Comando estético: eje y variable
+  geom_boxplot(color = "black", # Color del borde del gráfico
+               fill = "darkred") + # Color de relleno del gráfico
+  labs(title = "Caja EUR/USD", # Título del gráfico
+       x = "Tasa de cierre", # Título del eje X
+       y = "Dispersión/Cuantiles") # Título del eje Y
 ```
 
 ### Violín 
@@ -560,20 +587,29 @@ ggplot(data = datos, aes(y = Close)) +
 Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-g = ggplot(data = datos, aes(x = 1, y = Close)) + 
-  geom_violin(trim = F, alpha = 0.5, fill = "aquamarine3") +
-  labs(title = "Violín EUR/USD", x = "", y = "Tasa de cierre") + 
-  theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
-g
+# Se guarda el gráfico en una variable para posteriormente
+# integrar otros gráficos dentro de este.
+g = ggplot(data = datos, # Base de datos a utilizar
+           aes(x = 1, y = Close)) + # Comando estético: variables a graficar 
+  geom_violin(trim = F, # Modifica las terminaciones visuales superior e inferior
+              fill = "aquamarine3") + # Color de relleno del gráfico
+  labs(title = "Violín EUR/USD", # Título del gráfico
+       x = "", # Título del eje X
+       y = "Tasa de cierre") + # Título del eje Y
+  theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+        axis.text.x = element_blank()) # Elimina los números del eje X
+g # Desplegamos el gráfico en el visualizador
 ```
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-
-g + geom_boxplot(width = 0.1, color = "black",
-                 alpha = 0.3, fill = "darkblue")  +
-  stat_summary(fun = mean, geom = "point",
-               size = 1, color = "red")
+# Agregamos otros elementos al gráfico guardado
+g + geom_boxplot(width = 0.1, # Anchura del nuevo gráfico de caja
+                 color = "black", # Color de borde del gráfico
+                 fill = "lightblue2") + # Color de relleno del gráfico
+  stat_summary(fun = mean, # Función que indica el tipo de información (mean = media)
+               geom = "point", # Forma visual
+               size = 1, # Tamaño
+               color = "red") # Color
 ```
 
 ### Barras 
@@ -581,10 +617,16 @@ g + geom_boxplot(width = 0.1, color = "black",
 Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-datos$Close2 = ifelse(datos$Close > 1.1, "Mayor a 1.1", "Menor a  1.1")
-ggplot(data = datos,aes(x = Close2)) + 
-  geom_bar(fill = "darkgreen") + 
-  labs(title = "Barras EUR/USD", x = "Tasa de cierre", y = "Frecuencia")
+# Nueva variable para dicotomizar la tasa de cierre del EUR/USD
+datos$Close2 = ifelse(datos$Close > 1.1, # Criterio
+                      "Mayor a 1.1", # Valor asignado si se cumple el criterio
+                      "Menor a  1.1") # Valor asignado si no se cumple el criterio
+ggplot(data = datos, # Base de datos a utilizar
+       aes(x = Close2)) + # Comando estético: eje y variable
+  geom_bar(fill = "darkgreen") + # Color de relleno
+  labs(title = "Barras EUR/USD", # Título del gráfico
+       x = "Tasa de cierre", # Título del eje X
+       y = "Frecuencia") # Título del eje Y
 ```
 
 ### Dispersión 
@@ -592,9 +634,14 @@ ggplot(data = datos,aes(x = Close2)) +
 Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
-ggplot(data = datos, aes(x = Open, y = Close)) +
-  geom_point() +
-  labs(title = "Dispersión EUR/USD", x = "Tasa de apertura", y = "Tasa de cierre")
+ggplot(data = datos, # Base de datos a utilizar
+       aes(x = Open, # Comandos estéticos: Eje X y variable asociada
+           y = Close)) +  # Eje Y y variable asociada
+  geom_point(color = "darkblue", # Color de los puntos
+             alpha = 0.3) + # # Opacidad de los puntos
+  labs(title = "Dispersión EUR/USD", # Título del gráfico
+       x = "Tasa de apertura", # Título del eje X
+       y = "Tasa de cierre") # Título del eje Y
 ```
 
 ## Talleres de práctica
