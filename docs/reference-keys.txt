@@ -11,6 +11,8 @@ eq:varianzamuestral
 eq:demuestral
 eq:cv
 tab:notacion
+eq:binom
+thm:tri
 tópicos-básicos-de-estadística
 conceptos
 datos
@@ -73,3 +75,11 @@ asintótico
 diferencia-de-medias-1
 compraración-de-varianzas
 diferencia-de-proporciones-1
+blocks
+equations
+theorems-and-proofs
+callout-blocks
+sharing-your-book
+publishing
+pages
+metadata-for-sharing

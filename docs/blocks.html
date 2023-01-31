@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Unidad 4 Blocks | Estadística I &amp; Estadística Descriptiva</title>
+  <title>Unidad 5 Blocks | Estadística I &amp; Estadística Descriptiva</title>
   <meta name="description" content="Curso básico de Estadística en R para ingeniería" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Unidad 4 Blocks | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:title" content="Unidad 5 Blocks | Estadística I &amp; Estadística Descriptiva" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Curso básico de Estadística en R para ingeniería" />
   <meta name="github-repo" content="Dfranzani/Estadistica_I_UDP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Unidad 4 Blocks | Estadística I &amp; Estadística Descriptiva" />
+  <meta name="twitter:title" content="Unidad 5 Blocks | Estadística I &amp; Estadística Descriptiva" />
   
   <meta name="twitter:description" content="Curso básico de Estadística en R para ingeniería" />
   
@@ -29,12 +29,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="footnotes-and-citations.html"/>
-<link rel="next" href="sharing-your-book.html"/>
+<link rel="prev" href="intervalos-de-confianza.html"/>
+<link rel="next" href="referencias.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -51,6 +50,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -163,46 +166,106 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
 <ul>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#datos"><i class="fa fa-check"></i>Datos</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#información"><i class="fa fa-check"></i>Información</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#tipos-de-variables"><i class="fa fa-check"></i>Tipos de variables</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#población-y-muestra"><i class="fa fa-check"></i>Población y Muestra</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos"><i class="fa fa-check"></i>Parámetros y Estadísticos</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i>Estimador y Estimación</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i>Variabilidad muestral</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra"><i class="fa fa-check"></i>Representatividad y sesgo de la muestra</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-tendencia-central-mtc"><i class="fa fa-check"></i>Medidas de Tendencia Central (MTC)</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-dipersión-md"><i class="fa fa-check"></i>Medidas de Dipersión (MD)</a></li>
+<li class="chapter" data-level="1.1.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#datos"><i class="fa fa-check"></i><b>1.1.1</b> Datos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#información"><i class="fa fa-check"></i><b>1.1.2</b> Información</a></li>
+<li class="chapter" data-level="1.1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#tipos-de-variables"><i class="fa fa-check"></i><b>1.1.3</b> Tipos de variables</a></li>
+<li class="chapter" data-level="1.1.4" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#población-y-muestra"><i class="fa fa-check"></i><b>1.1.4</b> Población y Muestra</a></li>
+<li class="chapter" data-level="1.1.5" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#parámetros-y-estadísticos"><i class="fa fa-check"></i><b>1.1.5</b> Parámetros y Estadísticos</a></li>
+<li class="chapter" data-level="1.1.6" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#estimador-y-estimación"><i class="fa fa-check"></i><b>1.1.6</b> Estimador y Estimación</a></li>
+<li class="chapter" data-level="1.1.7" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.7</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="1.1.8" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#representatividad-y-sesgo-de-la-muestra"><i class="fa fa-check"></i><b>1.1.8</b> Representatividad y sesgo de la muestra</a></li>
+<li class="chapter" data-level="1.1.9" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-localización"><i class="fa fa-check"></i><b>1.1.9</b> Medidas de localización</a></li>
+<li class="chapter" data-level="1.1.10" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#medidas-de-escala"><i class="fa fa-check"></i><b>1.1.10</b> Medidas de escala</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>1.2</b> Gráficos descriptivos</a>
 <ul>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i>Histograma</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-caja"><i class="fa fa-check"></i>Gráfico de caja</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín"><i class="fa fa-check"></i>Gráfico de violín</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-violín-caja-promedio"><i class="fa fa-check"></i>Gráfico de violín + caja + promedio</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-barras"><i class="fa fa-check"></i>Gráfico de barras</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión"><i class="fa fa-check"></i>Gráfico de dispersión</a></li>
-<li class="chapter" data-level="" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#gráfico-de-dispersión-líneas"><i class="fa fa-check"></i>Gráfico de dispersión + líneas</a></li>
+<li class="chapter" data-level="1.2.1" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#histograma"><i class="fa fa-check"></i><b>1.2.1</b> Histograma</a></li>
+<li class="chapter" data-level="1.2.2" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#caja"><i class="fa fa-check"></i><b>1.2.2</b> Caja</a></li>
+<li class="chapter" data-level="1.2.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#violín"><i class="fa fa-check"></i><b>1.2.3</b> Violín</a></li>
+<li class="chapter" data-level="1.2.4" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#barras"><i class="fa fa-check"></i><b>1.2.4</b> Barras</a></li>
+<li class="chapter" data-level="1.2.5" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#dispersión"><i class="fa fa-check"></i><b>1.2.5</b> Dispersión</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#ejercicios"><i class="fa fa-check"></i><b>1.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.3" data-path="tópicos-básicos-de-estadística.html"><a href="tópicos-básicos-de-estadística.html#talleres-de-práctica"><i class="fa fa-check"></i><b>1.3</b> Talleres de práctica</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>2</b> Parts</a></li>
-<li class="chapter" data-level="3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>3</b> Footnotes and citations</a>
+<li class="chapter" data-level="2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias.</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>3.1</b> Footnotes</a></li>
-<li class="chapter" data-level="3.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>3.2</b> Citations</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>4</b> Blocks</a>
+<li class="chapter" data-level="2.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#elementos-de-probabilidad"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>4.1</b> Equations</a></li>
-<li class="chapter" data-level="4.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>4.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="4.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>4.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="2.1.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#espacio-muestral"><i class="fa fa-check"></i><b>2.1.1</b> Espacio muestral</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-probabilidad"><i class="fa fa-check"></i><b>2.1.2</b> Función de probabilidad</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>5</b> Sharing your book</a>
+<li class="chapter" data-level="2.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>5.1</b> Publishing</a></li>
-<li class="chapter" data-level="5.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>5.2</b> 404 pages</a></li>
-<li class="chapter" data-level="5.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>5.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="2.2.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-probabilidad-1"><i class="fa fa-check"></i><b>2.2.1</b> Función de probabilidad</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#función-de-distribución"><i class="fa fa-check"></i><b>2.2.2</b> Función de distribución</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variable aleatoria discreta</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#uniforme"><i class="fa fa-check"></i><b>2.3.1</b> Uniforme</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#bernoulli"><i class="fa fa-check"></i><b>2.3.2</b> Bernoulli</a></li>
+<li class="chapter" data-level="2.3.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#binomial"><i class="fa fa-check"></i><b>2.3.3</b> Binomial</a></li>
+<li class="chapter" data-level="2.3.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#poisson"><i class="fa fa-check"></i><b>2.3.4</b> Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variable aleatoria continua</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#uniforme-1"><i class="fa fa-check"></i><b>2.4.1</b> Uniforme</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#exponencial"><i class="fa fa-check"></i><b>2.4.2</b> Exponencial</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#normal"><i class="fa fa-check"></i><b>2.4.3</b> Normal</a></li>
+<li class="chapter" data-level="2.4.4" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#t---student"><i class="fa fa-check"></i><b>2.4.4</b> T - Student</a></li>
+<li class="chapter" data-level="2.4.5" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#ji---cuadrado"><i class="fa fa-check"></i><b>2.4.5</b> Ji - Cuadrado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-discreta-1"><i class="fa fa-check"></i><b>2.5.1</b> Variable aleatoria discreta</a></li>
+<li class="chapter" data-level="2.5.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-continua-1"><i class="fa fa-check"></i><b>2.5.2</b> Variable aleatoria continua</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-discreta-2"><i class="fa fa-check"></i><b>2.6.1</b> Variable aleatoria discreta</a></li>
+<li class="chapter" data-level="2.6.2" data-path="probabilidad-y-variables-aleatorias..html"><a href="probabilidad-y-variables-aleatorias..html#variable-aleatoria-continua-2"><i class="fa fa-check"></i><b>2.6.2</b> Variable aleatoria continua</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales y pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-muestreo-de-la-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#estandarización"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-la-media"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del límite central</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#distribución-de-muestreo-de-la-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="3.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#la-distribución-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+<li class="chapter" data-level="3.4" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#pruebas-de-hipótesis"><i class="fa fa-check"></i><b>3.4</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#una-media"><i class="fa fa-check"></i><b>3.4.1</b> Una media</a></li>
+<li class="chapter" data-level="3.4.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-medias"><i class="fa fa-check"></i><b>3.4.2</b> Diferencia de medias</a></li>
+<li class="chapter" data-level="3.4.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#comparación-de-varianzas"><i class="fa fa-check"></i><b>3.4.3</b> Comparación de varianzas</a></li>
+<li class="chapter" data-level="3.4.4" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.4.4</b> Diferencia de proporciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#una-media-1"><i class="fa fa-check"></i><b>4.1</b> Una media</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#bajo-distribución-normal"><i class="fa fa-check"></i><b>4.1.1</b> Bajo distribución normal</a></li>
+<li class="chapter" data-level="4.1.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#asintótico"><i class="fa fa-check"></i><b>4.1.2</b> Asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-medias-1"><i class="fa fa-check"></i><b>4.2</b> Diferencia de medias</a></li>
+<li class="chapter" data-level="4.3" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>4.3</b> Compraración de varianzas</a></li>
+<li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>4.4</b> Diferencia de proporciones</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>5.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="5.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -225,29 +288,29 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="blocks" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Unidad 4</span> Blocks<a href="blocks.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="equations" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Equations<a href="blocks.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="blocks" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Unidad 5</span> Blocks<a href="blocks.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="equations" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Equations<a href="blocks.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here is an equation.</p>
 <p><span class="math display" id="eq:binom">\[\begin{equation}
   f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \tag{4.1}
+  \tag{5.1}
 \end{equation}\]</span></p>
-<p>You may refer to using <code>\@ref(eq:binom)</code>, like see Equation <a href="blocks.html#eq:binom">(4.1)</a>.</p>
+<p>You may refer to using <code>\@ref(eq:binom)</code>, like see Equation <a href="blocks.html#eq:binom">(5.1)</a>.</p>
 </div>
-<div id="theorems-and-proofs" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Theorems and proofs<a href="blocks.html#theorems-and-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Labeled theorems can be referenced in text using <code>\@ref(thm:tri)</code>, for example, check out this smart theorem <a href="blocks.html#thm:tri">4.1</a>.</p>
+<div id="theorems-and-proofs" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Theorems and proofs<a href="blocks.html#theorems-and-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Labeled theorems can be referenced in text using <code>\@ref(thm:tri)</code>, for example, check out this smart theorem <a href="blocks.html#thm:tri">5.1</a>.</p>
 <div class="theorem">
-<p><span id="thm:tri" class="theorem"><strong>Theorem 4.1  </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the <em>length</em> of the hypotenuse
+<p><span id="thm:tri" class="theorem"><strong>Theorem 5.1  </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the <em>length</em> of the hypotenuse
 and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the lengths of the <strong>other</strong> two sides, we have
 <span class="math display">\[a^2 + b^2 = c^2\]</span></p>
 </div>
 <p>Read more here <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html" class="uri">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html</a>.</p>
 </div>
-<div id="callout-blocks" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Callout blocks<a href="blocks.html#callout-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="callout-blocks" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Callout blocks<a href="blocks.html#callout-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a></p>
 
 </div>
@@ -257,8 +320,8 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
           </div>
         </div>
       </div>
-<a href="footnotes-and-citations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sharing-your-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intervalos-de-confianza.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -306,7 +369,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": null
 },
 "info": true
 });

@@ -567,19 +567,27 @@ Los pasos para elaborar un gráfico de caja son los siguiente [@anderson, págin
 
 1. Se dibuja una caja cuyos extremos se localicen en primer y tercer cuartiles. Esta caja contiene 50% de los datos centrales.
 2. En el punto donde se localiza la mediana se traza una linea horizontal.
-3. Usando el rango intercuartílico ($RIC = Q_3-Q_1$), se localizan los límites. En un gráfio de cajua los límites se encuentra a $1.5RIC$ abajo y arriba de $Q_1$ y $Q_3$ respectivamente. Los datos que quedan fuera de estos límites se consideran observaciones atípicas.
-4. Las lineas que se extieden verticalmente desde la caja se les llama *bigotes*. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculadso en el paso 3.
+3. Usando el rango intercuartílico ($RIC = Q_3-Q_1$), se localizan los límites. En un gráfico de caja los límites se encuentra a $1.5RIC$ abajo y arriba de $Q_1$ y $Q_3$ respectivamente. Los datos que quedan fuera de estos límites se consideran observaciones atípicas [@Tukey]. La razón por la cual se considera 1.5 veces el rango intercuartílico es convencional, no obstante, hay argumento relacionados a la cantidad de datos dentro de los limites inferior y superior, los cuales indican que debe ser de 99.7% [@James2013].
+4. Las lineas que se extienden verticalmente desde la caja se les llama *bigotes*. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.
 5. Mediante puntos se indica la localización de las observaciones atípicas.
 
 
-```{r fig.align="center", fig.width=4, fig.height=3}
-ggplot(data = datos, # Base de datos a utilizar
+```{r fig.align="center", fig.width=8, fig.height=3}
+g = ggplot(data = datos, # Base de datos a utilizar
        aes(y = Close)) + # Comando estético: eje y variable
   geom_boxplot(color = "black", # Color del borde del gráfico
                fill = "darkred") + # Color de relleno del gráfico
   labs(title = "Caja EUR/USD", # Título del gráfico
-       x = "Tasa de cierre", # Título del eje X
-       y = "Dispersión/Cuantiles") # Título del eje Y
+       x = "", # Título del eje X
+       y = "Tasa de cierre") + # Título del eje Y
+  theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+        axis.text.x = element_blank()) # Elimina los números del eje X
+info = unlist(ggplot_build(g)[[1]]) # Guardamos los valores del gráfico
+values = round(as.numeric(info[1:5]), 3) # Extraemos los valores de construcción
+g1 = g + # Creamos un nuevo gráfico a partir del anterior
+  scale_y_continuous(breaks = values, labels = values) # Modificamos los valores mostrados en el eje de valores
+library(gridExtra)
+grid.arrange(g, g1, ncol = 2) # Desplegamos lo gráficos en la misma ventana
 ```
 
 ### Violín 
