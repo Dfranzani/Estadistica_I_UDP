@@ -502,7 +502,7 @@ c(CV_Open, CV_High)
 #### Notación poblacional y muestral {-}
 
 ```{r notacion, echo=FALSE}
-tabla = matrix(c("$$\\mu$$","$$\\sigma^2$$","$$\\sigma$$","$$\\bar{x}$$","$$S^2$$","$$S$$"), byrow = FALSE, ncol = 2)
+tabla = matrix(c("$\\mu$","$\\sigma^2$","$\\sigma$","$\\bar{x}$","$S^2$","$S$"), byrow = FALSE, ncol = 2)
 rownames(tabla) = c('Media','Varianza','Desviación estándar')
 kable(tabla, escape = FALSE, booktabs = TRUE, caption = 'Notación de parámetros y estadísticos',
       col.names = c('Poblacional', 'Muestral'), align = 'c') |>

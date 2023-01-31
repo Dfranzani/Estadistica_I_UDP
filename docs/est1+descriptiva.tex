@@ -137,6 +137,23 @@
 \author{Coordinación de Estadística - UFME}
 \date{01 de marzo del 2023}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -153,8 +170,8 @@ La asignatura Estadística I \& Estadística Descriptiva, es el primer curso est
 Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso de herramientas modernas de programación, situando al estudiante en un rol de analista dentro de una unidad organizacional.
 
 \hypertarget{modalidad-de-trabajo}{%
-\section*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
-\addcontentsline{toc}{section}{Modalidad de trabajo}
+\chapter*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
+\addcontentsline{toc}{chapter}{Modalidad de trabajo}
 
 \hypertarget{tuxf3picos-buxe1sicos-de-estaduxedstica}{%
 \chapter{Tópicos básicos de estadística}\label{tuxf3picos-buxe1sicos-de-estaduxedstica}}
@@ -423,7 +440,7 @@ A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran 
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Obtenga el promedio de la variable (columna) \textbf{Open}. Interprete.
+  Obtenga la media de la variable (columna) \textbf{Open}. Interprete.
 \item
   Utilice el comando \textbf{colMeans()} para obtener la media de todas las variables asociadas a la tasa de conversión.
 \end{enumerate}
@@ -579,6 +596,8 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
   Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
 \end{enumerate}
 
+\textbf{Nota}: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
+
 \hypertarget{medidas-de-escala}{%
 \subsection{Medidas de escala}\label{medidas-de-escala}}
 
@@ -646,7 +665,7 @@ Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Obtener el rango del resto de variables (ignore la variable fecha)
+  Obtener el rango del resto de variables de la base de datos (ignore la variable fecha).
 \end{enumerate}
 
 \hypertarget{varianza-y-desviaciuxf3n-estuxe1ndar}{%
@@ -662,7 +681,7 @@ x_1 - \bar{x}, x_2 - \bar{x}, x_3 - \bar{x}, \ldots, x_n - \bar{x}.
 
 Es decir, las desviaciones de la media se obtienen restando \(\bar{x}\) de cada una de las \(n\) observaciones muestrales. Una desviación será positiva si la observación es más grande que la media (a la derecha de la media sobre la recta real) y negativa si la observación es más pequeña que la media (a la izquierda de la media sobre la recta real). Si todas las desviaciones son pequeñas en magnitud, entonces todos los valores de la muestra son cercanos a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes de magnitud, entonces algunos de los de los valores de la muestra están lejos de la media (sobre la recta real) lo que sugiere una mayor variabilidad.
 
-Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es cero \eqref{eq:sumadesviaciones}, ¿alguna idea del por qué?
+Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es igual a cero \eqref{eq:sumadesviaciones}, ¿alguna idea del por qué?
 
 \begin{equation}
 \text{Suma de las desviaciones en una muestra} = \sum_{i=1}^{n}(x_i-\bar{x}) = 0
@@ -755,7 +774,7 @@ Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Al calcular la varianza, se observa que la tasa de cierre es levemente menor}
+\CommentTok{\# Al calcular la varianza muestral, se observa que la tasa de cierre es levemente menor}
 \CommentTok{\# variabilidad que la tasa de apertura.}
 \FunctionTok{c}\NormalTok{(}\FunctionTok{var}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open), }\FunctionTok{var}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close))}
 \end{Highlighting}
@@ -767,7 +786,7 @@ Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Al calcular la desviación estándar, se observa que la tasa de cierre tiene menor}
+\CommentTok{\# Al calcular la desviación estándar muestral, se observa que la tasa de cierre tiene menor}
 \CommentTok{\# variabilidad que la tasa de apertura.}
 \FunctionTok{c}\NormalTok{(}\FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open), }\FunctionTok{sd}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close))}
 \end{Highlighting}
@@ -854,6 +873,27 @@ En el ejercicio anterior, se utilizó la varianza para comprar directamente la v
   Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
 \end{enumerate}
 
+\textbf{Nota}: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
+
+\hypertarget{notaciuxf3n-poblacional-y-muestral}{%
+\subsubsection*{Notación poblacional y muestral}\label{notaciuxf3n-poblacional-y-muestral}}
+\addcontentsline{toc}{subsubsection}{Notación poblacional y muestral}
+
+\begin{table}
+
+\caption{\label{tab:notacion}Notación de parámetros y estadísticos}
+\centering
+\begin{tabular}[t]{lcc}
+\toprule
+  & Poblacional & Muestral\\
+\midrule
+Media & $\mu$ & $\bar{x}$\\
+Varianza & $\sigma^2$ & $S^2$\\
+Desviación estándar & $\sigma$ & $S$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \hypertarget{gruxe1ficos-descriptivos}{%
 \section{Gráficos descriptivos}\label{gruxe1ficos-descriptivos}}
 
@@ -883,9 +923,14 @@ Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggplot2)}
 \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético para señalar la variable a graficar y en que eje}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{13}\NormalTok{, }\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\AttributeTok{closed =} \StringTok{"left"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{13}\NormalTok{, }\CommentTok{\# Cantidad de intervalos del histograma}
+                 \AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\CommentTok{\# Color del borde de las barras del histograma}
+                 \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\CommentTok{\# Color de relleno de las barras}
+                 \AttributeTok{closed =} \StringTok{"left"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de intervalo del histograma}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+       \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
+       \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -922,16 +967,66 @@ Es útil recordar que el histograma está asociado a una tabla de frecuencia por
 ## 13  1.55  1.60 1.575        84        1.7 4966 100.0
 \end{verbatim}
 
+\textbf{Ejercicio:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Elaborar un histograma y obtener la tabla de frecuencias asociada, utilizando la variable \textbf{Low}.
+\end{enumerate}
+
 \hypertarget{caja}{%
 \subsection{Caja}\label{caja}}
 
-Este gráfico se utiliza para evidenciar las medidas de posición conocidas como cuartiles.
+El gráfico de caja se utiliza para describir las siguiente características de un conjunto de datos \citep[página 35]{Devore}:
+
+\begin{itemize}
+\tightlist
+\item
+  El centro.
+\item
+  La dispersión.
+\item
+  El grado y naturaleza de cualquier alejamiento de la simetría.
+\item
+  La identificación de las observaciones ``extremas'' (atípicas) inusualmente alejadas del cuerpo principal de los datos.
+\end{itemize}
+
+Los pasos para elaborar un gráfico de caja son los siguiente \citep[página 106]{anderson}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Se dibuja una caja cuyos extremos se localicen en primer y tercer cuartiles. Esta caja contiene 50\% de los datos centrales.
+\item
+  En el punto donde se localiza la mediana se traza una linea horizontal.
+\item
+  Usando el rango intercuartílico (\(RIC = Q_3-Q_1\)), se localizan los límites. En un gráfico de caja los límites se encuentra a \(1.5RIC\) abajo y arriba de \(Q_1\) y \(Q_3\) respectivamente. Los datos que quedan fuera de estos límites se consideran observaciones atípicas \citep{Tukey}. La razón por la cual se considera 1.5 veces el rango intercuartílico es convencional, no obstante, hay argumento relacionados a la cantidad de datos dentro de los limites inferior y superior, los cuales indican que debe ser de 99.7\% \citep{James2013}.
+\item
+  Las lineas que se extienden verticalmente desde la caja se les llama \emph{bigotes}. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.
+\item
+  Mediante puntos se indica la localización de las observaciones atípicas.
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Dispersión/Cuantiles"}\NormalTok{) }
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color del borde del gráfico}
+               \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+       \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
+       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
+        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
+\NormalTok{info }\OtherTok{=} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{ggplot\_build}\NormalTok{(g)[[}\DecValTok{1}\NormalTok{]]) }\CommentTok{\# Guardamos los valores del gráfico}
+\NormalTok{values }\OtherTok{=} \FunctionTok{round}\NormalTok{(}\FunctionTok{as.numeric}\NormalTok{(info[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]), }\DecValTok{3}\NormalTok{) }\CommentTok{\# Extraemos los valores de construcción}
+\NormalTok{g1 }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+} \CommentTok{\# Creamos un nuevo gráfico a partir del anterior}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ values, }\AttributeTok{labels =}\NormalTok{ values) }\CommentTok{\# Modificamos los valores mostrados en el eje de valores}
+\FunctionTok{library}\NormalTok{(gridExtra)}
+\FunctionTok{grid.arrange}\NormalTok{(g, g1, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{) }\CommentTok{\# Desplegamos lo gráficos en la misma ventana}
 \end{Highlighting}
 \end{Shaded}
 
@@ -944,12 +1039,18 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{trim =}\NormalTok{ F, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{""}\NormalTok{, }\AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(),}
-        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{())}
-\NormalTok{g}
+\CommentTok{\# Se guarda el gráfico en una variable para posteriormente}
+\CommentTok{\# integrar otros gráficos dentro de este.}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+           \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: variables a graficar }
+  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{trim =}\NormalTok{ F, }\CommentTok{\# Modifica las terminaciones visuales superior e inferior}
+              \AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+       \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
+       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
+        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
+\NormalTok{g }\CommentTok{\# Desplegamos el gráfico en el visualizador}
 \end{Highlighting}
 \end{Shaded}
 
@@ -957,10 +1058,14 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{,}
-                 \AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkblue"}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ mean, }\AttributeTok{geom =} \StringTok{"point"}\NormalTok{,}
-               \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{)}
+\CommentTok{\# Agregamos otros elementos al gráfico guardado}
+\NormalTok{g }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Anchura del nuevo gráfico de caja}
+                 \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color de borde del gráfico}
+                 \AttributeTok{fill =} \StringTok{"lightblue2"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ mean, }\CommentTok{\# Función que indica el tipo de información (mean = media)}
+               \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\CommentTok{\# Forma visual}
+               \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Tamaño}
+               \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\CommentTok{\# Color}
 \end{Highlighting}
 \end{Shaded}
 
@@ -973,10 +1078,16 @@ Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Close2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close }\SpecialCharTok{\textgreater{}} \FloatTok{1.1}\NormalTok{, }\StringTok{"Mayor a 1.1"}\NormalTok{, }\StringTok{"Menor a  1.1"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{)}
+\CommentTok{\# Nueva variable para dicotomizar la tasa de cierre del EUR/USD}
+\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Close2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close }\SpecialCharTok{\textgreater{}} \FloatTok{1.1}\NormalTok{, }\CommentTok{\# Criterio}
+                      \StringTok{"Mayor a 1.1"}\NormalTok{, }\CommentTok{\# Valor asignado si se cumple el criterio}
+                      \StringTok{"Menor a  1.1"}\NormalTok{) }\CommentTok{\# Valor asignado si no se cumple el criterio}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+       \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
+       \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -989,9 +1100,14 @@ Gráfico que permite contrastar dos variables cuantitativas. En general, se usa 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Open, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión EUR/USD"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Tasa de apertura"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Open, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
+           \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}  \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"darkblue"}\NormalTok{, }\CommentTok{\# Color de los puntos}
+             \AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# \# Opacidad de los puntos}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+       \AttributeTok{x =} \StringTok{"Tasa de apertura"}\NormalTok{, }\CommentTok{\# Título del eje X}
+       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1130,6 +1246,74 @@ Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdr
 
 \hypertarget{diferencia-de-proporciones-1}{%
 \section{Diferencia de proporciones}\label{diferencia-de-proporciones-1}}
+
+\hypertarget{blocks}{%
+\chapter{Blocks}\label{blocks}}
+
+\hypertarget{equations}{%
+\section{Equations}\label{equations}}
+
+Here is an equation.
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \label{eq:binom}
+\end{equation}
+
+You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+
+\hypertarget{theorems-and-proofs}{%
+\section{Theorems and proofs}\label{theorems-and-proofs}}
+
+Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+
+\begin{theorem}
+\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
+and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
+\[a^2 + b^2 = c^2\]
+\end{theorem}
+
+Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+
+\hypertarget{callout-blocks}{%
+\section{Callout blocks}\label{callout-blocks}}
+
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+
+\hypertarget{sharing-your-book}{%
+\chapter{Sharing your book}\label{sharing-your-book}}
+
+\hypertarget{publishing}{%
+\section{Publishing}\label{publishing}}
+
+HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+
+\hypertarget{pages}{%
+\section{404 pages}\label{pages}}
+
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+
+\hypertarget{metadata-for-sharing}{%
+\section{Metadata for sharing}\label{metadata-for-sharing}}
+
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+
+This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+
+Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+
+Read more about the features of this output format here:
+
+\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+
+Or use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\end{Highlighting}
+\end{Shaded}
+
 
   \bibliography{refs.bib}
 
