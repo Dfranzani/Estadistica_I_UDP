@@ -1,5 +1,8 @@
 \usepackage{booktabs}
 \usepackage[spanish]{babel}
-\renewcommand{\chaptername}{Unidad}
 \usepackage{minted}
 \fvset{breaklines=true}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\renewcommand\chaptertitlename{Unidad}

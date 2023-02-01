@@ -102,9 +102,12 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage[spanish]{babel}
-\renewcommand{\chaptername}{Unidad}
 \usepackage{minted}
 \fvset{breaklines=true}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\renewcommand\chaptertitlename{Unidad}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -900,7 +903,7 @@ Algunos datos numéricos se obtienen contando para determinar el valor de una va
   Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
 \end{enumerate}
 
-Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -993,13 +996,15 @@ Los pasos para elaborar un gráfico de caja son los siguiente \citep[página 106
   Mediante puntos se indica la localización de las observaciones atípicas.
 \end{enumerate}
 
+Para generar un gráfico de caja en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
        \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
   \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color del borde del gráfico}
                \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 1)"}\NormalTok{, }\CommentTok{\# Título del gráfico}
        \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
        \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
@@ -1007,7 +1012,8 @@ Los pasos para elaborar un gráfico de caja son los siguiente \citep[página 106
 \NormalTok{info }\OtherTok{=} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{ggplot\_build}\NormalTok{(g)[[}\DecValTok{1}\NormalTok{]]) }\CommentTok{\# Guardamos los valores del gráfico}
 \NormalTok{values }\OtherTok{=} \FunctionTok{round}\NormalTok{(}\FunctionTok{as.numeric}\NormalTok{(info[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]), }\DecValTok{3}\NormalTok{) }\CommentTok{\# Extraemos los valores de construcción}
 \NormalTok{g1 }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+} \CommentTok{\# Creamos un nuevo gráfico a partir del anterior}
-  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ values, }\AttributeTok{labels =}\NormalTok{ values) }\CommentTok{\# Modificamos los valores mostrados en el eje de valores}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ values, }\AttributeTok{labels =}\NormalTok{ values) }\SpecialCharTok{+} \CommentTok{\# Modificamos los valores mostrados en el eje Y (valores de construcción)}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 2)"}\NormalTok{)}
 \FunctionTok{library}\NormalTok{(gridExtra)}
 \FunctionTok{grid.arrange}\NormalTok{(g, g1, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{) }\CommentTok{\# Desplegamos lo gráficos en la misma ventana}
 \end{Highlighting}
@@ -1018,7 +1024,22 @@ Los pasos para elaborar un gráfico de caja son los siguiente \citep[página 106
 \hypertarget{violuxedn}{%
 \subsection{Violín}\label{violuxedn}}
 
-Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
+El gráfico de violín proporciona una representación más completa y precisa de la distribución de los datos que las técnicas anteriores, ya que muestra tanto la forma de la distribución como su concentración \citep{hintze1998violin}. La utilidad de este gráfico recae en la comparación de la distribución de los datos entre distintos grupos y/o categorías.
+
+El proceso de construcción del gráfico es el siguiente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dibujo de la traza de densidad: la traza de densidad se dibuja sobre el eje vertical en el gráfico de violín (``forma suavizada del histograma'').
+\item
+  Creación de la sección central simétrica: se crea una sección central simétrica que representa la mitad de la traza de densidad.
+\end{enumerate}
+
+Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.
+
+Para generar un gráfico de violín en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1057,7 +1078,22 @@ Gráfico utilizado para conocer la concentración de datos; es muy similar al hi
 \hypertarget{barras}{%
 \subsection{Barras}\label{barras}}
 
-Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
+Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente \citep[página 29]{anderson}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  En uno de los ejes de la gráfica (por lo general en el horizontal).
+\item
+  Se especifican las etiquetas empleadas para las clases (categorías).
+\item
+  Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.
+\item
+  Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
+\end{enumerate}
+
+Para generar un gráfico de barras en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]

@@ -163,60 +163,60 @@ El concepto detrás de esto es la **variabilidad muestral**, el cual, indica que
 
 <center>**¿Cuál es la proporción de círculos rojos en la población relfejada en la figura** **?**</center>
 
-```{r figura-poblacion1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Población"}
-  col_point1 = "darkred"
-  col_point2 = "darkgray"
-  col_fill = "black"
-  par(bg = NA, mar = c(0,0,0,0))
-  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
-  set.seed(2023)
-  df$color[sample(dim(df)[1], 20)] = col_point1
+```{r figura-poblacion1, echo=FALSE, fig.align="center", fig.width=2.5, fig.height=2.5, fig.cap="Población"}
+col_point1 = "darkred"
+col_point2 = "darkgray"
+col_fill = "black"
+par(bg = NA, mar = c(0,0,0,0))
+df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+set.seed(2023)
+df$color[sample(dim(df)[1], 20)] = col_point1
   df$color[is.na(df$color)] = col_point2
   plot(x = df$x, y = df$y, col = df$color,
-       pch = 20, cex = 5,
-       xlim = c(0,8), ylim = c(0,8),
-       bty = "n", xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "")
-  segments(x0 = c(0,0,0,8), y0 = c(0,8,0,0),
-           x1 = c(0,8,8,8), y1 = c(8,8,0,8))
+     pch = 20, cex = 4,
+     xlim = c(0,8), ylim = c(0,8),
+     bty = "n", xaxt = "n", yaxt = "n",
+     xlab = "", ylab = "")
+segments(x0 = c(0,0,0,8), y0 = c(0,8,0,0),
+         x1 = c(0,8,8,8), y1 = c(8,8,0,8))
 ```
 
 Luego,
 
 <center>**¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura** \@ref(fig:figura-muestra1)**?**</center>
 
-```{r figura-muestra1, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 1"}
-  par(bg = NA, mar = c(0,0,0,0))
-  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
-  set.seed(2023)
-  df$color[sample(dim(df)[1], 20)] = col_point1
-  df$color[is.na(df$color)] = col_point2
-  plot(x = df$x, y = df$y, col = df$color,
-       pch = 20, cex = 5,
-       xlim = c(0,8), ylim = c(0,8),
-       bty = "n", xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "")
-  polygon(x = c(0,0,8,8,4.5,4.5,2.5,2.5,4.5,4.5),
-          y = c(8,0,0,8,8,2.5,2.5,4.5,4.5,8),
-          col = col_fill, border = col_fill)
+```{r figura-muestra1, echo=FALSE, fig.align="center", fig.width=2.5, fig.height=2.5, fig.cap="Muestra 1"}
+par(bg = NA, mar = c(0,0,0,0))
+df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+set.seed(2023)
+df$color[sample(dim(df)[1], 20)] = col_point1
+df$color[is.na(df$color)] = col_point2
+plot(x = df$x, y = df$y, col = df$color,
+     pch = 20, cex = 4,
+     xlim = c(0,8), ylim = c(0,8),
+     bty = "n", xaxt = "n", yaxt = "n",
+     xlab = "", ylab = "")
+polygon(x = c(0,0,8,8,4.5,4.5,2.5,2.5,4.5,4.5),
+        y = c(8,0,0,8,8,2.5,2.5,4.5,4.5,8),
+        col = col_fill, border = col_fill)
 ```
 
 <center>**¿Y ahora? (Figura** \@ref(fig:figura-muestra2)**)**</center>
 
-```{r figura-muestra2, echo=FALSE, fig.align="center", fig.width=3, fig.height=3, fig.cap="Muestra 2"}
-  par(bg = NA, mar = c(0,0,0,0))
-  df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
-  set.seed(2023)
-  df$color[sample(dim(df)[1], 20)] = col_point1
-  df$color[is.na(df$color)] = col_point2
-  plot(x = df$x, y = df$y, col = df$color,
-       pch = 20, cex = 5,
-       xlim = c(0,8), ylim = c(0,8),
-       bty = "n", xaxt = "n", yaxt = "n",
-       xlab = "", ylab = "")
-  polygon(x = c(0,0,8,8,7.5,7.5,3.5,3.5,7.5,7.5),
-          y = c(8,0,0,8,8,3.5,3.5,7.5,7.5,8),
-          col = col_fill, border = col_fill)
+```{r figura-muestra2, echo=FALSE, fig.align="center", fig.width=2.5, fig.height=2.5, fig.cap="Muestra 2"}
+par(bg = NA, mar = c(0,0,0,0))
+df = data.frame(x = rep(1:7,rep(7,7)), y = rep(1:7,7), color = NA)
+set.seed(2023)
+df$color[sample(dim(df)[1], 20)] = col_point1
+df$color[is.na(df$color)] = col_point2
+plot(x = df$x, y = df$y, col = df$color,
+     pch = 20, cex = 4,
+     xlim = c(0,8), ylim = c(0,8),
+     bty = "n", xaxt = "n", yaxt = "n",
+     xlab = "", ylab = "")
+polygon(x = c(0,0,8,8,7.5,7.5,3.5,3.5,7.5,7.5),
+        y = c(8,0,0,8,8,3.5,3.5,7.5,7.5,8),
+        col = col_fill, border = col_fill)
 ```
 
 Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como **variabilidad muestral**.
@@ -492,7 +492,6 @@ c(CV_Open, CV_High)
 # relación a la media es similar entre ambas variables.
 ```
 
-
 **Ejercicio:**
 
 1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
@@ -522,7 +521,7 @@ Algunos datos numéricos se obtienen contando para determinar el valor de una va
 3. Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.
 3. Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
 
-Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 library(ggplot2)
@@ -571,13 +570,14 @@ Los pasos para elaborar un gráfico de caja son los siguiente [@anderson, págin
 4. Las lineas que se extienden verticalmente desde la caja se les llama *bigotes*. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.
 5. Mediante puntos se indica la localización de las observaciones atípicas.
 
+Para generar un gráfico de caja en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=8, fig.height=3}
 g = ggplot(data = datos, # Base de datos a utilizar
        aes(y = Close)) + # Comando estético: eje y variable
   geom_boxplot(color = "black", # Color del borde del gráfico
                fill = "darkred") + # Color de relleno del gráfico
-  labs(title = "Caja EUR/USD", # Título del gráfico
+  labs(title = "Caja EUR/USD (opción 1)", # Título del gráfico
        x = "", # Título del eje X
        y = "Tasa de cierre") + # Título del eje Y
   theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
@@ -585,14 +585,24 @@ g = ggplot(data = datos, # Base de datos a utilizar
 info = unlist(ggplot_build(g)[[1]]) # Guardamos los valores del gráfico
 values = round(as.numeric(info[1:5]), 3) # Extraemos los valores de construcción
 g1 = g + # Creamos un nuevo gráfico a partir del anterior
-  scale_y_continuous(breaks = values, labels = values) # Modificamos los valores mostrados en el eje de valores
+  scale_y_continuous(breaks = values, labels = values) + # Modificamos los valores mostrados en el eje Y (valores de construcción)
+  labs(title = "Caja EUR/USD (opción 2)")
 library(gridExtra)
 grid.arrange(g, g1, ncol = 2) # Desplegamos lo gráficos en la misma ventana
 ```
 
 ### Violín 
 
-Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.
+El gráfico de violín proporciona una representación más completa y precisa de la distribución de los datos que las técnicas anteriores, ya que muestra tanto la forma de la distribución como su concentración [@hintze1998violin]. La utilidad de este gráfico recae en la comparación de la distribución de los datos entre distintos grupos y/o categorías.
+
+El proceso de construcción del gráfico es el siguiente:
+
+1. Dibujo de la traza de densidad: la traza de densidad se dibuja sobre el eje vertical en el gráfico de violín ("forma suavizada del histograma").
+2. Creación de la sección central simétrica: se crea una sección central simétrica que representa la mitad de la traza de densidad.
+
+Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.
+
+Para generar un gráfico de violín en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Se guarda el gráfico en una variable para posteriormente
@@ -622,7 +632,14 @@ g + geom_boxplot(width = 0.1, # Anchura del nuevo gráfico de caja
 
 ### Barras 
 
-Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.
+Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente [@anderson, página 29]:
+
+1. En uno de los ejes de la gráfica (por lo general en el horizontal).
+2. Se especifican las etiquetas empleadas para las clases (categorías).
+3. Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.
+4. Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
+
+Para generar un gráfico de barras en R, a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Nueva variable para dicotomizar la tasa de cierre del EUR/USD

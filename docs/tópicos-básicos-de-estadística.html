@@ -254,6 +254,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.3" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>4.3</b> Compraración de varianzas</a></li>
 <li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>4.4</b> Diferencia de proporciones</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
 
@@ -369,7 +370,7 @@ Figura 1.2: Estimador y estimación
 <strong>¿Cuál es la proporción de círculos rojos en la población relfejada en la figura</strong> <strong>?</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-poblacion1"></span>
-<img src="est1+descriptiva_files/figure-html/figura-poblacion1-1.png" alt="Población" width="288" />
+<img src="est1+descriptiva_files/figure-html/figura-poblacion1-1.png" alt="Población" width="240" />
 <p class="caption">
 Figura 1.3: Población
 </p>
@@ -379,7 +380,7 @@ Figura 1.3: Población
 <strong>¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura</strong> <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra1">1.4</a><strong>?</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra1"></span>
-<img src="est1+descriptiva_files/figure-html/figura-muestra1-1.png" alt="Muestra 1" width="288" />
+<img src="est1+descriptiva_files/figure-html/figura-muestra1-1.png" alt="Muestra 1" width="240" />
 <p class="caption">
 Figura 1.4: Muestra 1
 </p>
@@ -388,7 +389,7 @@ Figura 1.4: Muestra 1
 <strong>¿Y ahora? (Figura</strong> <a href="tópicos-básicos-de-estadística.html#fig:figura-muestra2">1.5</a><strong>)</strong>
 </center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra2"></span>
-<img src="est1+descriptiva_files/figure-html/figura-muestra2-1.png" alt="Muestra 2" width="288" />
+<img src="est1+descriptiva_files/figure-html/figura-muestra2-1.png" alt="Muestra 2" width="240" />
 <p class="caption">
 Figura 1.5: Muestra 2
 </p>
@@ -761,7 +762,7 @@ Desviación estándar
 <li>Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.</li>
 <li>Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.</li>
 </ol>
-<p>Para obtener el histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
+<p>Para generar un histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tópicos-básicos-de-estadística.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb36-2"><a href="tópicos-básicos-de-estadística.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
 <span id="cb36-3"><a href="tópicos-básicos-de-estadística.html#cb36-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: eje y variable</span></span>
@@ -817,11 +818,12 @@ Desviación estándar
 <li>Las lineas que se extienden verticalmente desde la caja se les llama <em>bigotes</em>. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.</li>
 <li>Mediante puntos se indica la localización de las observaciones atípicas.</li>
 </ol>
+<p>Para generar un gráfico de caja en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tópicos-básicos-de-estadística.html#cb39-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
 <span id="cb39-2"><a href="tópicos-básicos-de-estadística.html#cb39-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: eje y variable</span></span>
 <span id="cb39-3"><a href="tópicos-básicos-de-estadística.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color del borde del gráfico</span></span>
 <span id="cb39-4"><a href="tópicos-básicos-de-estadística.html#cb39-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb39-5"><a href="tópicos-básicos-de-estadística.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb39-5"><a href="tópicos-básicos-de-estadística.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 1)&quot;</span>, <span class="co"># Título del gráfico</span></span>
 <span id="cb39-6"><a href="tópicos-básicos-de-estadística.html#cb39-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
 <span id="cb39-7"><a href="tópicos-básicos-de-estadística.html#cb39-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
 <span id="cb39-8"><a href="tópicos-básicos-de-estadística.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
@@ -829,14 +831,22 @@ Desviación estándar
 <span id="cb39-10"><a href="tópicos-básicos-de-estadística.html#cb39-10" aria-hidden="true" tabindex="-1"></a>info <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">ggplot_build</span>(g)[[<span class="dv">1</span>]]) <span class="co"># Guardamos los valores del gráfico</span></span>
 <span id="cb39-11"><a href="tópicos-básicos-de-estadística.html#cb39-11" aria-hidden="true" tabindex="-1"></a>values <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(info[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="dv">3</span>) <span class="co"># Extraemos los valores de construcción</span></span>
 <span id="cb39-12"><a href="tópicos-básicos-de-estadística.html#cb39-12" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Creamos un nuevo gráfico a partir del anterior</span></span>
-<span id="cb39-13"><a href="tópicos-básicos-de-estadística.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> values, <span class="at">labels =</span> values) <span class="co"># Modificamos los valores mostrados en el eje de valores</span></span>
-<span id="cb39-14"><a href="tópicos-básicos-de-estadística.html#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb39-15"><a href="tópicos-básicos-de-estadística.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g, g1, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># Desplegamos lo gráficos en la misma ventana</span></span></code></pre></div>
+<span id="cb39-13"><a href="tópicos-básicos-de-estadística.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> values, <span class="at">labels =</span> values) <span class="sc">+</span> <span class="co"># Modificamos los valores mostrados en el eje Y (valores de construcción)</span></span>
+<span id="cb39-14"><a href="tópicos-básicos-de-estadística.html#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 2)&quot;</span>)</span>
+<span id="cb39-15"><a href="tópicos-básicos-de-estadística.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb39-16"><a href="tópicos-básicos-de-estadística.html#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g, g1, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># Desplegamos lo gráficos en la misma ventana</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="violín" class="section level3 hasAnchor" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Violín<a href="tópicos-básicos-de-estadística.html#violín" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Gráfico utilizado para conocer la concentración de datos; es muy similar al histograma.</p>
+<p>El gráfico de violín proporciona una representación más completa y precisa de la distribución de los datos que las técnicas anteriores, ya que muestra tanto la forma de la distribución como su concentración <span class="citation">(<a href="#ref-hintze1998violin" role="doc-biblioref">Hintze and Nelson 1998</a>)</span>. La utilidad de este gráfico recae en la comparación de la distribución de los datos entre distintos grupos y/o categorías.</p>
+<p>El proceso de construcción del gráfico es el siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>Dibujo de la traza de densidad: la traza de densidad se dibuja sobre el eje vertical en el gráfico de violín (“forma suavizada del histograma”).</li>
+<li>Creación de la sección central simétrica: se crea una sección central simétrica que representa la mitad de la traza de densidad.</li>
+</ol>
+<p>Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.</p>
+<p>Para generar un gráfico de violín en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tópicos-básicos-de-estadística.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se guarda el gráfico en una variable para posteriormente</span></span>
 <span id="cb40-2"><a href="tópicos-básicos-de-estadística.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># integrar otros gráficos dentro de este.</span></span>
 <span id="cb40-3"><a href="tópicos-básicos-de-estadística.html#cb40-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
@@ -862,7 +872,14 @@ Desviación estándar
 </div>
 <div id="barras" class="section level3 hasAnchor" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> Barras<a href="tópicos-básicos-de-estadística.html#barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Gráfico por excelencia para visualizar la frecuencia de variables cualitativas.</p>
+<p>Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente <span class="citation">(<a href="#ref-anderson" role="doc-biblioref">Anderson, Sweeney, and Williams 2008</a>, página 29)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>En uno de los ejes de la gráfica (por lo general en el horizontal).</li>
+<li>Se especifican las etiquetas empleadas para las clases (categorías).</li>
+<li>Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.</li>
+<li>Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).</li>
+</ol>
+<p>Para generar un gráfico de barras en R, a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tópicos-básicos-de-estadística.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nueva variable para dicotomizar la tasa de cierre del EUR/USD</span></span>
 <span id="cb42-2"><a href="tópicos-básicos-de-estadística.html#cb42-2" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Close2 <span class="ot">=</span> <span class="fu">ifelse</span>(datos<span class="sc">$</span>Close <span class="sc">&gt;</span> <span class="fl">1.1</span>, <span class="co"># Criterio</span></span>
 <span id="cb42-3"><a href="tópicos-básicos-de-estadística.html#cb42-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Mayor a 1.1&quot;</span>, <span class="co"># Valor asignado si se cumple el criterio</span></span>
@@ -895,7 +912,7 @@ Desviación estándar
 
 </div>
 </div>
-<h3>References</h3>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-anderson" class="csl-entry">
 Anderson, David R., Dennis J. Sweeney, and Thomas A. Williams. 2008. <em>Estadística Para Administración y Economía</em>. 10a ed. México: Cengage Learning.
@@ -905,6 +922,9 @@ Brachman, Ronald J., and Hector J. Levesque. 2004. <em>Knowledge Representation 
 </div>
 <div id="ref-Devore" class="csl-entry">
 Devore, Jay L. 2008. <em>Probability and Statistics for Engineering and the Sciences</em>. 7th ed. Belmont, CA: Thomson/Brooks/Cole.
+</div>
+<div id="ref-hintze1998violin" class="csl-entry">
+Hintze, J. L., and R. D. Nelson. 1998. <span>“Violin Plots: A Box Plot-Density Trace Synergism.”</span> <em>The American Statistician</em> 52 (2): 181–84.
 </div>
 <div id="ref-James2013" class="csl-entry">
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2013. <em>An Introduction to Statistical Learning: With Applications in r</em>. Springer.
