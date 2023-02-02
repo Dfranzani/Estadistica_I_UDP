@@ -1,8 +1,23 @@
-# Tópicos básicos de estadística
+# Tópicos básicos de estadística {#unidad1}
+
+Para los ejemplos y ejercicios de esta unidad se hará uso la [base de datos](https://es.finance.yahoo.com/quote/EURUSD%3DX?p=EURUSD%3DX) *Tasa+euro+dolar+historica2023.csv* cuando corresponda. La base de datos contiene el registro diario histórico de la tasa de cambio del Euro a Dólar, el detalle de las columnas es el siguiente:
+
+- Date: Fecha de medición (yyyy-mm-dd), desde enero del 2003 hasta enero del 2023.
+- Open: tasa de apertura.
+- High: tasa más alta alcanzada en el día.
+- Low: tasa más baja alcanzada en el día.
+- Close: tasa de cierre del día.
+- Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
+  
+El código para cargar la base de datos en R es:
+  
+```{r}
+datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Estad%C3%ADstica%201/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv")
+```
 
 ## Conceptos
 
-En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas estadística básicas de visualización y tabulación de datos, para el estudio de estos.
+En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas básicas de visualización para el estudio de estos.
 
 ### Datos 
 
@@ -259,22 +274,8 @@ A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran 
 
 **Ejercicio:**
 
-1. Cargue la [base de datos](https://es.finance.yahoo.com/quote/EURUSD%3DX?p=EURUSD%3DX) *Tasa+euro+dolar+historica2023.csv* (se estará usando esta base para el resto de la unidad), la cual, contiene el registro diario histórico de la tasa de cambio del Euro a Dólar. Las columnas en la base de datos son las siguientes:
-
-  - Date: Fecha de medición (yyyy-mm-dd).
-  - Open: tasa de apertura.
-  - High: tasa más alta alcanzada en el día.
-  - Low: tasa más baja alcanzada en el día.
-  - Close: tasa de cierre del día.
-  - Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
-  - Volume: "no aplica".
-  
-```{r}
-datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Estad%C3%ADstica%201/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv")
-```
-    
-2. Obtenga la media de la variable (columna) **Open**. Interprete.
-3. Utilice el comando **colMeans()** para obtener la media de todas las variables asociadas a la tasa de conversión.
+1. Utilizando la base de datos de la unidad, obtenga la media de la variable (columna) **Open**. Interprete.
+2. Utilice el comando **colMeans()** para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete
 
 #### Mediana {-}
 
@@ -304,7 +305,7 @@ En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una re
 
 **Ejercicio:**
 
-1. Utilizando la base de tasas de EUR/USD, determine la media de cada una de las variables  presentes en la base (ignore la la columna de la fecha de medición). Interprete.
+1. Utilizando la base de datos de la unidad, determine la mediana de cada una de las variables  presentes en la base (ignore la columna asociada a la variable fecha). Interprete.
 
 
 #### Moda {-}
@@ -324,15 +325,15 @@ table(hermanos)
 
 **Ejemplo:**
 
-1. Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base *Tasa+euro+dolar+historica2023.csv* (no impriman la tabla).
+1. Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base de datos de la unidad (sin imprimir la tabla).
 ```{r}
 tabla = table(datos$Open)
 ```
-2. Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando **which.max()** para encontrar la posición en la que se ubica, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
+2. Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando **which.max()** para encontrar la posición en la que se ubica esta, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
 ```{r}
 (posicion = which.max(tabla))
 ```
-3. Finalmente consulte directamente en la tabla en valor en la posición calculada en el paso anterior. Interprete.
+3. Finalmente, consulte de manera directa en la tabla en valor de la frecuencia en la posición calculada en el paso anterior. Interprete.
 ```{r}
 tabla[posicion]
 ```
@@ -342,7 +343,7 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
 
 **Ejercicio:**
 
-1. Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
+1. Replique los anterior para el resto de variables presentes en la base de datos de la unidad (ignore la columna asociada a la variable fecha).
 
 **Nota**: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
 
@@ -369,7 +370,7 @@ La medida más simple de variabilidad en una muestra es el **rango**, el cual es
 
 **Ejemplo:**
 
-Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
+Obtengamos el rango de la tasa de apertura histórica del EUR/USD de la base de datos de la undiad.
 
 ```{r}
 # Utilizando el comando range() se obtienen los valores mínimo y máximo
@@ -382,7 +383,7 @@ rango[2] - rango[1]
 
 **Ejercicio:**
 
-1. Obtener el rango del resto de variables de la base de datos (ignore la variable fecha).
+1. Obtener el rango del resto de variables de la base de datos de la undiad (ignore la columna asociada a la variable fecha).
 
 #### Varianza y desviación estándar {-}
 
@@ -429,7 +430,7 @@ No seguir estas recomendaciones puede generar un falsa sensación en la comunica
 
 **Ejemplo:**
 
-Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD, para ello:
+Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos de la unidad, para ello:
 
 1. Verifique la media de ambas variables la misma
 
@@ -457,7 +458,7 @@ c(sd(datos$Open), sd(datos$Close))
 
 **Ejercicio:**
 
-1. Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD.
+1. Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD presentes en la base de datos de la unidad.
 
 
 #### Coeficiente de variación {-}
@@ -494,7 +495,7 @@ c(CV_Open, CV_High)
 
 **Ejercicio:**
 
-1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
+1. Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD presentes en la base de datos de la unidad. Interprete.
 
 **Nota**: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
 
@@ -510,7 +511,7 @@ kable(tabla, escape = FALSE, booktabs = TRUE, caption = 'Notación de parámetro
 
 ## Gráficos descriptivos
 
-En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva.
+En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva. Los ejemplos presentados en esta sección hacen uso de la base de datos de la unidad (sección \@ref(unidad1)).
 
 ### Histograma 
 
@@ -521,7 +522,7 @@ Algunos datos numéricos se obtienen contando para determinar el valor de una va
 3. Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.
 3. Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
 
-Para generar un histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un histograma en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 library(ggplot2)
@@ -570,7 +571,7 @@ Los pasos para elaborar un gráfico de caja son los siguiente [@anderson, págin
 4. Las lineas que se extienden verticalmente desde la caja se les llama *bigotes*. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.
 5. Mediante puntos se indica la localización de las observaciones atípicas.
 
-Para generar un gráfico de caja en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de caja en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=8, fig.height=3}
 g = ggplot(data = datos, # Base de datos a utilizar
@@ -602,7 +603,7 @@ El proceso de construcción del gráfico es el siguiente:
 
 Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.
 
-Para generar un gráfico de violín en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de violín en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Se guarda el gráfico en una variable para posteriormente
@@ -639,7 +640,7 @@ Una gráfico de barras, es una gráfica para representar los datos cualitativos 
 3. Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.
 4. Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
 
-Para generar un gráfico de barras en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Nueva variable para dicotomizar la tasa de cierre del EUR/USD
@@ -656,7 +657,15 @@ ggplot(data = datos, # Base de datos a utilizar
 
 ### Dispersión 
 
-Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
+El gráfico de dispersión es útil para estudiar la relación entre dos variables continuas. Muestra cómo varía un variable en función de la otra y puede ayudar a identificar patrones y tendencias [@rowlingson2016data].
+
+Los pasos para elaborar un gráfico de caja son los siguiente [@healy2019data]:
+
+1. Elegir dos variables continuas de la base de datos a trabajar. Cada fila corresponde a una observación, por lo cual, hay una correspondencia entre los valores de una misma fila.
+2. Elegir la variable estará en el eje X y Y.
+3. Representar cada par ordenado con un punto.
+
+Para generar un gráfico de dispersión en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
 ggplot(data = datos, # Base de datos a utilizar

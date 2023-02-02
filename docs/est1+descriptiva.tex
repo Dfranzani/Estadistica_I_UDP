@@ -101,7 +101,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
-\usepackage[spanish]{babel}
+\usepackage[spanish, es-tabla]{babel}
 \usepackage{minted}
 \fvset{breaklines=true}
 \usepackage{titlesec}
@@ -159,13 +159,39 @@ Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso d
 \chapter*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
 \addcontentsline{toc}{chapter}{Modalidad de trabajo}
 
-\hypertarget{tuxf3picos-buxe1sicos-de-estaduxedstica}{%
-\chapter{Tópicos básicos de estadística}\label{tuxf3picos-buxe1sicos-de-estaduxedstica}}
+\hypertarget{unidad1}{%
+\chapter{Tópicos básicos de estadística}\label{unidad1}}
+
+Para los ejemplos y ejercicios de esta unidad se hará uso la \href{https://es.finance.yahoo.com/quote/EURUSD\%3DX?p=EURUSD\%3DX}{base de datos} \emph{Tasa+euro+dolar+historica2023.csv} cuando corresponda. La base de datos contiene el registro diario histórico de la tasa de cambio del Euro a Dólar, el detalle de las columnas es el siguiente:
+
+\begin{itemize}
+\tightlist
+\item
+  Date: Fecha de medición (yyyy-mm-dd), desde enero del 2003 hasta enero del 2023.
+\item
+  Open: tasa de apertura.
+\item
+  High: tasa más alta alcanzada en el día.
+\item
+  Low: tasa más baja alcanzada en el día.
+\item
+  Close: tasa de cierre del día.
+\item
+  Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
+\end{itemize}
+
+El código para cargar la base de datos en R es:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/Dfranzani/Bases{-}de{-}datos{-}para{-}cursos/main/2023{-}1/Estad\%C3\%ADstica\%201/Tasa\%2Beuro\%2Bdolar\%2Bhistorica2023.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{conceptos}{%
 \section{Conceptos}\label{conceptos}}
 
-En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas estadística básicas de visualización y tabulación de datos, para el estudio de estos.
+En esta sección repasaremos algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas básicas de visualización para el estudio de estos.
 
 \hypertarget{datos}{%
 \subsection{Datos}\label{datos}}
@@ -394,41 +420,9 @@ A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran 
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Cargue la \href{https://es.finance.yahoo.com/quote/EURUSD\%3DX?p=EURUSD\%3DX}{base de datos} \emph{Tasa+euro+dolar+historica2023.csv} (se estará usando esta base para el resto de la unidad), la cual, contiene el registro diario histórico de la tasa de cambio del Euro a Dólar. Las columnas en la base de datos son las siguientes:
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
+  Utilizando la base de datos de la unidad, obtenga la media de la variable (columna) \textbf{Open}. Interprete.
 \item
-  Date: Fecha de medición (yyyy-mm-dd).
-\item
-  Open: tasa de apertura.
-\item
-  High: tasa más alta alcanzada en el día.
-\item
-  Low: tasa más baja alcanzada en el día.
-\item
-  Close: tasa de cierre del día.
-\item
-  Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
-\item
-  Volume: ``no aplica''.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{datos }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/Dfranzani/Bases{-}de{-}datos{-}para{-}cursos/main/2023{-}1/Estad\%C3\%ADstica\%201/Tasa\%2Beuro\%2Bdolar\%2Bhistorica2023.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Obtenga la media de la variable (columna) \textbf{Open}. Interprete.
-\item
-  Utilice el comando \textbf{colMeans()} para obtener la media de todas las variables asociadas a la tasa de conversión.
+  Utilice el comando \textbf{colMeans()} para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete
 \end{enumerate}
 
 \hypertarget{mediana}{%
@@ -483,7 +477,7 @@ En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una re
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Utilizando la base de tasas de EUR/USD, determine la media de cada una de las variables presentes en la base (ignore la la columna de la fecha de medición). Interprete.
+  Utilizando la base de datos de la unidad, determine la mediana de cada una de las variables presentes en la base (ignore la columna asociada a la variable fecha). Interprete.
 \end{enumerate}
 
 \hypertarget{moda}{%
@@ -522,7 +516,7 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base \emph{Tasa+euro+dolar+historica2023.csv} (no impriman la tabla).
+  Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base de datos de la unidad (sin imprimir la tabla).
 \end{enumerate}
 
 \begin{Shaded}
@@ -536,7 +530,7 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando \textbf{which.max()} para encontrar la posición en la que se ubica, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
+  Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando \textbf{which.max()} para encontrar la posición en la que se ubica esta, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
 \end{enumerate}
 
 \begin{Shaded}
@@ -555,7 +549,7 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Finalmente consulte directamente en la tabla en valor en la posición calculada en el paso anterior. Interprete.
+  Finalmente, consulte de manera directa en la tabla en valor de la frecuencia en la posición calculada en el paso anterior. Interprete.
 \end{enumerate}
 
 \begin{Shaded}
@@ -579,7 +573,7 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Replique los anterior para el resto de variables presentes en la base de datos (ignore la variable fecha).
+  Replique los anterior para el resto de variables presentes en la base de datos de la unidad (ignore la columna asociada a la variable fecha).
 \end{enumerate}
 
 \textbf{Nota}: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
@@ -614,7 +608,7 @@ La medida más simple de variabilidad en una muestra es el \textbf{rango}, el cu
 
 \textbf{Ejemplo:}
 
-Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
+Obtengamos el rango de la tasa de apertura histórica del EUR/USD de la base de datos de la undiad.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -651,7 +645,7 @@ Obtengamos el rango de la tasa de apertura histórica del EUR/USD.
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Obtener el rango del resto de variables de la base de datos (ignore la variable fecha).
+  Obtener el rango del resto de variables de la base de datos de la undiad (ignore la columna asociada a la variable fecha).
 \end{enumerate}
 
 \hypertarget{varianza-y-desviaciuxf3n-estuxe1ndar}{%
@@ -715,7 +709,7 @@ No seguir estas recomendaciones puede generar un falsa sensación en la comunica
 
 \textbf{Ejemplo:}
 
-Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD, para ello:
+Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos de la unidad, para ello:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -795,7 +789,7 @@ Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD.
+  Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD presentes en la base de datos de la unidad.
 \end{enumerate}
 
 \hypertarget{coeficiente-de-variaciuxf3n}{%
@@ -856,7 +850,7 @@ En el ejercicio anterior, se utilizó la varianza para comprar directamente la v
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD. Interprete.
+  Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD presentes en la base de datos de la unidad. Interprete.
 \end{enumerate}
 
 \textbf{Nota}: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
@@ -883,7 +877,7 @@ Desviación estándar & $\sigma$ & $S$\\
 \hypertarget{gruxe1ficos-descriptivos}{%
 \section{Gráficos descriptivos}\label{gruxe1ficos-descriptivos}}
 
-En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva.
+En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva. Los ejemplos presentados en esta sección hacen uso de la base de datos de la unidad (sección \ref{unidad1}).
 
 \hypertarget{histograma}{%
 \subsection{Histograma}\label{histograma}}
@@ -903,7 +897,7 @@ Algunos datos numéricos se obtienen contando para determinar el valor de una va
   Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.
 \end{enumerate}
 
-Para generar un histograma en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un histograma en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -996,7 +990,7 @@ Los pasos para elaborar un gráfico de caja son los siguiente \citep[página 106
   Mediante puntos se indica la localización de las observaciones atípicas.
 \end{enumerate}
 
-Para generar un gráfico de caja en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de caja en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1039,7 +1033,7 @@ El proceso de construcción del gráfico es el siguiente:
 
 Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.
 
-Para generar un gráfico de violín en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de violín en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1093,7 +1087,7 @@ Una gráfico de barras, es una gráfica para representar los datos cualitativos 
   Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
 \end{enumerate}
 
-Para generar un gráfico de barras en R, a partir de un conjunto de datos, se utiliza el siguiente código:
+Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1115,7 +1109,22 @@ Para generar un gráfico de barras en R, a partir de un conjunto de datos, se ut
 \hypertarget{dispersiuxf3n}{%
 \subsection{Dispersión}\label{dispersiuxf3n}}
 
-Gráfico que permite contrastar dos variables cuantitativas. En general, se usa para estudiar la asociación entre dos variables.
+El gráfico de dispersión es útil para estudiar la relación entre dos variables continuas. Muestra cómo varía un variable en función de la otra y puede ayudar a identificar patrones y tendencias \citep{rowlingson2016data}.
+
+Los pasos para elaborar un gráfico de caja son los siguiente \citep{healy2019data}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Elegir dos variables continuas de la base de datos a trabajar. Cada fila corresponde a una observación, por lo cual, hay una correspondencia entre los valores de una misma fila.
+\item
+  Elegir la variable estará en el eje X y Y.
+\item
+  Representar cada par ordenado con un punto.
+\end{enumerate}
+
+Para generar un gráfico de dispersión en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1230,8 +1239,8 @@ Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdr
 \hypertarget{la-distribuciuxf3n-t-student}{%
 \section{La distribución T-Student}\label{la-distribuciuxf3n-t-student}}
 
-\hypertarget{pruebas-de-hipuxf3tesis}{%
-\section{Pruebas de hipótesis}\label{pruebas-de-hipuxf3tesis}}
+\hypertarget{prueba}{%
+\section{Pruebas de hipótesis}\label{prueba}}
 
 \hypertarget{una-media}{%
 \subsection{Una media}\label{una-media}}

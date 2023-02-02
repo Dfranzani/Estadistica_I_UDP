@@ -10,7 +10,7 @@
 
 ## La distribución T-Student
 
-## Pruebas de hipótesis
+## Pruebas de hipótesis {#prueba}
 
 ### Una media
 
