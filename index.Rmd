@@ -2,7 +2,7 @@
 title: "Estadística I & Estadística Descriptiva"
 author: "Coordinación de Estadística - UFME"
 description: "Curso básico de Estadística en R para ingeniería"
-date: "01 de marzo del 2023"
+date: "Actualizado al `r format(Sys.Date(), '%d-%m-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [refs.bib]
@@ -13,12 +13,12 @@ github-repo: "Dfranzani/Estadistica_I_UDP"
 ---
 
 ```{r, include=FALSE}
-options(tinytex.engine_args = '-shell-escape') # Mintend indent
+options(tinytex.engine_args = '-shell-escape') # Minted indent
 ```
 
 # Presentación del curso {-}
 
-La asignatura Estadística I & Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente, los cuales, entregan las herramientas necesarias para realizar análisis descriptivos de datos, incluyendo formas simples de modelar relaciones entre variables con la intención de facilitar e iluminar la toma de decisiones económicas, de negocios, entre otros ámbitos. Al mismo tiempo, entrega los fundamentos básicos de la teoría de probabilidades para la modelación de fenómenos con base probabilística.
+La asignatura Estadística I & Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente, los cuales, entregan las herramientas necesarias para realizar análisis descriptivos de datos, incluyendo formas simples de modelar relaciones entre variables con la intención de facilitar e iluminar la toma de decisiones económicas, de negocios, entre otros ámbitos. Al mismo tiempo, entrega los fundamentos básicos de la teoría de probabilidades para la modelación de fenómenos con base probabilística. 
 
 Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso de herramientas modernas de programación, situando al estudiante en un rol de analista dentro de una unidad organizacional.
 

@@ -138,7 +138,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{Coordinación de Estadística - UFME}
-\date{Actualizado al 02-02-2023}
+\date{Actualizado al 03-02-2023}
 
 \begin{document}
 \maketitle
@@ -1117,7 +1117,7 @@ El siguiente código, crea una nueva columna en la base de datos que identifica 
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
-Una vez obtenido el gráfico, podemos comparar las dispersiones de los datos en cada uno de los años. En específico, se aprecia que la dispersión se encuentra principalmente entre 1.1 y 1.3 en la mayoría de los años, a excepción del periodo 2007 - 2014, el cual, refleja valores superiores a este rango.
+Una vez obtenido el gráfico, podemos comparar las dispersiones de los datos en cada uno de los años. En específico, se aprecia que la dispersión está entre 1.1 y 1.3 para la mayoría de los años, a excepción del periodo 2007 - 2014, el cual, refleja valores superiores a este rango.
 
 \textbf{Ejercicio:}
 
@@ -1171,7 +1171,7 @@ Para generar un gráfico de barras en R a partir de un conjunto de datos, se uti
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Utilizando las variables \textbf{High} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico de barras para cada una, para ello, establezca 2 puntos de cortes (3 categorías) a su elección. Interprete.
+  Utilizando las variables \textbf{High} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico de barras para cada una. Interprete.
 \end{enumerate}
 
 \hypertarget{dispersiuxf3n}{%
@@ -1234,7 +1234,7 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
                \AttributeTok{y =}\NormalTok{ Open,}
                \AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{stat =} \StringTok{"summary"}\NormalTok{,}
-            \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{)}
+             \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{)}
 \NormalTok{g}
 \end{Highlighting}
 \end{Shaded}
@@ -1276,7 +1276,9 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
                \AttributeTok{y =}\NormalTok{ Open)) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
-  \FunctionTok{facet\_wrap}\NormalTok{(}\FunctionTok{vars}\NormalTok{(Ano), }\AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{)}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\FunctionTok{vars}\NormalTok{(Ano),}
+             \AttributeTok{nrow =} \DecValTok{1}\NormalTok{,}
+             \AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{)}
 \NormalTok{g}
 \end{Highlighting}
 \end{Shaded}
@@ -1293,7 +1295,7 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =} \FunctionTok{aggregate}\NormalTok{(}\AttributeTok{x =}\NormalTok{ datos, }\AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\AttributeTok{FUN =}\NormalTok{ mean),}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =} \FunctionTok{aggregate}\NormalTok{(}\AttributeTok{x =}\NormalTok{ datos, }\AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\AttributeTok{FUN =}\NormalTok{ mean), }
            \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Low,}
                \AttributeTok{y =}\NormalTok{ High,}
                \AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+}
@@ -1303,13 +1305,6 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 \end{Shaded}
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
-
-\textbf{Ejercicio:}
-
-\hypertarget{talleres-de-pruxe1ctica}{%
-\section{Talleres de práctica}\label{talleres-de-pruxe1ctica}}
-
-Desarrollar el \href{https://colab.research.google.com/drive/1wASaDklH5qgHqfCPdri-V2cg00KflJBf?usp=sharing}{Taller 1}.
 
 \hypertarget{probabilidad-y-variables-aleatorias.}{%
 \chapter{Probabilidad y variables aleatorias.}\label{probabilidad-y-variables-aleatorias.}}
