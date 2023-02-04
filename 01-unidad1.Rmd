@@ -525,16 +525,20 @@ Algunos datos numéricos se obtienen contando para determinar el valor de una va
 Para generar un histograma en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
-library(ggplot2)
-ggplot(data = datos, # Base de datos a utilizar
-       aes(x = Close)) + # Comando estético: eje y variable
-  geom_histogram(bins = 13, # Cantidad de intervalos del histograma
-                 color = "white", # Color del borde de las barras del histograma
-                 fill = "darkred", # Color de relleno de las barras
-                 closed = "left") + # Tipo de intervalo del histograma
-  labs(title = "Histograma EUR/USD", # Título del gráfico
-       x = "Tasa de cierre", # Título del eje X
-       y = "Frecuencia") # Título del eje Y
+library(ggplot2) # Librería de ggplot2
+ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+       aes( # Comandos estéticos
+         x = Close)) + # Eje X y variable asociada 
+  geom_histogram( # Objeto a graficar: histograma
+    bins = 13, # Cantidad de intervalos del histograma
+    color = "white", # Color del borde de las barras del histograma
+    fill = "darkred", # Color de relleno de las barras
+    closed = "left") + # Tipo de intervalo del histograma
+  labs( # Títulos
+    title = "Histograma EUR/USD", # Título del gráfico
+    x = "Tasa de cierre", # Título del eje X
+    y = "Frecuencia") # Título del eje Y
 ```
 
 Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.
@@ -574,22 +578,32 @@ Los pasos para elaborar un gráfico de caja son los siguiente [@anderson, págin
 Para generar un gráfico de caja en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=8, fig.height=3}
-g = ggplot(data = datos, # Base de datos a utilizar
-       aes(y = Close)) + # Comando estético: eje y variable
-  geom_boxplot(color = "black", # Color del borde del gráfico
-               fill = "darkred") + # Color de relleno del gráfico
-  labs(title = "Caja EUR/USD (opción 1)", # Título del gráfico
-       x = "", # Título del eje X
-       y = "Tasa de cierre") + # Título del eje Y
-  theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
-        axis.text.x = element_blank()) # Elimina los números del eje X
+g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    y = Close)) + # Eje Y y variable asociada
+  geom_boxplot( # Objeto a graficar: gráfico de caja
+    color = "black", # Color del borde del gráfico
+    fill = "darkred") + # Color de relleno del gráfico
+  labs( # Títulos 
+    title = "Caja EUR/USD (opción 1)", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Tasa de cierre") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
 info = unlist(ggplot_build(g)[[1]]) # Guardamos los valores del gráfico
 values = round(as.numeric(info[1:5]), 3) # Extraemos los valores de construcción
 g1 = g + # Creamos un nuevo gráfico a partir del anterior
-  scale_y_continuous(breaks = values, labels = values) + # Modificamos los valores mostrados en el eje Y (valores de construcción)
-  labs(title = "Caja EUR/USD (opción 2)")
-library(gridExtra)
-grid.arrange(g, g1, ncol = 2) # Desplegamos lo gráficos en la misma ventana
+  scale_y_continuous( # Modificar el eje Y
+    breaks = values, # Modificamos los puntos a considerar en el eje Y
+    labels = values) + # Modificamos los valores mostrados en el eje Y
+  labs( # Títulos
+    title = "Caja EUR/USD (opción 2)") # Título del gráfico
+library(gridExtra) # Librería para juntar gráficos de ggplot2
+grid.arrange(g, # Gráfico
+             g1, # Gráfico
+             ncol = 2) # Despliegue en a dos columnas 
 ```
 **Ejercicio:**
 
@@ -612,27 +626,35 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Se guarda el gráfico en una variable para posteriormente
 # integrar otros gráficos dentro de este.
-g = ggplot(data = datos, # Base de datos a utilizar
-           aes(x = 1, y = Close)) + # Comando estético: variables a graficar 
-  geom_violin(trim = F, # Modifica las terminaciones visuales superior e inferior
-              fill = "aquamarine3") + # Color de relleno del gráfico
-  labs(title = "Violín EUR/USD", # Título del gráfico
-       x = "", # Título del eje X
-       y = "Tasa de cierre") + # Título del eje Y
-  theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
-        axis.text.x = element_blank()) # Elimina los números del eje X
+g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = 1, # Se fija el valor horizontal del gráfico (a elección)
+    y = Close)) + # Eje Y y variable asociada
+  geom_violin( # Objeto a graficar: violín
+    trim = F, # Modifica las terminaciones visuales superior e inferior
+    fill = "aquamarine3") + # Color de relleno del gráfico
+  labs( # Títulos
+    title = "Violín EUR/USD", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Tasa de cierre") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
 g # Desplegamos el gráfico en el visualizador
 ```
 
 ```{r fig.align="center", fig.width=4, fig.height=3}
 # Agregamos otros elementos al gráfico guardado
-g + geom_boxplot(width = 0.1, # Anchura del nuevo gráfico de caja
-                 color = "black", # Color de borde del gráfico
-                 fill = "lightblue2") + # Color de relleno del gráfico
-  stat_summary(fun = mean, # Función que indica el tipo de información (mean = media)
-               geom = "point", # Forma visual
-               size = 1, # Tamaño
-               color = "red") # Color
+g + geom_boxplot( # Objeto a graficar: gráfico de caja
+  width = 0.1, # Anchura proporcional del nuevo gráfico de caja
+  color = "black", # Color de borde del gráfico
+  fill = "lightblue2") + # Color de relleno del gráfico
+  stat_summary( # Función para agregar información de resumen
+    fun = mean, # Tipo de información: promedio
+    geom = "point", # Forma visual
+    size = 1, # Tamaño
+    color = "red") # Color
 ```
 
 **Ejercicio:**
@@ -645,25 +667,35 @@ g + geom_boxplot(width = 0.1, # Anchura del nuevo gráfico de caja
 El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable **Close**, diferenciando por año. Interprete.
 
 ```{r fig.align="center", fig.width=10, fig.height=3}
+# Extraemos el año de la variable Date, y la guardamos en un nueva columna
 datos$Ano = substr(datos$Date, 1, 4)
-ggplot(data = datos, # Base de datos a utilizar
-       aes(x = 1, y = Close)) + # Comando estético: variables a graficar 
-  geom_violin(trim = F, # Modifica las terminaciones visuales superior e inferior
-              fill = "aquamarine3") + # Color de relleno del gráfico
-  geom_boxplot(width = 0.1, # Anchura del nuevo gráfico de caja
-                 color = "black", # Color de borde del gráfico
-                 fill = "lightblue2") + # Color de relleno del gráfico
-  stat_summary(fun = mean, # Función que indica el tipo de información (mean = media)
-               geom = "point", # Forma visual
-               size = 1, # Tamaño
-               color = "red") + # Color
-  labs(title = "Violín EUR/USD", # Título del gráfico
-       x = "", # Título del eje X
-       y = "Tasa de cierre") + # Título del eje Y
-  theme(axis.ticks.x = element_blank(), # Elimina las regletas del eje X
-        axis.text.x = element_blank()) + # Elimina los números del eje X
-  facet_wrap(vars(Ano), # Variable que se utiliza para segregrar los gráficos
-             nrow = 1) # Disposición visual: todo en la misma fila
+ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = 1, # Se fija el valor horizontal del gráfico (a elección)
+    y = Close)) + # Eje Y y variable asociada
+  geom_violin( # Objeto a graficar: violín
+    trim = F, # Modifica las terminaciones visuales superior e inferior
+    fill = "aquamarine3") + # Color de relleno del gráfico
+  geom_boxplot( # Objeto a graficar: gráfico de caja
+    width = 0.1, # Anchura proporcional del nuevo gráfico de caja
+    color = "black", # Color de borde del gráfico
+    fill = "lightblue2") + # Color de relleno del gráfico
+  stat_summary( # Función para agregar información de resumen
+    fun = mean, # Tipo de información: promedio
+    geom = "point", # Forma visual
+    size = 1, # Tamaño
+    color = "red") + # Color
+  labs( # Títulos
+    title = "Violín EUR/USD", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Tasa de cierre") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) + # Elimina los números del eje X
+  facet_wrap( # Segregación del gráfico
+    vars(Ano), # Variable que se utiliza para segregar el gráfico
+    nrow = 1) # Disposición visual: una fila
 ```
 
 Una vez obtenido el gráfico, podemos comparar las dispersiones de los datos en cada uno de los años. En específico, se aprecia que la dispersión está entre 1.1 y 1.3 para la mayoría de los años, a excepción del periodo 2007 - 2014, el cual, refleja valores superiores a este rango.
@@ -689,12 +721,16 @@ Para generar un gráfico de barras en R a partir de un conjunto de datos, se uti
 datos$Close2 = ifelse(datos$Close > 1.1, # Criterio
                       "Mayor a 1.1", # Valor asignado si se cumple el criterio
                       "Menor a  1.1") # Valor asignado si no se cumple el criterio
-ggplot(data = datos, # Base de datos a utilizar
-       aes(x = Close2)) + # Comando estético: eje y variable
-  geom_bar(fill = "darkgreen") + # Color de relleno
-  labs(title = "Barras EUR/USD", # Título del gráfico
-       x = "Tasa de cierre", # Título del eje X
-       y = "Frecuencia") # Título del eje Y
+ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = Close2)) + # Eje Y y variable asociada
+  geom_bar( # Objeto a graficar: gráfico de barras
+    fill = "darkgreen") + # Color de relleno
+  labs( # Títulos
+    title = "Barras EUR/USD", # Título del gráfico
+    x = "Tasa de cierre", # Título del eje X
+    y = "Frecuencia") # Título del eje Y
 ```
 
 **Ejercicio:**
@@ -714,14 +750,18 @@ Los pasos para elaborar un gráfico de caja son los siguiente [@healy2019data]:
 Para generar un gráfico de dispersión en R a partir de un conjunto de datos, se utiliza el siguiente código:
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
-ggplot(data = datos, # Base de datos a utilizar
-       aes(x = Open, # Comandos estéticos: Eje X y variable asociada
-           y = Close)) +  # Eje Y y variable asociada
-  geom_point(color = "darkblue", # Color de los puntos
-             alpha = 0.3) + # # Opacidad de los puntos
-  labs(title = "Dispersión EUR/USD", # Título del gráfico
-       x = "Tasa de apertura", # Título del eje X
-       y = "Tasa de cierre") # Título del eje Y
+ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comando estéticos
+    x = Open, # Eje X y variable asociada
+    y = Close)) + # Eje Y y variable asociada
+  geom_point( # Objeto a graficar: Gráfico de dispersión
+    color = "darkblue", # Color
+    alpha = 0.3) + # # Opacidad
+  labs( # Títulos
+    title = "Tasa de apertura y cierre del EUR/USD", # Título del gráfico
+    x = "Tasa de apertura", # Título del eje X
+    y = "Tasa de cierre") # Título del eje Y
 ```
 
 **Ejercicio:**
@@ -731,55 +771,82 @@ ggplot(data = datos, # Base de datos a utilizar
 
 **Ejemplo:**
 
-1. Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD.
+1. Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
-g = ggplot(data = datos,
-           aes(x = Ano,
-               y = Open,
-               group = 1)) +
-  geom_point(stat = "summary",
-             fun = "mean")
-g
+g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comando estéticos
+    x = Ano, # Eje X y variable asociada
+    y = Open, # Eje Y y variable asociada
+    group = 1)) + # Comando únicamente necesario para la pregunta 2
+  geom_point( # Objeto a graficar
+    stat = "summary", # Tipo de información a graficar: resumen
+    fun = "mean") + # Tipo de resumen: promedio de la variable Y
+  labs( # Títulos
+    title = "Tasa de apertura promedio del EUR/USD por año", # Título del gráfico
+    x = "Año", # Título del eje X
+    y = "Tasa de apertura") # Título del eje Y
+g # Desplegamos el gráfico guardado
 ```
 
 2. Añadir al gráfico un formato de líneas entre los puntos. Interprete.
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
-g = g +
-  geom_line(stat = "summary",
-            fun = "mean")
-g
+g = g + # Añadimos otro gráfico
+  geom_line( # Objeto a graficar: lineas
+    stat = "summary", # Tipo de información a graficar: resumen
+    fun = "mean") # Tipo de resumen: promedio de la variable Y
+g # Desplegamos el gráfico guardado
 ```
 
 
 3. Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 en orden temporal. Interprete.
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
-datos$Date = as.Date(datos$Date)
-g = ggplot(data = datos[datos$Ano %in% 2020:2022,],
-           aes(x = Date,
-               y = Open)) +
-  geom_point(size = 0.5) +
-  theme(axis.text.x = element_blank()) +
-  facet_wrap(vars(Ano),
-             nrow = 1,
-             scales = "free_x")
-g
+datos$Date = as.Date(datos$Date) # Fechas en formato fecha de R
+g = ggplot( # Ambiente gráfico
+  data = datos[datos$Ano %in% 2020:2022,], # Datos de los años 2020 al 2022
+  aes( # Comando estéticos
+    x = Date, # Comandos estéticos: Eje X y variable asociada
+    y = Open)) + # Eje Y y variable asociada
+  geom_point( # Objeto a graficar
+    size = 0.5) + # Tamaño
+  theme( # Aspectos visuales del gráfico
+    axis.text.x = element_blank()) + # Eliminamos el texto del eje X
+  facet_wrap( # Segregación del gráfico
+    vars(Ano), # Variable que se utiliza para segregar el gráfico
+    nrow = 1, # Disposición visual: una fila
+    scales = "free_x") + # La escala del eje X es independiente para gráfico
+  labs( # Títulos
+    title = "Tasa de apertura del EUR/USD desde el 2020 hasta el 2022", # Título del gráfico
+    x = "Fecha", # Título del eje X
+    y = "Tasa de apertura") # Título del eje Y
+g # Desplegamos el gráfico guardado
 ```
 
 4. Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.
 
-
 ```{r fig.align="center", fig.width=8, fig.height=4, warning=FALSE}
-g = ggplot(data = aggregate(x = datos, by = list(Año = datos$Ano), FUN = mean), 
-           aes(x = Low,
-               y = High,
-               color = Año)) +
-  geom_point()
-g
+g = ggplot( # Ambiente gráfico
+  data = aggregate( # Función para resumir una base de datos (crea una nueva base)
+    x = datos, # Indicar la base de datos a modificar
+    by = list(Año = datos$Ano), # Variable por la cual se genera el resumen, y nombre asignado
+    FUN = mean), # Resumen que se genera en las columnas de la base de datos
+  aes( # Comandos estéticos
+    x = Low, # Eje X y variable asociada
+    y = High, # Eje Y y variable asociada
+    color = Año)) + # Color según variable
+  geom_point() + # Objeto a graficar: gráfico de dispersión
+  labs( # Títulos
+    title = "Promedio de la tasa más alta y más baja del EUR/USD", # Título del gráfico
+    x = "Tasa más baja", # Título el eje X
+    y = "Tasa más alta" # Título el eje Y
+  )
+g # Desplegamos el gráfico guardado
 ```
 
+**Ejercicio:**
 
 
 

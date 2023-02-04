@@ -241,17 +241,14 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.3" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#comparación-de-varianzas"><i class="fa fa-check"></i><b>3.4.3</b> Comparación de varianzas</a></li>
 <li class="chapter" data-level="3.4.4" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.4.4</b> Diferencia de proporciones</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<li class="chapter" data-level="3.5" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#una-media-1"><i class="fa fa-check"></i><b>3.5</b> Una media</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#una-media-1"><i class="fa fa-check"></i><b>4.1</b> Una media</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#bajo-distribución-normal"><i class="fa fa-check"></i><b>4.1.1</b> Bajo distribución normal</a></li>
-<li class="chapter" data-level="4.1.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#asintótico"><i class="fa fa-check"></i><b>4.1.2</b> Asintótico</a></li>
+<li class="chapter" data-level="3.5.1" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#bajo-distribución-normal"><i class="fa fa-check"></i><b>3.5.1</b> Bajo distribución normal</a></li>
+<li class="chapter" data-level="3.5.2" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#asintótico"><i class="fa fa-check"></i><b>3.5.2</b> Asintótico</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-medias-1"><i class="fa fa-check"></i><b>4.2</b> Diferencia de medias</a></li>
-<li class="chapter" data-level="4.3" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>4.3</b> Compraración de varianzas</a></li>
-<li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.html"><a href="intervalos-de-confianza.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>4.4</b> Diferencia de proporciones</a></li>
+<li class="chapter" data-level="3.6" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-medias-1"><i class="fa fa-check"></i><b>3.6</b> Diferencia de medias</a></li>
+<li class="chapter" data-level="3.7" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#compraración-de-varianzas"><i class="fa fa-check"></i><b>3.7</b> Compraración de varianzas</a></li>
+<li class="chapter" data-level="3.8" data-path="distribuciones-muestrales-y-pruebas-de-hipótesis.html"><a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html#diferencia-de-proporciones-1"><i class="fa fa-check"></i><b>3.8</b> Diferencia de proporciones</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
@@ -760,16 +757,20 @@ Desviación estándar
 <li>Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.</li>
 </ol>
 <p>Para generar un histograma en R a partir de un conjunto de datos, se utiliza el siguiente código:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="unidad1.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb36-2"><a href="unidad1.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb36-3"><a href="unidad1.html#cb36-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: eje y variable</span></span>
-<span id="cb36-4"><a href="unidad1.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">13</span>, <span class="co"># Cantidad de intervalos del histograma</span></span>
-<span id="cb36-5"><a href="unidad1.html#cb36-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="co"># Color del borde de las barras del histograma</span></span>
-<span id="cb36-6"><a href="unidad1.html#cb36-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>, <span class="co"># Color de relleno de las barras</span></span>
-<span id="cb36-7"><a href="unidad1.html#cb36-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">closed =</span> <span class="st">&quot;left&quot;</span>) <span class="sc">+</span> <span class="co"># Tipo de intervalo del histograma</span></span>
-<span id="cb36-8"><a href="unidad1.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histograma EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb36-9"><a href="unidad1.html#cb36-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Tasa de cierre&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb36-10"><a href="unidad1.html#cb36-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="unidad1.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Librería de ggplot2</span></span>
+<span id="cb36-2"><a href="unidad1.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb36-3"><a href="unidad1.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb36-4"><a href="unidad1.html#cb36-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb36-5"><a href="unidad1.html#cb36-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> Close)) <span class="sc">+</span> <span class="co"># Eje X y variable asociada </span></span>
+<span id="cb36-6"><a href="unidad1.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>( <span class="co"># Objeto a graficar: histograma</span></span>
+<span id="cb36-7"><a href="unidad1.html#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bins =</span> <span class="dv">13</span>, <span class="co"># Cantidad de intervalos del histograma</span></span>
+<span id="cb36-8"><a href="unidad1.html#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="co"># Color del borde de las barras del histograma</span></span>
+<span id="cb36-9"><a href="unidad1.html#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>, <span class="co"># Color de relleno de las barras</span></span>
+<span id="cb36-10"><a href="unidad1.html#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">closed =</span> <span class="st">&quot;left&quot;</span>) <span class="sc">+</span> <span class="co"># Tipo de intervalo del histograma</span></span>
+<span id="cb36-11"><a href="unidad1.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb36-12"><a href="unidad1.html#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Histograma EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb36-13"><a href="unidad1.html#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de cierre&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb36-14"><a href="unidad1.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-13-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="unidad1.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos del histograma guardados</span></span>
@@ -816,22 +817,32 @@ Desviación estándar
 <li>Mediante puntos se indica la localización de las observaciones atípicas.</li>
 </ol>
 <p>Para generar un gráfico de caja en R a partir de un conjunto de datos, se utiliza el siguiente código:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="unidad1.html#cb39-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb39-2"><a href="unidad1.html#cb39-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: eje y variable</span></span>
-<span id="cb39-3"><a href="unidad1.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color del borde del gráfico</span></span>
-<span id="cb39-4"><a href="unidad1.html#cb39-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb39-5"><a href="unidad1.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 1)&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb39-6"><a href="unidad1.html#cb39-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb39-7"><a href="unidad1.html#cb39-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
-<span id="cb39-8"><a href="unidad1.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
-<span id="cb39-9"><a href="unidad1.html#cb39-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
-<span id="cb39-10"><a href="unidad1.html#cb39-10" aria-hidden="true" tabindex="-1"></a>info <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">ggplot_build</span>(g)[[<span class="dv">1</span>]]) <span class="co"># Guardamos los valores del gráfico</span></span>
-<span id="cb39-11"><a href="unidad1.html#cb39-11" aria-hidden="true" tabindex="-1"></a>values <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(info[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="dv">3</span>) <span class="co"># Extraemos los valores de construcción</span></span>
-<span id="cb39-12"><a href="unidad1.html#cb39-12" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Creamos un nuevo gráfico a partir del anterior</span></span>
-<span id="cb39-13"><a href="unidad1.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> values, <span class="at">labels =</span> values) <span class="sc">+</span> <span class="co"># Modificamos los valores mostrados en el eje Y (valores de construcción)</span></span>
-<span id="cb39-14"><a href="unidad1.html#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 2)&quot;</span>)</span>
-<span id="cb39-15"><a href="unidad1.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb39-16"><a href="unidad1.html#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g, g1, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># Desplegamos lo gráficos en la misma ventana</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="unidad1.html#cb39-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb39-2"><a href="unidad1.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb39-3"><a href="unidad1.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb39-4"><a href="unidad1.html#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb39-5"><a href="unidad1.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb39-6"><a href="unidad1.html#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color del borde del gráfico</span></span>
+<span id="cb39-7"><a href="unidad1.html#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb39-8"><a href="unidad1.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos </span></span>
+<span id="cb39-9"><a href="unidad1.html#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 1)&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb39-10"><a href="unidad1.html#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb39-11"><a href="unidad1.html#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb39-12"><a href="unidad1.html#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb39-13"><a href="unidad1.html#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb39-14"><a href="unidad1.html#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb39-15"><a href="unidad1.html#cb39-15" aria-hidden="true" tabindex="-1"></a>info <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">ggplot_build</span>(g)[[<span class="dv">1</span>]]) <span class="co"># Guardamos los valores del gráfico</span></span>
+<span id="cb39-16"><a href="unidad1.html#cb39-16" aria-hidden="true" tabindex="-1"></a>values <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(info[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="dv">3</span>) <span class="co"># Extraemos los valores de construcción</span></span>
+<span id="cb39-17"><a href="unidad1.html#cb39-17" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Creamos un nuevo gráfico a partir del anterior</span></span>
+<span id="cb39-18"><a href="unidad1.html#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>( <span class="co"># Modificar el eje Y</span></span>
+<span id="cb39-19"><a href="unidad1.html#cb39-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> values, <span class="co"># Modificamos los puntos a considerar en el eje Y</span></span>
+<span id="cb39-20"><a href="unidad1.html#cb39-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> values) <span class="sc">+</span> <span class="co"># Modificamos los valores mostrados en el eje Y</span></span>
+<span id="cb39-21"><a href="unidad1.html#cb39-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb39-22"><a href="unidad1.html#cb39-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 2)&quot;</span>) <span class="co"># Título del gráfico</span></span>
+<span id="cb39-23"><a href="unidad1.html#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra) <span class="co"># Librería para juntar gráficos de ggplot2</span></span>
+<span id="cb39-24"><a href="unidad1.html#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g, <span class="co"># Gráfico</span></span>
+<span id="cb39-25"><a href="unidad1.html#cb39-25" aria-hidden="true" tabindex="-1"></a>             g1, <span class="co"># Gráfico</span></span>
+<span id="cb39-26"><a href="unidad1.html#cb39-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># Despliegue en a dos columnas </span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" />
 <strong>Ejercicio:</strong></p>
 <ol style="list-style-type: decimal">
@@ -850,25 +861,33 @@ Desviación estándar
 <p>Para generar un gráfico de violín en R a partir de un conjunto de datos, se utiliza el siguiente código:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="unidad1.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se guarda el gráfico en una variable para posteriormente</span></span>
 <span id="cb40-2"><a href="unidad1.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># integrar otros gráficos dentro de este.</span></span>
-<span id="cb40-3"><a href="unidad1.html#cb40-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb40-4"><a href="unidad1.html#cb40-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: variables a graficar </span></span>
-<span id="cb40-5"><a href="unidad1.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
-<span id="cb40-6"><a href="unidad1.html#cb40-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb40-7"><a href="unidad1.html#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb40-8"><a href="unidad1.html#cb40-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb40-9"><a href="unidad1.html#cb40-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
-<span id="cb40-10"><a href="unidad1.html#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
-<span id="cb40-11"><a href="unidad1.html#cb40-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
-<span id="cb40-12"><a href="unidad1.html#cb40-12" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico en el visualizador</span></span></code></pre></div>
+<span id="cb40-3"><a href="unidad1.html#cb40-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb40-4"><a href="unidad1.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb40-5"><a href="unidad1.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb40-6"><a href="unidad1.html#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1</span>, <span class="co"># Se fija el valor horizontal del gráfico (a elección)</span></span>
+<span id="cb40-7"><a href="unidad1.html#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb40-8"><a href="unidad1.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>( <span class="co"># Objeto a graficar: violín</span></span>
+<span id="cb40-9"><a href="unidad1.html#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
+<span id="cb40-10"><a href="unidad1.html#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb40-11"><a href="unidad1.html#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb40-12"><a href="unidad1.html#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb40-13"><a href="unidad1.html#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb40-14"><a href="unidad1.html#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb40-15"><a href="unidad1.html#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb40-16"><a href="unidad1.html#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb40-17"><a href="unidad1.html#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb40-18"><a href="unidad1.html#cb40-18" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico en el visualizador</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-16-1.png" width="384" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="unidad1.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregamos otros elementos al gráfico guardado</span></span>
-<span id="cb41-2"><a href="unidad1.html#cb41-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura del nuevo gráfico de caja</span></span>
-<span id="cb41-3"><a href="unidad1.html#cb41-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
-<span id="cb41-4"><a href="unidad1.html#cb41-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;lightblue2&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb41-5"><a href="unidad1.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="co"># Función que indica el tipo de información (mean = media)</span></span>
-<span id="cb41-6"><a href="unidad1.html#cb41-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
-<span id="cb41-7"><a href="unidad1.html#cb41-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
-<span id="cb41-8"><a href="unidad1.html#cb41-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="co"># Color</span></span></code></pre></div>
+<span id="cb41-2"><a href="unidad1.html#cb41-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb41-3"><a href="unidad1.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura proporcional del nuevo gráfico de caja</span></span>
+<span id="cb41-4"><a href="unidad1.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
+<span id="cb41-5"><a href="unidad1.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">fill =</span> <span class="st">&quot;lightblue2&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb41-6"><a href="unidad1.html#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>( <span class="co"># Función para agregar información de resumen</span></span>
+<span id="cb41-7"><a href="unidad1.html#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> mean, <span class="co"># Tipo de información: promedio</span></span>
+<span id="cb41-8"><a href="unidad1.html#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
+<span id="cb41-9"><a href="unidad1.html#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
+<span id="cb41-10"><a href="unidad1.html#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="co"># Color</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-17-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p><strong>Ejercicio:</strong></p>
 <ol style="list-style-type: decimal">
@@ -876,25 +895,35 @@ Desviación estándar
 </ol>
 <p><strong>Ejemplo</strong>:</p>
 <p>El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable <strong>Close</strong>, diferenciando por año. Interprete.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="unidad1.html#cb42-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Ano <span class="ot">=</span> <span class="fu">substr</span>(datos<span class="sc">$</span>Date, <span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb42-2"><a href="unidad1.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb42-3"><a href="unidad1.html#cb42-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Comando estético: variables a graficar </span></span>
-<span id="cb42-4"><a href="unidad1.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
-<span id="cb42-5"><a href="unidad1.html#cb42-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb42-6"><a href="unidad1.html#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura del nuevo gráfico de caja</span></span>
-<span id="cb42-7"><a href="unidad1.html#cb42-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
-<span id="cb42-8"><a href="unidad1.html#cb42-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;lightblue2&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
-<span id="cb42-9"><a href="unidad1.html#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="co"># Función que indica el tipo de información (mean = media)</span></span>
-<span id="cb42-10"><a href="unidad1.html#cb42-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
-<span id="cb42-11"><a href="unidad1.html#cb42-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
-<span id="cb42-12"><a href="unidad1.html#cb42-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="co"># Color</span></span>
-<span id="cb42-13"><a href="unidad1.html#cb42-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb42-14"><a href="unidad1.html#cb42-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb42-15"><a href="unidad1.html#cb42-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
-<span id="cb42-16"><a href="unidad1.html#cb42-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
-<span id="cb42-17"><a href="unidad1.html#cb42-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Elimina los números del eje X</span></span>
-<span id="cb42-18"><a href="unidad1.html#cb42-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregrar los gráficos</span></span>
-<span id="cb42-19"><a href="unidad1.html#cb42-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">1</span>) <span class="co"># Disposición visual: todo en la misma fila</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="unidad1.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraemos el año de la variable Date, y la guardamos en un nueva columna</span></span>
+<span id="cb42-2"><a href="unidad1.html#cb42-2" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Ano <span class="ot">=</span> <span class="fu">substr</span>(datos<span class="sc">$</span>Date, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb42-3"><a href="unidad1.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb42-4"><a href="unidad1.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb42-5"><a href="unidad1.html#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb42-6"><a href="unidad1.html#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1</span>, <span class="co"># Se fija el valor horizontal del gráfico (a elección)</span></span>
+<span id="cb42-7"><a href="unidad1.html#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb42-8"><a href="unidad1.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>( <span class="co"># Objeto a graficar: violín</span></span>
+<span id="cb42-9"><a href="unidad1.html#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
+<span id="cb42-10"><a href="unidad1.html#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;aquamarine3&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb42-11"><a href="unidad1.html#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb42-12"><a href="unidad1.html#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura proporcional del nuevo gráfico de caja</span></span>
+<span id="cb42-13"><a href="unidad1.html#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
+<span id="cb42-14"><a href="unidad1.html#cb42-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;lightblue2&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb42-15"><a href="unidad1.html#cb42-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>( <span class="co"># Función para agregar información de resumen</span></span>
+<span id="cb42-16"><a href="unidad1.html#cb42-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> mean, <span class="co"># Tipo de información: promedio</span></span>
+<span id="cb42-17"><a href="unidad1.html#cb42-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
+<span id="cb42-18"><a href="unidad1.html#cb42-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
+<span id="cb42-19"><a href="unidad1.html#cb42-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="co"># Color</span></span>
+<span id="cb42-20"><a href="unidad1.html#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb42-21"><a href="unidad1.html#cb42-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb42-22"><a href="unidad1.html#cb42-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb42-23"><a href="unidad1.html#cb42-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb42-24"><a href="unidad1.html#cb42-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb42-25"><a href="unidad1.html#cb42-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb42-26"><a href="unidad1.html#cb42-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb42-27"><a href="unidad1.html#cb42-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
+<span id="cb42-28"><a href="unidad1.html#cb42-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
+<span id="cb42-29"><a href="unidad1.html#cb42-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">1</span>) <span class="co"># Disposición visual: una fila</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-18-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>Una vez obtenido el gráfico, podemos comparar las dispersiones de los datos en cada uno de los años. En específico, se aprecia que la dispersión está entre 1.1 y 1.3 para la mayoría de los años, a excepción del periodo 2007 - 2014, el cual, refleja valores superiores a este rango.</p>
 <p><strong>Ejercicio:</strong></p>
@@ -916,12 +945,16 @@ Desviación estándar
 <span id="cb43-2"><a href="unidad1.html#cb43-2" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Close2 <span class="ot">=</span> <span class="fu">ifelse</span>(datos<span class="sc">$</span>Close <span class="sc">&gt;</span> <span class="fl">1.1</span>, <span class="co"># Criterio</span></span>
 <span id="cb43-3"><a href="unidad1.html#cb43-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Mayor a 1.1&quot;</span>, <span class="co"># Valor asignado si se cumple el criterio</span></span>
 <span id="cb43-4"><a href="unidad1.html#cb43-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Menor a  1.1&quot;</span>) <span class="co"># Valor asignado si no se cumple el criterio</span></span>
-<span id="cb43-5"><a href="unidad1.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb43-6"><a href="unidad1.html#cb43-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Close2)) <span class="sc">+</span> <span class="co"># Comando estético: eje y variable</span></span>
-<span id="cb43-7"><a href="unidad1.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno</span></span>
-<span id="cb43-8"><a href="unidad1.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Barras EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb43-9"><a href="unidad1.html#cb43-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Tasa de cierre&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb43-10"><a href="unidad1.html#cb43-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<span id="cb43-5"><a href="unidad1.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb43-6"><a href="unidad1.html#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb43-7"><a href="unidad1.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb43-8"><a href="unidad1.html#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Close2)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb43-9"><a href="unidad1.html#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>( <span class="co"># Objeto a graficar: gráfico de barras</span></span>
+<span id="cb43-10"><a href="unidad1.html#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno</span></span>
+<span id="cb43-11"><a href="unidad1.html#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb43-12"><a href="unidad1.html#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Barras EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb43-13"><a href="unidad1.html#cb43-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de cierre&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb43-14"><a href="unidad1.html#cb43-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-19-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p><strong>Ejercicio:</strong></p>
 <ol style="list-style-type: decimal">
@@ -938,14 +971,18 @@ Desviación estándar
 <li>Representar cada par ordenado con un punto.</li>
 </ol>
 <p>Para generar un gráfico de dispersión en R a partir de un conjunto de datos, se utiliza el siguiente código:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="unidad1.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
-<span id="cb44-2"><a href="unidad1.html#cb44-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Open, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
-<span id="cb44-3"><a href="unidad1.html#cb44-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Close)) <span class="sc">+</span>  <span class="co"># Eje Y y variable asociada</span></span>
-<span id="cb44-4"><a href="unidad1.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="co"># Color de los puntos</span></span>
-<span id="cb44-5"><a href="unidad1.html#cb44-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># # Opacidad de los puntos</span></span>
-<span id="cb44-6"><a href="unidad1.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dispersión EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb44-7"><a href="unidad1.html#cb44-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Tasa de apertura&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb44-8"><a href="unidad1.html#cb44-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="unidad1.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb44-2"><a href="unidad1.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb44-3"><a href="unidad1.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb44-4"><a href="unidad1.html#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Open, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb44-5"><a href="unidad1.html#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb44-6"><a href="unidad1.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar: Gráfico de dispersión</span></span>
+<span id="cb44-7"><a href="unidad1.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="co"># Color</span></span>
+<span id="cb44-8"><a href="unidad1.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># # Opacidad</span></span>
+<span id="cb44-9"><a href="unidad1.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb44-10"><a href="unidad1.html#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura y cierre del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb44-11"><a href="unidad1.html#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de apertura&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb44-12"><a href="unidad1.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-20-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p><strong>Ejercicio:</strong></p>
 <ol style="list-style-type: decimal">
@@ -953,48 +990,76 @@ Desviación estándar
 </ol>
 <p><strong>Ejemplo:</strong></p>
 <ol style="list-style-type: decimal">
-<li>Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD.</li>
+<li>Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).</li>
 </ol>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="unidad1.html#cb45-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos,</span>
-<span id="cb45-2"><a href="unidad1.html#cb45-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">x =</span> Ano,</span>
-<span id="cb45-3"><a href="unidad1.html#cb45-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> Open,</span>
-<span id="cb45-4"><a href="unidad1.html#cb45-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb45-5"><a href="unidad1.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>,</span>
-<span id="cb45-6"><a href="unidad1.html#cb45-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb45-7"><a href="unidad1.html#cb45-7" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="unidad1.html#cb45-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb45-2"><a href="unidad1.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb45-3"><a href="unidad1.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb45-4"><a href="unidad1.html#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Ano, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb45-5"><a href="unidad1.html#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Open, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb45-6"><a href="unidad1.html#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span> <span class="co"># Comando únicamente necesario para la pregunta 2</span></span>
+<span id="cb45-7"><a href="unidad1.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb45-8"><a href="unidad1.html#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="co"># Tipo de información a graficar: resumen</span></span>
+<span id="cb45-9"><a href="unidad1.html#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="sc">+</span> <span class="co"># Tipo de resumen: promedio de la variable Y</span></span>
+<span id="cb45-10"><a href="unidad1.html#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb45-11"><a href="unidad1.html#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura promedio del EUR/USD por año&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb45-12"><a href="unidad1.html#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Año&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb45-13"><a href="unidad1.html#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
+<span id="cb45-14"><a href="unidad1.html#cb45-14" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Añadir al gráfico un formato de líneas entre los puntos. Interprete.</li>
 </ol>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="unidad1.html#cb46-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> g <span class="sc">+</span></span>
-<span id="cb46-2"><a href="unidad1.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>,</span>
-<span id="cb46-3"><a href="unidad1.html#cb46-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb46-4"><a href="unidad1.html#cb46-4" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="unidad1.html#cb46-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Añadimos otro gráfico</span></span>
+<span id="cb46-2"><a href="unidad1.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="co"># Objeto a graficar: lineas</span></span>
+<span id="cb46-3"><a href="unidad1.html#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="co"># Tipo de información a graficar: resumen</span></span>
+<span id="cb46-4"><a href="unidad1.html#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="co"># Tipo de resumen: promedio de la variable Y</span></span>
+<span id="cb46-5"><a href="unidad1.html#cb46-5" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-22-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 en orden temporal. Interprete.</li>
 </ol>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="unidad1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Date <span class="ot">=</span> <span class="fu">as.Date</span>(datos<span class="sc">$</span>Date)</span>
-<span id="cb47-2"><a href="unidad1.html#cb47-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos[datos<span class="sc">$</span>Ano <span class="sc">%in%</span> <span class="dv">2020</span><span class="sc">:</span><span class="dv">2022</span>,],</span>
-<span id="cb47-3"><a href="unidad1.html#cb47-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">x =</span> Date,</span>
-<span id="cb47-4"><a href="unidad1.html#cb47-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> Open)) <span class="sc">+</span></span>
-<span id="cb47-5"><a href="unidad1.html#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb47-6"><a href="unidad1.html#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb47-7"><a href="unidad1.html#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Ano),</span>
-<span id="cb47-8"><a href="unidad1.html#cb47-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">1</span>,</span>
-<span id="cb47-9"><a href="unidad1.html#cb47-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>)</span>
-<span id="cb47-10"><a href="unidad1.html#cb47-10" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="unidad1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Date <span class="ot">=</span> <span class="fu">as.Date</span>(datos<span class="sc">$</span>Date) <span class="co"># Fechas en formato fecha de R</span></span>
+<span id="cb47-2"><a href="unidad1.html#cb47-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb47-3"><a href="unidad1.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos[datos<span class="sc">$</span>Ano <span class="sc">%in%</span> <span class="dv">2020</span><span class="sc">:</span><span class="dv">2022</span>,], <span class="co"># Datos de los años 2020 al 2022</span></span>
+<span id="cb47-4"><a href="unidad1.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb47-5"><a href="unidad1.html#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Date, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
+<span id="cb47-6"><a href="unidad1.html#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Open)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb47-7"><a href="unidad1.html#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb47-8"><a href="unidad1.html#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
+<span id="cb47-9"><a href="unidad1.html#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb47-10"><a href="unidad1.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Eliminamos el texto del eje X</span></span>
+<span id="cb47-11"><a href="unidad1.html#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
+<span id="cb47-12"><a href="unidad1.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
+<span id="cb47-13"><a href="unidad1.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">1</span>, <span class="co"># Disposición visual: una fila</span></span>
+<span id="cb47-14"><a href="unidad1.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span> <span class="co"># La escala del eje X es independiente para gráfico</span></span>
+<span id="cb47-15"><a href="unidad1.html#cb47-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb47-16"><a href="unidad1.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD desde el 2020 hasta el 2022&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb47-17"><a href="unidad1.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb47-18"><a href="unidad1.html#cb47-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
+<span id="cb47-19"><a href="unidad1.html#cb47-19" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.</li>
 </ol>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="unidad1.html#cb48-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">aggregate</span>(<span class="at">x =</span> datos, <span class="at">by =</span> <span class="fu">list</span>(Año <span class="ot">=</span> datos<span class="sc">$</span>Ano), <span class="at">FUN =</span> mean), </span>
-<span id="cb48-2"><a href="unidad1.html#cb48-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">x =</span> Low,</span>
-<span id="cb48-3"><a href="unidad1.html#cb48-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> High,</span>
-<span id="cb48-4"><a href="unidad1.html#cb48-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> Año)) <span class="sc">+</span></span>
-<span id="cb48-5"><a href="unidad1.html#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb48-6"><a href="unidad1.html#cb48-6" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="unidad1.html#cb48-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb48-2"><a href="unidad1.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">aggregate</span>( <span class="co"># Función para resumir una base de datos (crea una nueva base)</span></span>
+<span id="cb48-3"><a href="unidad1.html#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> datos, <span class="co"># Indicar la base de datos a modificar</span></span>
+<span id="cb48-4"><a href="unidad1.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">list</span>(Año <span class="ot">=</span> datos<span class="sc">$</span>Ano), <span class="co"># Variable por la cual se genera el resumen, y nombre asignado</span></span>
+<span id="cb48-5"><a href="unidad1.html#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> mean), <span class="co"># Resumen que se genera en las columnas de la base de datos</span></span>
+<span id="cb48-6"><a href="unidad1.html#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb48-7"><a href="unidad1.html#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Low, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb48-8"><a href="unidad1.html#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> High, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb48-9"><a href="unidad1.html#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Año)) <span class="sc">+</span> <span class="co"># Color según variable</span></span>
+<span id="cb48-10"><a href="unidad1.html#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># Objeto a graficar: gráfico de dispersión</span></span>
+<span id="cb48-11"><a href="unidad1.html#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb48-12"><a href="unidad1.html#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Promedio de la tasa más alta y más baja del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb48-13"><a href="unidad1.html#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa más baja&quot;</span>, <span class="co"># Título el eje X</span></span>
+<span id="cb48-14"><a href="unidad1.html#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa más alta&quot;</span> <span class="co"># Título el eje Y</span></span>
+<span id="cb48-15"><a href="unidad1.html#cb48-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb48-16"><a href="unidad1.html#cb48-16" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><strong>Ejercicio:</strong></p>
 
 </div>
 </div>
