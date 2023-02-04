@@ -757,7 +757,7 @@ ggplot( # Ambiente gráfico
     y = Close)) + # Eje Y y variable asociada
   geom_point( # Objeto a graficar: Gráfico de dispersión
     color = "darkblue", # Color
-    alpha = 0.3) + # # Opacidad
+    alpha = 0.3) + # Opacidad
   labs( # Títulos
     title = "Tasa de apertura y cierre del EUR/USD", # Título del gráfico
     x = "Tasa de apertura", # Título del eje X
@@ -801,7 +801,7 @@ g # Desplegamos el gráfico guardado
 ```
 
 
-3. Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 en orden temporal. Interprete.
+3. Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 separadamente. Interprete.
 
 ```{r fig.align="center", fig.width=8, fig.height=4}
 datos$Date = as.Date(datos$Date) # Fechas en formato fecha de R
@@ -811,7 +811,8 @@ g = ggplot( # Ambiente gráfico
     x = Date, # Comandos estéticos: Eje X y variable asociada
     y = Open)) + # Eje Y y variable asociada
   geom_point( # Objeto a graficar
-    size = 0.5) + # Tamaño
+    alpha = 0.5, # Opacidad
+    size = 0.6) + # Tamaño
   theme( # Aspectos visuales del gráfico
     axis.text.x = element_blank()) + # Eliminamos el texto del eje X
   facet_wrap( # Segregación del gráfico
@@ -825,7 +826,33 @@ g = ggplot( # Ambiente gráfico
 g # Desplegamos el gráfico guardado
 ```
 
-4. Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.
+4. Grafique el valor de la tasa de apertura del EUR/USD diferenciando por año. Interprete.
+
+```{r fig.align="center", fig.width=8, fig.height=4}
+g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comando estéticos
+    x = Date, # Comandos estéticos: Eje X y variable asociada
+    y = Open, # Eje Y y variable asociada
+    color = Ano)) + # Color según el año
+  geom_point( # Objeto a graficar
+    alpha = 0.5, # Opacidad
+    size = 0.7) + # Tamaño
+  labs( # Títulos
+    color = "Año", # Título de la leyenda
+    title = "Tasa de apertura del EUR/USD", # Título del gráfico
+    x = "Fecha", # Título del eje X
+    y = "Tasa de apertura") + # Título del eje Y
+  guides( # Edición de escalas
+    color = guide_legend( # Escala de color de la leyenda
+      override.aes = list( # Comando estéticos asociados
+        alpha = 1, # Opacidad de los puntos
+        size = 3))) # Tamaño de los puntos
+g # Desplegamos el gráfico guardado
+```
+
+
+5. Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.
 
 ```{r fig.align="center", fig.width=8, fig.height=4, warning=FALSE}
 g = ggplot( # Ambiente gráfico
@@ -847,6 +874,12 @@ g # Desplegamos el gráfico guardado
 ```
 
 **Ejercicio:**
+
+1. Elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de cierre del EUR/USD (guarde el gráfico en una variable).
+2. Añadir al gráfico un formato de líneas entre los puntos. Interprete.
+3. Grafique el valor de la tasa de cierre del EUR/USD desde el 2010 hasta el 2013 separadamente. Interprete.
+4. Grafique el valor de la tasa de cierre del EUR/USD diferenciando por año. Interprete.
+5. Grafique el valor el valor promedio de la tasa de cierre versus la más baja del EUR/USD para cada uno de los años. Interprete.
 
 
 

@@ -981,7 +981,7 @@ Desviación estándar
 <span id="cb44-5"><a href="unidad1.html#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
 <span id="cb44-6"><a href="unidad1.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar: Gráfico de dispersión</span></span>
 <span id="cb44-7"><a href="unidad1.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="co"># Color</span></span>
-<span id="cb44-8"><a href="unidad1.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># # Opacidad</span></span>
+<span id="cb44-8"><a href="unidad1.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># Opacidad</span></span>
 <span id="cb44-9"><a href="unidad1.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
 <span id="cb44-10"><a href="unidad1.html#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura y cierre del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
 <span id="cb44-11"><a href="unidad1.html#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de apertura&quot;</span>, <span class="co"># Título del eje X</span></span>
@@ -1020,7 +1020,7 @@ Desviación estándar
 <span id="cb46-5"><a href="unidad1.html#cb46-5" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-22-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
-<li>Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 en orden temporal. Interprete.</li>
+<li>Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 separadamente. Interprete.</li>
 </ol>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="unidad1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>Date <span class="ot">=</span> <span class="fu">as.Date</span>(datos<span class="sc">$</span>Date) <span class="co"># Fechas en formato fecha de R</span></span>
 <span id="cb47-2"><a href="unidad1.html#cb47-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
@@ -1029,40 +1029,72 @@ Desviación estándar
 <span id="cb47-5"><a href="unidad1.html#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Date, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
 <span id="cb47-6"><a href="unidad1.html#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Open)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
 <span id="cb47-7"><a href="unidad1.html#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
-<span id="cb47-8"><a href="unidad1.html#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
-<span id="cb47-9"><a href="unidad1.html#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
-<span id="cb47-10"><a href="unidad1.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Eliminamos el texto del eje X</span></span>
-<span id="cb47-11"><a href="unidad1.html#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
-<span id="cb47-12"><a href="unidad1.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
-<span id="cb47-13"><a href="unidad1.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">1</span>, <span class="co"># Disposición visual: una fila</span></span>
-<span id="cb47-14"><a href="unidad1.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span> <span class="co"># La escala del eje X es independiente para gráfico</span></span>
-<span id="cb47-15"><a href="unidad1.html#cb47-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
-<span id="cb47-16"><a href="unidad1.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD desde el 2020 hasta el 2022&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb47-17"><a href="unidad1.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
-<span id="cb47-18"><a href="unidad1.html#cb47-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
-<span id="cb47-19"><a href="unidad1.html#cb47-19" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<span id="cb47-8"><a href="unidad1.html#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># Opacidad</span></span>
+<span id="cb47-9"><a href="unidad1.html#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.6</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
+<span id="cb47-10"><a href="unidad1.html#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb47-11"><a href="unidad1.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Eliminamos el texto del eje X</span></span>
+<span id="cb47-12"><a href="unidad1.html#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
+<span id="cb47-13"><a href="unidad1.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
+<span id="cb47-14"><a href="unidad1.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">1</span>, <span class="co"># Disposición visual: una fila</span></span>
+<span id="cb47-15"><a href="unidad1.html#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span> <span class="co"># La escala del eje X es independiente para gráfico</span></span>
+<span id="cb47-16"><a href="unidad1.html#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb47-17"><a href="unidad1.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD desde el 2020 hasta el 2022&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb47-18"><a href="unidad1.html#cb47-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb47-19"><a href="unidad1.html#cb47-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
+<span id="cb47-20"><a href="unidad1.html#cb47-20" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
-<li>Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.</li>
+<li>Grafique el valor de la tasa de apertura del EUR/USD diferenciando por año. Interprete.</li>
 </ol>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="unidad1.html#cb48-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
-<span id="cb48-2"><a href="unidad1.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">aggregate</span>( <span class="co"># Función para resumir una base de datos (crea una nueva base)</span></span>
-<span id="cb48-3"><a href="unidad1.html#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> datos, <span class="co"># Indicar la base de datos a modificar</span></span>
-<span id="cb48-4"><a href="unidad1.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">list</span>(Año <span class="ot">=</span> datos<span class="sc">$</span>Ano), <span class="co"># Variable por la cual se genera el resumen, y nombre asignado</span></span>
-<span id="cb48-5"><a href="unidad1.html#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> mean), <span class="co"># Resumen que se genera en las columnas de la base de datos</span></span>
-<span id="cb48-6"><a href="unidad1.html#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
-<span id="cb48-7"><a href="unidad1.html#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Low, <span class="co"># Eje X y variable asociada</span></span>
-<span id="cb48-8"><a href="unidad1.html#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> High, <span class="co"># Eje Y y variable asociada</span></span>
-<span id="cb48-9"><a href="unidad1.html#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Año)) <span class="sc">+</span> <span class="co"># Color según variable</span></span>
-<span id="cb48-10"><a href="unidad1.html#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># Objeto a graficar: gráfico de dispersión</span></span>
-<span id="cb48-11"><a href="unidad1.html#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
-<span id="cb48-12"><a href="unidad1.html#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Promedio de la tasa más alta y más baja del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
-<span id="cb48-13"><a href="unidad1.html#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa más baja&quot;</span>, <span class="co"># Título el eje X</span></span>
-<span id="cb48-14"><a href="unidad1.html#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa más alta&quot;</span> <span class="co"># Título el eje Y</span></span>
-<span id="cb48-15"><a href="unidad1.html#cb48-15" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb48-16"><a href="unidad1.html#cb48-16" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<span id="cb48-2"><a href="unidad1.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb48-3"><a href="unidad1.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb48-4"><a href="unidad1.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Date, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
+<span id="cb48-5"><a href="unidad1.html#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Open, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb48-6"><a href="unidad1.html#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Ano)) <span class="sc">+</span> <span class="co"># Color según el año</span></span>
+<span id="cb48-7"><a href="unidad1.html#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb48-8"><a href="unidad1.html#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># Opacidad</span></span>
+<span id="cb48-9"><a href="unidad1.html#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.7</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
+<span id="cb48-10"><a href="unidad1.html#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb48-11"><a href="unidad1.html#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Año&quot;</span>, <span class="co"># Título de la leyenda</span></span>
+<span id="cb48-12"><a href="unidad1.html#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb48-13"><a href="unidad1.html#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb48-14"><a href="unidad1.html#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb48-15"><a href="unidad1.html#cb48-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>( <span class="co"># Edición de escalas</span></span>
+<span id="cb48-16"><a href="unidad1.html#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">guide_legend</span>( <span class="co"># Escala de color de la leyenda</span></span>
+<span id="cb48-17"><a href="unidad1.html#cb48-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">override.aes =</span> <span class="fu">list</span>( <span class="co"># Comando estéticos asociados</span></span>
+<span id="cb48-18"><a href="unidad1.html#cb48-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">alpha =</span> <span class="dv">1</span>, <span class="co"># Opacidad de los puntos</span></span>
+<span id="cb48-19"><a href="unidad1.html#cb48-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">3</span>))) <span class="co"># Tamaño de los puntos</span></span>
+<span id="cb48-20"><a href="unidad1.html#cb48-20" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.</li>
+</ol>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="unidad1.html#cb49-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb49-2"><a href="unidad1.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">aggregate</span>( <span class="co"># Función para resumir una base de datos (crea una nueva base)</span></span>
+<span id="cb49-3"><a href="unidad1.html#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> datos, <span class="co"># Indicar la base de datos a modificar</span></span>
+<span id="cb49-4"><a href="unidad1.html#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">list</span>(Año <span class="ot">=</span> datos<span class="sc">$</span>Ano), <span class="co"># Variable por la cual se genera el resumen, y nombre asignado</span></span>
+<span id="cb49-5"><a href="unidad1.html#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> mean), <span class="co"># Resumen que se genera en las columnas de la base de datos</span></span>
+<span id="cb49-6"><a href="unidad1.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb49-7"><a href="unidad1.html#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Low, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb49-8"><a href="unidad1.html#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> High, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb49-9"><a href="unidad1.html#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Año)) <span class="sc">+</span> <span class="co"># Color según variable</span></span>
+<span id="cb49-10"><a href="unidad1.html#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># Objeto a graficar: gráfico de dispersión</span></span>
+<span id="cb49-11"><a href="unidad1.html#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb49-12"><a href="unidad1.html#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Promedio de la tasa más alta y más baja del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb49-13"><a href="unidad1.html#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa más baja&quot;</span>, <span class="co"># Título el eje X</span></span>
+<span id="cb49-14"><a href="unidad1.html#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa más alta&quot;</span> <span class="co"># Título el eje Y</span></span>
+<span id="cb49-15"><a href="unidad1.html#cb49-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-16"><a href="unidad1.html#cb49-16" aria-hidden="true" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-25-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p><strong>Ejercicio:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de cierre del EUR/USD (guarde el gráfico en una variable).</li>
+<li>Añadir al gráfico un formato de líneas entre los puntos. Interprete.</li>
+<li>Grafique el valor de la tasa de cierre del EUR/USD desde el 2010 hasta el 2013 separadamente. Interprete.</li>
+<li>Grafique el valor de la tasa de cierre del EUR/USD diferenciando por año. Interprete.</li>
+<li>Grafique el valor el valor promedio de la tasa de cierre versus la más baja del EUR/USD para cada uno de los años. Interprete.</li>
+</ol>
 
 </div>
 </div>
