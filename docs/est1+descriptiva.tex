@@ -138,7 +138,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{Coordinación de Estadística - UFME}
-\date{Actualizado al 03-02-2023}
+\date{Actualizado al 04-02-2023}
 
 \begin{document}
 \maketitle
@@ -901,16 +901,20 @@ Para generar un histograma en R a partir de un conjunto de datos, se utiliza el 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{13}\NormalTok{, }\CommentTok{\# Cantidad de intervalos del histograma}
-                 \AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\CommentTok{\# Color del borde de las barras del histograma}
-                 \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\CommentTok{\# Color de relleno de las barras}
-                 \AttributeTok{closed =} \StringTok{"left"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de intervalo del histograma}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# Librería de ggplot2}
+\FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+       \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+         \AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Eje X y variable asociada }
+  \FunctionTok{geom\_histogram}\NormalTok{( }\CommentTok{\# Objeto a graficar: histograma}
+    \AttributeTok{bins =} \DecValTok{13}\NormalTok{, }\CommentTok{\# Cantidad de intervalos del histograma}
+    \AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\CommentTok{\# Color del borde de las barras del histograma}
+    \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{, }\CommentTok{\# Color de relleno de las barras}
+    \AttributeTok{closed =} \StringTok{"left"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de intervalo del histograma}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Histograma EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -994,22 +998,32 @@ Para generar un gráfico de caja en R a partir de un conjunto de datos, se utili
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
-  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color del borde del gráfico}
-               \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 1)"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
-        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+    \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_boxplot}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de caja}
+    \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color del borde del gráfico}
+    \AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos }
+    \AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 1)"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+  \FunctionTok{theme}\NormalTok{( }\CommentTok{\# Aspectos visuales del gráfico}
+    \AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
 \NormalTok{info }\OtherTok{=} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{ggplot\_build}\NormalTok{(g)[[}\DecValTok{1}\NormalTok{]]) }\CommentTok{\# Guardamos los valores del gráfico}
 \NormalTok{values }\OtherTok{=} \FunctionTok{round}\NormalTok{(}\FunctionTok{as.numeric}\NormalTok{(info[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]), }\DecValTok{3}\NormalTok{) }\CommentTok{\# Extraemos los valores de construcción}
 \NormalTok{g1 }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+} \CommentTok{\# Creamos un nuevo gráfico a partir del anterior}
-  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ values, }\AttributeTok{labels =}\NormalTok{ values) }\SpecialCharTok{+} \CommentTok{\# Modificamos los valores mostrados en el eje Y (valores de construcción)}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 2)"}\NormalTok{)}
-\FunctionTok{library}\NormalTok{(gridExtra)}
-\FunctionTok{grid.arrange}\NormalTok{(g, g1, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{) }\CommentTok{\# Desplegamos lo gráficos en la misma ventana}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{( }\CommentTok{\# Modificar el eje Y}
+    \AttributeTok{breaks =}\NormalTok{ values, }\CommentTok{\# Modificamos los puntos a considerar en el eje Y}
+    \AttributeTok{labels =}\NormalTok{ values) }\SpecialCharTok{+} \CommentTok{\# Modificamos los valores mostrados en el eje Y}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Caja EUR/USD (opción 2)"}\NormalTok{) }\CommentTok{\# Título del gráfico}
+\FunctionTok{library}\NormalTok{(gridExtra) }\CommentTok{\# Librería para juntar gráficos de ggplot2}
+\FunctionTok{grid.arrange}\NormalTok{(g, }\CommentTok{\# Gráfico}
+\NormalTok{             g1, }\CommentTok{\# Gráfico}
+             \AttributeTok{ncol =} \DecValTok{2}\NormalTok{) }\CommentTok{\# Despliegue en a dos columnas }
 \end{Highlighting}
 \end{Shaded}
 
@@ -1048,15 +1062,21 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 \begin{Highlighting}[]
 \CommentTok{\# Se guarda el gráfico en una variable para posteriormente}
 \CommentTok{\# integrar otros gráficos dentro de este.}
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-           \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: variables a graficar }
-  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{trim =}\NormalTok{ F, }\CommentTok{\# Modifica las terminaciones visuales superior e inferior}
-              \AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
-        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+    \AttributeTok{x =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Se fija el valor horizontal del gráfico (a elección)}
+    \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_violin}\NormalTok{( }\CommentTok{\# Objeto a graficar: violín}
+    \AttributeTok{trim =}\NormalTok{ F, }\CommentTok{\# Modifica las terminaciones visuales superior e inferior}
+    \AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+  \FunctionTok{theme}\NormalTok{( }\CommentTok{\# Aspectos visuales del gráfico}
+    \AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Elimina los números del eje X}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico en el visualizador}
 \end{Highlighting}
 \end{Shaded}
@@ -1066,13 +1086,15 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Agregamos otros elementos al gráfico guardado}
-\NormalTok{g }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Anchura del nuevo gráfico de caja}
-                 \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color de borde del gráfico}
-                 \AttributeTok{fill =} \StringTok{"lightblue2"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ mean, }\CommentTok{\# Función que indica el tipo de información (mean = media)}
-               \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\CommentTok{\# Forma visual}
-               \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Tamaño}
-               \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\CommentTok{\# Color}
+\NormalTok{g }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de caja}
+  \AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Anchura proporcional del nuevo gráfico de caja}
+  \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color de borde del gráfico}
+  \AttributeTok{fill =} \StringTok{"lightblue2"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{stat\_summary}\NormalTok{( }\CommentTok{\# Función para agregar información de resumen}
+    \AttributeTok{fun =}\NormalTok{ mean, }\CommentTok{\# Tipo de información: promedio}
+    \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\CommentTok{\# Forma visual}
+    \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Tamaño}
+    \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\CommentTok{\# Color}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1093,25 +1115,35 @@ El siguiente código, crea una nueva columna en la base de datos que identifica 
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Extraemos el año de la variable Date, y la guardamos en un nueva columna}
 \NormalTok{datos}\SpecialCharTok{$}\NormalTok{Ano }\OtherTok{=} \FunctionTok{substr}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Date, }\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: variables a graficar }
-  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{trim =}\NormalTok{ F, }\CommentTok{\# Modifica las terminaciones visuales superior e inferior}
-              \AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Anchura del nuevo gráfico de caja}
-                 \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color de borde del gráfico}
-                 \AttributeTok{fill =} \StringTok{"lightblue2"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
-  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ mean, }\CommentTok{\# Función que indica el tipo de información (mean = media)}
-               \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\CommentTok{\# Forma visual}
-               \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Tamaño}
-               \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
-        \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+} \CommentTok{\# Elimina los números del eje X}
-  \FunctionTok{facet\_wrap}\NormalTok{(}\FunctionTok{vars}\NormalTok{(Ano), }\CommentTok{\# Variable que se utiliza para segregrar los gráficos}
-             \AttributeTok{nrow =} \DecValTok{1}\NormalTok{) }\CommentTok{\# Disposición visual: todo en la misma fila}
+\FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+    \AttributeTok{x =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Se fija el valor horizontal del gráfico (a elección)}
+    \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_violin}\NormalTok{( }\CommentTok{\# Objeto a graficar: violín}
+    \AttributeTok{trim =}\NormalTok{ F, }\CommentTok{\# Modifica las terminaciones visuales superior e inferior}
+    \AttributeTok{fill =} \StringTok{"aquamarine3"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{geom\_boxplot}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de caja}
+    \AttributeTok{width =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Anchura proporcional del nuevo gráfico de caja}
+    \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\CommentTok{\# Color de borde del gráfico}
+    \AttributeTok{fill =} \StringTok{"lightblue2"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno del gráfico}
+  \FunctionTok{stat\_summary}\NormalTok{( }\CommentTok{\# Función para agregar información de resumen}
+    \AttributeTok{fun =}\NormalTok{ mean, }\CommentTok{\# Tipo de información: promedio}
+    \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\CommentTok{\# Forma visual}
+    \AttributeTok{size =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Tamaño}
+    \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Violín EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{""}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+  \FunctionTok{theme}\NormalTok{( }\CommentTok{\# Aspectos visuales del gráfico}
+    \AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(), }\CommentTok{\# Elimina las regletas del eje X}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+} \CommentTok{\# Elimina los números del eje X}
+  \FunctionTok{facet\_wrap}\NormalTok{( }\CommentTok{\# Segregación del gráfico}
+    \FunctionTok{vars}\NormalTok{(Ano), }\CommentTok{\# Variable que se utiliza para segregar el gráfico}
+    \AttributeTok{nrow =} \DecValTok{1}\NormalTok{) }\CommentTok{\# Disposición visual: una fila}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1154,12 +1186,16 @@ Para generar un gráfico de barras en R a partir de un conjunto de datos, se uti
 \NormalTok{datos}\SpecialCharTok{$}\NormalTok{Close2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close }\SpecialCharTok{\textgreater{}} \FloatTok{1.1}\NormalTok{, }\CommentTok{\# Criterio}
                       \StringTok{"Mayor a 1.1"}\NormalTok{, }\CommentTok{\# Valor asignado si se cumple el criterio}
                       \StringTok{"Menor a  1.1"}\NormalTok{) }\CommentTok{\# Valor asignado si no se cumple el criterio}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} \CommentTok{\# Comando estético: eje y variable}
-  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+    \AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_bar}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de barras}
+    \AttributeTok{fill =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1196,14 +1232,18 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Open, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
-           \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}  \CommentTok{\# Eje Y y variable asociada}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"darkblue"}\NormalTok{, }\CommentTok{\# Color de los puntos}
-             \AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# \# Opacidad de los puntos}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dispersión EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-       \AttributeTok{x =} \StringTok{"Tasa de apertura"}\NormalTok{, }\CommentTok{\# Título del eje X}
-       \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
+    \AttributeTok{x =}\NormalTok{ Open, }\CommentTok{\# Eje X y variable asociada}
+    \AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar: Gráfico de dispersión}
+    \AttributeTok{color =} \StringTok{"darkblue"}\NormalTok{, }\CommentTok{\# Color}
+    \AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# \# Opacidad}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Tasa de apertura y cierre del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Tasa de apertura"}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de cierre"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1224,18 +1264,25 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD.
+  Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).
 \end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos,}
-           \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Ano,}
-               \AttributeTok{y =}\NormalTok{ Open,}
-               \AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{stat =} \StringTok{"summary"}\NormalTok{,}
-             \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{)}
-\NormalTok{g}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
+    \AttributeTok{x =}\NormalTok{ Ano, }\CommentTok{\# Eje X y variable asociada}
+    \AttributeTok{y =}\NormalTok{ Open, }\CommentTok{\# Eje Y y variable asociada}
+    \AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \CommentTok{\# Comando únicamente necesario para la pregunta 2}
+  \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar}
+    \AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
+    \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de resumen: promedio de la variable Y}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Tasa de apertura promedio del EUR/USD por año"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Año"}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1251,10 +1298,11 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{stat =} \StringTok{"summary"}\NormalTok{,}
-            \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{)}
-\NormalTok{g}
+\NormalTok{g }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+} \CommentTok{\# Añadimos otro gráfico}
+  \FunctionTok{geom\_line}\NormalTok{( }\CommentTok{\# Objeto a graficar: lineas}
+    \AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
+    \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\CommentTok{\# Tipo de resumen: promedio de la variable Y}
+\NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1270,16 +1318,25 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{=} \FunctionTok{as.Date}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Date)}
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos[datos}\SpecialCharTok{$}\NormalTok{Ano }\SpecialCharTok{\%in\%} \DecValTok{2020}\SpecialCharTok{:}\DecValTok{2022}\NormalTok{,],}
-           \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date,}
-               \AttributeTok{y =}\NormalTok{ Open)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
-  \FunctionTok{facet\_wrap}\NormalTok{(}\FunctionTok{vars}\NormalTok{(Ano),}
-             \AttributeTok{nrow =} \DecValTok{1}\NormalTok{,}
-             \AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{)}
-\NormalTok{g}
+\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{=} \FunctionTok{as.Date}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Date) }\CommentTok{\# Fechas en formato fecha de R}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =}\NormalTok{ datos[datos}\SpecialCharTok{$}\NormalTok{Ano }\SpecialCharTok{\%in\%} \DecValTok{2020}\SpecialCharTok{:}\DecValTok{2022}\NormalTok{,], }\CommentTok{\# Datos de los años 2020 al 2022}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
+    \AttributeTok{x =}\NormalTok{ Date, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
+    \AttributeTok{y =}\NormalTok{ Open)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+  \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar}
+    \AttributeTok{size =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño}
+  \FunctionTok{theme}\NormalTok{( }\CommentTok{\# Aspectos visuales del gráfico}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+} \CommentTok{\# Eliminamos el texto del eje X}
+  \FunctionTok{facet\_wrap}\NormalTok{( }\CommentTok{\# Segregación del gráfico}
+    \FunctionTok{vars}\NormalTok{(Ano), }\CommentTok{\# Variable que se utiliza para segregar el gráfico}
+    \AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Disposición visual: una fila}
+    \AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# La escala del eje X es independiente para gráfico}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Tasa de apertura del EUR/USD desde el 2020 hasta el 2022"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Fecha"}\NormalTok{, }\CommentTok{\# Título del eje X}
+    \AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1295,16 +1352,28 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =} \FunctionTok{aggregate}\NormalTok{(}\AttributeTok{x =}\NormalTok{ datos, }\AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\AttributeTok{FUN =}\NormalTok{ mean), }
-           \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Low,}
-               \AttributeTok{y =}\NormalTok{ High,}
-               \AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{()}
-\NormalTok{g}
+\NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
+  \AttributeTok{data =} \FunctionTok{aggregate}\NormalTok{( }\CommentTok{\# Función para resumir una base de datos (crea una nueva base)}
+    \AttributeTok{x =}\NormalTok{ datos, }\CommentTok{\# Indicar la base de datos a modificar}
+    \AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\CommentTok{\# Variable por la cual se genera el resumen, y nombre asignado}
+    \AttributeTok{FUN =}\NormalTok{ mean), }\CommentTok{\# Resumen que se genera en las columnas de la base de datos}
+  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
+    \AttributeTok{x =}\NormalTok{ Low, }\CommentTok{\# Eje X y variable asociada}
+    \AttributeTok{y =}\NormalTok{ High, }\CommentTok{\# Eje Y y variable asociada}
+    \AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+} \CommentTok{\# Color según variable}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Objeto a graficar: gráfico de dispersión}
+  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
+    \AttributeTok{title =} \StringTok{"Promedio de la tasa más alta y más baja del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+    \AttributeTok{x =} \StringTok{"Tasa más baja"}\NormalTok{, }\CommentTok{\# Título el eje X}
+    \AttributeTok{y =} \StringTok{"Tasa más alta"} \CommentTok{\# Título el eje Y}
+\NormalTok{  )}
+\NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
+
+\textbf{Ejercicio:}
 
 \hypertarget{probabilidad-y-variables-aleatorias.}{%
 \chapter{Probabilidad y variables aleatorias.}\label{probabilidad-y-variables-aleatorias.}}
