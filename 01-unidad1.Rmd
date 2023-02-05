@@ -884,7 +884,7 @@ g = ggplot( # Ambiente gráfico
 g # Desplegamos el gráfico guardado
 ```
 
-El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja y más alta registrada en los diversos años, siendo el año 2018 aquel que destaca con las tasas promedio más altas.
+El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja y más alta registrada en los diversos años, siendo el año 2008 aquel que destaca con las tasas promedio más altas.
 
 **Ejercicio:**
 
