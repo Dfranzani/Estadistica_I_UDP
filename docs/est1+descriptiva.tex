@@ -132,13 +132,20 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Estadística I \& Estadística Descriptiva},
-  pdfauthor={Coordinación de Estadística - UFME},
+  pdfauthor={Coordinación de Estadística},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{Estadística I \& Estadística Descriptiva}
-\author{Coordinación de Estadística - UFME}
-\date{Actualizado al 05-02-2023}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Unidad de Formación en Matemática y Estadística (UFME)}
+\author{Coordinación de Estadística}
+\date{Actualizado al 07-02-2023}
 
 \begin{document}
 \maketitle
@@ -147,17 +154,44 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{presentaciuxf3n-del-curso}{%
-\chapter*{Presentación del curso}\label{presentaciuxf3n-del-curso}}
-\addcontentsline{toc}{chapter}{Presentación del curso}
+\hypertarget{presentaciuxf3n}{%
+\chapter*{Presentación}\label{presentaciuxf3n}}
+\addcontentsline{toc}{chapter}{Presentación}
 
-La asignatura Estadística I \& Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente, los cuales, entregan las herramientas necesarias para realizar análisis descriptivos de datos, incluyendo formas simples de modelar relaciones entre variables con la intención de facilitar e iluminar la toma de decisiones económicas, de negocios, entre otros ámbitos. Al mismo tiempo, entrega los fundamentos básicos de la teoría de probabilidades para la modelación de fenómenos con base probabilística.
+La asignatura Estadística I \& Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente. Estos son el primero de una serie de dos cursos introductorios de estadística, los cuales tienen un enfoque práctico con un fuerte énfasis en el estudio descriptivo de datos. Los cursos, se concentran en gráficos descriptivos, medidas de resumen, funciones de probabilidad, distribuciones muestrales, pruebas de hipótesis e intervalos de confianza. La metodología de aprendizaje se basa en clases interactivas - participativas, las que están basadas en el uso de R como programa estadístico para el análisis de datos.
 
-Esta asignatura aspira a enseñar estadística de forma aplicada, haciendo uso de herramientas modernas de programación, situando al estudiante en un rol de analista dentro de una unidad organizacional.
+\hypertarget{modalidad}{%
+\chapter*{Modalidad}\label{modalidad}}
+\addcontentsline{toc}{chapter}{Modalidad}
 
-\hypertarget{modalidad-de-trabajo}{%
-\chapter*{Modalidad de trabajo}\label{modalidad-de-trabajo}}
-\addcontentsline{toc}{chapter}{Modalidad de trabajo}
+La modalidad de trabajo consta de los siguientes elementos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  El \textbf{documento} web cuenta con el desarrollo de todos los tópicos de curso, además de ejemplificaciones y ejercicios.
+\item
+  En su mayoría, los ejemplos y ejercicios son presentados mediante el \textbf{uso de R} como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante desarrollarán en Google Colab R. Esta plataforma no cuenta con una opción de configuración interna para R, por defecto está configurada para Python, sin embargo, en el siguiente \href{https://colab.to/r}{enlace} se puede acceder a un documento con una configuración preestablecida para R. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el \textbf{Taller Introductorio}.
+\item
+  Se cuenta con \textbf{talleres de práctica}, lo cuales se desarrollarán en de Google Colab R. Estos talleres cuentan con tres elementos: ejercicios desarrollados, ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante. Para estos últimos, \textbf{NO} habrá pauta, ya que se espera que estudiante sea capaz de evaluar críticamente la solución propuesta y obtenida.
+\item
+  El curso cuenta con \textbf{bibliografía} obligatoria y suplementaria:
+
+  \begin{itemize}
+  \item
+    (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson\%2C\%20Estad\%C3\%ADstica.pdf}{\emph{``Estadística para Administración y Economía''}} \citep{anderson}
+  \item
+    (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
+  \item
+    (Suplementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
+  \item
+    (Suplementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
+  \end{itemize}
+
+  Además, se añaden citas adicionales que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
+\item
+  Las \textbf{bases de datos} a utilizar en el curso se encuentran disponible en un \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/tree/main/2023-1/Estad\%C3\%ADstica\%201}{repositorio web} de libre acceso.
+\end{enumerate}
 
 \hypertarget{unidad1}{%
 \chapter{Tópicos básicos de estadística}\label{unidad1}}

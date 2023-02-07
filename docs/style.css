@@ -45,19 +45,20 @@ img {
     left: 350px;
 }
 
-h1 {
+h1,h2,h3,h4,h5 {
   color: #730000;
 }
 
-h2 {
-  color: #730000;
+#header .subtitle {
+  color: #000000;
+  font-size: 15pt;
 }
 
-h3 {
-  color: #730000;
+#header .author {
+  font-weight: bold;
 }
 
-h4 {
-  color: #730000;
+#header .date {
+  font-size: 11pt;
 }
 
