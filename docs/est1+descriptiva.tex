@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -129,7 +132,7 @@
 \bibliographystyle{apalike}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Estadística I \& Estadística Descriptiva},
   pdfauthor={Coordinación de Estadística},
@@ -173,7 +176,7 @@ La modalidad de trabajo consta de los siguientes elementos:
 \item
   En su mayoría, los ejemplos y ejercicios son presentados mediante el \textbf{uso de R} como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante desarrollarán en Google Colab R. Esta plataforma no cuenta con una opción de configuración interna para R, por defecto está configurada para Python, sin embargo, en el siguiente \href{https://colab.to/r}{enlace} se puede acceder a un documento con una configuración preestablecida para R. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el \textbf{Taller Introductorio}.
 \item
-  Se cuenta con \textbf{talleres de práctica}, lo cuales se desarrollarán en de Google Colab R. Estos talleres cuentan con tres elementos: ejercicios desarrollados, ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante. Para estos últimos, \textbf{NO} habrá pauta, ya que se espera que estudiante sea capaz de evaluar críticamente la solución propuesta y obtenida.
+  Se cuenta con \textbf{talleres de práctica}, lo cuales se desarrollarán en de Google Colab R. Estos talleres cuentan con tres elementos: ejercicios desarrollados, ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante. Para estos últimos, \textbf{NO} habrá pauta, ya que se espera que el estudiante sea capaz de evaluar críticamente la solución obtenida.
 \item
   El curso cuenta con \textbf{bibliografía} obligatoria y suplementaria:
 
@@ -181,14 +184,16 @@ La modalidad de trabajo consta de los siguientes elementos:
   \item
     (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson\%2C\%20Estad\%C3\%ADstica.pdf}{\emph{``Estadística para Administración y Economía''}} \citep{anderson}
   \item
-    (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
+    (Obligatoria, texto guía) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
   \item
-    (Suplementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
+    (Complementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
   \item
-    (Suplementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
+    (Complementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
+  \item
+    (Complementaria)
   \end{itemize}
 
-  Además, se añaden citas adicionales que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
+  Además, se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
 \item
   Las \textbf{bases de datos} a utilizar en el curso se encuentran disponible en un \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/tree/main/2023-1/Estad\%C3\%ADstica\%201}{repositorio web} de libre acceso.
 \end{enumerate}

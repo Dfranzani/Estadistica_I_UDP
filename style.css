@@ -62,3 +62,13 @@ h1,h2,h3,h4,h5 {
   font-size: 11pt;
 }
 
+/* Independiente del archivo .csl para la bibliografía,
+se tuvo que agregar la identación manualmente (aunque viniense dentro del .csl).
+Además, se actualizó pandoc a 3.0.1. En el archivo Index.Rmd* está
+declara la versión de pandoc a utilizar */
+
+.references {
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+}
+
