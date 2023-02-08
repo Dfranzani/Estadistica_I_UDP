@@ -38,13 +38,16 @@ La modalidad de trabajo consta de los siguientes elementos:
    - (Obligatoria) [*"Estadística para Administración y Economía"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson%2C%20Estad%C3%ADstica.pdf) [@anderson]
 
    - (Obligatoria, texto guía) [*"Probabilidad y Estadística para Ingeniería y Ciencias"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore%2C%20Probabilidad%20y%20Estad%C3%ADstica.pdf) [@Devore]
+   
+   - (Complementaria)[*"ggplot2: Elegant Graphics for Data Analysis"*](https://ggplot2-book.org/) [@wickham_ggplot2_2009]
     
    - (Complementaria) [*"R Programming for Data Science"*](https://bookdown.org/rdpeng/rprogdatascience/) [@peng2016r]
     
    - (Complementaria) [*"The R Software: Fundamentals of Programming and Statistical Analysis"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux%2C%20Manual%20de%20R.pdf) [@deMicheaux2013]
    
-   - (Complementaria)[*"ggplot2: Elegant Graphics for Data Analysis "*](https://ggplot2-book.org/) [@wickham_ggplot2_2009]
-
     Además, se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
 
 5. Las **bases de datos** a utilizar en el curso se encuentran disponible en un [repositorio web](https://github.com/Dfranzani/Bases-de-datos-para-cursos/tree/main/2023-1/Estad%C3%ADstica%201) de libre acceso.
+
+
+
