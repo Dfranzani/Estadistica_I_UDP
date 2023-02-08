@@ -29,7 +29,7 @@ La modalidad de trabajo consta de los siguientes elementos:
 
 1. El **documento** web cuenta con el desarrollo de todos los tópicos de curso, además de ejemplificaciones y ejercicios.
 
-2. En su mayoría, los ejemplos y ejercicios son presentados mediante el **uso de R** como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante desarrollarán en Google Colab R.  Esta plataforma no cuenta con una opción de configuración interna para R, por defecto está configurada para Python, sin embargo, en el siguiente [enlace](https://colab.to/r) se puede acceder a un documento con una configuración preestablecida para R. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el **Taller Introductorio**.
+2. En su mayoría, los ejemplos y ejercicios presentes en el documento hacen **uso de R** como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante serán en Google Colab R.  Esta plataforma no cuenta con una opción de configuración interna para R, sin embargo, en el siguiente [enlace](https://colab.to/r) se puede acceder a un documento con una configuración preestablecida para este lenguaje. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el **Taller Introductorio**.
 
 3. Se cuenta con **talleres de práctica**, lo cuales se desarrollarán en de Google Colab R. Estos talleres cuentan con tres elementos: ejercicios desarrollados, ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante. Para estos últimos, **NO** habrá pauta, ya que se espera que el estudiante sea capaz de evaluar críticamente la solución obtenida.
 
@@ -38,16 +38,13 @@ La modalidad de trabajo consta de los siguientes elementos:
    - (Obligatoria) [*"Estadística para Administración y Economía"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson%2C%20Estad%C3%ADstica.pdf) [@anderson]
 
    - (Obligatoria, texto guía) [*"Probabilidad y Estadística para Ingeniería y Ciencias"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore%2C%20Probabilidad%20y%20Estad%C3%ADstica.pdf) [@Devore]
-   
-   - (Complementaria)[*"ggplot2: Elegant Graphics for Data Analysis"*](https://ggplot2-book.org/) [@wickham_ggplot2_2009]
     
    - (Complementaria) [*"R Programming for Data Science"*](https://bookdown.org/rdpeng/rprogdatascience/) [@peng2016r]
     
    - (Complementaria) [*"The R Software: Fundamentals of Programming and Statistical Analysis"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux%2C%20Manual%20de%20R.pdf) [@deMicheaux2013]
    
-    Además, se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
+   - (Complementaria) [*"ggplot2: Elegant Graphics for Data Analysis "*](https://ggplot2-book.org/) [] 
+
+    Además, a lo largo del documento se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
 
 5. Las **bases de datos** a utilizar en el curso se encuentran disponible en un [repositorio web](https://github.com/Dfranzani/Bases-de-datos-para-cursos/tree/main/2023-1/Estad%C3%ADstica%201) de libre acceso.
-
-
-

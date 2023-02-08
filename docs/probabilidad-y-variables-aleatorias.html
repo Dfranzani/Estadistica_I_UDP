@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Estadística I &amp; Estadística Descriptiva</title>
+  <title>Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva</title>
   <meta name="description" content="Curso básico de Estadística en R para ingeniería" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:title" content="Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Curso básico de Estadística en R para ingeniería" />
   <meta name="github-repo" content="Dfranzani/Estadistica_I_UDP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Estadística I &amp; Estadística Descriptiva" />
+  <meta name="twitter:title" content="Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva" />
   
   <meta name="twitter:description" content="Curso básico de Estadística en R para ingeniería" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="modalidad.html"/>
+<link rel="prev" href="unidad1.html"/>
+<link rel="next" href="distribuciones-muestrales-y-pruebas-de-hipótesis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -275,23 +275,144 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Estadística I &amp; Estadística Descriptiva</h1>
-<h2 class="subtitle"><em>Unidad de Formación en Matemática y Estadística (UFME)</em></h2>
-<p class="author"><em>Coordinación de Estadística</em></p>
-<p class="date"><em>Actualizado al 08-02-2023</em></p>
+<div id="probabilidad-y-variables-aleatorias" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Unidad 2</span> Probabilidad y variables aleatorias<a href="probabilidad-y-variables-aleatorias.html#probabilidad-y-variables-aleatorias" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="elementos-de-probabilidad" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Elementos de probabilidad<a href="probabilidad-y-variables-aleatorias.html#elementos-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="espacio-muestral" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Espacio muestral<a href="probabilidad-y-variables-aleatorias.html#espacio-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El espacio muestral, es el conjunto de todos los resultados posibles de un experimento. Se usa la letra omega (mayúscula) <span class="math inline">\(\Omega\)</span> para referirnos a este conjunto. Un elemento genérico de <span class="math inline">\(\Omega\)</span> se denota como <span class="math inline">\(\omega\)</span>.</p>
+<p><strong>Ejemplo:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?</li>
+</ol>
+<p><span class="math display">\[\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DDD \rbrace\]</span></p>
+<p><strong>Ejercicio:</strong></p>
+<p>Determinar el espacio muestral de los siguientes experimentos:</p>
+<ol style="list-style-type: decimal">
+<li>Elegir un estudiante que está dentro de la sala de clases.</li>
+<li>Registrar la cantidad de movimientos de inversión de un fondo de renta variable (símil: considere la cantidad de días que actuad un interés compuesto diario sobre un préstamo, el interés deja de aumentar cuando se paga la deuda).</li>
+<li>Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos platos de fondo y dos entradas distintas.</li>
+<li>Operación de 3 movimiento de trading, cada movimiento de trading tiene la opción de compra, venta y mantención en cada movimiento (el trading es la compra y venta de acciones de alta liquidez).</li>
+</ol>
 </div>
-<div id="presentación" class="section level1 unnumbered hasAnchor">
-<h1>Presentación<a href="index.html#presentación" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>La asignatura Estadística I &amp; Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente. Estos son el primero de una serie de dos cursos introductorios de estadística, los cuales tienen un enfoque práctico con un fuerte énfasis en el estudio descriptivo de datos. Los cursos, se concentran en gráficos descriptivos, medidas de resumen, funciones de probabilidad, distribuciones muestrales, pruebas de hipótesis e intervalos de confianza. La metodología de aprendizaje se basa en clases interactivas - participativas, las que están basadas en el uso de R como programa estadístico para el análisis de datos.</p>
+<div id="eventos-aleatorios" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Eventos aleatorios<a href="probabilidad-y-variables-aleatorias.html#eventos-aleatorios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En principio, un evento aleatorio es algún subconjunto del espacio muestral <span class="math inline">\(\Omega\)</span>. Los eventos se anotan con una letra mayúscula a elección.</p>
+<p>Considere el experimento de lanza un dado de 6 caras. Determine el espacio muestral. Defina al menos 3 eventos, escribiendo su correspondiente conjunto.</p>
+<p><span class="math inline">\(\Omega = \lbrace 1,2,3,4,5,6 \rbrace\)</span>
+1. A: obtener un número par <span class="math inline">\(\rightarrow \lbrace 2,4,6 \rbrace\)</span>
+2.
+3.</p>
+</div>
+<div id="función-de-probabilidad" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Función de probabilidad<a href="probabilidad-y-variables-aleatorias.html#función-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra, puede ser difícil de calcular. En este aspecto, cómo introducción, se hará uso de la definición clásica de probabilidad:</p>
+<p>Probabilidad de que ocurra un evento = <span class="math inline">\(\frac{\text{Casos favorables}}{\text{Casos totales}}\)</span></p>
+<p>Esta expresión es lo que se denominaría como función de probabilidad. Sin embargo, en temas posteriores se verán otro tipo de expresiones (no ahondaremos en el porqué es una función en estos momentos).</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de obtener un número par al lanzar un dado una vez.</li>
+</ol>
+<p>A: obtener un número par
+<span class="math display">\[P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}\]</span>
+Nota: La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son cero o igual a los casos totales, respectivamente.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Se lanza un dado de 6 caras una vez. Calcular las siguientes probabilidades:</li>
+<li>Sacar un número impar.</li>
+<li>Que salga un 2 o un 5.</li>
+<li>Sacar un valor menor que 4.</li>
+<li>Obtener un valor menor o igual que 4.</li>
+<li>Sacar un valor diferente de 3</li>
+<li>Sacar un número menor a cero.</li>
+<li>Sacar un número menor a siete</li>
+</ol>
+<p>En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?</p>
+<p>En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?</p>
+<p>Tenemos un mazo de 52 cartas de una baraja inglesa, que consta de cuatro palos: corazones, tréboles, diamantes y picas. ¿Cuál es la probabilidad de extraer un corazón?, sabiendo que hay 13 cartas de cada palo.</p>
+</div>
+</div>
+<div id="variable-aleatoria" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Variable aleatoria<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En temas anteriores hemos visto como analizar un conjunto de datos. La metodología general consiste en, a partir de una muestra de una población, resumir el contenido de esa muestra mediante análisis gráficos y numéricos.</p>
+<p>La muestra, habitualmente, consiste en una serie de variables (numéricas o no), que llamamos variables estadísticas. Esta variable es la medición u observación de una característica concreta (estatura, peso, …) en cada uno de los individuos de la muestra.</p>
+<p>Centrémonos ahora en variables numéricas. Si en vez de referirnos a los valores de la variable en una muestra concreta (que es una parte de una población) nos referimos a los valores de la variable en toda la población, tendremos una variable aleatoria.</p>
+<pre class="mermaid"><code>  graph TD;
+      A--&gt;B;
+      A--&gt;C;
+      B--&gt;D;
+      C--&gt;D;</code></pre>
+<p>El objetivo es conocer lo mejor posible una población, a partir de una muestra de individuos. Para ello se elige una muestra, y se analiza, extrayendo toda la información que se pueda.</p>
+<p>Para poder extrapolar los resultados de la muestra a la población, necesitaremos extender los conceptos vistos de una variable estadística a la población general. Es así, como la variable en la población general se llama variable aleatoria.</p>
+<p>Cuando tenemos una base de datos de una población, en general tenemos una muestra de dicha población. Una planilla de datos de pacientes de un hospital concreto es una muestra de la población total de pacientes. En esta planilla de datos, podemos tener mediciones de diferentes variables: altura, peso, temperatura corporal, niveles de elementos en la sangre, si tiene una enfermedad o no. Estas variables mencionadas, son ejemplos de variables aleatorias.</p>
+<p>El nombre de variable aleatoria hace referencia a que los valores de esta variable dependen del azar, mediante alguna ley concreta. El proceso de comprensión o interpretación es el que realizaremos en este tema.</p>
+<p>Cuando lanzamos una moneda, por ejemplo, cien veces, y anotamos 1 si sale cara y 0 si sale cruz, tenemos una variable estadística variable en la muestra) que toma los valores 0 y 1, con frecuencias de aparición de, por ejemplo, 56 y 44, respectivamente. Cuando consideramos el proceso general (variable en la población) de lanzar una moneda, tenemos una variable aleatoria que toma los valores 0 y 1 con probabilidad 0.5, respectivamente.</p>
+<div id="función-de-probabilidad-1" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Función de probabilidad<a href="probabilidad-y-variables-aleatorias.html#función-de-probabilidad-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="función-de-distribución" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Función de distribución<a href="probabilidad-y-variables-aleatorias.html#función-de-distribución" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="variable-aleatoria-discreta" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Variable aleatoria discreta<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-discreta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="uniforme" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Uniforme<a href="probabilidad-y-variables-aleatorias.html#uniforme" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="bernoulli" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Bernoulli<a href="probabilidad-y-variables-aleatorias.html#bernoulli" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="binomial" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Binomial<a href="probabilidad-y-variables-aleatorias.html#binomial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="poisson" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Poisson<a href="probabilidad-y-variables-aleatorias.html#poisson" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="variable-aleatoria-continua" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Variable aleatoria continua<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-continua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="uniforme-1" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Uniforme<a href="probabilidad-y-variables-aleatorias.html#uniforme-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="exponencial" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Exponencial<a href="probabilidad-y-variables-aleatorias.html#exponencial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="normal" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Normal<a href="probabilidad-y-variables-aleatorias.html#normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="t---student" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> T - Student<a href="probabilidad-y-variables-aleatorias.html#t---student" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="ji---cuadrado" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Ji - Cuadrado<a href="probabilidad-y-variables-aleatorias.html#ji---cuadrado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="esperanza" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Esperanza<a href="probabilidad-y-variables-aleatorias.html#esperanza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="variable-aleatoria-discreta-1" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Variable aleatoria discreta<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-discreta-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="variable-aleatoria-continua-1" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Variable aleatoria continua<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-continua-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="varianza" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Varianza<a href="probabilidad-y-variables-aleatorias.html#varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="variable-aleatoria-discreta-2" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Variable aleatoria discreta<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-discreta-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="variable-aleatoria-continua-2" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Variable aleatoria continua<a href="probabilidad-y-variables-aleatorias.html#variable-aleatoria-continua-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="modalidad.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="unidad1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distribuciones-muestrales-y-pruebas-de-hipótesis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -148,7 +148,7 @@
 \makeatother
 \subtitle{Unidad de Formación en Matemática y Estadística (UFME)}
 \author{Coordinación de Estadística}
-\date{Actualizado al 07-02-2023}
+\date{Actualizado al 08-02-2023}
 
 \begin{document}
 \maketitle
@@ -174,7 +174,7 @@ La modalidad de trabajo consta de los siguientes elementos:
 \item
   El \textbf{documento} web cuenta con el desarrollo de todos los tópicos de curso, además de ejemplificaciones y ejercicios.
 \item
-  En su mayoría, los ejemplos y ejercicios son presentados mediante el \textbf{uso de R} como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante desarrollarán en Google Colab R. Esta plataforma no cuenta con una opción de configuración interna para R, por defecto está configurada para Python, sin embargo, en el siguiente \href{https://colab.to/r}{enlace} se puede acceder a un documento con una configuración preestablecida para R. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el \textbf{Taller Introductorio}.
+  En su mayoría, los ejemplos y ejercicios presentes en el documento hacen \textbf{uso de R} como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante serán en Google Colab R. Esta plataforma no cuenta con una opción de configuración interna para R, sin embargo, en el siguiente \href{https://colab.to/r}{enlace} se puede acceder a un documento con una configuración preestablecida para este lenguaje. El archivo que se genera se guardará automáticamente en la cuenta de Gmail predeterminada, por lo que se recomienda que dicha cuenta corresponda a la asociada a la UDP; otra opción en caso de no querer modificar su cuenta predeterminada, es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de Google Colab R serán abordados en el \textbf{Taller Introductorio}.
 \item
   Se cuenta con \textbf{talleres de práctica}, lo cuales se desarrollarán en de Google Colab R. Estos talleres cuentan con tres elementos: ejercicios desarrollados, ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante. Para estos últimos, \textbf{NO} habrá pauta, ya que se espera que el estudiante sea capaz de evaluar críticamente la solución obtenida.
 \item
@@ -186,14 +186,14 @@ La modalidad de trabajo consta de los siguientes elementos:
   \item
     (Obligatoria, texto guía) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
   \item
-    (Complementaria)\href{https://ggplot2-book.org/}{\emph{``ggplot2: Elegant Graphics for Data Analysis''}} \citep{wickham_ggplot2_2009}
-  \item
     (Complementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
   \item
     (Complementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
+  \item
+    (Complementaria) \href{https://ggplot2-book.org/}{\emph{``ggplot2: Elegant Graphics for Data Analysis''}} {[}{]}
   \end{itemize}
 
-  Además, se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
+  Además, a lo largo del documento se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
 \item
   Las \textbf{bases de datos} a utilizar en el curso se encuentran disponible en un \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/tree/main/2023-1/Estad\%C3\%ADstica\%201}{repositorio web} de libre acceso.
 \end{enumerate}
@@ -1488,8 +1488,8 @@ El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja
   Grafique el valor el valor promedio de la tasa de cierre versus la más baja del EUR/USD para cada uno de los años. Interprete.
 \end{enumerate}
 
-\hypertarget{probabilidad-y-variables-aleatorias.}{%
-\chapter{Probabilidad y variables aleatorias.}\label{probabilidad-y-variables-aleatorias.}}
+\hypertarget{probabilidad-y-variables-aleatorias}{%
+\chapter{Probabilidad y variables aleatorias}\label{probabilidad-y-variables-aleatorias}}
 
 \hypertarget{elementos-de-probabilidad}{%
 \section{Elementos de probabilidad}\label{elementos-de-probabilidad}}
@@ -1497,11 +1497,124 @@ El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja
 \hypertarget{espacio-muestral}{%
 \subsection{Espacio muestral}\label{espacio-muestral}}
 
+El espacio muestral, es el conjunto de todos los resultados posibles de un experimento. Se usa la letra omega (mayúscula) \(\Omega\) para referirnos a este conjunto. Un elemento genérico de \(\Omega\) se denota como \(\omega\).
+
+\textbf{Ejemplo:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?
+\end{enumerate}
+
+\[\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DDD \rbrace\]
+
+\textbf{Ejercicio:}
+
+Determinar el espacio muestral de los siguientes experimentos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Elegir un estudiante que está dentro de la sala de clases.
+\item
+  Registrar la cantidad de movimientos de inversión de un fondo de renta variable (símil: considere la cantidad de días que actuad un interés compuesto diario sobre un préstamo, el interés deja de aumentar cuando se paga la deuda).
+\item
+  Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos platos de fondo y dos entradas distintas.
+\item
+  Operación de 3 movimiento de trading, cada movimiento de trading tiene la opción de compra, venta y mantención en cada movimiento (el trading es la compra y venta de acciones de alta liquidez).
+\end{enumerate}
+
+\hypertarget{eventos-aleatorios}{%
+\subsection{Eventos aleatorios}\label{eventos-aleatorios}}
+
+En principio, un evento aleatorio es algún subconjunto del espacio muestral \(\Omega\). Los eventos se anotan con una letra mayúscula a elección.
+
+Considere el experimento de lanza un dado de 6 caras. Determine el espacio muestral. Defina al menos 3 eventos, escribiendo su correspondiente conjunto.
+
+\(\Omega = \lbrace 1,2,3,4,5,6 \rbrace\)
+1. A: obtener un número par \(\rightarrow \lbrace 2,4,6 \rbrace\)
+2.
+3.
+
 \hypertarget{funciuxf3n-de-probabilidad}{%
 \subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad}}
 
+El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra, puede ser difícil de calcular. En este aspecto, cómo introducción, se hará uso de la definición clásica de probabilidad:
+
+Probabilidad de que ocurra un evento = \(\frac{\text{Casos favorables}}{\text{Casos totales}}\)
+
+Esta expresión es lo que se denominaría como función de probabilidad. Sin embargo, en temas posteriores se verán otro tipo de expresiones (no ahondaremos en el porqué es una función en estos momentos).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calcular la probabilidad de obtener un número par al lanzar un dado una vez.
+\end{enumerate}
+
+A: obtener un número par
+\[P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}\]
+Nota: La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son cero o igual a los casos totales, respectivamente.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Se lanza un dado de 6 caras una vez. Calcular las siguientes probabilidades:
+\item
+  Sacar un número impar.
+\item
+  Que salga un 2 o un 5.
+\item
+  Sacar un valor menor que 4.
+\item
+  Obtener un valor menor o igual que 4.
+\item
+  Sacar un valor diferente de 3
+\item
+  Sacar un número menor a cero.
+\item
+  Sacar un número menor a siete
+\end{enumerate}
+
+En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
+
+En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
+
+Tenemos un mazo de 52 cartas de una baraja inglesa, que consta de cuatro palos: corazones, tréboles, diamantes y picas. ¿Cuál es la probabilidad de extraer un corazón?, sabiendo que hay 13 cartas de cada palo.
+
 \hypertarget{variable-aleatoria}{%
 \section{Variable aleatoria}\label{variable-aleatoria}}
+
+En temas anteriores hemos visto como analizar un conjunto de datos. La metodología general consiste en, a partir de una muestra de una población, resumir el contenido de esa muestra mediante análisis gráficos y numéricos.
+
+La muestra, habitualmente, consiste en una serie de variables (numéricas o no), que llamamos variables estadísticas. Esta variable es la medición u observación de una característica concreta (estatura, peso, \ldots) en cada uno de los individuos de la muestra.
+
+Centrémonos ahora en variables numéricas. Si en vez de referirnos a los valores de la variable en una muestra concreta (que es una parte de una población) nos referimos a los valores de la variable en toda la población, tendremos una variable aleatoria.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  graph TD;}
+\NormalTok{      A{-}{-}\textgreater{}B;}
+\NormalTok{      A{-}{-}\textgreater{}C;}
+\NormalTok{      B{-}{-}\textgreater{}D;}
+\NormalTok{      C{-}{-}\textgreater{}D;}
+\end{Highlighting}
+\end{Shaded}
+
+El objetivo es conocer lo mejor posible una población, a partir de una muestra de individuos. Para ello se elige una muestra, y se analiza, extrayendo toda la información que se pueda.
+
+Para poder extrapolar los resultados de la muestra a la población, necesitaremos extender los conceptos vistos de una variable estadística a la población general. Es así, como la variable en la población general se llama variable aleatoria.
+
+Cuando tenemos una base de datos de una población, en general tenemos una muestra de dicha población. Una planilla de datos de pacientes de un hospital concreto es una muestra de la población total de pacientes. En esta planilla de datos, podemos tener mediciones de diferentes variables: altura, peso, temperatura corporal, niveles de elementos en la sangre, si tiene una enfermedad o no. Estas variables mencionadas, son ejemplos de variables aleatorias.
+
+El nombre de variable aleatoria hace referencia a que los valores de esta variable dependen del azar, mediante alguna ley concreta. El proceso de comprensión o interpretación es el que realizaremos en este tema.
+
+Cuando lanzamos una moneda, por ejemplo, cien veces, y anotamos 1 si sale cara y 0 si sale cruz, tenemos una variable estadística variable en la muestra) que toma los valores 0 y 1, con frecuencias de aparición de, por ejemplo, 56 y 44, respectivamente. Cuando consideramos el proceso general (variable en la población) de lanzar una moneda, tenemos una variable aleatoria que toma los valores 0 y 1 con probabilidad 0.5, respectivamente.
 
 \hypertarget{funciuxf3n-de-probabilidad-1}{%
 \subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad-1}}
