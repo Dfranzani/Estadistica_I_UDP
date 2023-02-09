@@ -32,7 +32,6 @@ $\Omega = \lbrace 1,2,3,4,5,6 \rbrace$
 2.
 3.
 
-
 ### Función de probabilidad 
 
 El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra, puede ser difícil de calcular. En este aspecto, cómo introducción, se hará uso de la definición clásica de probabilidad:
@@ -70,12 +69,16 @@ La muestra, habitualmente, consiste en una serie de variables (numéricas o no),
 
 Centrémonos ahora en variables numéricas. Si en vez de referirnos a los valores de la variable en una muestra concreta (que es una parte de una población) nos referimos a los valores de la variable en toda la población, tendremos una variable aleatoria.
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+```{r echo=FALSE, fig.align='center', fig.height=3, eval=FALSE, include=FALSE}
+plot(x = 1, y = 1, col = "white", bty = "n", xaxt = "n", yaxt = "n",
+     xlab = "", ylab = "", xlim = c(-10,10), ylim = c(-3,3))
+text(x = -8, y = 0, labels = "Población", col = "black")
+text(x = 0, y = 0, labels = "Muestra", col = "black")
+text(x = 8, y = 0, labels = "Ánalisis", col = "black")
+```
+
+```{r img1, echo=FALSE, fig.align='center', fig.height=3}
+knitr::include_graphics("img/img1.png")
 ```
 
 El objetivo es conocer lo mejor posible una población, a partir de una muestra de individuos. Para ello se elige una muestra, y se analiza, extrayendo toda la información que se pueda.
@@ -88,18 +91,29 @@ El nombre de variable aleatoria hace referencia a que los valores de esta variab
 
 Cuando lanzamos una moneda, por ejemplo, cien veces, y anotamos 1 si sale cara y 0 si sale cruz, tenemos una variable estadística variable en la muestra) que toma los valores 0 y 1, con frecuencias de aparición de, por ejemplo, 56 y 44, respectivamente. Cuando consideramos el proceso general (variable en la población) de lanzar una moneda, tenemos una variable aleatoria que toma los valores 0 y 1 con probabilidad 0.5, respectivamente.
 
+### Tipos de variables aleatorias {.unlisted .unnumbered}
+Al igual que sucede con las variables estadísticas, las variables aleatorias pueden ser discretas o continuas.
+
+La variable número que sale al lanzar un dado con seis caras es una variable aleatoria discreta (toma los valores del 1 al 6).
+La variable número de autos que pasan por un cruce en un tiempo determinado, es del tipo ...
+La variable estatura se mueve en un rango de valores determinado por el mínimo y el máximo de la población, es del tipo ...
+
 ### Función de probabilidad 
+
+#### Variable aleatoria discreta {.unlisted .unnumbered}
+
+
+
 ### Función de distribución 
 
-
-## Variable aleatoria discreta
+## Variables aleatorias discretas
 
 ### Uniforme 
 ### Bernoulli
 ### Binomial 
 ### Poisson 
 
-## Variable aleatoria continua
+## Variables aleatorias continuas
 
 ### Uniforme
 ### Exponencial 
