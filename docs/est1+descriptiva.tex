@@ -148,7 +148,7 @@
 \makeatother
 \subtitle{Unidad de Formación en Matemática y Estadística (UFME)}
 \author{Coordinación de Estadística}
-\date{Actualizado al 08-02-2023}
+\date{Actualizado al 12-02-2023}
 
 \begin{document}
 \maketitle
@@ -1494,10 +1494,31 @@ El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja
 \hypertarget{elementos-de-probabilidad}{%
 \section{Elementos de probabilidad}\label{elementos-de-probabilidad}}
 
-\hypertarget{espacio-muestral}{%
-\subsection{Espacio muestral}\label{espacio-muestral}}
+\hypertarget{experimento-y-espacio-muestral}{%
+\subsection{Experimento y Espacio muestral}\label{experimento-y-espacio-muestral}}
 
-El espacio muestral, es el conjunto de todos los resultados posibles de un experimento. Se usa la letra omega (mayúscula) \(\Omega\) para referirnos a este conjunto. Un elemento genérico de \(\Omega\) se denota como \(\omega\).
+En el contexto de la probabilidad, un \textbf{experimento} es definido como un proceso que genera resultados definidos. Y en cada una de las repeticiones del experimento, habrá uno y solo uno de los posibles resultados experimentales \citep[página 143]{anderson}.
+
+\textbf{Ejemplo:}
+
+\begin{table}
+
+\caption{\label{tab:experimentos}Experimentos y resultados}
+\centering
+\begin{tabular}[t]{ll}
+\toprule
+Experimento & Resultado experimental\\
+\midrule
+Lanzar una moneda & Cara, cruz\\
+Tomar una pieza para inspeccionarla & Con defecto, sin defecto\\
+Realizar una llamada de ventas & Hay compra, no hay compra\\
+Lanzar un dado & 1, 2, 3, 4, 5, 6\\
+Jugar un partido de fútbol & Ganar, perder, empatar\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Al especificar todos los resultados experimentales posibles, está definiendo el \textbf{espacio muestral} de un experimento. En otras palabras, el espacio muestral de un experimentos es el conjunto de todos los resultados experimentales. Se usa la letra omega mayúscula (\(\Omega\)) para referirnos a este conjunto. Un elemento genérico de \(\Omega\) se denota como \(\omega\).
 
 \textbf{Ejemplo:}
 
@@ -1509,7 +1530,6 @@ El espacio muestral, es el conjunto de todos los resultados posibles de un exper
 \end{enumerate}
 
 \[\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DDD \rbrace\]
-
 \textbf{Ejercicio:}
 
 Determinar el espacio muestral de los siguientes experimentos:
@@ -1518,53 +1538,54 @@ Determinar el espacio muestral de los siguientes experimentos:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Elegir un estudiante que está dentro de la sala de clases.
+  Elegir un estudiante que está dentro de tu sala de clases (en este momento).
 \item
-  Registrar la cantidad de movimientos de inversión de un fondo de renta variable (símil: considere la cantidad de días que actuad un interés compuesto diario sobre un préstamo, el interés deja de aumentar cuando se paga la deuda).
+  Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos opciones de platos de fondo y dos de entradas.
 \item
-  Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos platos de fondo y dos entradas distintas.
 \item
-  Operación de 3 movimiento de trading, cada movimiento de trading tiene la opción de compra, venta y mantención en cada movimiento (el trading es la compra y venta de acciones de alta liquidez).
 \end{enumerate}
 
 \hypertarget{eventos-aleatorios}{%
 \subsection{Eventos aleatorios}\label{eventos-aleatorios}}
 
-En principio, un evento aleatorio es algún subconjunto del espacio muestral \(\Omega\). Los eventos se anotan con una letra mayúscula a elección.
+En principio, un \textbf{evento aleatorio} (o simplemente evento) es algún subconjunto del espacio muestral \(\Omega\). Los eventos se anotan con una letra mayúscula a elección \citep[página 153]{anderson}.
 
-Considere el experimento de lanza un dado de 6 caras. Determine el espacio muestral. Defina al menos 3 eventos, escribiendo su correspondiente conjunto.
+A modo de ejemplo, consideren el experimento de lanzar un dado de 6 caras. Luego, determine el espacio muestral, y defina al menos 3 eventos, escribiendo su correspondiente conjunto.
 
 \(\Omega = \lbrace 1,2,3,4,5,6 \rbrace\)
-1. A: obtener un número par \(\rightarrow \lbrace 2,4,6 \rbrace\)
-2.
-3.
-
-\hypertarget{funciuxf3n-de-probabilidad}{%
-\subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad}}
-
-El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra, puede ser difícil de calcular. En este aspecto, cómo introducción, se hará uso de la definición clásica de probabilidad:
-
-Probabilidad de que ocurra un evento = \(\frac{\text{Casos favorables}}{\text{Casos totales}}\)
-
-Esta expresión es lo que se denominaría como función de probabilidad. Sin embargo, en temas posteriores se verán otro tipo de expresiones (no ahondaremos en el porqué es una función en estos momentos).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Calcular la probabilidad de obtener un número par al lanzar un dado una vez.
+  A: obtener un número par \(\rightarrow A = \lbrace 2,4,6 \rbrace\)
+\item
+\item
 \end{enumerate}
 
-A: obtener un número par
+\hypertarget{probabilidad-de-un-evento}{%
+\subsection{Probabilidad de un evento}\label{probabilidad-de-un-evento}}
+
+El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra puede ser difícil de calcular. En este aspecto, como introducción, se hará uso de la definición clásica de probabilidad:
+
+\emph{Probabilidad de que ocurra un evento} \(= \displaystyle\frac{\text{Casos favorables}}{\text{Casos totales}}\)
+
+Por ejemplo, la probabilidad de obtener un número par al lanzar un dado una vez es:
+
+A: obtener un número par.
+
 \[P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}\]
-Nota: La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son cero o igual a los casos totales, respectivamente.
+\textbf{Nota:} La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles, respectivamente.
+
+\textbf{Ejercicio:}
+
+Calcular las siguientes probabilidades:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
 \tightlist
 \item
-  Se lanza un dado de 6 caras una vez. Calcular las siguientes probabilidades:
+  Se lanza un dado de 6 caras una vez.
 \item
   Sacar un número impar.
 \item
@@ -1579,34 +1600,14 @@ Nota: La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos
   Sacar un número menor a cero.
 \item
   Sacar un número menor a siete
+\item
+  En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
+\item
+  En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
 \end{enumerate}
-
-En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
-
-En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
-
-Tenemos un mazo de 52 cartas de una baraja inglesa, que consta de cuatro palos: corazones, tréboles, diamantes y picas. ¿Cuál es la probabilidad de extraer un corazón?, sabiendo que hay 13 cartas de cada palo.
 
 \hypertarget{variable-aleatoria}{%
 \section{Variable aleatoria}\label{variable-aleatoria}}
-
-En temas anteriores hemos visto como analizar un conjunto de datos. La metodología general consiste en, a partir de una muestra de una población, resumir el contenido de esa muestra mediante análisis gráficos y numéricos.
-
-La muestra, habitualmente, consiste en una serie de variables (numéricas o no), que llamamos variables estadísticas. Esta variable es la medición u observación de una característica concreta (estatura, peso, \ldots) en cada uno de los individuos de la muestra.
-
-Centrémonos ahora en variables numéricas. Si en vez de referirnos a los valores de la variable en una muestra concreta (que es una parte de una población) nos referimos a los valores de la variable en toda la población, tendremos una variable aleatoria.
-
-\begin{center}\includegraphics[width=13.9in]{img/img1} \end{center}
-
-El objetivo es conocer lo mejor posible una población, a partir de una muestra de individuos. Para ello se elige una muestra, y se analiza, extrayendo toda la información que se pueda.
-
-Para poder extrapolar los resultados de la muestra a la población, necesitaremos extender los conceptos vistos de una variable estadística a la población general. Es así, como la variable en la población general se llama variable aleatoria.
-
-Cuando tenemos una base de datos de una población, en general tenemos una muestra de dicha población. Una planilla de datos de pacientes de un hospital concreto es una muestra de la población total de pacientes. En esta planilla de datos, podemos tener mediciones de diferentes variables: altura, peso, temperatura corporal, niveles de elementos en la sangre, si tiene una enfermedad o no. Estas variables mencionadas, son ejemplos de variables aleatorias.
-
-El nombre de variable aleatoria hace referencia a que los valores de esta variable dependen del azar, mediante alguna ley concreta. El proceso de comprensión o interpretación es el que realizaremos en este tema.
-
-Cuando lanzamos una moneda, por ejemplo, cien veces, y anotamos 1 si sale cara y 0 si sale cruz, tenemos una variable estadística variable en la muestra) que toma los valores 0 y 1, con frecuencias de aparición de, por ejemplo, 56 y 44, respectivamente. Cuando consideramos el proceso general (variable en la población) de lanzar una moneda, tenemos una variable aleatoria que toma los valores 0 y 1 con probabilidad 0.5, respectivamente.
 
 \hypertarget{tipos-de-variables-aleatorias}{%
 \subsection*{Tipos de variables aleatorias}\label{tipos-de-variables-aleatorias}}
@@ -1617,65 +1618,74 @@ La variable número que sale al lanzar un dado con seis caras es una variable al
 La variable número de autos que pasan por un cruce en un tiempo determinado, es del tipo \ldots{}
 La variable estatura se mueve en un rango de valores determinado por el mínimo y el máximo de la población, es del tipo \ldots{}
 
-\hypertarget{funciuxf3n-de-probabilidad-1}{%
-\subsection{Función de probabilidad}\label{funciuxf3n-de-probabilidad-1}}
+\hypertarget{variables-aleatorias-discretas-v.a.d}{%
+\section{Variables aleatorias discretas (v.a.d)}\label{variables-aleatorias-discretas-v.a.d}}
 
-\hypertarget{variable-aleatoria-discreta}{%
-\subsubsection*{Variable aleatoria discreta}\label{variable-aleatoria-discreta}}
+\hypertarget{funciuxf3n-de-masa-de-probabilidad}{%
+\subsection{Función de masa de probabilidad}\label{funciuxf3n-de-masa-de-probabilidad}}
 
-\hypertarget{funciuxf3n-de-distribuciuxf3n}{%
-\subsection{Función de distribución}\label{funciuxf3n-de-distribuciuxf3n}}
+\hypertarget{funciuxf3n-de-distribuciuxf3n-acumulada}{%
+\subsection{Función de distribución acumulada}\label{funciuxf3n-de-distribuciuxf3n-acumulada}}
 
-\hypertarget{variables-aleatorias-discretas}{%
-\section{Variables aleatorias discretas}\label{variables-aleatorias-discretas}}
+\hypertarget{distribuciuones}{%
+\subsection{Distribuciuones}\label{distribuciuones}}
 
 \hypertarget{uniforme}{%
-\subsection{Uniforme}\label{uniforme}}
+\subsubsection{Uniforme}\label{uniforme}}
 
 \hypertarget{bernoulli}{%
-\subsection{Bernoulli}\label{bernoulli}}
+\subsubsection{Bernoulli}\label{bernoulli}}
 
 \hypertarget{binomial}{%
-\subsection{Binomial}\label{binomial}}
+\subsubsection{Binomial}\label{binomial}}
 
 \hypertarget{poisson}{%
-\subsection{Poisson}\label{poisson}}
+\subsubsection{Poisson}\label{poisson}}
 
-\hypertarget{variables-aleatorias-continuas}{%
-\section{Variables aleatorias continuas}\label{variables-aleatorias-continuas}}
+\hypertarget{variables-aleatorias-continuas-v.a.c}{%
+\section{Variables aleatorias continuas (v.a.c)}\label{variables-aleatorias-continuas-v.a.c}}
+
+\hypertarget{funciuxf3n-de-densidad-de-probabilidad}{%
+\subsection{Función de densidad de probabilidad}\label{funciuxf3n-de-densidad-de-probabilidad}}
+
+\hypertarget{funciuxf3n-de-distribuciuxf3n-acumulada-1}{%
+\subsection{Función de distribución acumulada}\label{funciuxf3n-de-distribuciuxf3n-acumulada-1}}
+
+\hypertarget{distribuciones}{%
+\subsection{Distribuciones}\label{distribuciones}}
 
 \hypertarget{uniforme-1}{%
-\subsection{Uniforme}\label{uniforme-1}}
+\subsubsection{Uniforme}\label{uniforme-1}}
 
 \hypertarget{exponencial}{%
-\subsection{Exponencial}\label{exponencial}}
+\subsubsection{Exponencial}\label{exponencial}}
 
 \hypertarget{normal}{%
-\subsection{Normal}\label{normal}}
+\subsubsection{Normal}\label{normal}}
 
 \hypertarget{t---student}{%
-\subsection{T - Student}\label{t---student}}
+\subsubsection{T - Student}\label{t---student}}
 
 \hypertarget{ji---cuadrado}{%
-\subsection{Ji - Cuadrado}\label{ji---cuadrado}}
+\subsubsection{Ji - Cuadrado}\label{ji---cuadrado}}
 
 \hypertarget{esperanza}{%
 \section{Esperanza}\label{esperanza}}
 
-\hypertarget{variable-aleatoria-discreta-1}{%
-\subsection{Variable aleatoria discreta}\label{variable-aleatoria-discreta-1}}
+\hypertarget{v.a.d}{%
+\subsection{v.a.d}\label{v.a.d}}
 
-\hypertarget{variable-aleatoria-continua}{%
-\subsection{Variable aleatoria continua}\label{variable-aleatoria-continua}}
+\hypertarget{v.a.c}{%
+\subsection{v.a.c}\label{v.a.c}}
 
 \hypertarget{varianza}{%
 \section{Varianza}\label{varianza}}
 
-\hypertarget{variable-aleatoria-discreta-2}{%
-\subsection{Variable aleatoria discreta}\label{variable-aleatoria-discreta-2}}
+\hypertarget{v.a.d-1}{%
+\subsection{v.a.d}\label{v.a.d-1}}
 
-\hypertarget{variable-aleatoria-continua-1}{%
-\subsection{Variable aleatoria continua}\label{variable-aleatoria-continua-1}}
+\hypertarget{v.a.c-1}{%
+\subsection{v.a.c}\label{v.a.c-1}}
 
 \hypertarget{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}{%
 \chapter{Distribuciones muestrales y pruebas de hipótesis}\label{distribuciones-muestrales-y-pruebas-de-hipuxf3tesis}}
