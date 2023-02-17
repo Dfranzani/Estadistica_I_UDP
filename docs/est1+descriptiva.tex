@@ -111,6 +111,7 @@
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \renewcommand\chaptertitlename{Unidad}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -148,7 +149,7 @@
 \makeatother
 \subtitle{Unidad de Formación en Matemática y Estadística (UFME)}
 \author{Coordinación de Estadística}
-\date{Actualizado al 12-02-2023}
+\date{Actualizado al 17-02-2023}
 
 \begin{document}
 \maketitle
@@ -157,6 +158,14 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\begin{verbatim}
+## $version
+## [1] '3.0.1'
+## 
+## $dir
+## [1] "/usr/bin"
+\end{verbatim}
+
 \hypertarget{presentaciuxf3n}{%
 \chapter*{Presentación}\label{presentaciuxf3n}}
 \addcontentsline{toc}{chapter}{Presentación}
@@ -637,7 +646,7 @@ Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repit
 
 Al momento de reportar la media solo se obtiene información parcial sobre el un conjunto de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de localización y aún diferir entre sí en otras importantes maneras. La tabla \ref{tab:variabilidad} muestra las notas obtenidas por los alumnos de 2 dos cursos con la misma media, aunque el grado de \textbf{dispersión} (variabilidad) en torno a esta es diferente para ambas muestras, es decir, en el Curso 1 las se observan notas más bajas y altas que el Curso 2.
 
-\begin{table}
+\begin{table}[H]
 
 \caption{\label{tab:variabilidad}Notas por curso}
 \centering
@@ -699,7 +708,7 @@ Obtengamos el rango de la tasa de apertura histórica del EUR/USD de la base de 
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Obtener el rango del resto de variables de la base de datos de la undiad (ignore la columna asociada a la variable fecha).
+  Obtener el rango del resto de variables de la base de datos de la unidad (ignore la columna asociada a la variable fecha).
 \end{enumerate}
 
 \hypertarget{varianza-y-desviaciuxf3n-estuxe1ndar}{%
@@ -910,10 +919,9 @@ En el ejercicio anterior, se utilizó la varianza para comprar directamente la v
 \textbf{Nota}: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
 
 \hypertarget{notaciuxf3n-poblacional-y-muestral}{%
-\subsubsection*{Notación poblacional y muestral}\label{notaciuxf3n-poblacional-y-muestral}}
-\addcontentsline{toc}{subsubsection}{Notación poblacional y muestral}
+\section*{Notación poblacional y muestral}\label{notaciuxf3n-poblacional-y-muestral}}
 
-\begin{table}
+\begin{table}[H]
 
 \caption{\label{tab:notacion}Notación de parámetros y estadísticos}
 \centering
@@ -1457,12 +1465,16 @@ Al observar la evolución histórica de la tasa de apertura diferenciada por añ
     \AttributeTok{x =}\NormalTok{ Low, }\CommentTok{\# Eje X y variable asociada}
     \AttributeTok{y =}\NormalTok{ High, }\CommentTok{\# Eje Y y variable asociada}
     \AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+} \CommentTok{\# Color según variable}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Objeto a graficar: gráfico de dispersión}
+  \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de dispersión}
+    \AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño de los puntos}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
     \AttributeTok{title =} \StringTok{"Promedio de la tasa más alta y más baja del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
     \AttributeTok{x =} \StringTok{"Tasa más baja"}\NormalTok{, }\CommentTok{\# Título el eje X}
-    \AttributeTok{y =} \StringTok{"Tasa más alta"} \CommentTok{\# Título el eje Y}
-\NormalTok{  )}
+    \AttributeTok{y =} \StringTok{"Tasa más alta"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título el eje Y}
+  \FunctionTok{guides}\NormalTok{( }\CommentTok{\# Edición de escalas}
+    \AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{( }\CommentTok{\# Escala de color de la leyenda}
+      \AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{( }\CommentTok{\# Comando estéticos asociados}
+        \AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\CommentTok{\# Tamaño de los puntos}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
@@ -1501,7 +1513,7 @@ En el contexto de la probabilidad, un \textbf{experimento} es definido como un p
 
 \textbf{Ejemplo:}
 
-\begin{table}
+\begin{table}[H]
 
 \caption{\label{tab:experimentos}Experimentos y resultados}
 \centering
@@ -1610,7 +1622,7 @@ Calcular las siguientes probabilidades:
 \section{Variable aleatoria}\label{variable-aleatoria}}
 
 \hypertarget{tipos-de-variables-aleatorias}{%
-\subsection*{Tipos de variables aleatorias}\label{tipos-de-variables-aleatorias}}
+\subsection{Tipos de variables aleatorias}\label{tipos-de-variables-aleatorias}}
 
 Al igual que sucede con las variables estadísticas, las variables aleatorias pueden ser discretas o continuas.
 
@@ -1627,20 +1639,20 @@ La variable estatura se mueve en un rango de valores determinado por el mínimo 
 \hypertarget{funciuxf3n-de-distribuciuxf3n-acumulada}{%
 \subsection{Función de distribución acumulada}\label{funciuxf3n-de-distribuciuxf3n-acumulada}}
 
-\hypertarget{distribuciuones}{%
-\subsection{Distribuciuones}\label{distribuciuones}}
+\hypertarget{distribuciones}{%
+\subsection{Distribuciones}\label{distribuciones}}
 
 \hypertarget{uniforme}{%
-\subsubsection{Uniforme}\label{uniforme}}
+\subsubsection*{Uniforme}\label{uniforme}}
 
 \hypertarget{bernoulli}{%
-\subsubsection{Bernoulli}\label{bernoulli}}
+\subsubsection*{Bernoulli}\label{bernoulli}}
 
 \hypertarget{binomial}{%
-\subsubsection{Binomial}\label{binomial}}
+\subsubsection*{Binomial}\label{binomial}}
 
 \hypertarget{poisson}{%
-\subsubsection{Poisson}\label{poisson}}
+\subsubsection*{Poisson}\label{poisson}}
 
 \hypertarget{variables-aleatorias-continuas-v.a.c}{%
 \section{Variables aleatorias continuas (v.a.c)}\label{variables-aleatorias-continuas-v.a.c}}
@@ -1651,23 +1663,23 @@ La variable estatura se mueve en un rango de valores determinado por el mínimo 
 \hypertarget{funciuxf3n-de-distribuciuxf3n-acumulada-1}{%
 \subsection{Función de distribución acumulada}\label{funciuxf3n-de-distribuciuxf3n-acumulada-1}}
 
-\hypertarget{distribuciones}{%
-\subsection{Distribuciones}\label{distribuciones}}
+\hypertarget{distribuciones-1}{%
+\subsection{Distribuciones}\label{distribuciones-1}}
 
 \hypertarget{uniforme-1}{%
-\subsubsection{Uniforme}\label{uniforme-1}}
+\subsubsection*{Uniforme}\label{uniforme-1}}
 
 \hypertarget{exponencial}{%
-\subsubsection{Exponencial}\label{exponencial}}
+\subsubsection*{Exponencial}\label{exponencial}}
 
 \hypertarget{normal}{%
-\subsubsection{Normal}\label{normal}}
+\subsubsection*{Normal}\label{normal}}
 
 \hypertarget{t---student}{%
-\subsubsection{T - Student}\label{t---student}}
+\subsubsection*{T - Student}\label{t---student}}
 
 \hypertarget{ji---cuadrado}{%
-\subsubsection{Ji - Cuadrado}\label{ji---cuadrado}}
+\subsubsection*{Ji - Cuadrado}\label{ji---cuadrado}}
 
 \hypertarget{esperanza}{%
 \section{Esperanza}\label{esperanza}}

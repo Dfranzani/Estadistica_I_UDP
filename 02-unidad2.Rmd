@@ -2,133 +2,130 @@
 
 ## Elementos de probabilidad
 
-### Espacio muestral 
+### Experimento y Espacio muestral 
 
-El espacio muestral, es el conjunto de todos los resultados posibles de un experimento. Se usa la letra omega (mayúscula) $\Omega$ para referirnos a este conjunto. Un elemento genérico de $\Omega$ se denota como $\omega$.
+En el contexto de la probabilidad, un **experimento** es definido como un proceso que genera resultados definidos. Y en cada una de las repeticiones del experimento, habrá uno y solo uno de los posibles resultados experimentales [@anderson, página 143]. 
+
+**Ejemplo:**
+
+```{r experimentos, echo=FALSE}
+tabla = matrix(c("Lanzar una moneda",
+                 "Tomar una pieza para inspeccionarla",
+                 "Realizar una llamada de ventas",
+                 "Lanzar un dado",
+                 "Jugar un partido de fútbol",
+                 "Cara, cruz",
+                 "Con defecto, sin defecto",
+                 "Hay compra, no hay compra",
+                 "1, 2, 3, 4, 5, 6",
+                 "Ganar, perder, empatar"),
+               byrow = F, ncol = 2)
+kable(tabla, align = 'l', booktabs = TRUE,
+      caption = "Experimentos y resultados",
+      col.names = c("Experimento", "Resultado experimental"), escape = FALSE) |>
+  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"), latex_options = c("HOLD_position"))
+
+```
+
+Al especificar todos los resultados experimentales posibles, está definiendo el **espacio muestral** de un experimento. En otras palabras, el espacio muestral de un experimentos es el conjunto de todos los resultados experimentales. Se usa la letra omega mayúscula ($\Omega$) para referirnos a este conjunto. Un elemento genérico de $\Omega$ se denota como $\omega$.
 
 **Ejemplo:**
 
 1. Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?
 
 $$\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DDD \rbrace$$
-
 **Ejercicio:**
 
 Determinar el espacio muestral de los siguientes experimentos:
 
-1. Elegir un estudiante que está dentro de la sala de clases.
-2. Registrar la cantidad de movimientos de inversión de un fondo de renta variable (símil: considere la cantidad de días que actuad un interés compuesto diario sobre un préstamo, el interés deja de aumentar cuando se paga la deuda).
-3. Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos platos de fondo y dos entradas distintas.
-4. Operación de 3 movimiento de trading, cada movimiento de trading tiene la opción de compra, venta y mantención en cada movimiento (el trading es la compra y venta de acciones de alta liquidez).
+1. Elegir un estudiante que está dentro de tu sala de clases (en este momento).
+2. Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos opciones de platos de fondo y dos de entradas.
+3. 
+4. 
 
 ### Eventos aleatorios
 
-En principio, un evento aleatorio es algún subconjunto del espacio muestral $\Omega$. Los eventos se anotan con una letra mayúscula a elección.
+En principio, un **evento aleatorio** (o simplemente evento) es algún subconjunto del espacio muestral $\Omega$. Los eventos se anotan con una letra mayúscula a elección [@anderson, página 153].
 
-Considere el experimento de lanza un dado de 6 caras. Determine el espacio muestral. Defina al menos 3 eventos, escribiendo su correspondiente conjunto.
+A modo de ejemplo, consideren el experimento de lanzar un dado de 6 caras. Luego, determine el espacio muestral, y defina al menos 3 eventos, escribiendo su correspondiente conjunto.
 
 $\Omega = \lbrace 1,2,3,4,5,6 \rbrace$
-1. A: obtener un número par $\rightarrow \lbrace 2,4,6 \rbrace$
+
+1. A: obtener un número par $\rightarrow A = \lbrace 2,4,6 \rbrace$
 2.
 3.
 
-### Función de probabilidad 
+### Probabilidad de un evento
 
-El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra, puede ser difícil de calcular. En este aspecto, cómo introducción, se hará uso de la definición clásica de probabilidad:
+El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra puede ser difícil de calcular. En este aspecto, como introducción, se hará uso de la definición clásica de probabilidad:
 
-Probabilidad de que ocurra un evento = $\frac{\text{Casos favorables}}{\text{Casos totales}}$
+*Probabilidad de que ocurra un evento* $= \displaystyle\frac{\text{Casos favorables}}{\text{Casos totales}}$
 
-Esta expresión es lo que se denominaría como función de probabilidad. Sin embargo, en temas posteriores se verán otro tipo de expresiones (no ahondaremos en el porqué es una función en estos momentos). 
+Por ejemplo, la probabilidad de obtener un número par al lanzar un dado una vez es:
 
-1. Calcular la probabilidad de obtener un número par al lanzar un dado una vez.
+A: obtener un número par.
 
-A: obtener un número par
 $$P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}$$
-Nota: La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son cero o igual a los casos totales, respectivamente.
+**Nota:** La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles, respectivamente.
 
-2. Se lanza un dado de 6 caras una vez. Calcular las siguientes probabilidades:
-3. Sacar un número impar.
-4. Que salga un 2 o un 5.
-5. Sacar un valor menor que 4.
-6. Obtener un valor menor o igual que 4.
-7. Sacar un valor diferente de 3
-8. Sacar un número menor a cero.
-9. Sacar un número menor a siete
+**Ejercicio:**
 
-En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
+Calcular las siguientes probabilidades:
 
-En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
-
-Tenemos un mazo de 52 cartas de una baraja inglesa, que consta de cuatro palos: corazones, tréboles, diamantes y picas. ¿Cuál es la probabilidad de extraer un corazón?, sabiendo que hay 13 cartas de cada palo.
+1. Se lanza un dado de 6 caras una vez. 
+2. Sacar un número impar.
+3. Que salga un 2 o un 5.
+4. Sacar un valor menor que 4.
+5. Obtener un valor menor o igual que 4.
+6. Sacar un valor diferente de 3
+7. Sacar un número menor a cero.
+8. Sacar un número menor a siete
+9. En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
+10. En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
 
 ## Variable aleatoria
 
-En temas anteriores hemos visto como analizar un conjunto de datos. La metodología general consiste en, a partir de una muestra de una población, resumir el contenido de esa muestra mediante análisis gráficos y numéricos.
 
-La muestra, habitualmente, consiste en una serie de variables (numéricas o no), que llamamos variables estadísticas. Esta variable es la medición u observación de una característica concreta (estatura, peso, ...) en cada uno de los individuos de la muestra.
-
-Centrémonos ahora en variables numéricas. Si en vez de referirnos a los valores de la variable en una muestra concreta (que es una parte de una población) nos referimos a los valores de la variable en toda la población, tendremos una variable aleatoria.
-
-```{r echo=FALSE, fig.align='center', fig.height=3, eval=FALSE, include=FALSE}
-plot(x = 1, y = 1, col = "white", bty = "n", xaxt = "n", yaxt = "n",
-     xlab = "", ylab = "", xlim = c(-10,10), ylim = c(-3,3))
-text(x = -8, y = 0, labels = "Población", col = "black")
-text(x = 0, y = 0, labels = "Muestra", col = "black")
-text(x = 8, y = 0, labels = "Ánalisis", col = "black")
-```
-
-```{r img1, echo=FALSE, fig.align='center', fig.height=3}
-knitr::include_graphics("img/img1.png")
-```
-
-El objetivo es conocer lo mejor posible una población, a partir de una muestra de individuos. Para ello se elige una muestra, y se analiza, extrayendo toda la información que se pueda.
-
-Para poder extrapolar los resultados de la muestra a la población, necesitaremos extender los conceptos vistos de una variable estadística a la población general. Es así, como la variable en la población general se llama variable aleatoria.
-
-Cuando tenemos una base de datos de una población, en general tenemos una muestra de dicha población. Una planilla de datos de pacientes de un hospital concreto es una muestra de la población total de pacientes. En esta planilla de datos, podemos tener mediciones de diferentes variables: altura, peso, temperatura corporal, niveles de elementos en la sangre, si tiene una enfermedad o no. Estas variables mencionadas, son ejemplos de variables aleatorias.
-
-El nombre de variable aleatoria hace referencia a que los valores de esta variable dependen del azar, mediante alguna ley concreta. El proceso de comprensión o interpretación es el que realizaremos en este tema.
-
-Cuando lanzamos una moneda, por ejemplo, cien veces, y anotamos 1 si sale cara y 0 si sale cruz, tenemos una variable estadística variable en la muestra) que toma los valores 0 y 1, con frecuencias de aparición de, por ejemplo, 56 y 44, respectivamente. Cuando consideramos el proceso general (variable en la población) de lanzar una moneda, tenemos una variable aleatoria que toma los valores 0 y 1 con probabilidad 0.5, respectivamente.
-
-### Tipos de variables aleatorias {.unlisted .unnumbered}
+### Tipos de variables aleatorias
 Al igual que sucede con las variables estadísticas, las variables aleatorias pueden ser discretas o continuas.
 
 La variable número que sale al lanzar un dado con seis caras es una variable aleatoria discreta (toma los valores del 1 al 6).
 La variable número de autos que pasan por un cruce en un tiempo determinado, es del tipo ...
 La variable estatura se mueve en un rango de valores determinado por el mínimo y el máximo de la población, es del tipo ...
 
-### Función de probabilidad 
 
-#### Variable aleatoria discreta {.unlisted .unnumbered}
+## Variables aleatorias discretas (v.a.d)
 
+### Función de masa de probabilidad
+### Función de distribución acumulada
 
+### Distribuciones
+#### Uniforme {.unlisted .unnumbered} 
+#### Bernoulli {.unlisted .unnumbered}
+#### Binomial {.unlisted .unnumbered} 
+#### Poisson {.unlisted .unnumbered} 
 
-### Función de distribución 
+## Variables aleatorias continuas (v.a.c)
 
-## Variables aleatorias discretas
+### Función de densidad de probabilidad
+### Función de distribución acumulada
 
-### Uniforme 
-### Bernoulli
-### Binomial 
-### Poisson 
-
-## Variables aleatorias continuas
-
-### Uniforme
-### Exponencial 
-### Normal 
-### T - Student 
-### Ji - Cuadrado
+### Distribuciones
+#### Uniforme {.unlisted .unnumbered}
+#### Exponencial {.unlisted .unnumbered} 
+#### Normal {.unlisted .unnumbered} 
+#### T - Student {.unlisted .unnumbered} 
+#### Ji - Cuadrado {.unlisted .unnumbered}
 
 
 ## Esperanza
 
-### Variable aleatoria discreta 
-### Variable aleatoria continua
+### v.a.d
+### v.a.c
 
 ## Varianza
 
-### Variable aleatoria discreta 
-### Variable aleatoria continua 
+### v.a.d
+### v.a.c
+
 

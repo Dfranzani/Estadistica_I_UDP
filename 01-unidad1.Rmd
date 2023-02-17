@@ -368,7 +368,7 @@ tabla = matrix(n, byrow = F, ncol = 3)
 # tabla = structure(.Data = tabla, .Dim = dim(tabla), .Dimnames = list(c(),c("Curso 1", "Curso 2", "Curso 3")))
 kable(tabla, caption = 'Notas por curso', align = 'c', booktabs = TRUE,
              col.names = c("Curso 1", "Curso 2", "Curso 3"), escape = FALSE) |>
-  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"))
+  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"), latex_options = c("HOLD_position"))
 ```
 
 #### Rango {.unnumbered}
@@ -390,7 +390,7 @@ rango[2] - rango[1]
 
 **Ejercicio:**
 
-1.  Obtener el rango del resto de variables de la base de datos de la undiad (ignore la columna asociada a la variable fecha).
+1.  Obtener el rango del resto de variables de la base de datos de la unidad (ignore la columna asociada a la variable fecha).
 
 #### Varianza y desviación estándar {.unnumbered}
 
@@ -510,14 +510,14 @@ c(CV_Open, CV_High)
 
 **Nota**: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
 
-#### Notación poblacional y muestral {.unnumbered}
+## Notación poblacional y muestral {.unnumbered .unlisted}
 
 ```{r notacion, echo=FALSE}
 tabla = matrix(c("$\\mu$","$\\sigma^2$","$\\sigma$","$\\bar{x}$","$S^2$","$S$"), byrow = FALSE, ncol = 2)
 rownames(tabla) = c('Media','Varianza','Desviación estándar')
 kable(tabla, escape = FALSE, booktabs = TRUE, caption = 'Notación de parámetros y estadísticos',
       col.names = c('Poblacional', 'Muestral'), align = 'c') |>
-  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"))
+  kable_styling(full_width = FALSE, bootstrap_options = c("condensed", "striped"), latex_options = c("HOLD_position"))
 ```
 
 ## Gráficos descriptivos
@@ -875,12 +875,16 @@ g = ggplot( # Ambiente gráfico
     x = Low, # Eje X y variable asociada
     y = High, # Eje Y y variable asociada
     color = Año)) + # Color según variable
-  geom_point() + # Objeto a graficar: gráfico de dispersión
+  geom_point( # Objeto a graficar: gráfico de dispersión
+    size = 3) + # Tamaño de los puntos
   labs( # Títulos
     title = "Promedio de la tasa más alta y más baja del EUR/USD", # Título del gráfico
     x = "Tasa más baja", # Título el eje X
-    y = "Tasa más alta" # Título el eje Y
-  )
+    y = "Tasa más alta") + # Título el eje Y
+  guides( # Edición de escalas
+    color = guide_legend( # Escala de color de la leyenda
+      override.aes = list( # Comando estéticos asociados
+        size = 3))) # Tamaño de los puntos
 g # Desplegamos el gráfico guardado
 ```
 
