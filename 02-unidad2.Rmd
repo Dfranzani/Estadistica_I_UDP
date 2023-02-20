@@ -66,7 +66,7 @@ Por ejemplo, la probabilidad de obtener un número par al lanzar un dado una vez
 A: obtener un número par.
 
 $$P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}$$
-**Nota:** La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles, respectivamente.
+**Nota:** La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles respectivamente.
 
 **Ejercicio:**
 
@@ -84,6 +84,7 @@ Calcular las siguientes probabilidades:
 10. En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
 
 ## Variable aleatoria
+
 
 
 ### Tipos de variables aleatorias
