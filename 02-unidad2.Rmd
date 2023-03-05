@@ -270,7 +270,7 @@ A continuación se mencionan algunas propiedades relacionadas con probabilidades
 
 Una variable aleatoria proporciona un medio para describir los resultados experimentales utilizando valores numéricos, es decir, una variable aleatoria asocia un valor numérico a cada uno de los resultados experimentales. Una variable aleatoria puede ser *discreta* o *continua*, depende del tipo de valores numéricos que asuma. [@anderson, página 187]
 
-- Una variable aleatoria se denomina **discreta** si asume un número finito de valores o una sucesión infinita de valores tales como $0,1,2,\ldots$. Consideremos el siguiente experimento como ejemplo: un contador presenta el examen para certificarse como contador público. El examen tiene cuatro partes. Defina una variable aleatoria $x$ como $x =$ *número de partes del examen aprobadas*. Esta es una variable aleatoria discreta porque puede tomar el número finito de valores $0,1,2,3$ o $4$. Otros ejemplos se pueden apreciar en la tabla \@ref(tab:variablesdiscretas).
+- Una variable aleatoria se denomina **discreta** si asume un número finito de valores o una sucesión infinita de valores tales como $0,1,2,\ldots$. Consideremos el siguiente experimento como ejemplo: un contador presenta el examen para certificarse como contador público. El examen tiene cuatro partes. Defina una variable aleatoria $X$ como $X =$ *número de partes del examen aprobadas*. Esta es una variable aleatoria discreta porque puede tomar el número finito de valores $0,1,2,3$ o $4$. Otros ejemplos se pueden apreciar en la tabla \@ref(tab:variablesdiscretas).
 
 ```{r variablesdiscretas, echo=FALSE}
 tabla = matrix(c("Llamar a cinco clientes",
@@ -300,7 +300,7 @@ if (knitr:::is_latex_output()) {
 tabla
 ```
 
-- Una variable aleatoria se denomina **continua** si puede tomar cualquier valor numéricos dentro de un intervalo. Los resultados experimentales basados en escalas de medición tales como tiempo, peso, distancia y temperatura puede ser descritos por variables aleatorias continuas. Consideremos el siguiente experimento como ejemplo: observar las llamadas telefónicas que llegan a la oficina de atención de una importante empresa de seguros. La variable aleatoria que interesa es $x =$ *tiempo en minutos entre dos llamadas consecutivas*. Esta variable aleatoria puede tomar cualquier valor en el intervalo $[0, \infty)$. En efecto, $x$ puede tomar un número infinito de valores, entre los cuales se encuentra valores como 1.25 minutos 3.4562 minutos, 4.33333 minutos, etc. En la tabla  \@ref(tab:variablescontinuas) aparecen otros ejemplos de variables aleatorias continuas.
+- Una variable aleatoria se denomina **continua** si puede tomar cualquier valor numéricos dentro de un intervalo. Los resultados experimentales basados en escalas de medición tales como tiempo, peso, distancia y temperatura puede ser descritos por variables aleatorias continuas. Consideremos el siguiente experimento como ejemplo: observar las llamadas telefónicas que llegan a la oficina de atención de una importante empresa de seguros. La variable aleatoria que interesa es $X =$ *tiempo en minutos entre dos llamadas consecutivas*. Esta variable aleatoria puede tomar cualquier valor en el intervalo $[0, \infty)$. En efecto, $x$ puede tomar un número infinito de valores, entre los cuales se encuentra valores como 1.25 minutos 3.4562 minutos, 4.33333 minutos, etc. En la tabla  \@ref(tab:variablescontinuas) aparecen otros ejemplos de variables aleatorias continuas.
 
 ```{r variablescontinuas, echo=FALSE}
 tabla = matrix(c("Operar un banco",
