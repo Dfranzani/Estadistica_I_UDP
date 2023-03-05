@@ -112,6 +112,8 @@
   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \renewcommand\chaptertitlename{Unidad}
 \usepackage{float}
+\floatplacement{figure}{H}
+\decimalpoint
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -149,8 +151,25 @@
 \makeatother
 \subtitle{Unidad de Formación en Matemática y Estadística (UFME)}
 \author{Coordinación de Estadística}
-\date{Actualizado al 17-02-2023}
+\date{Actualizado al 05-03-2023}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Ejemplo}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -193,13 +212,13 @@ La modalidad de trabajo consta de los siguientes elementos:
   \item
     (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson\%2C\%20Estad\%C3\%ADstica.pdf}{\emph{``Estadística para Administración y Economía''}} \citep{anderson}
   \item
-    (Obligatoria, texto guía) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
+    (Obligatoria,) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
   \item
     (Complementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
   \item
     (Complementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
   \item
-    (Complementaria) \href{https://ggplot2-book.org/}{\emph{``ggplot2: Elegant Graphics for Data Analysis''}} {[}{]}
+    (Complementaria) \href{https://ggplot2-book.org/}{\emph{``ggplot2: Elegant Graphics for Data Analysis''}} \citep{wickham_ggplot2_2009}
   \end{itemize}
 
   Además, a lo largo del documento se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
@@ -274,14 +293,9 @@ El concepto de datos está fuertemente ligado a su naturaleza, es decir, el cont
   \textbf{Cuantitativas} (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
 \end{itemize}
 
-\textbf{Ejercicio}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
-\end{enumerate}
+\begin{exercise}
+Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+\end{exercise}
 
 \hypertarget{poblaciuxf3n-y-muestra}{%
 \subsection{Población y Muestra}\label{poblaciuxf3n-y-muestra}}
@@ -298,14 +312,9 @@ Una investigación típicamente se enfocará en una colección bien definida de 
   \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
 \end{itemize}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Determine la población y muestra de los siguientes enunciados:
-\end{enumerate}
+\begin{exercise}
+Determine la población y muestra de los siguientes enunciados.
+\end{exercise}
 
 \begin{itemize}
 \tightlist
@@ -421,24 +430,16 @@ Efectivamente, diferentes muestras se comportan de manera diferente, es decir, l
 \hypertarget{representatividad-y-sesgo-de-la-muestra}{%
 \subsection{Representatividad y sesgo de la muestra}\label{representatividad-y-sesgo-de-la-muestra}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+\begin{itemize}
 \item
   \textbf{Representatividad}
-\end{enumerate}
 
-Comunmente se escucha hablar de que una muestra debe ser reperesentativa respecto de la población, algo muy similar a lo presentado en la sección \ref{variabilidad-muestral}. Sin embargo, este concepto no tiene sustento matemático, ya que, para poder verificar que una muestra es representativa se debe conocer a toda la población (la característica de estudio), lo cual en la práctica no ocurre. Y en caso de que se conociesen todos los datos de la población, sería absurdo calcular la estimación de un parámetro, ya que podría calcularse directamente el valor del parámetro en cuestión.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
+  Comúnmente se escucha hablar de que una muestra debe ser representativa respecto de la población, algo muy similar a lo presentado en la sección \ref{variabilidad-muestral}. Sin embargo, este concepto no tiene sustento matemático, ya que, para poder verificar que una muestra es representativa se debe conocer a toda la población (la característica de estudio), lo cual en la práctica no ocurre. Y en caso de que se conociesen todos los datos de la población, sería absurdo calcular la estimación de un parámetro, ya que podría calcularse directamente el valor del parámetro en cuestión.
 \item
   \textbf{Sesgo}
-\end{enumerate}
 
-Hay personas utilizan la siguiente frase ``\emph{la muestra está sesgada}'', lo cual es incorrecto en su totalidad enestadística. El concepto de sesgo no es únicamente propio de la estadística, sin embargo, en esta área, corresponde a una propiedad de los estimadores. Se dice que un estimador es insesgado cuando el valor esperado de este es igual al parámetro. Y al igual que el concepto anterior, no es posible verificarlo en la práctica, aunque si tiene un sustento matemático por detrás.
+  Hay personas utilizan la siguiente frase ``\emph{la muestra está sesgada}'', lo cual es incorrecto en su totalidad en estadística. El concepto de sesgo no es únicamente propio de la estadística, sin embargo, en esta área, corresponde a una propiedad de los estimadores. Se dice que un estimador es insesgado cuando el valor esperado de este es igual al parámetro. Y al igual que el concepto anterior, no es posible verificarlo en la práctica, aunque si tiene un sustento matemático por detrás.
+\end{itemize}
 
 \hypertarget{medidas-de-localizaciuxf3n}{%
 \subsection{Medidas de localización}\label{medidas-de-localizaciuxf3n}}
@@ -477,7 +478,8 @@ El promedio (\(\bar{x}\)) representa el valor central de las observaciones inclu
 
 A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: \href{https://www.google.com/finance/quote/EUR-CLP?window=MAX\&comparison=USD-CLP}{tipo de cambio del dólar y el euro}).
 
-\textbf{Ejercicio:}
+\begin{exercise}
+\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -487,6 +489,8 @@ A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran 
 \item
   Utilice el comando \textbf{colMeans()} para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete
 \end{enumerate}
+
+\end{exercise}
 
 \hypertarget{mediana}{%
 \subsubsection*{Mediana}\label{mediana}}
@@ -534,14 +538,9 @@ Para poder calcular la mediana en R, se debe hacer uso del comando \textbf{media
 
 En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una recta real), tanto a la derecha como izquierda de la mediana se encuentra la misma cantidad de datos.
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando la base de datos de la unidad, determine la mediana de cada una de las variables presentes en la base (ignore la columna asociada a la variable fecha). Interprete.
-\end{enumerate}
+\begin{exercise}
+Utilizando la base de datos de la unidad, determine la mediana de cada una de las variables presentes en la base (ignore la columna asociada a la variable fecha). Interprete.
+\end{exercise}
 
 \hypertarget{moda}{%
 \subsubsection*{Moda}\label{moda}}
@@ -573,28 +572,21 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Ejemplo:}
+\begin{example}
+\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base de datos de la unidad (sin imprimir la tabla).
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{tabla }\OtherTok{=} \FunctionTok{table}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Open)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
 \item
   Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando \textbf{which.max()} para encontrar la posición en la que se ubica esta, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -606,14 +598,8 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 ## 1.336005 
 ##     3067
 \end{verbatim}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
 \item
   Finalmente, consulte de manera directa en la tabla en valor de la frecuencia en la posición calculada en el paso anterior. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -626,18 +612,16 @@ La moda es la medida más intuitiva de las tres, ya que simplemente corresponde 
 ##        6
 \end{verbatim}
 
-Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es 1.336005 con una frecuencia de 6.
+  Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es 1.336005 con una frecuencia de 6.
 
-\emph{Nota: En caso de que existan dos o más valores con las frecuencias más altas, el programa solo reporta la primera, según el orden lexicográfico de las columnas.}
-
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Replique los anterior para el resto de variables presentes en la base de datos de la unidad (ignore la columna asociada a la variable fecha).
+  \emph{Nota: En caso de que existan dos o más valores con las frecuencias más altas, el programa solo reporta la primera, según el orden lexicográfico de las columnas.}
 \end{enumerate}
+
+\end{example}
+
+\begin{exercise}
+Replique los anterior para el resto de variables presentes en la base de datos de la unidad (ignore la columna asociada a la variable fecha).
+\end{exercise}
 
 \textbf{Nota}: en el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).
 
@@ -669,9 +653,9 @@ Curso 1 & Curso 2 & Curso 3\\
 
 La medida más simple de variabilidad en una muestra es el \textbf{rango}, el cual es la diferencia entre los valores muestrales más grande y más pequeño \citep[página 32]{Devore}. El rango de las notas del curso 1 en la tabla \ref{tab:variabilidad} es más grande que el del curso 2, lo que refleja más variabilidad en la primer muestra que en la segunda. Un defecto del rango, no obstante, es que depende de solo las dos observaciones más extremas y hace caso omiso de las posiciones de los valores restantes. Los cursos 1 y 3 tienen rangos idénticos, aunque cuando se toman en cuenta las observaciones entre los dos extremos, existe mucho menos variabilidad o dispersión en la tercera muestra que en la primera.
 
-\textbf{Ejemplo:}
-
-Obtengamos el rango de la tasa de apertura histórica del EUR/USD de la base de datos de la undiad.
+\begin{example}
+Obtener el rango de la tasa de apertura histórica del EUR/USD de la base de datos de la unidad.
+\end{example}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -702,14 +686,9 @@ Obtengamos el rango de la tasa de apertura histórica del EUR/USD de la base de 
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Obtener el rango del resto de variables de la base de datos de la unidad (ignore la columna asociada a la variable fecha).
-\end{enumerate}
+\begin{exercise}
+Obtener el rango del resto de variables de la base de datos de la unidad (ignore la columna asociada a la variable fecha).
+\end{exercise}
 
 \hypertarget{varianza-y-desviaciuxf3n-estuxe1ndar}{%
 \subsubsection*{Varianza y desviación estándar}\label{varianza-y-desviaciuxf3n-estuxe1ndar}}
@@ -770,16 +749,14 @@ La \textbf{desviación estándar} es la raíz cuadrada de la varianza, pero, ¿q
 
 No seguir estas recomendaciones puede generar un falsa sensación en la comunicación de resultados.
 
-\textbf{Ejemplo:}
+\begin{example}
 
 Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos de la unidad, para ello:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Verifique la media de ambas variables la misma
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -806,14 +783,8 @@ Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica
 \CommentTok{\# Las tasas son similares hasta el tercer decimal, se asumirá que las medias son iguales}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
 \item
   Ya que tienen la misma unidad de medida, calcule la varianza y desviación estándar de cada una. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -845,15 +816,13 @@ Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica
 \CommentTok{\# la desviación estándar?}
 \end{Highlighting}
 \end{Shaded}
-
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD presentes en la base de datos de la unidad.
 \end{enumerate}
+
+\end{example}
+
+\begin{exercise}
+Utilice la varianza directamente para comparar la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD presentes en la base de datos de la unidad.
+\end{exercise}
 
 \hypertarget{coeficiente-de-variaciuxf3n}{%
 \subsubsection*{Coeficiente de variación}\label{coeficiente-de-variaciuxf3n}}
@@ -868,7 +837,7 @@ CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
 
 Cuando el valor del coeficiente de variación es cercano a 100\% se habla de mayor dispersión (heterogéneo), mientras que un valor cercano a 0\% indica menor dispersión (homogéneo), además, se debe considerar que el porcentaje calculado corresponde a la variabilidad respecto a la media de los datos. Sin embargo, no es recomendable usar esta medida cuando el valor de la media es cercano a cero, ya que el CV pierde su significado al tomar valores muy grandes, lo que daría una falsa sensación de dispersión de los datos \citep[página 95]{anderson}.
 
-\textbf{Ejemplo:}
+\begin{example}
 
 En el ejercicio anterior, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.
 
@@ -907,14 +876,11 @@ En el ejercicio anterior, se utilizó la varianza para comprar directamente la v
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Ejercicio:}
+\end{example}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD presentes en la base de datos de la unidad. Interprete.
-\end{enumerate}
+\begin{exercise}
+Comparar la variabilidad entre la tasa de más baja y de cierre histórica del EUR/USD presentes en la base de datos de la unidad. Interprete.
+\end{exercise}
 
 \textbf{Nota}: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).
 
@@ -1013,14 +979,9 @@ Es útil recordar que el histograma está asociado a una tabla de frecuencia por
 ## 13  1.55  1.60 1.575        84        1.7 4966 100.0
 \end{verbatim}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando la variable \textbf{Low} de la base de datos de la unidad, elabore un histograma y obtenga la tabla de frecuencias asociada. Interprete.
-\end{enumerate}
+\begin{exercise}
+Utilizando la variable \textbf{Low} de la base de datos de la unidad, elabore un histograma y obtenga la tabla de frecuencias asociada. Interprete.
+\end{exercise}
 
 \hypertarget{caja}{%
 \subsection{Caja}\label{caja}}
@@ -1091,14 +1052,9 @@ Para generar un gráfico de caja en R a partir de un conjunto de datos, se utili
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando la variable \textbf{Open} de la base de datos de la unidad, elabore un gráfico de caja. Interprete.
-\end{enumerate}
+\begin{exercise}
+Utilizando la variable \textbf{Open} de la base de datos de la unidad, elabore un gráfico de caja. Interprete.
+\end{exercise}
 
 \hypertarget{violuxedn}{%
 \subsection{Violín}\label{violuxedn}}
@@ -1162,17 +1118,11 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
-\textbf{Ejercicio:}
+\begin{exercise}
+Utilizando las variables \textbf{Low} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico violín incluyendo un gráfico de caja y el promedio para cada una. Interprete.
+\end{exercise}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando las variables \textbf{Low} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico violín incluyendo un gráfico de caja y el promedio para cada una. Interprete.
-\end{enumerate}
-
-\textbf{Ejemplo}:
-
+\begin{example}
 El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable \textbf{Close}, diferenciando por año. Interprete.
 
 \begin{Shaded}
@@ -1212,20 +1162,16 @@ El siguiente código, crea una nueva columna en la base de datos que identifica 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
 Una vez obtenido el gráfico, podemos comparar las dispersiones de los datos en cada uno de los años. En específico, se aprecia que la dispersión está entre 1.1 y 1.3 para la mayoría de los años, a excepción del periodo 2007 - 2014, el cual, refleja valores superiores a este rango.
+\end{example}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando las variables \textbf{Low} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico violín incluyendo un gráfico de caja y el promedio para cada una, diferencia por año. Compara e interprete cada variable por separado.
-\end{enumerate}
+\begin{exercise}
+Utilizando las variables \textbf{Low} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico violín incluyendo un gráfico de caja y el promedio para cada una, diferencia por año. Compara e interprete cada variable por separado.
+\end{exercise}
 
 \hypertarget{barras}{%
 \subsection{Barras}\label{barras}}
 
-Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente \citep[página 29]{anderson}:
+Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente \citep[página 29]{anderson}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1263,14 +1209,9 @@ Para generar un gráfico de barras en R a partir de un conjunto de datos, se uti
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
-\textbf{Ejercicio:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando las variables \textbf{High} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico de barras para cada una. Interprete.
-\end{enumerate}
+\begin{exercise}
+Utilizando las variables \textbf{High} y \textbf{Open} de la base de datos de la unidad, elabore un gráfico de barras para cada una. Interprete.
+\end{exercise}
 
 \hypertarget{dispersiuxf3n}{%
 \subsection{Dispersión}\label{dispersiuxf3n}}
@@ -1311,74 +1252,56 @@ Para generar un gráfico de dispersión en R a partir de un conjunto de datos, s
 
 \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
-\textbf{Ejercicio:}
+\begin{exercise}
+Utilizando las variables \textbf{High} y \textbf{Low} de la base de datos de la unidad, elabore un gráfico de dispersión. Interprete.
+\end{exercise}
+
+\begin{example}
+\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Utilizando las variables \textbf{High} y \textbf{Low} de la base de datos de la unidad, elabore un gráfico de dispersión. Interprete.
-\end{enumerate}
-
-\textbf{Ejemplo:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
   \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
   \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
-    \AttributeTok{x =}\NormalTok{ Ano, }\CommentTok{\# Eje X y variable asociada}
-    \AttributeTok{y =}\NormalTok{ Open, }\CommentTok{\# Eje Y y variable asociada}
-    \AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \CommentTok{\# Comando únicamente necesario para la pregunta 2}
+\AttributeTok{x =}\NormalTok{ Ano, }\CommentTok{\# Eje X y variable asociada}
+\AttributeTok{y =}\NormalTok{ Open, }\CommentTok{\# Eje Y y variable asociada}
+\AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \CommentTok{\# Comando únicamente necesario para la pregunta 2}
   \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar}
-    \AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
-    \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de resumen: promedio de la variable Y}
+\AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
+\AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tipo de resumen: promedio de la variable Y}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
-    \AttributeTok{title =} \StringTok{"Tasa de apertura promedio del EUR/USD por año"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-    \AttributeTok{x =} \StringTok{"Año"}\NormalTok{, }\CommentTok{\# Título del eje X}
-    \AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\AttributeTok{title =} \StringTok{"Tasa de apertura promedio del EUR/USD por año"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+\AttributeTok{x =} \StringTok{"Año"}\NormalTok{, }\CommentTok{\# Título del eje X}
+\AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-21-1} \end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
+  \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-21-1} \end{center}
 \item
   Añadir al gráfico un formato de líneas entre los puntos. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{g }\OtherTok{=}\NormalTok{ g }\SpecialCharTok{+} \CommentTok{\# Añadimos otro gráfico}
   \FunctionTok{geom\_line}\NormalTok{( }\CommentTok{\# Objeto a graficar: lineas}
-    \AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
-    \AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\CommentTok{\# Tipo de resumen: promedio de la variable Y}
+\AttributeTok{stat =} \StringTok{"summary"}\NormalTok{, }\CommentTok{\# Tipo de información a graficar: resumen}
+\AttributeTok{fun =} \StringTok{"mean"}\NormalTok{) }\CommentTok{\# Tipo de resumen: promedio de la variable Y}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-22-1} \end{center}
+  \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
-Hasta el 2008 la tasa promedio de apertura estuvo en alza, posteriormente, la tasa decayó a un valor inferior a 1.2.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
+  Hasta el 2008 la tasa promedio de apertura estuvo en alza, posteriormente, la tasa decayó a un valor inferior a 1.2.
 \item
   Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 separadamente. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1386,104 +1309,96 @@ Hasta el 2008 la tasa promedio de apertura estuvo en alza, posteriormente, la ta
 \NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
   \AttributeTok{data =}\NormalTok{ datos[datos}\SpecialCharTok{$}\NormalTok{Ano }\SpecialCharTok{\%in\%} \DecValTok{2020}\SpecialCharTok{:}\DecValTok{2022}\NormalTok{,], }\CommentTok{\# Datos de los años 2020 al 2022}
   \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
-    \AttributeTok{x =}\NormalTok{ Date, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
-    \AttributeTok{y =}\NormalTok{ Open)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
+\AttributeTok{x =}\NormalTok{ Date, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
+\AttributeTok{y =}\NormalTok{ Open)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
   \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar}
-    \AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Opacidad}
-    \AttributeTok{size =} \FloatTok{0.6}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño}
+\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Opacidad}
+\AttributeTok{size =} \FloatTok{0.6}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño}
   \FunctionTok{theme}\NormalTok{( }\CommentTok{\# Aspectos visuales del gráfico}
-    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+} \CommentTok{\# Eliminamos el texto del eje X}
+\AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+} \CommentTok{\# Eliminamos el texto del eje X}
   \FunctionTok{facet\_wrap}\NormalTok{( }\CommentTok{\# Segregación del gráfico}
-    \FunctionTok{vars}\NormalTok{(Ano), }\CommentTok{\# Variable que se utiliza para segregar el gráfico}
-    \AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Disposición visual: una fila}
-    \AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# La escala del eje X es independiente para gráfico}
+\FunctionTok{vars}\NormalTok{(Ano), }\CommentTok{\# Variable que se utiliza para segregar el gráfico}
+\AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Disposición visual: una fila}
+\AttributeTok{scales =} \StringTok{"free\_x"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# La escala del eje X es independiente para gráfico}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
-    \AttributeTok{title =} \StringTok{"Tasa de apertura del EUR/USD desde el 2020 hasta el 2022"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-    \AttributeTok{x =} \StringTok{"Fecha"}\NormalTok{, }\CommentTok{\# Título del eje X}
-    \AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
+\AttributeTok{title =} \StringTok{"Tasa de apertura del EUR/USD desde el 2020 hasta el 2022"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+\AttributeTok{x =} \StringTok{"Fecha"}\NormalTok{, }\CommentTok{\# Título del eje X}
+\AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-23-1} \end{center}
+  \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
-Durante los 3 años consecutivos, se observa que únicamente en el 2020 la tendencia de la tasa de apertura es al alza, mientra que para los otros dos años hubo un decaimiento en el valor de esta.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
+  Durante los 3 años consecutivos, se observa que únicamente en el 2020 la tendencia de la tasa de apertura es al alza, mientra que para los otros dos años hubo un decaimiento en el valor de esta.
 \item
   Grafique el valor de la tasa de apertura del EUR/USD diferenciando por año. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
   \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
   \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comando estéticos}
-    \AttributeTok{x =}\NormalTok{ Date, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
-    \AttributeTok{y =}\NormalTok{ Open, }\CommentTok{\# Eje Y y variable asociada}
-    \AttributeTok{color =}\NormalTok{ Ano)) }\SpecialCharTok{+} \CommentTok{\# Color según el año}
+\AttributeTok{x =}\NormalTok{ Date, }\CommentTok{\# Comandos estéticos: Eje X y variable asociada}
+\AttributeTok{y =}\NormalTok{ Open, }\CommentTok{\# Eje Y y variable asociada}
+\AttributeTok{color =}\NormalTok{ Ano)) }\SpecialCharTok{+} \CommentTok{\# Color según el año}
   \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar}
-    \AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Opacidad}
-    \AttributeTok{size =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño}
+\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Opacidad}
+\AttributeTok{size =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
-    \AttributeTok{color =} \StringTok{"Año"}\NormalTok{, }\CommentTok{\# Título de la leyenda}
-    \AttributeTok{title =} \StringTok{"Tasa de apertura del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-    \AttributeTok{x =} \StringTok{"Fecha"}\NormalTok{, }\CommentTok{\# Título del eje X}
-    \AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
+\AttributeTok{color =} \StringTok{"Año"}\NormalTok{, }\CommentTok{\# Título de la leyenda}
+\AttributeTok{title =} \StringTok{"Tasa de apertura del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+\AttributeTok{x =} \StringTok{"Fecha"}\NormalTok{, }\CommentTok{\# Título del eje X}
+\AttributeTok{y =} \StringTok{"Tasa de apertura"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título del eje Y}
   \FunctionTok{guides}\NormalTok{( }\CommentTok{\# Edición de escalas}
-    \AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{( }\CommentTok{\# Escala de color de la leyenda}
-      \AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{( }\CommentTok{\# Comando estéticos asociados}
-        \AttributeTok{alpha =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Opacidad de los puntos}
-        \AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\CommentTok{\# Tamaño de los puntos}
+\AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{( }\CommentTok{\# Escala de color de la leyenda}
+  \AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{( }\CommentTok{\# Comando estéticos asociados}
+    \AttributeTok{alpha =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Opacidad de los puntos}
+    \AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\CommentTok{\# Tamaño de los puntos}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
+  \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
 
-Al observar la evolución histórica de la tasa de apertura diferenciada por año, se aprecia que el periodo 2008 - 2010 es aquel con predominancia de valores más altos. Por otro lado, desde el 2016, se registraron pro primera vez valores menores a 1.1. En años posteriores, no ha observado que la tasa supere los 1.3 puntos.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
+  Al observar la evolución histórica de la tasa de apertura diferenciada por año, se aprecia que el periodo 2008 - 2010 es aquel con predominancia de valores más altos. Por otro lado, desde el 2016, se registraron pro primera vez valores menores a 1.1. En años posteriores, no ha observado que la tasa supere los 1.3 puntos.
 \item
   Grafique el valor el valor promedio de la tasa más alta versus la más baja del EUR/USD para cada uno de los años. Interprete.
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{g }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
   \AttributeTok{data =} \FunctionTok{aggregate}\NormalTok{( }\CommentTok{\# Función para resumir una base de datos (crea una nueva base)}
-    \AttributeTok{x =}\NormalTok{ datos, }\CommentTok{\# Indicar la base de datos a modificar}
-    \AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\CommentTok{\# Variable por la cual se genera el resumen, y nombre asignado}
-    \AttributeTok{FUN =}\NormalTok{ mean), }\CommentTok{\# Resumen que se genera en las columnas de la base de datos}
+\AttributeTok{x =}\NormalTok{ datos, }\CommentTok{\# Indicar la base de datos a modificar}
+\AttributeTok{by =} \FunctionTok{list}\NormalTok{(Año }\OtherTok{=}\NormalTok{ datos}\SpecialCharTok{$}\NormalTok{Ano), }\CommentTok{\# Variable por la cual se genera el resumen, y nombre asignado}
+\AttributeTok{FUN =}\NormalTok{ mean), }\CommentTok{\# Resumen que se genera en las columnas de la base de datos}
   \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
-    \AttributeTok{x =}\NormalTok{ Low, }\CommentTok{\# Eje X y variable asociada}
-    \AttributeTok{y =}\NormalTok{ High, }\CommentTok{\# Eje Y y variable asociada}
-    \AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+} \CommentTok{\# Color según variable}
+\AttributeTok{x =}\NormalTok{ Low, }\CommentTok{\# Eje X y variable asociada}
+\AttributeTok{y =}\NormalTok{ High, }\CommentTok{\# Eje Y y variable asociada}
+\AttributeTok{color =}\NormalTok{ Año)) }\SpecialCharTok{+} \CommentTok{\# Color según variable}
   \FunctionTok{geom\_point}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de dispersión}
-    \AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño de los puntos}
+\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Tamaño de los puntos}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
-    \AttributeTok{title =} \StringTok{"Promedio de la tasa más alta y más baja del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-    \AttributeTok{x =} \StringTok{"Tasa más baja"}\NormalTok{, }\CommentTok{\# Título el eje X}
-    \AttributeTok{y =} \StringTok{"Tasa más alta"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título el eje Y}
+\AttributeTok{title =} \StringTok{"Promedio de la tasa más alta y más baja del EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
+\AttributeTok{x =} \StringTok{"Tasa más baja"}\NormalTok{, }\CommentTok{\# Título el eje X}
+\AttributeTok{y =} \StringTok{"Tasa más alta"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Título el eje Y}
   \FunctionTok{guides}\NormalTok{( }\CommentTok{\# Edición de escalas}
-    \AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{( }\CommentTok{\# Escala de color de la leyenda}
-      \AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{( }\CommentTok{\# Comando estéticos asociados}
-        \AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\CommentTok{\# Tamaño de los puntos}
+\AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{( }\CommentTok{\# Escala de color de la leyenda}
+  \AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{( }\CommentTok{\# Comando estéticos asociados}
+    \AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\CommentTok{\# Tamaño de los puntos}
 \NormalTok{g }\CommentTok{\# Desplegamos el gráfico guardado}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-25-1} \end{center}
+  \begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-25-1} \end{center}
 
-El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja y más alta registrada en los diversos años, siendo el año 2008 aquel que destaca con las tasas promedio más altas.
+  El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja y más alta registrada en los diversos años, siendo el año 2008 aquel que destaca con las tasas promedio más altas.
+\end{enumerate}
 
-\textbf{Ejercicio:}
+\end{example}
+
+\begin{exercise}
+\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1500,18 +1415,25 @@ El gráfico da cuenta de una tendencia positiva entre la tasa promedio más baja
   Grafique el valor el valor promedio de la tasa de cierre versus la más baja del EUR/USD para cada uno de los años. Interprete.
 \end{enumerate}
 
+\end{exercise}
+
 \hypertarget{probabilidad-y-variables-aleatorias}{%
 \chapter{Probabilidad y variables aleatorias}\label{probabilidad-y-variables-aleatorias}}
 
 \hypertarget{elementos-de-probabilidad}{%
 \section{Elementos de probabilidad}\label{elementos-de-probabilidad}}
 
+Los elementos de probabilidad son los conceptos fundamentales que se utilizan en la teoría de la probabilidad para describir y analizar eventos aleatorios. Algunos de ellos son: espacio muestral, eventos, función de probabilidad, variable aleatoria, distribución de probabilidad, entre otros.
+
+Estos elementos son esenciales para el estudio de la probabilidad y su aplicación en la estadística y en muchas áreas de la ciencia, incluyendo la economía, la biología, la física, entre otras.
+
 \hypertarget{experimento-y-espacio-muestral}{%
 \subsection{Experimento y Espacio muestral}\label{experimento-y-espacio-muestral}}
 
 En el contexto de la probabilidad, un \textbf{experimento} es definido como un proceso que genera resultados definidos. Y en cada una de las repeticiones del experimento, habrá uno y solo uno de los posibles resultados experimentales \citep[página 143]{anderson}.
 
-\textbf{Ejemplo:}
+\begin{example}
+\leavevmode
 
 \begin{table}[H]
 
@@ -1530,53 +1452,63 @@ Jugar un partido de fútbol & Ganar, perder, empatar\\
 \end{tabular}
 \end{table}
 
+\end{example}
+
 Al especificar todos los resultados experimentales posibles, está definiendo el \textbf{espacio muestral} de un experimento. En otras palabras, el espacio muestral de un experimentos es el conjunto de todos los resultados experimentales. Se usa la letra omega mayúscula (\(\Omega\)) para referirnos a este conjunto. Un elemento genérico de \(\Omega\) se denota como \(\omega\).
 
-\textbf{Ejemplo:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?
-\end{enumerate}
+\begin{example}
+Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?
 
 \[\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DDD \rbrace\]
-\textbf{Ejercicio:}
+\end{example}
 
-Determinar el espacio muestral de los siguientes experimentos:
+\begin{exercise}
+Un fabricante de ropa deportiva produce pantalones deportivos en dos colores (azul y gris) y en cuatro tamaños diferentes (pequeño, mediano, grande y extra grande). ¿Cuál es el espacio muestral del experimento de elegir al azar un pantalón deportivo de la línea de producción de la empresa?
+\end{exercise}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Elegir un estudiante que está dentro de tu sala de clases (en este momento).
-\item
-  Pedir una orden (plato de fondo más entrada) en un local de comida, en cuyo menú tienen dos opciones de platos de fondo y dos de entradas.
-\item
-\item
-\end{enumerate}
+\begin{exercise}
+Un restaurante ofrece tres opciones de menú para el almuerzo: menú A, menú B y menú C. Además, cada menú se puede pedir con carne o con pescado. ¿Cuál es el espacio muestral del experimento de elegir al azar un menú para el almuerzo en este restaurante?
+\end{exercise}
+
+\begin{exercise}
+Una compañía de seguros de autos ofrece pólizas de seguro con dos niveles de cobertura (básico y completo) y dos tipos de franquicia (alta y baja). ¿Cuál es el espacio muestral del experimento de elegir al azar una póliza de seguro de auto de la compañía?
+\end{exercise}
 
 \hypertarget{eventos-aleatorios}{%
 \subsection{Eventos aleatorios}\label{eventos-aleatorios}}
 
 En principio, un \textbf{evento aleatorio} (o simplemente evento) es algún subconjunto del espacio muestral \(\Omega\). Los eventos se anotan con una letra mayúscula a elección \citep[página 153]{anderson}.
 
-A modo de ejemplo, consideren el experimento de lanzar un dado de 6 caras. Luego, determine el espacio muestral, y defina al menos 3 eventos, escribiendo su correspondiente conjunto.
+A modo de ejemplo, consideren el experimento de lanzar un dado de 6 caras.
 
 \(\Omega = \lbrace 1,2,3,4,5,6 \rbrace\)
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  A: obtener un número par \(\rightarrow A = \lbrace 2,4,6 \rbrace\)
-\item
-\item
-\end{enumerate}
+Luego, el evento correspondiente a obtener un número par estaá dado por:
 
-\hypertarget{probabilidad-de-un-evento}{%
-\subsection{Probabilidad de un evento}\label{probabilidad-de-un-evento}}
+A: obtener un número par \(\rightarrow A = \lbrace 2,4,6 \rbrace\)
+
+\begin{exercise}
+Experimento aleatorio: Lanzamiento de un dado. Evento aleatorio: Obtener un número par. ¿Cuál es el conjunto correspondiente al evento aleatorio?
+\end{exercise}
+
+\begin{exercise}
+Experimento aleatorio: Elegir una carta al azar de una baraja de 52 cartas. Evento aleatorio: Obtener una carta roja. ¿Cuál es el conjunto correspondiente al evento aleatorio?
+\end{exercise}
+
+\begin{exercise}
+Experimento aleatorio: Lanzar dos monedas. Evento aleatorio: Obtener dos caras. ¿Cuál es el conjunto correspondiente al evento aleatorio?
+\end{exercise}
+
+\begin{exercise}
+Experimento aleatorio: Elegir un estudiante al azar de una clase de 30 estudiantes. Evento aleatorio: Elegir a un estudiante que tenga una altura superior a 1,75 metros. ¿Cuál es el conjunto correspondiente al evento aleatorio?
+\end{exercise}
+
+\begin{exercise}
+Experimento aleatorio: Lanzar un dardo a una diana circular. Evento aleatorio: Obtener un lanzamiento dentro del círculo exterior de la diana. ¿Cuál es el conjunto correspondiente al evento aleatorio?
+\end{exercise}
+
+\hypertarget{probabilidad-evento}{%
+\subsection{Probabilidad de un evento}\label{probabilidad-evento}}
 
 El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra puede ser difícil de calcular. En este aspecto, como introducción, se hará uso de la definición clásica de probabilidad:
 
@@ -1584,75 +1516,1272 @@ El concepto de probabilidad está asociado a la ocurrencia de un evento Sin emba
 
 Por ejemplo, la probabilidad de obtener un número par al lanzar un dado una vez es:
 
-A: obtener un número par.
+A: obtener un número par. \(\rightarrow A = \lbrace 2,4,6 \rbrace\)
 
 \[P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}\]
-\textbf{Nota:} La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles, respectivamente.
+\textbf{Nota:} La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles respectivamente.
 
-\textbf{Ejercicio:}
+\begin{exercise}
+En una tienda de ropa hay 10 camisas rojas, 15 camisas azules y 20 camisas verdes. ¿Cuál es la probabilidad de que al escoger una camisa al azar, sea de color verde?
+\end{exercise}
 
-Calcular las siguientes probabilidades:
+\begin{exercise}
+En un mercado hay 200 vendedores, de los cuales el 70\% son hombres y el 30\% son mujeres. Si se elige al azar un vendedor, ¿cuál es la probabilidad de que sea mujer?
+\end{exercise}
+
+\hypertarget{propiedades}{%
+\subsubsection*{Propiedades}\label{propiedades}}
+
+A continuación se mencionan algunas propiedades relacionadas con probabilidades \citep[página 157]{anderson}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Se lanza un dado de 6 caras una vez.
+  \textbf{Complemento de un evento:} Dado un evento \(A\), el complemento de \(A\) se define como el evento que consta de todos los casos muestrales que \textbf{no} están en \(A\), y se denota por \(A^c\). Por ejemplo, si consideramos el experimento de lanzar el dado, y el evento de obtener un número par (\(A\)), entonces, el complemento corresponde a obtener un número que no sea par (\(A^c\)). De lo anterior se tiene que
+
+  \begin{equation}
+  P(A) + P(A^c) = 1
+  \label{eq:complemento}
+  \end{equation}
+
+  \begin{example}
+  Considere el caso de un administrador de ventas que, después de revisar los informes de ventas, encuentra que el 80\% de los contactos con clientes nuevos no producen ninguna venta. Si \(A\) denota el evento \textbf{hubo venta}, entonces \(A^c\) corresponde al evento de \textbf{no hubo venta}. Si el administrador tiene que \(P(A^c) = 0.8\), mediante la ecuación \eqref{eq:complemento} se ve que
+
+  \[P(A) = 1 - P(A^c) = 1 - 0.8 = 0.2\]
+  La conclusión es que la probabilidad de una venta en el contacto con un cliente nuevo es de 0.2.
+  \end{example}
 \item
-  Sacar un número impar.
+  \textbf{Unión de dos eventos:} La unión de dos eventos \(A\) y \(B\) es el evento que contiene todos los casos muestrales que pertenecen a \(A\) o \(B\) o ambos. La unión se denota \(A \cup B\).
 \item
-  Que salga un 2 o un 5.
+  \textbf{Intersección de dos eventos:} Dados dos eventos \(A\) y \(B\), la intersección de \(A\) y \(B\) es el evento que contiene los casos muestrales que pertenecen tanto a \(A\) como a \(B\). La intersección se denota \(A \cap B\).
 \item
-  Sacar un valor menor que 4.
+  \textbf{Ley de la adición:} La ley de la adición proporciona una manera de calcular la probabilidad de que ocurra el evento \(A\) o el evento \(B\) o ambos. En otras palabras, esta ley se emplea para calcular la probabilidad de la unión de dos eventos. La ley de la adición se expresa de la siguiente manera.
+
+  \begin{equation}
+  P(A\cup B) = P(A) + P(B) - P(A\cap B)
+  \label{eq:leyadicion}
+  \end{equation}
+
+  \begin{example}
+  Considere el caso de una pequeña empresa de ensamble en la que hay 50 empleados. Se espera que todos los trabajadores terminen su trabajo a tiempo y que pase la inspección final. A veces, alguno de los empleados no satisface el estándar de desempeño, ya sea porque no termina a tiempo su trabajo o porque no ensambla bien una pieza. Al final del periodo de evaluación del desempeño, el jefe de producción encuentra que 5 de los 50 trabajadores no terminaron su trabajo a tiempo. 6 de los 50 trabajadores ensamblaron mal una pieza y 2 de los 50 trabajadores no terminaron su trabajo a tiempo y armaron mal una pieza.
+
+  Sea
+
+  \begin{equation}
+  \notag
+  \begin{split}
+  L &: \text{No se termino el trabajo a tiempo}\\
+  D &: \text{Se armó mal la pieza}\\
+  \end{split}
+  \end{equation}
+
+  La información de las frecuencias relativas lleva a las probabilidades siguientes.
+
+  \begin{equation}
+  \notag
+  \begin{split}
+  P(L) &= \frac{5}{50} = 0.1\\
+  P(D) &= \frac{6}{50} = 0.12\\
+  P(L\cap D) &= \frac{2}{50} = 0.04\\
+  \end{split}
+  \end{equation}
+
+  Después de analizar los datos del desempeño, el jefe de producción decide dar una calificación baja al desempeño de los trabajadores que no terminaron a tiempo su trabajo o que armaron mal alguna pieza; por tanto, el evento de interés es \(L \cup D\). ¿Cuál es la probabilidad de que el jefe de producción de a un trabajador una calificación baja de desempeño?
+
+  Esta pregunta se refiere a la unión de dos eventos. En concreto, se desea hallar \(P(L\cup D)\), usando la ecuación \eqref{eq:leyadicion} se tiene
+
+  \[P(L\cup D) = P(L) + P(D) - P(L\cap D)\]
+  Como conoce las tres posibilidades del lado derecho de la expresión, se tiene
+
+  \[P(L\cup D) = 0.1 + 0.12 - 0.04 = 0.18\]
+  Estos cálculos indican que la probabilidad de que un empleado elegido al azar obtenga una calificación baja por su desempeño es 0.18.
+  \end{example}
+
+  \begin{example}
+  Considere un estudio reciente efectuado por el director de personal de una empresa de software. En el estudio encontró que el 30\% de los empleados que se van de la empresa antes de dos años, lo hacen por estar insatisfechos con el salario, 20\% se van de la empresa por estar descontentos con el trabajo y 12\% por estar insatisfechos con las dos cosas, el salio y el trabajo. ¿Cuál es la probabilidad de que un empleado que se vaya de la empresa en menos de dos años lo haga por estar insatisfecho con el salario, con el trabajo o con las dos cosas?
+
+  Sea
+
+  \begin{equation}
+  \notag
+  \begin{split}
+  S &: \text{El empleado se va de la empresa por insatisfacción con el salario}\\
+  W &: \text{El empleado se va de la empresa por insatisfacción con el trabajo}\\
+  \end{split}
+  \end{equation}
+
+  Se tiene \(P(S) = 0.3\), \(P(W) = 0.2\) y \(P(S\cap W) = 0.12\). Al aplicar la ecuación \eqref{eq:leyadicion}, de la ley de la adición, se tiene
+
+  \[P(S\cup W) = P(S) + P(W) - P(S\cap W) = 0.3+0.2-0.12 = 0.38\]
+  Así, la probabilidad de que un empleado se vaya de la empresa por el salario o por el trabajo es 0.38.
+  \end{example}
 \item
-  Obtener un valor menor o igual que 4.
+  \textbf{Eventos mutuamente excluyentes:} Se dice que dos eventos son mutuamente excluyentes si, cuando un evento ocurre, el otro no puede ocurrir. Por lo tanto, para que A y B sean mutuamente excluyentes, se requiere que su intersección sea nula, es decir,
+
+  \begin{equation}
+  \text{Si } A \cap B = \emptyset \text{, entonces, } P(A \cap B) = 0.
+  \label{eq:excluyentes}
+  \end{equation}
 \item
-  Sacar un valor diferente de 3
-\item
-  Sacar un número menor a cero.
-\item
-  Sacar un número menor a siete
-\item
-  En una caja hay una pelota azul, una verde, una roja, una amarilla y una negra. ¿Cuál es la probabilidad de que, al sacar con los ojos cerrados una pelota de la caja, esta sea amarilla?
-\item
-  En un salón de clases hay 4 niños y 7 niñas. Si la maestra escoge al azar un estudiante de su salón, ¿cuál es la probabilidad de que el estudiante escogido sea una niña?
+  \textbf{Ley de la adición para eventos mutuamente excluyentes:} En caso de que se cumplan las condiciones mencionadas en la ecuación \eqref{eq:excluyentes}, se tiene el siguiente resultado para la ecuación \eqref{eq:leyadicion}.
+
+  \begin{equation}
+  \begin{split}
+  P(A\cup B) &= P(A) + P(B) - P(A\cap B)\\
+  &= P(A) + P(B) - 0\\
+  P(A\cup B) &= P(A) + P(B)\\
+  \end{split}
+  \label{eq:leyadicion2}
+  \end{equation}
+
+  \begin{exercise}
+
+  Suponga que tiene un espacio muestral con cinco resultados experimentales que son igualmente posibles: \(E_1,E_2,E_3,E_4\) y \(E_5\). Sean
+
+  \begin{equation}
+  \notag
+  \begin{split}
+  A &= \lbrace E_1, E_2 \rbrace\\
+  B &= \lbrace E_3, E_4 \rbrace\\
+  C &= \lbrace E_2, E_3, E_5 \rbrace\\
+  \end{split}
+  \end{equation}
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Calcular \(P(A)\), \(P(B)\) y \(P(C)\).
+  \item
+    Calcular \(P(A \cup B)\). ¿\(A\) y \(B\) son mutuamente excluyentes?
+  \item
+    Determinar \(A^c\), \(C^c\), y calcular \(P(A^c)\), \(P(C^c)\).
+  \item
+    Determinar \(A\cup B^c\), y calcular \(P(A\cup B^c)\).
+  \item
+    Calcular \(P(B\cup C)\).
+  \end{enumerate}
+
+  \end{exercise}
+
+  \begin{exercise}
+
+  Datos sobre las 30 principales acciones y fondos balanceados proporcionan los rendimientos porcentuales anuales y a 5 años para el periodo que termina el 31 de marzo de 2000 (\emph{The Wall Street Journal}, 10 de abril de 2000). Suponga que considera altos un rendimiento anual arriba de 50\% y un rendimiento a cinco años arriba de 300\% y cinco de los fondos tienen tanto un rendimiento anual arriba de 50\% como un rendimiento a cinco años arriba de 300\%.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de un rendimiento anual alto y cuál es la probabilidad de un rendimiento a cinco años alto?
+  \item
+    ¿Cuál es la probabilidad de ambos, un rendimiento anual alto y un rendimiento a cinco años alto?
+  \item
+    ¿Cuál es la probabilidad de que no haya un rendimiento anual alto ni un rendimiento a cinco años alto?
+  \end{enumerate}
+
+  \end{exercise}
+
+  \begin{exercise}
+
+  La oficina de Censos de Estados Unidos cuenta con datos sobre la cantidad de adultos jóvenes entre 18 y 24 años, que viven en casa de sus padres. Sea
+
+  \begin{equation}
+  \notag
+  \begin{split}
+  M &= \text{Aldulto joven que vive en casa de sus padres}\\
+  F &= \text{Aldulta joven que vive en casa de sus padres}\\
+  \end{split}
+  \end{equation}
+
+  Si toma al azar un adulto joven y una adulta joven, los datos de dicha oficina permiten concluir que \(P(M) = 0.56\) y \(P(F) = 0.42\). La probabilidad de que ambos vivan encasa de sus padres es \(0.24\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de que al menos uno de dos adultos jóvenes seleccionados viva en casa de sus padres?
+  \item
+    ¿Cuál es la probabilidad de que los dos adultos jóvenes seleccionados vivan en casa de sus padres?
+  \end{enumerate}
+
+  \end{exercise}
 \end{enumerate}
 
 \hypertarget{variable-aleatoria}{%
 \section{Variable aleatoria}\label{variable-aleatoria}}
 
-\hypertarget{tipos-de-variables-aleatorias}{%
-\subsection{Tipos de variables aleatorias}\label{tipos-de-variables-aleatorias}}
+Una variable aleatoria proporciona un medio para describir los resultados experimentales utilizando valores numéricos, es decir, una variable aleatoria asocia un valor numérico a cada uno de los resultados experimentales. Una variable aleatoria puede ser \emph{discreta} o \emph{continua}, depende del tipo de valores numéricos que asuma. \citep[página 187]{anderson}
 
-Al igual que sucede con las variables estadísticas, las variables aleatorias pueden ser discretas o continuas.
+\begin{itemize}
+\tightlist
+\item
+  Una variable aleatoria se denomina \textbf{discreta} si asume un número finito de valores o una sucesión infinita de valores tales como \(0,1,2,\ldots\). Consideremos el siguiente experimento como ejemplo: un contador presenta el examen para certificarse como contador público. El examen tiene cuatro partes. Defina una variable aleatoria \(x\) como \(x =\) \emph{número de partes del examen aprobadas}. Esta es una variable aleatoria discreta porque puede tomar el número finito de valores \(0,1,2,3\) o \(4\). Otros ejemplos se pueden apreciar en la tabla \ref{tab:variablesdiscretas}.
+\end{itemize}
 
-La variable número que sale al lanzar un dado con seis caras es una variable aleatoria discreta (toma los valores del 1 al 6).
-La variable número de autos que pasan por un cruce en un tiempo determinado, es del tipo \ldots{}
-La variable estatura se mueve en un rango de valores determinado por el mínimo y el máximo de la población, es del tipo \ldots{}
+\begin{table}[H]
+
+\caption{\label{tab:variablesdiscretas}Ejemplos de variables aleatorias discretas}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{6cm}>{\centering\arraybackslash}p{4cm}}
+\toprule
+Experimento & Variable aleatoria (X) & Valores posibles para la variable aleatoria\\
+\midrule
+Llamar a cinco clientes & Número de clientes que hacen un pedido & 0,1,2,3,4,5\\
+Inspeccionar un envío de 50 radios & Número de radios que tienen algún defecto & 0,1,2,...,49,50\\
+Hacerse cargo de un restaurante durante el día & Número de clientes & 0,1,2,3,...\\
+Vender un automóvil & Sexo del cliente & 0 si el hombre, 1 si es mujer\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Una variable aleatoria se denomina \textbf{continua} si puede tomar cualquier valor numéricos dentro de un intervalo. Los resultados experimentales basados en escalas de medición tales como tiempo, peso, distancia y temperatura puede ser descritos por variables aleatorias continuas. Consideremos el siguiente experimento como ejemplo: observar las llamadas telefónicas que llegan a la oficina de atención de una importante empresa de seguros. La variable aleatoria que interesa es \(x =\) \emph{tiempo en minutos entre dos llamadas consecutivas}. Esta variable aleatoria puede tomar cualquier valor en el intervalo \([0, \infty)\). En efecto, \(x\) puede tomar un número infinito de valores, entre los cuales se encuentra valores como 1.25 minutos 3.4562 minutos, 4.33333 minutos, etc. En la tabla \ref{tab:variablescontinuas} aparecen otros ejemplos de variables aleatorias continuas.
+\end{itemize}
+
+\begin{table}[H]
+
+\caption{\label{tab:variablescontinuas}Ejemplos de variables aleatorias discretas}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{6cm}>{\centering\arraybackslash}p{4cm}}
+\toprule
+Experimento & Variable aleatoria (X) & Valores posibles para la variable aleatoria\\
+\midrule
+Operar un banco & Tiempo en minutos entre la llegada de los clientes & $x\geq 0$\\
+Llenar una lata de bebida (máximo 12.1 onzas) & Cantidad de onzas & $0\leq x \leq 12.1$\\
+Contruir una biblioteca & Porcentaje del proyecto terminado en seis meses & $0\leq x \leq 100$\\
+Probar un proceso químico nuevo & Temperatura a la que tiene lugar la reacción deseada (mín. 150 grados F, máx. 212 grados F) & $150\leq x \leq 212$\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{example}
+A continuación se da una serie de experimentos y su variable aleatoria correspondiente. En cada caso determine qué valores toma la variable aleatoria y diga si se trata de una variable aleatoria discreta o continua.
+\end{example}
+
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{5cm}}
+\toprule
+ & Experimento & Variable aleatoria (X)\\
+\midrule
+a. & Hacer un examen con 20 preguntas & Número de preguntas contestadas correctamente\\
+b. & Obervar los automóviles que llegan a una caseta de peaje en 1 hora & Número de automóviles que llegan a la casea de peaje\\
+c. & Revisar 50 declaraciones de impuestos & Número de declaracionex que tienen algún error\\
+d. & Observar trabar a un empleado & Número de horas no productivas en una jornada de 8 horas\\
+e. & Pesar un envío & Número de libras\\
+\bottomrule
+\end{tabular}}
+\end{table}
 
 \hypertarget{variables-aleatorias-discretas-v.a.d}{%
 \section{Variables aleatorias discretas (v.a.d)}\label{variables-aleatorias-discretas-v.a.d}}
 
+La distribución de probabilidad de una variable aleatoria discreta describe como se distribuyen las probabilidades entre los valores de la variable aleatoria. En el caso de una variable aleatoria discreta \(x\), la distribución de probabilidad está definida por una función de probabilidad o también llamada \textbf{función de masa de probabilidad} (fmp) \citep[página 90]{Devore}.
+
 \hypertarget{funciuxf3n-de-masa-de-probabilidad}{%
 \subsection{Función de masa de probabilidad}\label{funciuxf3n-de-masa-de-probabilidad}}
+
+Consideremos el siguiente ejemplo, una empresa acaba de adquirir cuatro impresoras láser y sea \(X\) el número entre estas que requieres servicio durante el periodo de garantía. Los posibles valores de \(X\) son entonces 0, 1, 2, 3 y 4. La distribución de probabilidad diría cómo está subdividida la probabilidad de 1 entre los cinco posibles valores: cuánta probabilidad está asociada con el valor 0 de \(X\), cuánta está adjudicada con 1 de \(X\) y así sucesivamente. Se utiliza la siguiente notación para las probabilidades:
+
+\[p(0) = \text{la probabilidad del valor 0 de } X = P(X = 0)\]
+
+\[p(1) = \text{la probabilidad del valor 1 de } X = P(X = 1)\]
+y así sucesivamente. En general, \(p(x)\) denotará la probabilidad asignada al valor de \(x\).
+
+\begin{example}
+Una cierta gasolinera tiene seis bombas. Sea \(X\) el número de bombas que están bajo servicio a una hora particular del día. Suponga que la distribución de probabilidad de \(X\) es como se detalla en la siguiente tabla; la primera fila de la tabla contiene los posibles valores de \(X\) y la segunda la probabilidad de dicho valor.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccccccc}
+\toprule
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+$p(x)$ & 0.05 & 0.1 & 0.15 & 0.25 & 0.2 & 0.15 & 0.1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ahora, utilizando propiedades de probabilidad elemental (revisar las propiedades mencionadas en la sección \ref{probabilidad-evento}) es posible calcular otras probabilidades de interés. Por ejemplo, la probabilidad de que cuando dos gasolineras estén en servicio es
+
+\[P(X\leq 2) = P(X = 0 \text{ o } 1 \text{ o } 2) = p(0) + p(1) + p(2) = 0.05 + 0.1 + 0.15 = 0.3\]
+Por otro lado, la probabilidad de que entre 2 y 5 gasolineras inclusive estén en servicio es
+
+\[P(2\leq X\leq 4) = P(X = 2 \text{ o } 3 \text{ o } 4) = p(2) + p(3) + p(4) = 0.15 + 0.25 + 0.2 = 0.6\]
+\end{example}
+
+La figura \ref{fig:plotmasa} está reproducida mediante R, con la finalidad de visualizar la función de masa asociada al ejemplo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\StringTok{"x"} \OtherTok{=} \DecValTok{0}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\CommentTok{\# Valores de X}
+                \StringTok{"p"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.10}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.20}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.10}\NormalTok{)) }\CommentTok{\# Probabilidades asociadas}
+\FunctionTok{ggplot}\NormalTok{(}
+  \AttributeTok{data =}\NormalTok{ df, }
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x,}
+      \AttributeTok{y =}\NormalTok{ p)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_segment}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}
+        \AttributeTok{y =} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+        \AttributeTok{xend =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}
+        \AttributeTok{yend =}\NormalTok{ p)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Probabilidades de cada valor"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Valores del experimento (x)"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Probabilidades"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/plotmasa-1} 
+
+}
+
+\caption{Función de masa}\label{fig:plotmasa}
+\end{figure}
+
+Cabe mencionar que cualquier función de masa de probabilidad requiere cumplir las siguientes condiciones
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(p(x) >0, \forall x \in X\)
+\item
+  \(\displaystyle\sum_{\text{todas las x posibles}} p(x) = 1\)
+\end{enumerate}
+
+para que se válida.
+
+\begin{exercise}
+
+Seis lotes de componentes están listos para ser enviados por un proveedor. El número de componentes defectuosos en cada lote es como sigue:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{>{}lclclcl}
+\toprule
+\textbf{Lote} & 1 & 2 & 3 & 4 & 5 & 6\\
+\textbf{Número de defectuosos} & 0 & 2 & 0 & 1 & 2 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{exercise}
+
+Uno de estos lotes tiene que ser seleccionado al azar para ser enviado a un cliente particular. Sea \(X\) el número de defectuosos en el lote seleccionado. Los tres posibles valores de \(X\) son 0, 1 y 2.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Determine los la probabilidad para cada uno de los valores de \(X\). Interprete.
+\item
+  Verifique las condiciones de la función de masa de probabilidad asociada al experimento.
+\item
+  Grafique la función de masa asociada.
+\end{enumerate}
+
+\begin{exercise}
+\protect\hypertarget{exr:telefonica}{}\label{exr:telefonica}
+
+Una empresa de ventas en línea dispone de seis líneas telefónicas. Sea \(X\) el número de líneas en uso en un tiempo epsecificado. Suponga que la función de masa de probabilidad de \(X\) es la que se da en la tabla adjunta.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccccccc}
+\toprule
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+$p(x)$ & 0.1 & 0.15 & 0.2 & 0.25 & 0.2 & 0.06 & 0.04\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Grafique la función de masa asociada, y luego calcule la probabilidad de cada uno de los siguientes eventos.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Cuando mucho tres líneas están en uso.
+\item
+  Menos de tres líneas están en uso.
+\item
+  Por o menos tres líneas están en uso.
+\item
+  entre dos y cinco líneas, inclusive, están en uso.
+\item
+  Entre dos y cuatro líneas, inclusive, no está en uso.
+\item
+  Por lo menos cuatro líneas no están en uso.
+\end{enumerate}
+
+\end{exercise}
 
 \hypertarget{funciuxf3n-de-distribuciuxf3n-acumulada}{%
 \subsection{Función de distribución acumulada}\label{funciuxf3n-de-distribuciuxf3n-acumulada}}
 
+Para algún valor fijo de \(x\), a menudo se desea calcular la probabilidad de que el valor observado de \(X\) sea cuando mucho \(x\) (\(X \leq x\)). Por ejemplo, consideremos la siguiente función de masa.
+
+\begin{equation}
+\notag
+\begin{split}
+P(X = x) = p(x) = \left\lbrace
+\begin{matrix}
+0.5 & x = 0\\
+0.167 & x = 1\\
+0.333 & x = 2\\
+0 & \text{en otro caso}\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}
+
+La probabilidad de que \(X\) sea cuando mucho de 1 es entonces
+
+\[P(X \leq 1) = p(0) + p(1) = 0.5 + 0.167 = 0.667\]
+Asimismo,
+
+\[P(X \leq 0) = P(X = 0) = 0.5.\]
+
+La \textbf{función de distribución acumulada} (fda) \(F(x)\) de una variable aleatoria discreta \(X\) con función de masa de probabilidad \(P(X=x)\) se define como
+
+\begin{equation}
+F(x) = P(X\leq x) =\displaystyle\sum_{y\leq x}P(X=y)
+\label{eq:fdadiscreta}
+\end{equation}
+
+Para cualquier número \(x\), \(F(X)\) es la probabilidad de que el valor observado de \(X\) será cuando mucho (como máximo) \(x\). \citep[página 95]{Devore}
+
+\begin{example}
+Consideremos un grupo de cinco donadores de sangre potenciales, \(a, b, c, d\) y \(e\), de los cuales solo \(a\) y \(b\) tienen sangre tipo O+. Se determinará en orden aleatorio el tipo de sangre con cinco muestra, una de cada individuo hasta que identifique un individuo O+. Sea la variable aleatoria \(Y =\) \emph{el número de exámenes de sangre para identificar un individuo O+}. Entonces la función de masa de probabilidad de \(Y\) es
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$y$ & 1 & 2 & 3 & 4\\
+$p(y)$ & 0.4 & 0.3 & 0.2 & 0.1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Para determinar la función de distribución acumulada \(F(Y)\), lo primero es determinar el valor de \(F(Y)\) para cada uno de los valores posibles del conjunto (\(1,2,3,4\)):
+
+\begin{equation}
+\notag
+\begin{split}
+F(1) &= P(Y\leq 1) = P(Y = 1) = p(1) = 0.4\\
+F(2) &= P(Y\leq 2) = P(Y = 1 \text{ o } 2) = p(1) + p(2) = 0.7\\
+F(3) &= P(Y\leq 3) = P(Y = 1 \text{ o } 2 \text{ o } 3) = p(1) + p(2) + p(3) = 0.9\\
+F(4) &= P(Y\leq 4) = P(Y = 1 \text{ o } 2 \text{ o } 3 \text{ o } 4) = p(1) + p(2) + p(3) + p(4) = 0.1\\
+\end{split}
+\end{equation}
+
+Ahora con cualquier otro número \(y\), \(F(Y)\) será igual al valor de \(F\) con el valor más próximo posible de \(Y\) a la izquierda de \(y\). Por ejemplo, \(F(2.7) = P(Y\leq 2.7) = p(Y\leq 2) = 0.7\) y \(F(3.9999) = F(3) = 0.9\). La función de distribución acumulativa es por lo tanto
+
+\begin{equation}
+\notag
+\begin{split}
+F(y) = \left\lbrace
+\begin{matrix}
+0 & \text{si } y < 1\\
+0.4 & \text{si } 1\leq y < 2\\
+0.7 & \text{si } 2\leq y < 3\\
+0.9 & \text{si } 3\leq y < 4\\
+1 & \text{si } y\geq 4\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}
+
+La siguiente figura muestra una gráfica de \(F(y)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\StringTok{"y"} \OtherTok{=} \DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{, }\CommentTok{\# Valores de Y}
+                \StringTok{"p"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.7}\NormalTok{,}\FloatTok{0.9}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\CommentTok{\# Probabilidades acumuladas asociadas}
+\FunctionTok{ggplot}\NormalTok{(}
+  \AttributeTok{data =}\NormalTok{ df, }
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y,}
+      \AttributeTok{y =}\NormalTok{ p)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_segment}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(y[}\DecValTok{1}\NormalTok{],y[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]),}
+        \AttributeTok{y =} \FunctionTok{c}\NormalTok{(y[}\DecValTok{1}\NormalTok{],p[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]),}
+        \AttributeTok{xend =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,y[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]),}
+        \AttributeTok{yend =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,p[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_segment}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y[}\FunctionTok{length}\NormalTok{(y)],}
+        \AttributeTok{y =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(y)],}
+        \AttributeTok{xend =}\NormalTok{ y[}\FunctionTok{length}\NormalTok{(y)] }\SpecialCharTok{+} \FunctionTok{mean}\NormalTok{(y[}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(y)]}\SpecialCharTok{{-}}\NormalTok{ y[}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(y)}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]),}
+        \AttributeTok{yend =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(y)]),}
+    \AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\StringTok{"cm"}\NormalTok{)),}
+    \AttributeTok{alpha =} \FloatTok{0.4}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Probabilidad acumulada"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Valores de y"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"F(y)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-30-1} 
+
+}
+
+\caption{Función de distribución acumulada}\label{fig:unnamed-chunk-30}
+\end{figure}
+
+Para una variable aleatorio discreta \(X\), la gráfica de \(F(X)\) mostrará un saltó con cada valor posible de \(X\) y será plana entre los valores posibles. Tal gráfica se conoce como función escalonada.
+\end{example}
+
+Una propiedad que surge de la función de distribución acumulada es que, para dos números cualesquiera \(a\) y \(b\) con \(a\leq b\).
+
+\begin{equation}
+P(a\leq X \leq b) = P(X \leq b) - P(X < a)
+\label{eq:fda2}
+\end{equation}
+
+En caso de que se desee calcular \(P(a < X \leq b)\), la propiedad sería
+
+\begin{equation}
+P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(a) - F(b)
+\label{eq:fda3}
+\end{equation}
+
+De lo anterior se deduce, que dependiendo de los signos de desigualdad, cambiará la forma en la se escribe la propiedad.
+
+\begin{exercise}
+Remítase al ejercicio \ref{exr:telefonica} y calcule y trace la gráfica de la función de distribución acumulada \(F(X)\). Luego, utilícela para calcular las probabilidades de los eventos dados en los ítem a. y d.~de dicho problema. Además, grafique la función de distribución acumulada.
+\end{exercise}
+
+\begin{exercise}
+
+Una organización de protección al consumidor que habitualmente evalúa automóviles nuevos reporta el número de defectos importantes encontrados en un carro seleccionado al azar de cierto tipo. La función de distribución acumulativa de \(Y\) es la siguiente.
+
+\begin{equation}
+\notag
+\begin{split}
+F(y) = \left\lbrace
+\begin{matrix}
+0 & \text{si } y < 1\\
+0.06 & \text{si } 0\leq y < 1\\
+0.19 & \text{si } 1\leq y < 2\\
+0.39 & \text{si } 2\leq y < 3\\
+0.67 & \text{si } 3\leq y < 4\\
+0.92 & \text{si } 4\leq y < 5\\
+0.97 & \text{si } 5\leq y < 6\\
+1 & \text{si } y\geq 6\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Calcule las siguientes probabilidades directamente con la función de distribución acumulada:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    \(p(2)\), es decir, \(P(Y=2)\)
+  \item
+    \(P(Y>3)\)
+  \item
+    \(P(2\leq Y\leq 5)\)
+  \item
+    \(P(2 < Y < 5)\)
+  \end{enumerate}
+\item
+  ¿Cuál es la función de masa de probabilidad de \(X\)? Grafique la función de masa de probabilidad, y la función de distribución acumulada.
+\end{enumerate}
+
+\end{exercise}
+
 \hypertarget{distribuciones}{%
 \subsection{Distribuciones}\label{distribuciones}}
+
+A continuación se dan a conocer algunas de las distribución de probabilidad discreta más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al lector a informarse de ellas en caso de lo requiera.
 
 \hypertarget{uniforme}{%
 \subsubsection*{Uniforme}\label{uniforme}}
 
+El ejemplo más sencillo de de una distribución de probabilidad discreta dada mediante una fórmula es la \textbf{distribución uniforme discreta} \citep[página 191]{anderson}. Su función de masa de probabilidad está definida por
+
+\begin{equation}
+P(X=x) = \dfrac{1}{n}
+\label{eq:uniformediscreta}
+\end{equation}
+
+donde
+
+\[n = \text{número de valores que puede tomar la variable aleatoria.}\]
+
+\begin{example}
+Consideremos el experimento de lanzar un dado de seis caras. Se define la variable aleatoria \(X\) como el número de puntos en la cara del dado que cae hacia arriba. En este experimento la variable aleatoria toma 6 valores posibles (\(n = 6\)). Por lo tanto, la función de masa de probabilidad de esta variable aleatoria uniforme discreta es
+
+\[P(X = x)=1/6 \text{, } x = 1,2,3,4,5,6\]
+\end{example}
+
+La figura \ref{fig:simUD}, muestra una simulación de la función de masa de probabilidad de la distribución uniforme discreta, dependiendo del número de valores que puede tomar la variable aleatoria (\(n\)).
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/simUD-1} 
+
+}
+
+\caption{Simulación de la distribución Uniforme discreta}\label{fig:simUD}
+\end{figure}
+
 \hypertarget{bernoulli}{%
 \subsubsection*{Bernoulli}\label{bernoulli}}
+
+La distribución Bernoulli es una distribución de probabilidad discreta que describe el resultado de un experimento de ensayo único que puede tener dos posibles resultados, a menudo etiquetados como éxito y fracaso, con una probabilidad de éxito de \(p\) y una probabilidad de fracaso de \(q = 1 - p\). La función de masa de probabilidad de la distribución Bernoulli está dada por:
+
+\begin{equation}
+P(X = x) = p^x(1-p)^{1-x}
+\label{eq:bernoulli}
+\end{equation}
+
+donde \(x\) puede tomar únicamente los valores de 0 y 1 \citep[página 105]{larsen}.
+
+La figura \ref{fig:simBer}, muestra una simulación de la función de masa de probabilidad de la distribución Bernoulli, dependiendo de la probabilidad de éxito (\(p\)).
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/simBer-1} 
+
+}
+
+\caption{Simulación de la distribución Binomial}\label{fig:simBer}
+\end{figure}
+
+\begin{example}
+
+En un experimento de lanzamiento de moneda, se puede modelar la probabilidad de obtener cara como una distribución Bernoulli. En este caso, si se define ``éxito'' como obtener cara y ``fracaso'' como obtener sello, entonces la probabilidad de éxito es \(p = 0.5\) y la probabilidad de fracaso es \(q = 1 - p = 0.5\). Entonces, la distribución Bernoulli para este experimento estaría dada por:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(\text{Obtener cara}) = p = 0.5\)
+\item
+  \(P(\text{Obtener sello}) = q = 0.5\)
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+
+En una campaña publicitaria en línea, se puede modelar la probabilidad de que un usuario haga clic en un anuncio como una distribución Bernoulli. En este caso, si se define ``éxito'' como un usuario que hace clic en el anuncio y ``fracaso'' como un usuario que no hace clic, entonces la probabilidad de éxito es p y la probabilidad de fracaso es \(q = 1 - p\). Supongamos que la probabilidad de que un usuario haga clic en el anuncio es del 10\%, es decir, \(p = 0.1\). Entonces, la distribución Bernoulli para este experimento estaría dada por:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(\text{Hacer clic en el anuncio}) = p = 0.1\)
+\item
+  \(P(\text{No hacer clic en el anuncio}) = q = 0.9\)
+\end{itemize}
+
+\end{example}
 
 \hypertarget{binomial}{%
 \subsubsection*{Binomial}\label{binomial}}
 
+La distribución de probabilidad binomial es una distribución de probabilidad que tiene muchas aplicaciones. Está relacionada con un experimento de pasos múltiples al que se llama experimento binomial \citep[paǵina 200]{anderson}.
+
+Un experimento binomial tiene las siguientes cuatro propiedades.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  El experimento consiste en una serie de n ensayos idénticos.
+\item
+  En cada ensayo hay dos resultados posibles. A uno de estos resultados se le llama éxito y al otro se le llama fracaso.
+\item
+  La probabilidad de éxito, que se denota \(p\), no cambia de un ensayo a otro. Por ende, la probabilidad de fracaso, que se denota \(1 - p\), tampoco cambia de un ensayo a otro.
+\item
+  Los ensayos son independientes.
+\end{enumerate}
+
+Si se presentan las propiedades \(2, 3\) y \(4\), se dice que los ensayos son generados por un proceso de Bernoulli. Si, además, se presenta la propiedad 1, se trata de un experimento binomial.
+
+En un experimento binomial lo que interesa es el número de éxitos en n ensayos. Si \(X\) denota el número de éxitos en \(n\) ensayos, es claro que \(x\) tomará los valores \(0, 1, 2, 3, \ldots, n\). Dado que el número de estos valores es finito, \(X\) es una variable aleatoria discreta. A la distribución de probabilidad correspondiente a esta variable aleatoria se le llama \textbf{distribución de probabilidad binomial}.
+
+\begin{example}
+Considere el experimento que consiste en lanzar una moneda cinco veces y observar si la cara de la moneda que cae hacia arriba es cara o cruz. Suponga que se desea contar el número de caras que aparecen en los cinco lanzamientos. ¿Presenta este experimento las propiedades de un experimento binomial? ¿Cuál es la variable aleatoria que interesa? Observe que:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  El experimento consiste en cinco ensayos idénticos; cada ensayo consiste en lanzar una moneda.
+\item
+  En cada ensayo hay dos resultados posibles: cara o cruz. Se puede considerar cara como éxito y cruz como fracaso.
+\item
+  La probabilidad de éxito y la probabilidad de fracaso son iguales en todos los ensayos, siendo \(p = 0.5\) y \(1 - p = 0.5\).
+\item
+  Los ensayos o lanzamientos son independientes porque al resultado de un ensayo no afecta a lo que pase en los otros ensayos o lanzamientos.
+\end{enumerate}
+
+Por tanto, se satisfacen las propiedades de un experimento binomial. La variable aleatoria que interesa es \(X =\) número de caras que aparecen en cinco ensayos. En este caso, X puede tomar los valores \(0, 1, 2, 3, 4\) o \(5\).
+\end{example}
+
+La función de masa de probabilidad de la distribución Binomial está dada por:
+
+\begin{equation}
+P(X = x) = \binom{n}{x}p^x(1-p)^{n-x}
+\label{eq:binomial}
+\end{equation}
+
+donde
+
+\begin{equation}
+\notag
+\begin{split}
+P(X = x) &= \text{probabilidad de } x \text{ éxitos en } n \text{ ensayos}\\
+n &= \text{ número de ensayos}\\
+\binom{n}{x} &= \dfrac{n!}{x!(n-x!)}\\
+p &= \text{probabilidad de un éxito en cualquiera de los ensayos}\\
+1 - p &= \text{probabilidad de un fracaso en cualquiera de los ensayos}\\
+\end{split}
+\end{equation}
+
+La figura \ref{fig:simBinomial}, muestra una simulación de la función de masa de probabilidad de la distribución Binomial, dependiendo del número de ensayos (\(n\)) y de la probabilidad de éxito (\(p\)).
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/simBinomial-1} 
+
+}
+
+\caption{Simulación de la distribución Binomial}\label{fig:simBinomial}
+\end{figure}
+
+\begin{example}
+\protect\hypertarget{exm:ejcomandosbin}{}\label{exm:ejcomandosbin}
+
+Considere una distribución Binomial con \(n = 7\) y \(p = 0.4\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Escriba la función de masa de probabilidad asociada.
+
+  \begin{equation}
+  \notag
+  P(X=x) = \binom{7}{x}0.4^x(1-0.4)^{7-x}
+  \end{equation}
+\item
+  Calcule \(p(4)\).
+
+  Recordemos que \(p(4) = P(X = 4)\). Para poder calcular probabilidades en un punto exacto (igual a 4) en R, se debe usar el prefijo \emph{d} seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es \emph{binom}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dbinom}\NormalTok{(}
+  \AttributeTok{x =} \DecValTok{4}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.4}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.193536
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de obtener 4 resultados exitosos de 7 ensayos es de 0.19.
+\item
+  Calcule \(P(X\leq 2)\).
+
+  En R para poder calcular probabilidades acumuladas es posible usar el prefijo \emph{p} seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es \emph{binom}.
+
+  Por defecto, R considera que las probabilidades acumuladas son del tipo \(P(X \leq x)\), tal como se presenta en este enunciado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{2}\NormalTok{, }\CommentTok{\# Se consideran valores MENORES o iguales a 2}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.851968
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de obtener 2 o menos resultados exitosos de 7 ensayos es de 0.85.
+\item
+  Calcule \(P(X < 5)\).
+
+  En este caso antes de calcular en la probabilidad en R, se debe transformar la expresión a la forma \(P(X \geq x)\). Ya que estamos trabajando con eventos discretos, tenemos que
+
+  \[P(X < 5) = P(X \leq 4)\]
+
+  Luego, esta probabilidad la podemos calcular en R de la siguiente manera.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{4}\NormalTok{, }\CommentTok{\# Se consideran valores MENORES o iguales a 4}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.995328
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de obtener menos de 5 resultados exitosos de 7 ensayos es de 0.99.
+\item
+  Calcule \(P(X > 1)\).
+
+  R incluye un comando para aquellos casos en los que el signo de desigualdad no estricto está invertido si es esctricto, es decir, en vez de \(\leq\) se tiene \(>\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Se consideran valores MAYORES o iguales a 1}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+  \AttributeTok{lower.tail =} \ConstantTok{FALSE} \CommentTok{\# En caso de que se tenga el signo mayor estricto}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4232832
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de obtener más de 1 resultado exitoso de 7 ensayos es de 0.42.
+\item
+  Calcule \(P(X \geq 1)\).
+
+  Para aquellos casos en que se tenga el signo de mayor no estricto (\(\geq\)), lo más más recomendable es transformar la expresión a no estricto (\(>\)) para así utilizar un código similar al del ejemplo \emph{d.}. Ya que estamos trabajando con eventos discretos, tenemos que
+
+  \[P(X \geq 1) =P(X > 0)\]
+
+  Luego, esta probabilidad la podemos calcular en R de la siguiente manera.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{0}\NormalTok{, }\CommentTok{\# Se consideran valores MAYORES a 0}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+  \AttributeTok{lower.tail =} \ConstantTok{FALSE} \CommentTok{\# En caso de que se tenga el signo mayor estricto}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7902848
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de obtener al menos 1 resultado exitoso de 7 ensayos es de 0.79.
+\item
+  ¿Para que valor de \(x\), \(P(X \leq x) = 0.6\)?
+
+  Despejar esta ecuación puede llegar a ser engorroso. Sin embargo, R posee un argumento para determinar estos valores. Para el calculo se debe usar el prefijo \emph{q} seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es \emph{binom}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qbinom}\NormalTok{(}
+  \AttributeTok{p =} \FloatTok{0.6}\NormalTok{, }\CommentTok{\# Valor resultante de la probabilidad}
+  \AttributeTok{size =} \DecValTok{7}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+  Por lo tanto, para \(x = 2\), la probabilidad de obtener a lo más \(x\) resultados exitosos es de 0.6.
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+Un acusado va a ser declarado inocente o culpable por un jurado popular. Para ser condenado es necesario que al menos 7 personas de las 10 del jurado voten culpable. Dado que en los programas de televisión ya han dado muchos detalles del caso, los miembros del jurado están atendiendo \textit{twitter} o leyendo el diario en vez de escuchar al fiscal y al abogado, porque van a decidir tirando una moneda al aire. ¿Cuál es la probabilidad de que el acusado sea declarado inocente?
+
+La probabilidad de éxito (inocencia) es de \(p = 0.5\). Sea \(X\) el número éxitos (votos de inocencia) en 10 ensayos (votos del jurado). Entonces, la probabilidad de ser declarado inocente esta dada por la siguiente expresión.
+
+\[
+P(X \geq 4) = \sum_{k=4}^{10} \binom{10}{k} 0.5^{k}(1-0.5)^{10-k} = 0.82,\text{ o}
+\]
+
+Antes de realizar el cálculo en R lo recomendable es transformar la expresión para utilizar el comando adecuado. En este caso, la expresión es:
+
+\[P(X\geq 4) = P(X > 3)\]
+Luego, en R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Se consideran valores MAYORES o iguales a 3 (es decir, mayor o igual a 4)}
+  \AttributeTok{size =} \DecValTok{10}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Probabilidad de éxito}
+  \AttributeTok{lower.tail =} \ConstantTok{FALSE} \CommentTok{\# TRUE: menor igual, FALSE: mayor estricto}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.828125
+\end{verbatim}
+
+Por otro lado, la probabilidad \(P(X\geq 4)\) puede ser escrita como \(1 - P(X \leq 3)\).
+
+\[
+1 - P(X \leq 3) = \sum_{k=0}^{3} \binom{10}{k} 0.5^{k}(1-0.5)^{10-k} = 0.82
+\]
+
+Es posible calcular esta expresión en R de la siguiente manera.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pbinom}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Se consideran valores MENORES o iguales a 3}
+  \AttributeTok{size =} \DecValTok{10}\NormalTok{, }\CommentTok{\# Cantidad de ensayos}
+  \AttributeTok{prob =} \FloatTok{0.5} \CommentTok{\# Probabilidad de éxito}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.828125
+\end{verbatim}
+
+Por lo tanto, la probabilidad de que el acusado sea declarado inocente es de 0.82.
+\end{example}
+
+\begin{exercise}
+
+En una planta de revisión técnica, resulta rechazado el \(42 \%\) de los vehículos livianos.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  En la primera media hora de un día cualquiera se alcanzan a revisar 9 vehículos ¿cuál es la probabilidad de que más de 3 sean rechazados?
+\item
+  Una mañana se rechazaron 25 vehículos de los cuales 8 fueron fabricados antes del año 2022. Un inspector revisa al azar los antecedentes de 5 vehículos rechazados ¿cuál es la probabilidad de que la mayoría de los vehículos revisados hayan sido fabricados antes del año 2022?
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+Se sabe que la probabilidad de que una empresa no pase la revisión de fraude fiscal es de 0.21. De las siguientes 345 empresas que se revisan en búsqueda de fraude fiscal, calcule la probabilidad de que al menos 10 empresas no aprueben la revisión.
+\end{exercise}
+
+\begin{exercise}
+
+Un banco sabe que el 3\% de sus clientes no pagan a tiempo sus tarjetas de crédito. Si el banco emite 5000 tarjetas de crédito,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que al menos 200 de ellas pertenezcan a clientes que no pagan a tiempo?
+\item
+  ¿Qué pasaría con la probabilidad de que al menos 200 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo si la tasa de incumplimiento del banco aumenta al 5\%?
+\item
+  Si el banco quisiera reducir la probabilidad de que al menos 200 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo a menos del 0.05\%, ¿cuál debería ser el número máximo de tarjetas de crédito que debería emitir?
+\item
+  ¿Cómo cambiaría la probabilidad de que al menos 200 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo si el banco decidiera aumentar el número de tarjetas de crédito que otorga a cada cliente?
+\item
+  ¿Cuál es la probabilidad de que exactamente 250 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo?
+\end{enumerate}
+
+\end{exercise}
+
 \hypertarget{poisson}{%
 \subsubsection*{Poisson}\label{poisson}}
+
+Una variable aleatoria discreta que se suele usar para estimar el número de veces que sucede un hecho determinado (ocurrencias) en un intervalo de tiempo o de espacio. Por ejemplo, número de reparaciones en un autopista o número de fugas en un tubería. Si se satisfacen las siguientes condiciones, el número de ocurrencias es una variable aleatoria discreta, descrita por la distribución de probabilidad de Poisson \citep[página 211]{anderson}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La probabilidad de ocurrencia es la misma para cualesquiera dos intervalos de la misma magnitud.
+\item
+  La ocurrencia o no-ocurrencia en cualquier intervalo es independiente de la ocurrencia o no-ocurrencia en cualquier otro intervalo.
+\end{enumerate}
+
+La función de masa de probabilidad de Poisson se define mediante la ecuación
+
+\begin{equation}
+P(X = x) = \dfrac{\lambda^xe^{-\lambda}}{x!}
+\label{eq:poisson}
+\end{equation}
+
+en donde
+
+\begin{equation}
+\notag
+\begin{split}
+P(X = x) &= \text{probabilidad de } x \text{ ocurrencias en un intervalo de tiempo}\\
+\lambda &= \text{ tasa de ocurrencias en un intervalo}\\
+e &\approx 2.71828\\
+\end{split}
+\end{equation}
+
+Es importante observar, que el número de ocurrencias de \(x\), no tiene límite superior. Esta es un variable aleatoria discreta que toma los valores de una sucesión infinita de números (\(x = 0,1,2,3,4,\ldots\)).
+
+La figura \ref{fig:simPois}, muestra una simulación de la función de masa de probabilidad de la distribución Poisson, dependiendo de la tasa en función del tiempo (\(\lambda\)).
+
+\begin{figure}
+
+{\centering \includegraphics{est1+descriptiva_files/figure-latex/simPois-1} 
+
+}
+
+\caption{Simulación de la distribución Poisson}\label{fig:simPois}
+\end{figure}
+
+\begin{example}
+
+Considere una distribución Poisson con \(\lambda = 3\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Escriba la función de probabilidad asociada.
+
+  \begin{equation}
+  \notag
+  P(X=x) = \dfrac{3^xe^{-3}}{x!}
+  \end{equation}
+\item
+  Calcule \(p(2)\).
+
+  Considerando los comandos explicados en el ejemplo \ref{exm:ejcomandosbin}, solo es necesario modificar la abreviatura de la distribución de probabilidad, la cual, en este caso, corresponde a \emph{pois}.
+
+  Recordemos que \(p(2) = P(X = 2)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dpois}\NormalTok{(}
+  \AttributeTok{x =} \DecValTok{2}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2240418
+\end{verbatim}
+
+  Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran dos sucesos es de 0.22.
+\item
+  Calcule \(P(X\leq 3)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ppois}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6472319
+\end{verbatim}
+
+  Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran a lo más tres sucesos es de 0.64.
+\item
+  Calcule \(P(X < 2)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ppois}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{1}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1991483
+\end{verbatim}
+
+  Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran menos de dos sucesos es de 0.19.
+\item
+  Calcule \(P(X > 2)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ppois}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+  \AttributeTok{lower.tail =} \ConstantTok{FALSE} \CommentTok{\# En caso de que se tenga el signo mayor estricto}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3527681
+\end{verbatim}
+
+  Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran más de dos sucesos es de 0.35.
+\item
+  Calcule \(P(X\geq 5)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ppois}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{4}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3}\NormalTok{, }\CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+  \AttributeTok{lower.tail =} \ConstantTok{FALSE} \CommentTok{\# En caso de que se tenga el signo mayor estricto}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1847368
+\end{verbatim}
+
+  Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran al menos cinco sucesos es de 0.18.
+\item
+  Calcule \(P(X\leq x) = 0.1\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qpois}\NormalTok{(}
+  \AttributeTok{p =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Valor resultante de la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{3} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+  Por lo tanto, para \(x=1\), la probabilidad de que ocurran a los más \(x\) sucesos es de 0.1, considerando una tasa de 3 por unidad de tiempo.
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+
+Por un paradero pasan los buses de la línea \(A\) a una razón de 12 por hora y en forma independiente pasan los buses de la línea \(B\) a razón de 10 por hora. Un inspector observa la pasada de buses por el paradero.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  ¿Cuál es la probabilidad de que en los primeros 10 minutos no pasen buses de la línea \(A\)?
+
+  La tasa de llegada de buses de la línea \(A\) es de 12 por hora, por lo tanto, la tasa de llegada en 10 minutos es de 2 buses (\(12/60\cdot 10=2\)). La probabilidad de que no pase ningún bus en esos 10 minutos esta dada por \(P(X = 0)\). En R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dpois}\NormalTok{(}
+  \AttributeTok{x =} \DecValTok{0}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \DecValTok{2} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1353353
+\end{verbatim}
+
+  Por lo tanto, la probabilidad de que en los primeros 10 minutos no pase ningún bus de la línea \(A\) es de aproximadamente 0.13.
+\item
+  ¿Cuál es la probabilidad de que en los primeros 8 minutos pasen menos de 3 buses de la línea \(B\)?
+
+  La tasa de llegada en 8 minutos es de aproximadamente 1.333 buses \((10/60\cdot 8=1.333)\). Entonces, la probabilidad de que pasen menos de 3 buses de la línea \(B\) en esos 8 minutos esta dada por \(P(X < 3) = P(X\leq 2)\). En R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ppois}\NormalTok{(}
+  \AttributeTok{q =} \DecValTok{2}\NormalTok{, }\CommentTok{\# Valor de X para el cual se desea calcular la probabilidad}
+  \AttributeTok{lambda =} \FloatTok{1.333} \CommentTok{\# Tasa de ocurrencia por unidad de tiempo o espacio}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.8494467
+\end{verbatim}
+
+  La probabilidad de que en los primeros 8 minutos pasen menos de 3 buses de la línea \(B\) es de aproximadamente 0.84.
+\end{enumerate}
+
+\end{example}
+
+\begin{exercise}
+
+Una compañía de seguros tiene un promedio de 4 reclamaciones de seguros de automóviles por día.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que la compañía de seguros reciba menos de 3 reclamaciones en un día?
+\item
+  Si la compañía de seguros quiere asegurarse de tener suficientes empleados para manejar la carga de trabajo, ¿cuántos empleados deben tener en su equipo si quieren tener una probabilidad del 90\% de manejar cualquier cantidad de reclamaciones en un día?
+\item
+  Si la compañía de seguros quiere limitar su riesgo y sólo estar dispuesta a pagar por un número limitado de reclamaciones, ¿cuál es la cantidad máxima de reclamaciones que deberían estar dispuestos a pagar por día si sólo están dispuestos a aceptar un riesgo del 5\% de exceder ese límite?
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+Un banco recibe en promedio 2 solicitudes de préstamos hipotecarios por hora.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que el banco reciba exactamente 3 solicitudes de préstamo hipotecario en un período de 90 minutos?
+\item
+  Si el banco quiere asegurarse de tener suficiente personal para manejar una alta demanda de solicitudes de préstamo, ¿cuántos empleados deben tener en su equipo si quieren tener una probabilidad del 95\% de manejar cualquier cantidad de solicitudes en una hora?
+\item
+  Si el banco quiere limitar su exposición a riesgos y sólo estar dispuesto a aprobar un número limitado de préstamos, ¿cuál es la cantidad máxima de solicitudes que deberían estar dispuestos a aprobar por hora si sólo están dispuestos a aceptar un riesgo del 10\% de exceder ese límite?
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+Un laboratorio farmacéutico encarga una encuesta para estimar el consumo de cierto medicamento que, elabora con el fin de controlar su producción. Se sabe que, a lo largo de un año cada persona tiene una posibilidad entre mil de necesitar el medicamento, y el laboratorio podrá vender en promedio 4000 unidades del producto por año.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que el número de enfermos no exceda 4 por año?
+\item
+  ¿Cuál es la probabilidad de que el número de enfermos sea más de 2 por año?
+\item
+  ¿Cuál es la probabilidad de que haya 12 enfermos en un año?
+\end{enumerate}
+
+\end{exercise}
 
 \hypertarget{variables-aleatorias-continuas-v.a.c}{%
 \section{Variables aleatorias continuas (v.a.c)}\label{variables-aleatorias-continuas-v.a.c}}

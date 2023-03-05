@@ -37,13 +37,13 @@ La modalidad de trabajo consta de los siguientes elementos:
 
    - (Obligatoria) [*"Estadística para Administración y Economía"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson%2C%20Estad%C3%ADstica.pdf) [@anderson]
 
-   - (Obligatoria, texto guía) [*"Probabilidad y Estadística para Ingeniería y Ciencias"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore%2C%20Probabilidad%20y%20Estad%C3%ADstica.pdf) [@Devore]
+   - (Obligatoria,) [*"Probabilidad y Estadística para Ingeniería y Ciencias"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore%2C%20Probabilidad%20y%20Estad%C3%ADstica.pdf) [@Devore]
     
    - (Complementaria) [*"R Programming for Data Science"*](https://bookdown.org/rdpeng/rprogdatascience/) [@peng2016r]
     
    - (Complementaria) [*"The R Software: Fundamentals of Programming and Statistical Analysis"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux%2C%20Manual%20de%20R.pdf) [@deMicheaux2013]
    
-   - (Complementaria) [*"ggplot2: Elegant Graphics for Data Analysis "*](https://ggplot2-book.org/) [] 
+   - (Complementaria) [*"ggplot2: Elegant Graphics for Data Analysis "*](https://ggplot2-book.org/) [@wickham_ggplot2_2009] 
 
     Además, a lo largo del documento se añaden citas que refuerzan el contenido presentando. Al final de cada sección se encuentra el detalle de cada una de ellas.
 

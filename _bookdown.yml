@@ -7,3 +7,5 @@ language:
   label:
     fig: "Figura "
     tab: "Tabla "
+    exr: "Ejercicio "
+    exm: "Ejemplo "
