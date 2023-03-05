@@ -18,14 +18,3 @@
 ### Comparación de varianzas
 ### Diferencia de proporciones
 
-# Intervalos de confianza
-
-## Una media
-### Bajo distribución normal
-### Asintótico 
-
-## Diferencia de medias
-
-## Compraración de varianzas
-
-## Diferencia de proporciones

@@ -16,7 +16,7 @@ github-repo: "Dfranzani/Estadistica_I_UDP"
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 options(tinytex.engine_args = '-shell-escape') # Minted indent
-rmarkdown::find_pandoc(cache = TRUE, dir = "/usr/bin", version = NULL) # Pandoc versión (referencias y tablas)
+#rmarkdown::find_pandoc(cache = TRUE, dir = "/usr/bin", version = NULL) # Pandoc versión (referencias y tablas)
 ```
 
 # Presentación {-}
